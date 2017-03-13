@@ -16,7 +16,7 @@
             }).state('BlueParent.profile', {
                 url: 'profile',
                 templateUrl: 'user-profile.html',
-                // controller: "ProfileController as profile"
+                controller: "ProfileController as profile"
             });
             // }).state('BlueParent.meds', {
             //     url: 'medication'
