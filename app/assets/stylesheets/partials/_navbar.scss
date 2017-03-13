@@ -1,0 +1,31 @@
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fixed-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 50px;
+    background-color: #EFD6AC;
+}
+
+.fixed-nav ul {
+    padding:0;
+}
+
+.fixed-nav li {
+  display:inline-block;
+  display: flex;
+  justify-content: center;
+}
+
+.fixed-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 17px;
+  color: #333;
+}
