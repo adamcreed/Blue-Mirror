@@ -1,3 +1,34 @@
+@import url( 'https://fonts.googleapis.com/css?family=Josefin+Slab|Vast+Shadow');
+$headerFont: 'Vast Shadow', cursive;
+$primaryFont: 'Josefin Slab', serif;
+$mainColor: #183A37;
+$plumAccent: #550527;
+$navyAccent: #04151F;
+$creamAcceent: #EFD6AC;
+$border: 2px solid $mainColor;
+$portfolioBorder: 2px solid white;
+$largeBorder: 10px solid $mainColor;
+$radius: 1rem;
+$start: $mainColor;
+$end: $mainColor;
+
+h1 {
+    font-family: $headerFont;
+    font-size: 2rem;
+}
+
+span {
+    font-family: $primaryFont;
+}
+
+ul {
+    font-family: $primaryFont;
+}
+
+p {
+    font-family: $primaryFont;
+}
+
 main {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
