@@ -10,6 +10,7 @@ gem 'devise_token_auth'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'google-api-client', '~> 0.9', require: 'google/apis/calendar_v3'
 
 gem 'bower-rails'
 gem 'angular-rails-templates'
@@ -30,7 +31,7 @@ gem 'sass-rails', '~> 5.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
