@@ -8,4 +8,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            },
            name: 'google',
            scope: 'email, profile, calendar'
+
+  provider :facebook, ENV.fetch('FACEBOOK_APP_ID'),
+           ENV.fetch('FACEBOOK_APP_SECRET')
 end
