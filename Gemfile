@@ -10,6 +10,7 @@ gem 'devise_token_auth'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'google-api-client', '~> 0.9', require: 'google/apis/calendar_v3'
 
 gem 'bower-rails'
 gem 'angular-rails-templates'
