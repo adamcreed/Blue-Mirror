@@ -12,6 +12,10 @@ $radius: 1rem;
 $start: $mainColor;
 $end: $mainColor;
 
+body {
+    background: url('../images/scribble_light.png');
+}
+
 h1 {
     font-family: $headerFont;
     font-size: 2rem;
