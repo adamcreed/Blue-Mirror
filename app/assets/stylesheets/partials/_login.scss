@@ -1,0 +1,39 @@
+.ui {
+    width: 266px;
+    margin: 1%;
+    background: #FFFFFF;
+    height: 50px;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
+    border-radius: 2px;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: 0.22px;
+    color: rgba(0,0,0,0.54);
+    outline: none;
+
+    &:hover {
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+    }
+
+    .logo {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+        vertical-align: top;
+    }
+
+    &:disabled {
+        background: #EEEEEE;
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    height: 80vh;
+}
