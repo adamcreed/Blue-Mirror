@@ -11,7 +11,7 @@
                 template: '<ui-view></ui-view>',
             }).state('BlueParent.login', {
                 url: 'login',
-                templateUrl: 'login.html',
+                templateUrl: 'login-template.html',
                 // controller: "LoginController as login"
             }).state('BlueParent.profile', {
                 url: 'profile',
