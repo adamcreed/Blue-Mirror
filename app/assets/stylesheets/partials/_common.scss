@@ -25,6 +25,14 @@ ul {
     font-family: $primaryFont;
 }
 
+li {
+    font-family: $primaryFont;
+
+    a {
+        font-family: $primaryFont;
+    }
+}
+
 p {
     font-family: $primaryFont;
 }
