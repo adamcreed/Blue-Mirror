@@ -1,12 +1,7 @@
 (function(ng) {
     ng.module('BlueMirrorApp').controller('TodoController', function($state, $scope, $q) {
 
-        $scope.todos = [
-                        {
-                            "text": '',
-                            "done": false,
-                        }
-                       ];
+        $scope.todos = [{"text": "Did you drink water today?", "done": false}];
 
 
           $scope.totalToDo = function() {
@@ -16,17 +11,16 @@
 
           $scope.addToDo = function() {
 
-              if ($scope.input === undefined) {
+              if ($scope.input === undefined || $scope.input === '') {
 
-                  $scope.error ="Please enter a task";
+                  $scope.error = "Please enter a task";
 
               } else {
                   $scope.todos.push({"text":$scope.input,"done":false});
-
-                  $scope.error ="";
+                  $scope.error = "";
                   $scope.input = "";
-             }
-         };
+              }
+          };
 
 
           $scope.clearCompleted = function() {
