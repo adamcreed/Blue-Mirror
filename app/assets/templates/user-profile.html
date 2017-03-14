@@ -3,12 +3,6 @@
 </div>
 
 <div class="container mood">
-    <div class="mood-info">
-        <h2>Update Your Mood</h2>
-
-        <select>
-
-<main class="mood">
     <div class="update-mood-container">
         <div class="mood-info">
             <h2>Update Your Mood</h2>
@@ -19,32 +13,20 @@
                 <option value="4">Angry</option>
                 <option value="5">Awful</option>
             </select>
-        <form name="explainForm" class="mood-form" ng-submit="postMoods()">
-            <label for="explain">Explain:</label>
-            <input type="text" id="explain" ng-model="explanation.text" name="explain" placeholder="Please explain">
+            <form class="mood-form">
+                <label for="explain">Why do you feel that way?</label>
+                <input type="text" id="explain" name="explain" placeholder="Please explain">
 
-            <input type="submit" value="Enter">
-        </form>
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="mood-updated">
+            <h2>Mood Updated!</h2>
+            <span>Edit</span>
+        </div>
     </div>
-    <div class="mood-updated">
-        <h2>Mood Updated!</h2>
-        <span>Edit</span>
-    </div>
 </div>
-</main>
 
-<form class="mood-form">
-    <label for="explain">Why do you feel that way?</label>
-    <input type="text" id="explain" name="explain" placeholder="Please explain">
-
-    <input class="button" type="submit" value="Submit">
-</form>
-</div>
-<div class="mood-updated">
-    <h2>Mood Updated!</h2>
-    <span>Edit</span>
-</div>
-</div>
 
 <div class="counselors">
     <div class="local-counselors-container">
