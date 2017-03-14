@@ -13,9 +13,9 @@
                 <option value="4">Angry</option>
                 <option value="5">Awful</option>
             </select>
-            <form class="mood-form">
+            <form name="explainForm" class="mood-form" ng-submit="postMoods()">
                 <label for="explain">Why do you feel that way?</label>
-                <input type="text" id="explain" name="explain" placeholder="Please explain">
+                <input type="text" id="explain" ng-model="explanation.text" name="explain" placeholder="Please explain">
                 <input class="button" type="submit" value="Submit">
             </form>
         </div>
@@ -25,6 +25,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="counselors">
     <div class="local-counselors-container">
