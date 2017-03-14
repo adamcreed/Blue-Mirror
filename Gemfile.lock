@@ -73,6 +73,7 @@ GEM
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     google-api-client (0.10.1)
       addressable (~> 2.3)
       googleauth (~> 0.5)
@@ -240,6 +241,7 @@ DEPENDENCIES
   bower-rails
   devise_token_auth
   dotenv-rails
+  gmaps4rails
   google-api-client
   jbuilder (~> 2.5)
   listen (~> 3.0.5)
