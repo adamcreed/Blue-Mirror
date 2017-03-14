@@ -22,19 +22,28 @@
     </div>
 </main>
 
-<div class="container">
+
+
+
+<div class="local-counselors-container">
+    <button>Local Counselors</button>
+</div>
+
+
+
+<div class="container" ng-controller="TodoController as todo">
     <div class="todo-wrapper text-center">
-        <h4 class="total-items">Total todos : 5</h4>
+        <h4 class="total-items">What Motivates You? <a href="#">See what motivates other users..</a></h4>
         <div class="todo text-left">
             <ul class="nav" >
-                <li>
+                <li ng-repeat="todo in todos">
                     <input type="checkbox" ng-model="todo.done"/>
-                    <span class="todo">Go for a walk</span>
+                    <span class="todo-{{todo.done}}">{{todo.text}}</span>
                 </li>
           </ul>
           <input type="text" Placeholder="Enter Task" ng-model="input"/>
-          <p class="error"></p>
-          <a href="" class="btn btn-success" ng-click="addToDo()"> Add New Task</a>
-          <a href="#" class="btn btn-danger" ng-click="clearCompleted()">Delete Selected</a>
+          <p class="error">{{error}}</p>
+          <a class="btn btn-success" ng-click="addToDo()"> Add New Task</a>
+          <a class="btn btn-danger" ng-click="clearCompleted()">Delete Selected</a>
       </div>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='BlueMirrorApp'>
   <head>
     <title>BlueMirror</title>
     <%= csrf_meta_tags %>
@@ -8,7 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body ng-controller="ProfileController">
     <%= yield %>
+    <script>
+      var currentUser = <%= raw current_user.to_json %>
+    </script>
   </body>
 </html>

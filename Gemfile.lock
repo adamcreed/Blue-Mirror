@@ -240,7 +240,7 @@ DEPENDENCIES
   bower-rails
   devise_token_auth
   dotenv-rails
-  google-api-client (~> 0.9)
+  google-api-client
   jbuilder (~> 2.5)
   listen (~> 3.0.5)
   omniauth
@@ -255,6 +255,9 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   web-console (>= 3.3.0)
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.14.1
