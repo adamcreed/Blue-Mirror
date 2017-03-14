@@ -13,11 +13,11 @@
                 <option value="4">Angry</option>
                 <option value="5">Awful</option>
             </select>
-            <form name="explainForm" class="mood-form" ng-submit="postMoods()">
-                <label for="explain">Explain:</label>
-                <input type="text" id="explain" ng-model="explanation.text" name="explain" placeholder="Please explain">
+            <form class="mood-form">
+                <label for="explain">Why do you feel that way?</label>
+                <input type="text" id="explain" name="explain" placeholder="Please explain">
 
-                <input type="submit" value="Enter">
+                <input class="button" type="submit" value="Submit">
             </form>
         </div>
         <div class="mood-updated">
@@ -26,13 +26,6 @@
         </div>
     </div>
     </main>
-
-    <form class="mood-form">
-        <label for="explain">Why do you feel that way?</label>
-        <input type="text" id="explain" name="explain" placeholder="Please explain">
-
-        <input class="button" type="submit" value="Submit">
-    </form>
 </div>
 </div>
 
