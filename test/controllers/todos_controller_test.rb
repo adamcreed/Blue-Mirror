@@ -6,43 +6,33 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get todos_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_todo_url
+    get todos_url, as: :json
     assert_response :success
   end
 
   test "should create todo" do
     assert_difference('Todo.count') do
-      post todos_url, params: { todo: { todo: @todo.todo, user_id: @todo.user_id } }
+      post todos_url, params: { todo: { todo: @todo.todo, user_id: @todo.user_id } }, as: :json
     end
 
-    assert_redirected_to todo_url(Todo.last)
+    assert_response 201
   end
 
   test "should show todo" do
-    get todo_url(@todo)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_todo_url(@todo)
+    get todo_url(@todo), as: :json
     assert_response :success
   end
 
   test "should update todo" do
-    patch todo_url(@todo), params: { todo: { todo: @todo.todo, user_id: @todo.user_id } }
-    assert_redirected_to todo_url(@todo)
+    patch todo_url(@todo), params: { todo: { todo: @todo.todo, user_id: @todo.user_id } }, as: :json
+    assert_response 200
   end
 
   test "should destroy todo" do
     assert_difference('Todo.count', -1) do
-      delete todo_url(@todo)
+      delete todo_url(@todo), as: :json
     end
 
-    assert_redirected_to todos_url
+    assert_response 204
   end
 end
