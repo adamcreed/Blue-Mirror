@@ -29,6 +29,7 @@ class TodosController < ApplicationController
   # DELETE /todos/1
   # DELETE /todos/1.json
   def destroy
+    set_todo
     @todo.destroy
   end
 

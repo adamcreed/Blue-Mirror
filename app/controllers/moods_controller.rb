@@ -29,6 +29,7 @@ class MoodsController < ApplicationController
   # PATCH/PUT /moods/1
   # PATCH/PUT /moods/1.json
   def update
+    set_mood
     if @mood.update(mood_params)
       render json: { status: :ok, location: @mood }
     else
