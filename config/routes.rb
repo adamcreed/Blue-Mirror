@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
 
-  resources :users, shallow: true do
-    resources :todos
-  end
+  resources :users
+  resources :todos, only: [:index, :show, :create, :destroy]
+  resources :moods, only: [:index, :show, :create, :update]
 
   root 'home#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/', to: 'home#index'
 end

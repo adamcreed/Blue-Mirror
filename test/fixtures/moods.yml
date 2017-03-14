@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mood: 1
+  reason: MyString
+  user: one
+
+two:
+  mood: 1
+  reason: MyString
+  user: two

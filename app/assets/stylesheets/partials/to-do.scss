@@ -19,6 +19,26 @@
         margin-bottom: 5px;
         flex-wrap: wrap;
 
+        a {
+            font-size: 10px;
+        }
+    }
+
+    .text-center {
+        h4 {
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #4c5667;
+        }
+    }
+
+    .text-left ul {
+        width: 90%;
+        // padding: 5px;
+        display: inline-block;
+        color: #97a0af;
+
         .checkbox {
             width: 10%;
         }
