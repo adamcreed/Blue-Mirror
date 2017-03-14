@@ -28,7 +28,7 @@
 
         // get selection value
         $scope.change = function () {
-            $scope.moodObj.mood = $scope.value;
+            $scope.moodObj.mood = Number($scope.value);
             console.log($scope.moodObj);
         };
 
