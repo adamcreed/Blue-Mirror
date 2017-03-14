@@ -7,11 +7,11 @@
         <div class="mood-info">
             <h2>Update Your Mood</h2>
             <select ng-change="change()" ng-model="value" id="mood-selections">
-                <option value="1">Happy</option>
-                <option value="2">Sad</option>
-                <option value="3">Indifferent</option>
-                <option value="4">Angry</option>
-                <option value="5">Awful</option>
+                <option value="1">great</option>
+                <option value="2">good</option>
+                <option value="3">neutral</option>
+                <option value="4">bad</option>
+                <option value="5">terrible</option>
             </select>
             <form name="explainForm" class="mood-form" ng-submit="postMoods()">
                 <label for="explain">Why do you feel that way?</label>
@@ -19,24 +19,20 @@
                 <input class="button" type="submit" value="Submit">
             </form>
         </div>
-        <div class="mood-updated">
+        <!-- <div class="mood-updated">
             <h2>Mood Updated!</h2>
             <span>Edit</span>
-        </div>
+        </div> -->
     </div>
 </div>
-
-
-<div class="counselors">
+<!-- <div class="counselors">
     <div class="local-counselors-container">
         <button class="counselors" type="submit">Local Counselors</button>
     </div>
     <div class="emergency-services">
         <button class="emergency" type="submit">Emergency Services</button>
     </div>
-</div>
-
-
+</div> -->
 <div class="container" ng-controller="TodoController as todo">
     <div class="todo-wrapper">
         <h2 class="total-items">What Motivates You?</h2>

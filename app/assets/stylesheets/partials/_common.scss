@@ -5,8 +5,8 @@ $mainColor: #183A37;
 $plumAccent: #550527;
 $navyAccent: #04151F;
 $creamAcceent: #EFD6AC;
-$borderColor: #eee #a0a0a0;
-$border: 2px solid $mainColor;
+$borderColor: #d6d6d6;
+$border: 2px solid #d6d6d6;
 $portfolioBorder: 2px solid white;
 $largeBorder: 10px solid $mainColor;
 $radius: 1rem;
@@ -66,17 +66,21 @@ button {
 }
 
 input {
+    outline: none;
     display: block;
     margin: 2%;
     padding: 10px;
     width: 100%;
     border: 1px solid #333;
-    border: $borderColor;
+    border: $border;
     background: transparent;
 }
 
 .button {
+    outline: none;
     font-family: $primaryFont;
+    color: black;
+    font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 5px;
