@@ -1,49 +1,56 @@
-<main class="mood">
-    <div class="update-mood-container">
-        <div class="mood-info">
-            <h2>Update Your Mood</h2>
-            <select>
-                <option value="Happy">Happy</option>
-                <option value="Sad">Sad</option>
-                <option value="Indifferent">Indifferent</option>
-                <option value="Angry">Angry</option>
-            </select>
-            <form class="mood-form">
-                <label for="explain">Explain:</label>
-                <input type="text" id="explain" name="explain" placeholder="Please explain">
-
-                <input type="submit" value="Enter">
-            </form>
-        </div>
-        <div class="mood-updated">
-            <h2>Mood Updated!</h2>
-            <span>Edit</span>
-        </div>
-    </div>
-</main>
-
-
-
-
-<div class="local-counselors-container">
-    <button>Local Counselors</button>
+<div class="signout">
+    <a href="signout">sign out</a>
 </div>
+<!--
+<div class="container mood">
+    <div class="mood-info">
+        <h2>Update Your Mood</h2>
 
+        <select>
+                <option value="1">Happy</option>
+                <option value="2">Sad</option>
+                <option value="3">Indifferent</option>
+                <option value="4">Angry</option>
+            </select>
+
+        <form class="mood-form">
+            <label for="explain">Why do you feel that way?</label>
+            <input type="text" id="explain" name="explain" placeholder="Please explain">
+
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="mood-updated">
+        <h2>Mood Updated!</h2>
+        <span>Edit</span>
+    </div>
+</div> -->
+
+<div class="counselors">
+    <div class="local-counselors-container">
+        <button class="counselors" type="submit">Local Counselors</button>
+    </div>
+
+    <div class="emergency-services">
+        <button class="emergency" type="submit">Emergency Services</button>
+    </div>
+</div>
 
 
 <div class="container" ng-controller="TodoController as todo">
-    <div class="todo-wrapper text-center">
-        <h4 class="total-items">What Motivates You? <a href="#">See what motivates other users..</a></h4>
-        <div class="todo text-left">
-            <ul class="nav" >
+    <div class="todo-wrapper">
+        <h2 class="total-items">What Motivates You?</h2>
+        <a href="#">See what motivates other users..</a>
+        <div class="todo-list">
+            <ul class="nav">
                 <li ng-repeat="todo in todos">
-                    <input type="checkbox" ng-model="todo.done"/>
-                    <span class="todo-{{todo.done}}">{{todo.text}}</span>
+                    <input class="checkbox" type="checkbox" ng-model="todo.done" />
+                    <span class="todo-{{todo.done}} todo">{{todo.text}}</span>
                 </li>
-          </ul>
-          <input type="text" Placeholder="Enter Task" ng-model="input"/>
-          <p class="error">{{error}}</p>
-          <a class="btn btn-success" ng-click="addToDo()"> Add New Task</a>
-          <a class="btn btn-danger" ng-click="clearCompleted()">Delete Selected</a>
-      </div>
-</div>
+            </ul>
+            <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
+            <p class="error">{{error}}</p>
+            <a class="button" ng-click="addToDo()"> Add New Task</a>
+            <a class="button" ng-click="clearCompleted()">Delete Selected</a>
+        </div>
+    </div>
