@@ -20,7 +20,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
 
     if @todo.save
-      render :show, status: :created, location: @todo
+      render json: {status: :created, location: @todo}
     else
       render json: @todo.errors, status: :unprocessable_entity
     end
@@ -29,6 +29,7 @@ class TodosController < ApplicationController
   # DELETE /todos/1
   # DELETE /todos/1.json
   def destroy
+    set_todo
     @todo.destroy
   end
 
@@ -41,6 +42,6 @@ class TodosController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def todo_params
-    params.require(:todo).permit(:todo, :user_id)
+    params.permit(:todo, :user_id)
   end
 end

@@ -21,6 +21,31 @@
               });
           }
 
+          function postTodo(url, todoObj) {
+              return $http({
+                 method: 'POST',
+                 url: url,
+                 dataType: "json",
+                 headers: {
+                     "content-type": "application/json;charset=utf-8"
+                 },
+                 data: todoObj
+              });
+          }
+
+          function patchData(url) {
+              return $http({
+                 method: 'POST',
+                 url: url,
+                 dataType: "json",
+                 headers: {
+                     "content-type": "application/json;charset=utf-8"
+                 },
+              });
+          }
+
+
+
         //   function postScores(url, dataObj) {
         //       return $http({
         //           method: 'POST',
@@ -66,22 +91,23 @@
         //       });
         //   }
           //
-        //   function deleteData(url, dataObj) {
-        //       return $http({
-        //           method: 'DELETE',
-        //           url: url,
-        //           headers: {
-        //               "content-type": "application/json;charset=utf-8"
-        //           },
-        //           data: dataObj
-        //       });
-        //   }
+          function deleteData(url) {
+              return $http({
+                  method: 'DELETE',
+                  url: url,
+                  headers: {
+                      "content-type": "application/json;charset=utf-8"
+                  },
+              });
+          }
 
           return {
               get: getData,
-              post: postData
-            //   put: putData,
-            //   delete: deleteData,
+              post: postData,
+              postTodo: postTodo,
+              delete: deleteData,
+              patch: patchData
+              //   put: putData,
             //   loginPost: loginPost,
             //   postScores: postScores,
             //   getScores: getScores
