@@ -20,7 +20,7 @@ class MoodsController < ApplicationController
     @mood = Mood.new(mood_params)
 
     if @mood.save
-      render :show, status: :created, location: @mood
+      render json: {status: :created, location: @mood}
     else
       render json: @mood.errors, status: :unprocessable_entity
     end
@@ -51,6 +51,6 @@ class MoodsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def mood_params
-    params.require(:mood).permit(:mood, :reason, :user_id)
+    params.permit(:mood, :reason, :user_id)
   end
 end
