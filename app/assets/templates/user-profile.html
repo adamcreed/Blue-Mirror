@@ -2,15 +2,16 @@
     <div class="update-mood-container">
         <div class="mood-info">
             <h2>Update Your Mood</h2>
-            <select>
-                <option value="Happy">Happy</option>
-                <option value="Sad">Sad</option>
-                <option value="Indifferent">Indifferent</option>
-                <option value="Angry">Angry</option>
+            <select ng-change="change()" ng-model="value" id="mood-selections">
+                <option value="1">Happy</option>
+                <option value="2">Sad</option>
+                <option value="3">Indifferent</option>
+                <option value="4">Angry</option>
+                <option value="5">Awful</option>
             </select>
-            <form class="mood-form">
+            <form name="explainForm" class="mood-form" ng-submit="postMoods()">
                 <label for="explain">Explain:</label>
-                <input type="text" id="explain" name="explain" placeholder="Please explain">
+                <input type="text" id="explain" ng-model="explanation.text" name="explain" placeholder="Please explain">
 
                 <input type="submit" value="Enter">
             </form>
