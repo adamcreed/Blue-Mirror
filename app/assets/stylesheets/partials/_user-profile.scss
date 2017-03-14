@@ -19,8 +19,12 @@
 }
 
 .signout {
-    margin: 10px;
+    margin-left: 10px;
     position: fixed;
+    background: rgba(white,.5);
+    @include bp(small) {
+        margin-top: 60px;
+    }
 
     a {
         text-decoration: none;

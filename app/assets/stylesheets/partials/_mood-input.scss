@@ -2,6 +2,16 @@
     margin-top: 10px;
 }
 
+.update-mood-container {
+    margin-top: 40px;
+    border-top: $border;
+    border-bottom: $border;
+    padding: 10px;
+    @include bp (small) {
+        margin-top: 70px;
+    }
+}
+
 .mood-info {
     display: flex;
     width: 300px;
@@ -17,10 +27,15 @@
         outline: none;
         font-size: 1rem;
         text-transform: lowercase;
+        padding: 10px;
     }
 
     form {
         width: 100%;
         margin-top: 1%;
+
+        label {
+            margin-left: 9px;
+        }
     }
 }

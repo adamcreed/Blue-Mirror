@@ -5,11 +5,11 @@ $mainColor: #183A37;
 $plumAccent: #550527;
 $navyAccent: #04151F;
 $creamAcceent: #EFD6AC;
-$borderColor: #d6d6d6;
+$borderColor: #d6d6d6 #888 #888 #d6d6d6;
 $border: 2px solid #d6d6d6;
 $portfolioBorder: 2px solid white;
 $largeBorder: 10px solid $mainColor;
-$radius: 1rem;
+$radius: 0.3rem;
 $start: $mainColor;
 $end: $mainColor;
 
@@ -33,10 +33,10 @@ ul {
 
 li {
     font-family: $primaryFont;
+}
 
-    a {
-        font-family: $primaryFont;
-    }
+a {
+    font-family: $primaryFont;
 }
 
 p {
@@ -54,8 +54,10 @@ main {
 
 button {
     text-transform: uppercase;
+    font-family: $primaryFont;
     padding: 10px;
     margin-bottom: 10px;
+    font-size: 1rem;
     display: block;
     width: 300px;
     cursor: pointer;
@@ -63,6 +65,11 @@ button {
     outline: none;
     border: 2px solid;
     border-color: $borderColor;
+    border-radius: $radius;
+
+    &:hover {
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+    }
 }
 
 input {
@@ -74,6 +81,7 @@ input {
     border: 1px solid #333;
     border: $border;
     background: transparent;
+    border-radius: $radius;
 }
 
 .button {
@@ -90,4 +98,9 @@ input {
     border: 2px solid;
     border-color: $borderColor;
     cursor: pointer;
+    border-radius: $radius;
+
+    &:hover {
+        box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+    }
 }

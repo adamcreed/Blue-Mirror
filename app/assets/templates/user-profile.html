@@ -21,22 +21,22 @@
         </div>
         <!-- <div class="mood-updated">
             <h2>Mood Updated!</h2>
-            <span>Edit</span>
+            <a href="#">Edit</a>
         </div> -->
     </div>
 </div>
-<!-- <div class="counselors">
+<div class="counselors">
     <div class="local-counselors-container">
         <button class="counselors" type="submit">Local Counselors</button>
     </div>
     <div class="emergency-services">
         <button class="emergency" type="submit">Emergency Services</button>
     </div>
-</div> -->
+</div>
 <div class="container" ng-controller="TodoController as todo">
     <div class="todo-wrapper">
         <h2 class="total-items">What Motivates You?</h2>
-        <a href="#">See what motivates other users..</a>
+        <a href="#">See what motivates other users</a>
         <div class="todo-list">
             <ul class="nav">
                 <li ng-repeat="todo in todos">
@@ -46,7 +46,9 @@
             </ul>
             <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
             <p class="error">{{error}}</p>
-            <a class="button" ng-click="addToDo()"> Add New Task</a>
-            <a class="button" ng-click="clearCompleted()">Delete Selected</a>
+            <div class="button-container">
+                <a class="button" ng-click="addToDo()"> Add Task</a>
+                <a class="button" ng-click="clearCompleted()">Delete Task</a>
+            </div>
         </div>
     </div>
