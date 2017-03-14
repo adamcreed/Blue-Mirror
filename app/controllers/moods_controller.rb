@@ -20,7 +20,7 @@ class MoodsController < ApplicationController
     @mood = Mood.new(mood_params)
 
     if @mood.save
-      render json: {status: :created, location: @mood}
+      render json: { status: :created, location: @mood }
     else
       render json: @mood.errors, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class MoodsController < ApplicationController
   def update
     set_mood
     if @mood.update(mood_params)
-      render :show, status: :ok, location: @mood
+      render json: { status: :ok, location: @mood }
     else
       render json: @mood.errors, status: :unprocessable_entity
     end
