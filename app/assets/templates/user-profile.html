@@ -46,9 +46,7 @@
             </ul>
             <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
             <p class="error">{{error}}</p>
-            <div class="button-container">
-                <a class="button" ng-click="addToDo()"> Add Task</a>
-                <a class="button" ng-click="clearCompleted()">Delete Task</a>
-            </div>
+            <a class="button" ng-click="postTodos()"> Add New Task</a>
+            <a class="button" ng-click="deleteTodos()">Delete Selected</a>
         </div>
     </div>
