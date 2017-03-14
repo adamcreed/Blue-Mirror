@@ -30,11 +30,6 @@
     }
 }
 
-img{
-  border: 1px solid #ccc;
-  margin-top: 20px;
-}
-
 .text-left ul{
   width: 90%;
   // padding: 5px;
@@ -83,6 +78,7 @@ a.btn{
   margin-bottom: 5px;
   display: block;
   width: 100%;
+  cursor: pointer;
 }
 
 .btn-success,
