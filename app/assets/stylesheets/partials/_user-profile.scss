@@ -1,3 +1,7 @@
+.update-mood-container {
+    margin: 20px;
+}
+
 .mood-info {
     font-family: $primaryFont;
 }
@@ -16,6 +20,7 @@
 
 .signout {
     margin: 10px;
+    position: fixed;
 
     a {
         text-decoration: none;
