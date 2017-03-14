@@ -256,8 +256,5 @@ DEPENDENCIES
   tzinfo-data
   web-console (>= 3.3.0)
 
-RUBY VERSION
-   ruby 2.3.1p112
-
 BUNDLED WITH
-   1.14.1
+   1.14.5

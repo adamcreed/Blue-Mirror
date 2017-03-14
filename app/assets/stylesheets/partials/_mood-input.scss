@@ -1,0 +1,26 @@
+.mood {
+    margin-top: 10px;
+}
+
+.mood-info {
+    display: flex;
+    width: 300px;
+    align-items: center;
+    flex-direction: column;
+
+    select {
+        height: 29px;
+        overflow: hidden;
+        width: 240px;
+        background: transparent;
+        font-family: $primaryFont;
+        outline: none;
+        font-size: 1rem;
+        text-transform: lowercase;
+    }
+
+    form {
+        width: 100%;
+        margin-top: 1%;
+    }
+}

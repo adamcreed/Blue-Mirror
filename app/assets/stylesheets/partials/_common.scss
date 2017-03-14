@@ -5,6 +5,7 @@ $mainColor: #183A37;
 $plumAccent: #550527;
 $navyAccent: #04151F;
 $creamAcceent: #EFD6AC;
+$borderColor: #eee #a0a0a0;
 $border: 2px solid $mainColor;
 $portfolioBorder: 2px solid white;
 $largeBorder: 10px solid $mainColor;
@@ -15,6 +16,11 @@ $end: $mainColor;
 h1 {
     font-family: $headerFont;
     font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-family: $primaryFont;
 }
 
 span {
@@ -39,4 +45,45 @@ p {
 
 main {
     margin-bottom: 50px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    text-transform: uppercase;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: block;
+    width: 300px;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: 2px solid;
+    border-color: $borderColor;
+}
+
+input {
+    display: block;
+    margin: 2%;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #333;
+    border: $borderColor;
+    background: transparent;
+}
+
+.button {
+    font-family: $primaryFont;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+    padding: 10px;
+    width: 300px;
+    border: 2px solid;
+    border-color: $borderColor;
+    cursor: pointer;
 }
