@@ -16,6 +16,7 @@ class MoodsController < ApplicationController
   # POST /moods
   # POST /moods.json
   def create
+    params['user_id'] = current_user.id
     @mood = Mood.new(mood_params)
 
     if @mood.save

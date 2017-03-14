@@ -16,6 +16,7 @@ class TodosController < ApplicationController
   # POST /todos
   # POST /todos.json
   def create
+    params['user_id'] = current_user.id
     @todo = Todo.new(todo_params)
 
     if @todo.save
