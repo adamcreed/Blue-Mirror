@@ -1,12 +1,12 @@
 .angular-google-map-container {
-  height: 300px; // Or whatever pixel value you require :)
+    height: 300px; // Or whatever pixel value you require :)
 }
-
-@import url( 'https://fonts.googleapis.com/css?family=Lemonada|Raleway');
-$headerFont: 'Lemonada', cursive;
+@import url( 'https://fonts.googleapis.com/css?family=Josefin+Slab|Raleway');
+$headerFont: 'Josefin Slab', serif;
 $primaryFont: 'Raleway', sans-serif;
 $mainColor: #399ea7;
 $accentTeal: #2e7a81;
+$darkAccentTeal: #225b60;
 $accentCream: #f5f6ef;
 $borderColor: #d6d6d6 #888 #888 #d6d6d6;
 $border: 2px solid $accentCream;
@@ -22,11 +22,11 @@ body {
 
 h1 {
     font-family: $headerFont;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: $headerFont;
     color: $accentCream;
     padding-bottom: 10px;
@@ -43,10 +43,12 @@ ul {
 
 li {
     font-family: $primaryFont;
+    color: $darkAccentTeal;
 }
 
 a {
     font-family: $primaryFont;
+    color: $darkAccentTeal;
 }
 
 p {
@@ -55,6 +57,10 @@ p {
 
 main {
     margin-bottom: 50px;
+}
+
+label {
+    color: $darkAccentTeal;
 }
 
 .container {
@@ -74,6 +80,7 @@ button {
     background: none;
     outline: none;
     border: 2px solid;
+    color: $accentTeal;
     background: $accentCream;
     border-color: $borderColor;
     border-radius: $radius;
@@ -93,12 +100,13 @@ input {
     border: $border;
     background: $accentCream;
     border-radius: $radius;
+    color: $accentTeal;
 }
 
 .button {
     outline: none;
     font-family: $primaryFont;
-    color: black;
+    color: $accentTeal;
     font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
@@ -115,4 +123,8 @@ input {
     &:hover {
         box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
     }
+}
+
+.error {
+    color: $accentCream;
 }
