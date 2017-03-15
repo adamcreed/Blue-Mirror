@@ -25,7 +25,7 @@
 
             } else {
                 $scope.todos.push({
-                    "text": $scope.input,
+                    "todo": $scope.input,
                     "done": false
                 });
                 $scope.error = "";
@@ -47,8 +47,18 @@
         // get todos
         $q.when(DataRequestService.get('/todos')).then((response) => {
 
-            $scope.allTodos = response.data;
-            console.log($scope.allTodos);
+            console.log(response.data);
+
+            // $scope.defaultTodos = response.data.slice(0, 5);
+
+            $scope.defaultTodos = response.data;
+
+            for(var todo in $scope.defaultTodos) {
+                $scope.allTodos = $scope.defaultTodos[todo];
+                $scope.todos.push($scope.allTodos);
+                console.log($scope.todos);
+}
+
 
         }).catch((error) => {
             console.log(error);

@@ -2,6 +2,7 @@
         ng.module('BlueMirrorApp', ['ui.router', 'templates']);
 
         ng.module('BlueMirrorApp').config(function($stateProvider, $urlRouterProvider) {
+
             $urlRouterProvider.otherwise('/');
             $urlRouterProvider.when('/', '/' + 'login');
 

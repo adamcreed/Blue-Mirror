@@ -12,7 +12,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-gem 'gmaps4rails'
 gem 'google-api-client', require: 'google/apis/calendar_v3'
 
 gem 'angular-rails-templates'
