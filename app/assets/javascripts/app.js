@@ -3,25 +3,12 @@
 
 
         .config( ['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProviders) {
-        uiGmapGoogleMapApiProviders.configure({
-            key: 'AIzaSyAp0S6RJ9DAtCo8ODnJffXAu8SIIYGIIP4',
-            libraries: 'weather,geometry,visualization,places'
-        });
-    }]
-);
-
-
-
-
-
-        //     function(uiGmapGoogleMapApiProviders) {
-        //     uiGmapGoogleMapApiProviders.configure({
-        //         key: 'AIzaSyAp0S6RJ9DAtCo8ODnJffXAu8SIIYGIIP4',
-        //         v: '3.20', //defaults to latest 3.X anyhow
-        //         libraries: 'weather,geometry,visualization'
-        //     });
-        // });
-
+            uiGmapGoogleMapApiProviders.configure({
+                key: 'AIzaSyAp0S6RJ9DAtCo8ODnJffXAu8SIIYGIIP4',
+                libraries: 'weather,geometry,visualization,places'
+            });
+        }]
+    );
 
         ng.module('BlueMirrorApp').config(function($stateProvider, $urlRouterProvider) {
 
@@ -35,7 +22,6 @@
             }).state('BlueParent.login', {
                 url: 'login',
                 templateUrl: 'login-template.html'
-                // controller: "LoginController as login"
             }).state('BlueParent.profile', {
                 url: 'profile',
                 templateUrl: 'user-profile.html',
@@ -43,6 +29,10 @@
             }).state('BlueParent.counselors', {
                 url: 'counselors',
                 templateUrl: 'map-template.html',
+                controller: "MapController as map"
+            }).state('BlueParent.place', {
+                url: 'place',
+                templateUrl: 'place.html',
                 controller: "MapController as map"
             });
             // }).state('BlueParent.journal', {

@@ -7,61 +7,66 @@
                     latitude: 45,
                     longitude: -73
                 },
-                zoom: 8
-            };
-            $scope.marker = {
-                id: 0,
-                coords: {
-                    latitude: 45,
-                    longitude: -73
+                options: {
+                    maxZoom: 6,
+                    minZoom: 3
                 },
-                options: { draggable: true },
-                events: {
-                    dragend: function (marker, eventName, args) {
+                zoom: 16,
+                control: {},
+                markers: [],
+                place: '',
+                result: ''
+            };
 
-                        $scope.marker.options = {
-                            draggable: true,
-                            labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
-                            labelAnchor: "100 0",
-                            labelClass: "marker-labels"
-                        };
+            $scope.placeSearch = function(place) {
+                var request = {
+                    location: {
+                        lat: $scope.map.center.latitude,
+                        lng: $scope.map.center.longitude
+                    },
+                    radius: place.radius,
+                    query: place.query
+                };
+                var map = $scope.map.control.getGMap();
+                var service = new google.maps.places.PlacesService(map);
+
+                service.textSearch(request, callback);
+                return;
+            };
+
+            var callback = function(results, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        createMarker(results[i], i);
                     }
                 }
             };
-            var events = {
-                places_changed: function (searchBox) {
-                    var place = searchBox.getPlaces();
-                    if (!place || place == 'undefined' || place.length == 0) {
-                        console.log('no place data :(');
-                        return;
+
+            var createMarker = function(place, id) {
+                $scope.map.markers.push({
+                    id: id,
+                    latitude: place.geometry.location.lat(),
+                    longitude: place.geometry.location.lng(),
+                    showWindow: false,
+                    name: place.name,
+                    templateUrl: 'place.html',
+                    templateParameter: {
+                        message: place.name // TODO: play around with place obj/details
                     }
-
-                    $scope.map = {
-                        "center": {
-                            "latitude": place[0].geometry.location.lat(),
-                            "longitude": place[0].geometry.location.lng()
-                        },
-                        "zoom": 18
-                    };
-                    $scope.marker = {
-                        id: 0,
-                        coords: {
-                            latitude: place[0].geometry.location.lat(),
-                            longitude: place[0].geometry.location.lng()
-                        }
-                    };
-                }
+                });
+                $scope.$apply();
             };
-            $scope.searchbox = { template: 'searchbox.tpl.html', events: events };
+            $scope.closeClick = function(marker) {
+                marker.showWindow = false;
+            };
+            $scope.onMarkerClicked = function(marker) {
+                marker.showWindow = true;
+            };
+            $scope.removeMarkers = function() {
+                $scope.map.markers.length = 0;
+            };
 
-
-
-
-
-
-
-
-   });
-});
+        });
+    });
 
 })(angular);
