@@ -1,17 +1,20 @@
 @import url( 'https://fonts.googleapis.com/css?family=Lemonada|Raleway');
 $headerFont: 'Lemonada', cursive;
 $primaryFont: 'Raleway', sans-serif;
-$mainColor: #183A37;
-$plumAccent: #550527;
-$navyAccent: #04151F;
-$creamAcceent: #EFD6AC;
+$mainColor: #399ea7;
+$accentTeal: #2e7a81;
+$accentCream: #f5f6ef;
 $borderColor: #d6d6d6 #888 #888 #d6d6d6;
-$border: 2px solid #d6d6d6;
+$border: 2px solid $accentCream;
 $portfolioBorder: 2px solid white;
 $largeBorder: 10px solid $mainColor;
 $radius: 0.3rem;
 $start: $mainColor;
 $end: $mainColor;
+
+body {
+    background: $mainColor;
+}
 
 h1 {
     font-family: $headerFont;
@@ -20,7 +23,10 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    font-family: $primaryFont;
+    font-family: $headerFont;
+    color: $accentCream;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 span {
@@ -64,6 +70,7 @@ button {
     background: none;
     outline: none;
     border: 2px solid;
+    background: $accentCream;
     border-color: $borderColor;
     border-radius: $radius;
 
@@ -80,7 +87,7 @@ input {
     width: 100%;
     border: 1px solid #333;
     border: $border;
-    background: transparent;
+    background: $accentCream;
     border-radius: $radius;
 }
 
@@ -96,6 +103,7 @@ input {
     padding: 10px;
     width: 300px;
     border: 2px solid;
+    background: $accentCream;
     border-color: $borderColor;
     cursor: pointer;
     border-radius: $radius;
