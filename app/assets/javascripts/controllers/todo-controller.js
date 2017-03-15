@@ -16,8 +16,8 @@
 
         // add todos
         $scope.addToDo = function() {
-                $scope.todoObj.todo = $scope.input;
-                $scope.error = "";
+            $scope.todoObj.todo = $scope.input;
+            $scope.error = "";
         };
 
         // get todos
@@ -27,7 +27,7 @@
 
             $scope.defaultTodos = response.data;
 
-            for(var todo in $scope.defaultTodos) {
+            for (var todo in $scope.defaultTodos) {
                 $scope.allTodos = $scope.defaultTodos[todo];
                 $scope.todos.push($scope.allTodos);
                 console.log($scope.todos);
@@ -65,11 +65,11 @@
             for (let i = $scope.todos.length - 1; i >= 0; i--) {
 
                 if ($scope.todos[i].done === true) {
-                  $q.when(DataRequestService.delete(`/todos/${$scope.todos[i].id}`)).then((response) => {
+                    $q.when(DataRequestService.delete(`/todos/${$scope.todos[i].id}`)).then((response) => {
 
-                  }).catch((error) => {
-                      console.log(error);
-                  });
+                    }).catch((error) => {
+                        console.log(error);
+                    });
 
                     $scope.todos.splice(i, 1);
                 }

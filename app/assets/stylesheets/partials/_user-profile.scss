@@ -19,7 +19,8 @@
 }
 
 .signout {
-    margin-left: 10px;
+    margin-left: 5px;
+    text-align: center;
     position: fixed;
     @include bp(small) {
         margin-top: 50px;
