@@ -5,7 +5,7 @@
         .config( ['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProviders) {
         uiGmapGoogleMapApiProviders.configure({
             key: 'AIzaSyAp0S6RJ9DAtCo8ODnJffXAu8SIIYGIIP4',
-            libraries: 'weather,geometry,visualization'
+            libraries: 'weather,geometry,visualization,places'
         });
     }]
 );

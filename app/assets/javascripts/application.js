@@ -17,6 +17,7 @@
 //= require angular-simple-logger/dist/angular-simple-logger
 //= require underscore/underscore
 //= require angular-google-maps/dist/angular-google-maps
+//= require google-places/google-places
 //= require underscore/underscore
 //= require_tree ../templates
 //= require_tree .
