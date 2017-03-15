@@ -42,6 +42,7 @@
                 <li ng-repeat="todo in todos">
                     <input class="checkbox" type="checkbox" ng-model="todo.done" />
                     <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>
+                    <input style="display: none;" data-id="{{todo.id}}"></input>
                 </li>
             </ul>
             <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
