@@ -5,20 +5,21 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 40px;
+        height: 50px;
 
         &:hover ul {
             position: relative;
             display: flex;
             flex-direction: column;
             height: 216px;
-            top: -253px;
+            top: -268px;
             font-size: 2rem;
 
             li {
-                background: rgba(white,.8);
+                background: rgba(white,.9);
                 padding-top: 10px;
                 padding-bottom: 10px;
+                box-shadow: -2px -2px 2px 2px rgba(0,0,0,0.24);
 
                 &:hover {
                     border-left: 10px solid $accentTeal;
@@ -34,18 +35,17 @@
             background: transparent;
             cursor: pointer;
             width: 100%;
-            height: 35px;
-
-            &:hover {
-                box-shadow: none;
-            }
-
+            height: 50px;
+            padding: 0;
+            // &:hover {
+            //     box-shadow: none;
+            // }
             img {
-                width: 1.5rem;
-                height: 1.5rem;
+                width: 2.5rem;
+                height: 2.5rem;
             }
         }
-        background: rgba(white,.5);
+        background: rgba(white,.8);
         box-shadow: -2px -2px 2px 2px rgba(0,0,0,0.24);
     }
     @include bp (small) {
