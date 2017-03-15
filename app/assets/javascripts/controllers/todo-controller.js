@@ -32,7 +32,7 @@
         // get todos
         $q.when(DataRequestService.get('/todos')).then((response) => {
 
-            console.log(response.data);
+            // console.log(response.data);
 
             $scope.defaultTodos = response.data;
 
@@ -55,7 +55,7 @@
             $q.when(DataRequestService.postTodo('/todos', $scope.todoObj)).then((response) => {
                 $scope.currentTodos = response.data.location;
                 $scope.todos.push($scope.currentTodos);
-                console.log($scope.todos);
+                // console.log($scope.todos);
 
             }).catch((error) => {
                 console.log(error);

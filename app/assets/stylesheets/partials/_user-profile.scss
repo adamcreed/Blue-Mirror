@@ -21,13 +21,18 @@
 .signout {
     margin-left: 10px;
     position: fixed;
-    background: rgba(white,.5);
     @include bp(small) {
-        margin-top: 60px;
+        margin-top: 50px;
     }
 
     a {
-        text-decoration: none;
+        color: $accentCream;
+
+        &:hover {
+            color: white;
+        }
+
+        &:active {}
     }
 }
 

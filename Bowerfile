@@ -1,6 +1,8 @@
 asset 'jquery'
 asset 'angular'
 asset 'lodash'
+asset 'underscore'
 asset 'angular-ui-router'
 asset 'angular-google-maps'
+asset 'angular-simple-logger'
 asset 'underscore'

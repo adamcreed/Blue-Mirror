@@ -1,33 +1,34 @@
 <div class="signout">
     <a href="signout">sign out</a>
 </div>
-
-<div class="container mood">
-    <div class="update-mood-container">
-        <div class="mood-info">
-            <h2>Update Your Mood</h2>
-            <select ng-change="change()" ng-model="value" id="mood-selections">
-                <option value="1">great</option>
-                <option value="2">good</option>
-                <option value="3">neutral</option>
-                <option value="4">bad</option>
-                <option value="5">terrible</option>
-            </select>
-            <form name="explainForm" class="mood-form" ng-submit="postMoods()">
-                <label for="explain">Why do you feel that way?</label>
-                <input type="text" id="explain" ng-model="explanation.text" name="explain" placeholder="Please explain">
-                <input class="button" type="submit" value="Submit">
-            </form>
+<div class="background-container">
+    <div class="container mood">
+        <div class="update-mood-container">
+            <div class="mood-info">
+                <h2>Update Your Mood</h2>
+                <select ng-change="change()" ng-model="value" id="mood-selections">
+                  <option value="1">great</option>
+                  <option value="2">good</option>
+                  <option value="3">neutral</option>
+                  <option value="4">bad</option>
+                  <option value="5">terrible</option>
+              </select>
+                <form name="explainForm" class="mood-form" ng-submit="postMoods()">
+                    <label for="explain">Why do you feel that way?</label>
+                    <input type="text" id="explain" ng-model="explanation.text" name="explain" placeholder="Please explain">
+                    <input class="button" type="submit" value="Submit">
+                </form>
+            </div>
+            <!-- <div class="mood-updated">
+              <h2>Mood Updated!</h2>
+              <a href="#">Edit</a>
+          </div> -->
         </div>
-        <!-- <div class="mood-updated">
-            <h2>Mood Updated!</h2>
-            <a href="#">Edit</a>
-        </div> -->
     </div>
 </div>
 <div class="counselors">
     <div class="local-counselors-container">
-        <button class="counselors" type="submit">Local Counselors</button>
+        <button class="counselors" type="submit"><a ui-sref="BlueParent.counselors">Local Counselors</a></button>
     </div>
     <div class="emergency-services">
         <button class="emergency" type="submit">Emergency Services</button>
