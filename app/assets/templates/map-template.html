@@ -2,3 +2,8 @@
     <div id="map"></div>
     <script src=https: "//maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places,visualization" async defer></script>
 </div> -->
+
+<ui-gmap-google-map ng-if="map.center"
+ center='map.center'
+ zoom='map.zoom'>
+</ui-gmap-google-map>
