@@ -7,24 +7,48 @@
         width: 100%;
         height: 40px;
 
+        &:hover ul {
+            position: relative;
+            top: -109px;
+            background: rgba(white,.8);
+            display: flex;
+            flex-direction: column;
+            height: 216px;
+            top: -261px;
+            font-size: 2rem;
+
+            li {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid $mainColor;
+            }
+        }
+
         button {
             display: flex;
             align-items: center;
             justify-content: center;
             border: none;
+            background: transparent;
             cursor: pointer;
             width: 100%;
             height: 35px;
+
+            &:hover {
+                box-shadow: none;
+            }
 
             img {
                 width: 1.5rem;
                 height: 1.5rem;
             }
         }
-        background: rgba(white,.8);
+        background: rgba(white,.5);
         box-shadow: -2px -2px 2px 2px rgba(0,0,0,0.24);
     }
     @include bp (small) {
+        height: 52px;
+
         button {
             display: none;
         }
@@ -34,12 +58,18 @@
 
         ul {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
         }
 
         li {
-            display: flex;
-            justify-content: center;
+            text-align: center;
+            width: 20%;
+            margin-top: 20px;
+            padding-bottom: 7px;
+
+            &:hover {
+                border-bottom: 10px solid $accentTeal;
+            }
         }
     }
 }
