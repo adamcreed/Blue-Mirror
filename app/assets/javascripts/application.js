@@ -14,5 +14,7 @@
 //= require angular/angular
 //= require angular-rails-templates
 //= require angular-ui-router/release/angular-ui-router
+//= require underscore/underscore
+//= require angular-google-maps/dist/angular-google-maps
 //= require_tree ../templates
 //= require_tree .
