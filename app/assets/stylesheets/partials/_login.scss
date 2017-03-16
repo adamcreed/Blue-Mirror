@@ -38,6 +38,8 @@
         flex-direction: column;
         align-items: center;
         background: $accentCream;
+        border-right: 20px double $mainColor;
+        border-left: 20px double $mainColor;
         height: 100vh;
         width: 50vh;
 
