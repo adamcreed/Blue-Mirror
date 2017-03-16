@@ -2,18 +2,18 @@
 
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
 
-    // $( document ).ready(function() {
+        // $( document ).ready(function() {
 
         $scope.currentUser = UserService.getUser();
 
         $scope.explanation = {
-                                text: ''
-                            };
+            text: ''
+        };
 
         $scope.moodObj = {
-                            mood: null,
-                            reason: null
-                        };
+            mood: null,
+            reason: null
+        };
 
 
         // get moods
@@ -27,7 +27,7 @@
         });
 
         // get selection value
-        $scope.change = function () {
+        $scope.change = function() {
             $scope.moodObj.mood = Number($scope.value);
             console.log($scope.moodObj);
         };
@@ -42,9 +42,10 @@
         // post moods
         $scope.postMoods = function() {
             $scope.getExplanation();
-
             $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
                 console.log(response);
+                $scope.moodObj.mood = 1;
+                $scope.explanation.text = '';
 
             }).catch((error) => {
                 console.log(error);

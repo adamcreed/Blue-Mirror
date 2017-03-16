@@ -16,17 +16,9 @@
 
         // add todos
         $scope.addToDo = function() {
-
             $scope.todoObj.todo = $scope.input;
-
-            if ($scope.input === undefined || $scope.input === '') {
-
-                $scope.error = "Please enter a task";
-
-            } else {
-                $scope.error = "";
-                $scope.input = "";
-            }
+            $scope.error = "";
+            $scope.input = '';
         };
 
         // get todos
@@ -36,7 +28,7 @@
 
             $scope.defaultTodos = response.data;
 
-            for(var todo in $scope.defaultTodos) {
+            for (var todo in $scope.defaultTodos) {
                 $scope.allTodos = $scope.defaultTodos[todo];
                 $scope.todos.push($scope.allTodos);
                 console.log($scope.todos);
@@ -50,16 +42,22 @@
         // post todos
         $scope.postTodos = function() {
 
-            $scope.addToDo();
+            if ($scope.input === undefined || $scope.input === '') {
 
-            $q.when(DataRequestService.postTodo('/todos', $scope.todoObj)).then((response) => {
-                $scope.currentTodos = response.data.location;
-                $scope.todos.push($scope.currentTodos);
-                // console.log($scope.todos);
+                $scope.error = "Please enter a task";
 
-            }).catch((error) => {
-                console.log(error);
-            });
+            } else {
+                $scope.addToDo();
+
+                $q.when(DataRequestService.postTodo('/todos', $scope.todoObj)).then((response) => {
+                    $scope.currentTodos = response.data.location;
+                    $scope.todos.push($scope.currentTodos);
+
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+
         };
 
         // delete todos
@@ -68,11 +66,11 @@
             for (let i = $scope.todos.length - 1; i >= 0; i--) {
 
                 if ($scope.todos[i].done === true) {
-                  $q.when(DataRequestService.delete(`/todos/${$scope.todos[i].id}`)).then((response) => {
+                    $q.when(DataRequestService.delete(`/todos/${$scope.todos[i].id}`)).then((response) => {
 
-                  }).catch((error) => {
-                      console.log(error);
-                  });
+                    }).catch((error) => {
+                        console.log(error);
+                    });
 
                     $scope.todos.splice(i, 1);
                 }
