@@ -1,22 +1,45 @@
 (function(ng) {
-    ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi) {
+    ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi, $geolocation) {
+
+        $geolocation.getCurrentPosition({
+        timeout: 60000
+       }).then(function(position) {
+         console.log('position: ', position);
+         $scope.map = {
+           center: {
+             latitude: position.coords.latitude,
+             longitude: position.coords.longitude
+           },
+           zoom: 16,
+           control: {},
+           markers: [],
+           place: '',
+           result: ''
+         };
+       });
+
+
 
         uiGmapGoogleMapApi.then(function(maps) {
-            $scope.map = {
-                center: {
-                    latitude: 45,
-                    longitude: -73
-                },
-                options: {
-                    maxZoom: 6,
-                    minZoom: 3
-                },
-                zoom: 16,
-                control: {},
-                markers: [],
-                place: '',
-                result: ''
-            };
+        //     $geolocation.getCurrentPosition({
+        //     timeout: 60000
+        //    }).then(function(position) {
+        //     $scope.map = {
+        //         center: {
+        //             latitude: position.coords.latitude,
+        //             longitude: position.coords.longitutde
+        //         },
+        //         // options: {
+        //         //     maxZoom: 4,
+        //         //     minZoom: 4
+        //         // },
+        //         zoom: 16,
+        //         control: {},
+        //         markers: [],
+        //         place: '',
+        //         result: ''
+        //     };
+        //    });
 
             $scope.placeSearch = function(place) {
                 var request = {
@@ -24,8 +47,8 @@
                         lat: $scope.map.center.latitude,
                         lng: $scope.map.center.longitude
                     },
-                    radius: place.radius,
-                    query: place.query
+                    radius: '50',
+                    query: 'mental health'
                 };
                 var map = $scope.map.control.getGMap();
                 var service = new google.maps.places.PlacesService(map);
@@ -51,7 +74,8 @@
                     name: place.name,
                     templateUrl: 'place.html',
                     templateParameter: {
-                        message: place.name // TODO: play around with place obj/details
+                        message: place.name, // TODO: play around with place obj/details
+                        address: place.formatted_address
                     }
                 });
                 $scope.$apply();
