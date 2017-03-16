@@ -9,7 +9,7 @@
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 },
-                zoom: 16,
+                zoom: 13,
                 control: {},
                 markers: [],
                 templateUrl: 'place.html',
