@@ -9,7 +9,7 @@
       <input type="text" placeholder="Search">
     </script>
     <ui-gmap-google-map ng-if="map.center"
-        center="current-location" zoom="map.zoom" draggable="true" options="options">
+        center="map.center" zoom="map.zoom" draggable="true" options="options">
         <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
     </ui-gmap-google-map>
 </div>
