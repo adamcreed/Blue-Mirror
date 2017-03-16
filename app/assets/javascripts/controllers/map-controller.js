@@ -56,39 +56,37 @@
                 var detail = new google.maps.places.PlacesService($scope.map.control.getGMap());
                 detail.getDetails(request, function(result, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
-                        $scope.map.markers.push(new google.maps.Marker({
+                        $scope.map.markers.push({
                             id: id,
                             latitude: place.geometry.location.lat(),
                             longitude: place.geometry.location.lng(),
-                            showWindow: false,
                             name: result.name,
                             address: result.formatted_address,
                             phone: result.formatted_phone_number,
                             website: result.website,
                             rating: result.rating,
-                        }));
+                        });
                         $scope.$apply();
                     }
                 });
             };
 
-            $scope.closeClick = function(marker) {
-                marker.showWindow = false;
-            };
+            // $scope.closeClick = function(marker) {
+            // };
             $scope.onMarkerClicked = function(marker) {
-                marker.showWindow = true;
                 $scope.map.templateParameter = {
                     name: marker.name,
                     address: marker.address,
                     phone: marker.phone,
                     website: marker.website,
-                    rating: marker.rating,
+                    rating: marker.rating
                 };
+                $scope.$apply()
+
             };
             $scope.removeMarkers = function() {
                 $scope.map.markers.length = 0;
             };
-
         });
     });
 
