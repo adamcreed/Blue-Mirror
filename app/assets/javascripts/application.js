@@ -19,6 +19,7 @@
 //= require angular-google-maps/dist/angular-google-maps
 //= require google-places/google-places
 //= require ngGeolocation/ngGeolocation
+//= require ng-chartjs/dist/angular-chartjs
 //= require underscore/underscore
 //= require_tree ../templates
 //= require_tree .

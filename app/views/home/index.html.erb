@@ -11,11 +11,11 @@
 <body>
 
     <nav ng-show="currentUser" class="fixed-nav">
-      <button><img ng-src="http://bit.ly/2npYW9B"/></button>
+      <button>  <img class="bmirror" src="images/betalogo.png" /></button>
         <ul>
             <li><a ui-sref="BlueParent.profile">Home</a></li>
             <li><a>Meds</a></li>
-            <li><a>Mood</a></li>
+            <li><a ui-sref="BlueParent.mood">Mood</a></li>
             <li><a>Journal</a></li>
         </ul>
     </nav>

@@ -18,6 +18,7 @@
         $scope.addToDo = function() {
             $scope.todoObj.todo = $scope.input;
             $scope.error = "";
+            $scope.input = '';
         };
 
         // get todos
