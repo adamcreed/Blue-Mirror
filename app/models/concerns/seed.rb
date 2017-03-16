@@ -1,5 +1,3 @@
-require "pry-byebug"
-
 module Seed
   extend ActiveSupport::Concern
 
