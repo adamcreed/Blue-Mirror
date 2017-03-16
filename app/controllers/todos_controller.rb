@@ -6,6 +6,11 @@ class TodosController < ApplicationController
     render json: @todos
   end
 
+  def featured
+    @todos = Todo.where('featured = ?', true)
+    render json: @todos
+  end
+
   # GET /todos/1
   # GET /todos/1.json
   def show
