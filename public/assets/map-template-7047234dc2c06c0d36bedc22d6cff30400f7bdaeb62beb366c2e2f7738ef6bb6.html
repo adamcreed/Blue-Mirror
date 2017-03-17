@@ -10,8 +10,7 @@
         event="map.event"
       >
         <ui-gmap-marker ng-repeat="m in map.markers"  idkey='m.id' coords="m" click="onMarkerClicked(m)">
-          <ui-gmap-window show="m.showWindow"
-                closeClick="closeClick(m)"
+          <ui-gmap-window
                 templateUrl="map.templateUrl"
                 templateParameter="map.templateParameter"
           >

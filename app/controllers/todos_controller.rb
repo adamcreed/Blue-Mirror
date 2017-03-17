@@ -8,7 +8,12 @@ class TodosController < ApplicationController
   end
 
   def featured
+<<<<<<< HEAD
     render json: featured_todos
+=======
+    @todos = Todo.where('featured = ?', true)
+    render json: @todos
+>>>>>>> adamcreed/master
   end
 
   # GET /todos/1
