@@ -10,7 +10,8 @@
         event="map.event"
       >
         <ui-gmap-marker ng-repeat="m in map.markers"  idkey='m.id' coords="m" click="onMarkerClicked(m)">
-          <ui-gmap-window
+          <ui-gmap-window show="m.showWindow"
+                closeClick="closeClick(m)"
                 templateUrl="map.templateUrl"
                 templateParameter="map.templateParameter"
           >
@@ -19,7 +20,7 @@
       </ui-gmap-google-map>
     </div>
     <div>
-        <button ng-click="placeSearch(place)" type="submit" class="btn btn-primary">Find Counselors</button>
+        <button ng-click="placeSearch(place)" type="submit" class="btn btn-primary">submit</button>
         <button class="btn btn-danger" ng-click="removeMarkers()">Clear Map</button>
     </div>
   </div>

@@ -1,22 +1,29 @@
 (function(ng) {
-    ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi) {
+    ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi, $geolocation, $sce) {
 
-        uiGmapGoogleMapApi.then(function(maps) {
+        $geolocation.getCurrentPosition({
+            timeout: 60000
+        }).then(function(position) {
             $scope.map = {
                 center: {
-                    latitude: 45,
-                    longitude: -73
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
                 },
-                options: {
-                    maxZoom: 6,
-                    minZoom: 3
-                },
-                zoom: 16,
+                zoom: 13,
                 control: {},
                 markers: [],
+                templateUrl: 'place.html',
+                templateParameter: {
+                    name: '',
+                    address: '',
+                    phone: '',
+                    website: '',
+                    rating: ''
+                },
                 place: '',
                 result: ''
             };
+        }).then(function(maps) {
 
             $scope.placeSearch = function(place) {
                 var request = {
@@ -24,8 +31,8 @@
                         lat: $scope.map.center.latitude,
                         lng: $scope.map.center.longitude
                     },
-                    radius: place.radius,
-                    query: place.query
+                    radius: '50',
+                    query: 'mental health'
                 };
                 var map = $scope.map.control.getGMap();
                 var service = new google.maps.places.PlacesService(map);
@@ -43,29 +50,43 @@
             };
 
             var createMarker = function(place, id) {
-                $scope.map.markers.push({
-                    id: id,
-                    latitude: place.geometry.location.lat(),
-                    longitude: place.geometry.location.lng(),
-                    showWindow: false,
-                    name: place.name,
-                    templateUrl: 'place.html',
-                    templateParameter: {
-                        message: place.name // TODO: play around with place obj/details
+                var request = {
+                    reference: place.reference
+                };
+                var detail = new google.maps.places.PlacesService($scope.map.control.getGMap());
+                detail.getDetails(request, function(result, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        $scope.map.markers.push({
+                            id: id,
+                            latitude: place.geometry.location.lat(),
+                            longitude: place.geometry.location.lng(),
+                            name: result.name,
+                            address: result.formatted_address,
+                            phone: result.formatted_phone_number,
+                            website: result.website,
+                            rating: result.rating,
+                        });
+                        $scope.$apply();
                     }
                 });
-                $scope.$apply();
             };
-            $scope.closeClick = function(marker) {
-                marker.showWindow = false;
-            };
+
+            // $scope.closeClick = function(marker) {
+            // };
             $scope.onMarkerClicked = function(marker) {
-                marker.showWindow = true;
+                $scope.map.templateParameter = {
+                    name: marker.name,
+                    address: marker.address,
+                    phone: marker.phone,
+                    website: marker.website,
+                    rating: marker.rating
+                };
+                $scope.$apply()
+
             };
             $scope.removeMarkers = function() {
                 $scope.map.markers.length = 0;
             };
-
         });
     });
 

@@ -1,65 +1,35 @@
 (function(ng) {
     ng.module('BlueMirrorApp').controller('MoodController', function($state, $scope, $q, DataRequestService, UserService) {
-
-        $(document).ready(function() {
-            var ctx = document.getElementById('chartJSContainer').getContext('2d');
-            new Chart(ctx, options);
-            var options = {
-                type: 'line',
-                data: {
-                    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                    datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
-                            borderWidth: 1
-                        },
-                        {
-                            label: '# of Points',
-                            data: [7, 11, 5, 8, 3, 7],
-                            borderWidth: 1
-                        }
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                reverse: false
-                            }
-                        }]
+        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        $scope.series = ['Series A', 'Series B'];
+        $scope.data = [
+            [65, 59, 80, 81, 56, 55, 40],
+            [28, 48, 40, 19, 86, 27, 90]
+        ];
+        $scope.onClick = function(points, evt) {
+            console.log(points, evt);
+        };
+        $scope.datasetOverride = [{
+            yAxisID: 'y-axis-1'
+        }, {
+            yAxisID: 'y-axis-2'
+        }];
+        $scope.options = {
+            scales: {
+                yAxes: [{
+                        id: 'y-axis-1',
+                        type: 'linear',
+                        display: true,
+                        position: 'left'
+                    },
+                    {
+                        id: 'y-axis-2',
+                        type: 'linear',
+                        display: true,
+                        position: 'right'
                     }
-                }
-            };
-            // angular.element(document).ready(function() {
-            //     var ctx = $('#mycanvas').get(0).getContext("2d");
-            //
-            //     var data = [{
-            //             value: 270,
-            //             color: 'blue',
-            //             highlight: 'lightskyblue',
-            //             label: 'blue'
-            //         },
-            //         {
-            //             value: 270,
-            //             color: 'blue',
-            //             highlight: 'lightskyblue',
-            //             label: 'blue'
-            //         },
-            //         {
-            //             value: 50,
-            //             color: 'lightgreen',
-            //             highlight: 'yellowgreen',
-            //             label: 'lightgreen'
-            //         },
-            //         {
-            //             value: 40,
-            //             color: 'orange',
-            //             highlight: 'darkorange',
-            //             label: 'orange'
-            //         },
-            //     ];
-            //     var piechart = new Chart(ctx).Pie(data);
-            // });
-        });
+                ]
+            }
+        };
     });
 })(angular);
