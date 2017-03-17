@@ -58,3 +58,16 @@ span.todo-true {
         font-size: 0.9rem;
     }
 }
+
+.other-todos {
+    padding: 5px;
+    width: 300px;
+    border-radius: $radius;
+    background: rgba($accentCream,.8);
+
+    span {
+        display: flex;
+        justify-content: flex-end;
+        color: $mainColor;
+    }
+}

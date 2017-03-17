@@ -40,13 +40,15 @@
     <div class="todo-wrapper">
         <h2 class="total-items">What Motivates You?</h2>
         <a href="#">See what motivates other users...</a>
-        <div class="todo-list">
-            <ul class="nav">
-                <li ng-repeat="todo in todos">
-                    <input class="checkbox" type="checkbox" ng-model="todo.done" />
-                    <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>
-    <input style="display: none;" data-id="{{todo.id}}"></input>
-    </li>
+        <div class="other-todos">
+        <span>close</span></div>
+<div class="todo-list">
+    <ul class="nav">
+        <li ng-repeat="todo in todos">
+            <input class="checkbox" type="checkbox" ng-model="todo.done" />
+            <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>
+            <input style="display: none;" data-id="{{todo.id}}"></input>
+        </li>
     </ul>
     <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
     <p class="error">{{error}}</p>
