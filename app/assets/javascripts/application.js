@@ -19,7 +19,8 @@
 //= require angular-google-maps/dist/angular-google-maps
 //= require google-places/google-places
 //= require ngGeolocation/ngGeolocation
-//= require chartjs/dist/Chart
-//= require angular-chart/angular-chart
+//= require chart.js/dist/Chart
+//= require angular-chart.js/angular-chart
+//= require underscore/underscore
 //= require_tree ../templates
 //= require_tree .
