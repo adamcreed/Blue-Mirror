@@ -2,7 +2,30 @@
     .list-colored a {
         color: $mainColor;
     }
+
     .list-underlined a {
         text-decoration: underline;
+    }
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -40px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 15px solid $accentTeal;
+    border-top-color: $darkAccentTeal;
+    animation: spin 1s infinite linear;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }

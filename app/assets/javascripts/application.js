@@ -21,8 +21,5 @@
 //= require ngGeolocation/ngGeolocation
 //= require chartjs/dist/Chart
 //= require angular-chart/angular-chart
-//= require underscore/underscore
-//= require chartjs/dist/Chart
-//= require angular-chart/angular-chart
 //= require_tree ../templates
 //= require_tree .

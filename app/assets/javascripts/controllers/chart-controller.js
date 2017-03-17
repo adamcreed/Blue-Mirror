@@ -1,5 +1,7 @@
 (function(ng) {
     ng.module('BlueMirrorApp').controller('MoodController', function($state, $scope, $q, DataRequestService, UserService) {
+
+
         $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
         $scope.series = ['Series A', 'Series B'];
         $scope.data = [
