@@ -2,8 +2,6 @@
 
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
 
-        // $( document ).ready(function() {
-
         $scope.currentUser = UserService.getUser();
 
         $scope.explanation = {
@@ -14,7 +12,6 @@
             mood: null,
             reason: null
         };
-
 
         // get moods
         $q.when(DataRequestService.get('/moods')).then((response) => {
@@ -36,7 +33,6 @@
         $scope.getExplanation = function() {
             $scope.moodObj.reason = $scope.explanation.text;
             console.log($scope.moodObj);
-
         };
 
         // post moods
@@ -62,8 +58,38 @@
         //     });
         // };
 
-    });
 
-    // });
+        // CHART MOODS
+
+        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        $scope.series = ['Series A'];
+        $scope.data = [
+            [65, 59, 80, 81, 56, 55, 40]
+        ];
+
+        $scope.onClick = function(points, evt) {
+            console.log(points, evt);
+        };
+
+        $scope.datasetOverride = [{
+            yAxisID: 'y-axis-1'
+        }];
+        $scope.options = {
+            scales: {
+                yAxes: [{
+                    id: 'y-axis-1',
+                    type: 'linear',
+                    display: true,
+                    position: 'left'
+                }]
+            }
+        };
+
+
+
+
+
+
+    });
 
 })(angular);
