@@ -37,6 +37,10 @@
             url: 'mood',
             templateUrl: 'chart-template.html',
             controller: "MoodController as mood"
+        }).state('BlueParent.journal', {
+            url: 'journal',
+            templateUrl: 'journal-template.html',
+            controller: "JournalController as journal"
         });
         // }).state('BlueParent.journal', {
         //     url: 'journal'

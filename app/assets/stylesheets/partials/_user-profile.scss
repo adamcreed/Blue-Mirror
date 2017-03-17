@@ -19,21 +19,52 @@
 }
 
 .signout {
-    margin-left: 5px;
+    background: rgba(white,.9);
+    top: 0;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     text-align: center;
     position: fixed;
-    @include bp(small) {
-        margin-top: 50px;
-    }
 
     a {
-        color: $accentCream;
+        color: $mainColor;
+        margin-left: 10px;
 
         &:hover {
-            color: white;
+            color: $accentTeal;
+        }
+    }
+
+    span {
+        color: $mainColor;
+        margin-right: 5px;
+    }
+    @include bp(small) {
+        background: none;
+        margin-top: 50px;
+
+        a {
+            background: rgba($mainColor,.6);
+            color: $accentCream;
+            margin-left: 10px;
+            border-bottom: 0.13rem solid $accentCream;
+            padding-bottom: 5px;
+
+            &:hover {
+                color: white;
+            }
         }
 
-        &:active {}
+        span {
+            background: rgba($mainColor,.6);
+            border-radius: $radius;
+            color: $accentCream;
+            // padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
     }
 }
 
