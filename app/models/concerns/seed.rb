@@ -5,7 +5,9 @@ module Seed
     def seed_todos(user_id)
       # binding.pry
 
-      File.readlines('db/data/todos.seed', quote_char: "\x00").each do |row|
+      File.readlines('db/data/todos.seed', quote_char: "\x00")
+          .sample(5).each do |row|
+
         Todo.create(
           todo: row.strip,
           user_id: user_id
