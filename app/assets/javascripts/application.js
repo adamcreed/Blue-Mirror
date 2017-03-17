@@ -22,7 +22,5 @@
 //= require chart.js/dist/Chart
 //= require angular-chart.js/angular-chart
 //= require underscore/underscore
-//= require chartjs/dist/Chart
-//= require angular-chart/angular-chart
 //= require_tree ../templates
 //= require_tree .
