@@ -1,9 +1,14 @@
 class TodosController < ApplicationController
+  include ApplicationHelper
   # GET /todos
   # GET /todos.json
   def index
     @todos = Todo.where('user_id = ?', current_user)
     render json: @todos
+  end
+
+  def featured
+    render json: featured_todos
   end
 
   # GET /todos/1
