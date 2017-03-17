@@ -1,5 +1,5 @@
 (function(ng) {
-        ng.module('BlueMirrorApp', ['ui.router', 'templates', 'uiGmapgoogle-maps', 'nemLogging', 'ngGeolocation', 'chart.js'])
+    ng.module('BlueMirrorApp', ['ui.router', 'templates', 'uiGmapgoogle-maps', 'nemLogging', 'ngGeolocation', 'chart.js'])
 
         .config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProviders) {
             uiGmapGoogleMapApiProviders.configure({
@@ -36,6 +36,10 @@
             url: 'mood',
             templateUrl: 'chart-template.html',
             controller: "MoodController as mood"
+        }).state('BlueParent.journal', {
+            url: 'journal',
+            templateUrl: 'journal-template.html',
+            controller: "JournalController as journal"
         });
         // }).state('BlueParent.journal', {
         //     url: 'journal'

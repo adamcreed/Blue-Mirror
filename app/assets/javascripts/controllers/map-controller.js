@@ -66,6 +66,7 @@
                             website: result.website,
                             rating: result.rating,
                         });
+                        var help = true;
                         $scope.$apply();
                     }
                 });
@@ -81,7 +82,7 @@
                     website: marker.website,
                     rating: marker.rating
                 };
-                $scope.$apply()
+                $scope.$apply();
 
             };
             $scope.removeMarkers = function() {

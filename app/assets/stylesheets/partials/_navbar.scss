@@ -6,13 +6,18 @@
         left: 0;
         width: 100%;
         height: 50px;
+        box-shadow: -2px -2px 2px 2px rgba(0,0,0,0.24);
+
+        &:hover {
+            box-shadow: none;
+        }
 
         &:hover ul {
             position: relative;
             display: flex;
             flex-direction: column;
             height: 216px;
-            top: -268px;
+            top: -258px;
             font-size: 2rem;
 
             li {
@@ -27,53 +32,54 @@
             }
         }
 
-        button {
+        .menu-hover {
             display: flex;
             align-items: center;
             justify-content: center;
             border: none;
             background: transparent;
-            cursor: pointer;
             width: 100%;
             height: 50px;
             padding: 0;
-            // &:hover {
-            //     box-shadow: none;
-            // }
+
             img {
                 width: 2.5rem;
                 height: 2.5rem;
             }
         }
-        background: rgba(white,.8);
-        box-shadow: -2px -2px 2px 2px rgba(0,0,0,0.24);
+        background: rgba(white,.9);
     }
     @include bp (small) {
         height: 52px;
-
-        button {
-            display: none;
-        }
         top: 0;
         background: rgba(white,.8);
         box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
 
+        .menu-hover {
+            display: none;
+        }
+
         &:hover ul {
-            background: transparent;
+            background: none;
             display: flex;
             justify-content: center;
             flex-direction: row;
             height: 100%;
             font-size: 1rem;
             top: 0;
+            box-shadow: none;
 
             li {
+                box-shadow: none;
+                background: none;
                 border-bottom: none;
                 padding: 0;
 
                 &:hover {
+                    background: none;
                     border-bottom: 10px solid $accentTeal;
                     border-left: none;
+                    box-shadow: none;
                 }
             }
         }
