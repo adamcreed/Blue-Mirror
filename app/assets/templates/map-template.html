@@ -1,5 +1,6 @@
 <div class="row">
-    <div>
+    <div class="loading" ng-show="!map.control"></div>
+    <div class="map-container">
         <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options" control="map.control" event="map.event">
             <ui-gmap-marker ng-repeat="m in map.markers" idkey='m.id' coords="m" click="onMarkerClicked(m)">
                 <ui-gmap-window templateUrl="map.templateUrl" templateParameter="map.templateParameter">
@@ -8,7 +9,6 @@
         </ui-gmap-google-map>
     </div>
     <div>
-        <div class="loading" ng-show="!map.control"></div>
         <button ng-click="placeSearch(place)" ng-show="map.control" type="submit" class="btn btn-primary">Find Counselors</button>
         <button class="btn btn-danger" ng-show="map.control" ng-click="removeMarkers()">Clear Map</button>
     </div>
