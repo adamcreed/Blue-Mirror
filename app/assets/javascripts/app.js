@@ -35,7 +35,7 @@
         }).state('BlueParent.mood', {
             url: 'mood',
             templateUrl: 'chart-template.html',
-            controller: "MoodController as mood"
+            controller: "ProfileController as profile"
         }).state('BlueParent.journal', {
             url: 'journal',
             templateUrl: 'journal-template.html',
