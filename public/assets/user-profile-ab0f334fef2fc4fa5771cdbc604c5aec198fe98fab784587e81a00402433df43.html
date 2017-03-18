@@ -1,0 +1,55 @@
+<div class="signout">
+    <a href="signout">sign out</a>
+
+    <span>Hello, {{currentUser.name}}<span>
+</div>
+<div class="background-container">
+    <div class="container mood">
+        <div class="update-mood-container">
+            <div class="mood-info">
+                <h2>Update Your Mood</h2>
+                <select ng-change="change()" ng-model="value"
+                  ng-options="moodLabels.indexOf(mood) + 1 as mood for mood in moodLabels"
+                  id="mood-selections">
+                </select>
+                <form name="explainForm" class="mood-form" ng-submit="postMoods()">
+                    <label for="explain">Why do you feel that way?</label>
+                    <input type="text" id="explain" ng-model="explanation.text" maxlength="35" name="explain" placeholder="Please explain">
+                    <input class="button" type="submit" value="Submit">
+                </form>
+            </div>
+            <!-- <div class="mood-updated">
+              <h2>Mood Updated!</h2>
+              <a href="#">Edit</a>
+          </div> -->
+        </div>
+    </div>
+</div>
+<div class="counselors">
+    <div class="local-counselors-container">
+        <button class="counselors" type="submit"><a ui-sref="BlueParent.counselors">Local Counselors</a></button>
+    </div>
+    <div class="emergency-services">
+        <button class="emergency" type="submit">Emergency Services</button>
+    </div>
+</div>
+<div class="container" ng-controller="TodoController as todo">
+    <div class="todo-wrapper">
+        <h2 class="total-items">What Motivates You?</h2>
+        <a href="#">See what motivates other users...</a>
+        <div class="other-todos">
+        <span>close</span></div>
+<div class="todo-list">
+    <ul class="nav">
+        <li ng-repeat="todo in todos">
+            <input class="checkbox" type="checkbox" ng-model="todo.done" />
+            <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>
+            <input style="display: none;" data-id="{{todo.id}}"></input>
+        </li>
+    </ul>
+    <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
+    <p class="error">{{error}}</p>
+    <a class="button" ng-click="postTodos()"> Add New Task</a>
+    <a class="button" ng-click="deleteTodos()">Delete Selected</a>
+</div>
+</div>
