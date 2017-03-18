@@ -31,7 +31,6 @@
             for (var todo in $scope.defaultTodos) {
                 $scope.allTodos = $scope.defaultTodos[todo];
                 $scope.todos.push($scope.allTodos);
-                console.log($scope.todos);
             }
 
 
