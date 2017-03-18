@@ -1,7 +1,7 @@
 (function(ng, currentUser) {
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.currentUser = UserService.getUser();
-        $scope.moodLabels = ['Terrible', 'Bad', 'Neutral', 'Good', 'Great']
+        $scope.moodList = moodList
 
         $scope.explanation = {
             text: ''
@@ -85,7 +85,7 @@
                             if (tick === 0) {
                               return '';
                             }
-                            return $scope.moodLabels[tick - 1];
+                            return moodList[tick - 1];
                         }
                     }
                 }]
