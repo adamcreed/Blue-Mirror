@@ -20,17 +20,17 @@
 
             $scope.labels = [];
             $scope.data = [];
+            $scope.reasons = [];
 
             for (let i = 0; i < $scope.allMoods.length; i++) {
-                $scope.labels.push($scope.allMoods[i].created_at);
+                $scope.labels.push($scope.allMoods[i].day);
                 $scope.data.push($scope.allMoods[i].mood);
+                $scope.reasons.push($scope.allMoods[i].reason);
             }
             $scope.data = [$scope.data];
 
-            console.log($scope.labels);
             console.log($scope.data);
 
-            // console.log($scope.allMoods);
 
         }).catch((error) => {
             console.log(error);
@@ -74,31 +74,46 @@
 
         // CHART MOODS
 
-        $scope.series = ['Series A'];
-
         $scope.onClick = function(points, evt) {
             console.log(points, evt);
         };
 
-
-        $scope.datasetOverride = [{
-            yAxisID: 'y-axis-1'
-        }];
         $scope.options = {
+            responsive: true,
             scales: {
+                xAxes: [{
+                    ticks: {
+                        fontColor: 'blue',
+                        fontStyle: 'italic',
+                        minRotation: 20
+                    }
+                }],
                 yAxes: [{
-                    id: 'y-axis-1',
-                    type: 'linear',
-                    display: true,
-                    position: 'left'
+                    ticks: {
+                        fontColor: 'blue',
+                        min: 0,
+                        max: 5,
+                        stepSize: 1,
+                        callback: function(tick, index, ticksArray) {
+                            if (tick === 1) {
+                                return 'Terrible';
+                            } if (tick === 2) {
+                                return 'Bad';
+                            } if (tick === 3) {
+                                return 'Neutral';
+                            } if (tick === 4) {
+                                return 'Good';
+                            } if (tick === 5) {
+                                return 'Great';
+                            }
+                        }
+                    }
                 }]
+            },
+            tooltips: {
+                enabled: false,
             }
         };
-
-
-
-
-
 
     });
 
