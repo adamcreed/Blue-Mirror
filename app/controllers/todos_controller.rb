@@ -9,7 +9,6 @@ class TodosController < ApplicationController
 
   def featured
     render json: featured_todos
-
   end
 
   # GET /todos/1

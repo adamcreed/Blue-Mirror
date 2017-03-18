@@ -1,8 +1,7 @@
 (function(ng, currentUser) {
-
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
-
         $scope.currentUser = UserService.getUser();
+        $scope.moodLabels = ['Terrible', 'Bad', 'Neutral', 'Good', 'Great']
 
         $scope.explanation = {
             text: ''
@@ -16,8 +15,18 @@
         // get moods
         $q.when(DataRequestService.get('/moods')).then((response) => {
 
-            $scope.currentMood = response.data;
-            console.log($scope.currentMood);
+            $scope.allMoods = response.data;
+
+            $scope.labels = [];
+            $scope.data = [];
+            $scope.reasons = [];
+
+            for (let i = 0; i < $scope.allMoods.length; i++) {
+                $scope.labels.push($scope.allMoods[i].day);
+                $scope.data.push($scope.allMoods[i].mood);
+                $scope.reasons.push($scope.allMoods[i].reason);
+            }
+            $scope.data = [$scope.data];
 
         }).catch((error) => {
             console.log(error);
@@ -26,20 +35,17 @@
         // get selection value
         $scope.change = function() {
             $scope.moodObj.mood = Number($scope.value);
-            console.log($scope.moodObj);
         };
 
         // get user explanation
         $scope.getExplanation = function() {
             $scope.moodObj.reason = $scope.explanation.text;
-            console.log($scope.moodObj);
         };
 
         // post moods
         $scope.postMoods = function() {
             $scope.getExplanation();
             $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
-                console.log(response);
                 $scope.moodObj.mood = 1;
                 $scope.explanation.text = '';
 
@@ -58,38 +64,35 @@
         //     });
         // };
 
-
         // CHART MOODS
 
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        $scope.series = ['Series A'];
-        $scope.data = [
-            [65, 59, 80, 81, 56, 55, 40]
-        ];
-
-        $scope.onClick = function(points, evt) {
-            console.log(points, evt);
-        };
-
-        $scope.datasetOverride = [{
-            yAxisID: 'y-axis-1'
-        }];
         $scope.options = {
+            responsive: true,
             scales: {
+                xAxes: [{
+                    ticks: {
+                        fontColor: 'blue',
+                        minRotation: 20
+                    }
+                }],
                 yAxes: [{
-                    id: 'y-axis-1',
-                    type: 'linear',
-                    display: true,
-                    position: 'left'
+                    ticks: {
+                        fontColor: 'blue',
+                        min: 0,
+                        max: 5,
+                        stepSize: 1,
+                        callback: function(tick, index, ticksArray) {
+                            if (tick === 0) {
+                              return '';
+                            }
+                            return $scope.moodLabels[tick - 1];
+                        }
+                    }
                 }]
+            },
+            tooltips: {
+                enabled: false,
             }
         };
-
-
-
-
-
-
     });
-
 })(angular);
