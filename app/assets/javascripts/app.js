@@ -41,6 +41,10 @@
             url: 'journal',
             templateUrl: 'journal-template.html',
             controller: "JournalController as journal"
+        }).state('BlueParent.todo', {
+            url: 'todo',
+            templateUrl: 'todo-template.html',
+            controller: "ProfileController as profile"
         });
         // }).state('BlueParent.journal', {
         //     url: 'journal'
