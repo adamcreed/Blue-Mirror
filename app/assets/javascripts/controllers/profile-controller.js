@@ -1,8 +1,7 @@
 (function(ng, currentUser) {
-
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
-
         $scope.currentUser = UserService.getUser();
+        $scope.moodLabels = ['Terrible', 'Bad', 'Neutral', 'Good', 'Great']
 
         $scope.explanation = {
             text: ''
@@ -29,9 +28,6 @@
             }
             $scope.data = [$scope.data];
 
-            console.log($scope.data);
-
-
         }).catch((error) => {
             console.log(error);
         });
@@ -39,20 +35,17 @@
         // get selection value
         $scope.change = function() {
             $scope.moodObj.mood = Number($scope.value);
-            console.log($scope.moodObj);
         };
 
         // get user explanation
         $scope.getExplanation = function() {
             $scope.moodObj.reason = $scope.explanation.text;
-            console.log($scope.moodObj);
         };
 
         // post moods
         $scope.postMoods = function() {
             $scope.getExplanation();
             $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
-                console.log(response);
                 $scope.moodObj.mood = 1;
                 $scope.explanation.text = '';
 
@@ -71,12 +64,7 @@
         //     });
         // };
 
-
         // CHART MOODS
-
-        $scope.onClick = function(points, evt) {
-            console.log(points, evt);
-        };
 
         $scope.options = {
             responsive: true,
@@ -84,7 +72,6 @@
                 xAxes: [{
                     ticks: {
                         fontColor: 'blue',
-                        fontStyle: 'italic',
                         minRotation: 20
                     }
                 }],
@@ -95,17 +82,10 @@
                         max: 5,
                         stepSize: 1,
                         callback: function(tick, index, ticksArray) {
-                            if (tick === 1) {
-                                return 'Terrible';
-                            } if (tick === 2) {
-                                return 'Bad';
-                            } if (tick === 3) {
-                                return 'Neutral';
-                            } if (tick === 4) {
-                                return 'Good';
-                            } if (tick === 5) {
-                                return 'Great';
+                            if (tick === 0) {
+                              return '';
                             }
+                            return $scope.moodLabels[tick - 1];
                         }
                     }
                 }]
@@ -114,7 +94,5 @@
                 enabled: false,
             }
         };
-
     });
-
 })(angular);
