@@ -12,6 +12,7 @@
     <%= yield %>
     <script>
       var currentUser = <%= raw current_user.to_json %>
+      var moodList = <%= raw mood_list %>
     </script>
   </body>
 </html>
