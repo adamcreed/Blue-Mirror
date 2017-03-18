@@ -8,7 +8,8 @@
             });
         }]);
 
-    ng.module('BlueMirrorApp').config(function($stateProvider, $urlRouterProvider) {
+    ng.module('BlueMirrorApp').config(function($stateProvider, $locationProvider, $urlRouterProvider) {
+      $locationProvider.hashPrefix('!');
 
         $urlRouterProvider.otherwise('/');
         $urlRouterProvider.when('/', '/' + 'login');
