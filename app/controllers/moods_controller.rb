@@ -2,7 +2,7 @@ class MoodsController < ApplicationController
   # GET /moods
   # GET /moods.json
   def index
-    @moods = Mood.where('user_id = ?', current_user)
+    @moods = Mood.where('user_id = ?', current_user).order('created_at')
 
     formatted_moods = @moods.map do |mood|
       format_mood mood
