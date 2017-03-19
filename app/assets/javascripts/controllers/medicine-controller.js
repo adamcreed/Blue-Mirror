@@ -12,6 +12,8 @@
             /* event source that contains custom events on the scope */
             $scope.events = [];
 
+            console.log($scope.events);
+
             /* event source that calls a function on every view switch */
             $scope.eventsF = function (start, end, timezone, callback) {
                 var s = new Date(start).getTime() / 1000;
@@ -57,19 +59,20 @@
             //     $scope.alertMessage = (date.title + ' was clicked ');
             // };
 
+            // /* alert on Drop */
+            // $scope.alertOnDrop = function (event, delta, revertFunc, jsEvent, ui, view) {
+            //     $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);
+            // };
+            //
+            // /* alert on Resize */
+            // $scope.alertOnResize = function (event, delta, revertFunc, jsEvent, ui, view) {
+            //     $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
+            // };
+
             $scope.remove = function(index) {
                 $scope.events.splice(index,1);
             };
 
-
-            /* alert on Drop */
-            $scope.alertOnDrop = function (event, delta, revertFunc, jsEvent, ui, view) {
-                $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);
-            };
-            /* alert on Resize */
-            $scope.alertOnResize = function (event, delta, revertFunc, jsEvent, ui, view) {
-                $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
-            };
             /* add and removes an event source of choice */
             $scope.addRemoveEventSource = function (sources, source) {
                 var canAdd = 0;
@@ -83,16 +86,19 @@
                     sources.push(source);
                 }
             };
+
             /* add custom event*/
             $scope.addEvent = function () {
                 $scope.events.push({
+                    id: event.id,
                     title: $scope.ev.title,
                     start: moment($scope.ev.from),
                     end: moment($scope.ev.to),
                     allDay: true,
-                    className: ['openSesame'],
+                    // className: ['openSesame'],
                     stick: true
                 });
+                console.log($scope.events);
             };
 
             /* Change View */
@@ -100,6 +106,7 @@
                 $scope.currentView = view;
                 uiCalendarConfig.calendars[calendar].fullCalendar('changeView', view);
             };
+
             /* Change View */
             $scope.renderCalender = function (calendar) {
                 $timeout(function () {
@@ -108,20 +115,29 @@
                     }
                 });
             };
-            /* Render Tooltip */
-            $scope.eventRender = function (event, element, view) {};
+
+
+
+            /* Event Render */
+            $scope.eventRender = function (event, element, view) {
+                console.log(event);
+                element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
+                $compile(element)($scope);
+                element.append( "<span class='closeon'>X</span>" );
+                element.find(".closeon").click(function() {
+                    $('.calendar').fullCalendar($scope.remove(), event);
+                    console.log($scope.events);
+                });
+            };
             /* config object */
             $scope.uiConfig = {
                 calendar: {
                     height: 450,
                     editable: true,
-                    // customButtons: {
-                    //     myCustomButton: {
-                    //         text: 'custom!',
-                    //         click: function () {
-                    //             alert('clicked the custom button!');
-                    //         }
-                    //     }
+                    eventClick: function(event){
+				        $(".closon").click(function() {
+			            $('.calendar').fullCalendar($scope.remove(), event._id);
+		   	              });
                     },
                     header: {
                         left: 'title',
@@ -129,18 +145,11 @@
                         right: 'today prev,next'
                     },
                     dayClick: $scope.alertOnDayClick,
-                    eventClick: $scope.alertOnEventClick,
+                    // eventClick: $scope.alertOnEventClick,
                     eventDrop: $scope.alertOnDrop,
                     eventResize: $scope.alertOnResize,
-                    eventRender: $scope.eventRender,
-                    businessHours: {
-                        start: '10:00', // a start time (10am in this example)
-                        end: '18:00', // an end time (6pm in this example)
-
-                        dow: [1, 2, 3, 4]
-                        // days of week. an array of zero-based day of week integers (0=Sunday)
-                        // (Monday-Thursday in this example)
-                    }
+                    eventRender: $scope.eventRender
+                }
                 };
 
 
