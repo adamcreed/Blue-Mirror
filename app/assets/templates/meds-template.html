@@ -1,12 +1,21 @@
-<!-- <div class="calendar-container">
-    <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
-</div> -->
-
-<!-- <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> -->
-
 <div class="medication-container">
-    <h2>Add medication:</h2>
-    <input type="text">
+    <div class="todo-wrapper">
+        <h2 class="total-items">Current Medication:</h2>
+        <a ng-hide="show">Add current medications you're taking . . .</a>
+        <div class="todo-list">
+            <ul class="nav">
+                <li ng-repeat="med in meds">
+                    <input class="checkbox" type="checkbox" ng-model="med.done" />
+                    <span class="med-{{med.done}} todo">{{med.name}}</span>
+                    <input style="display: none;" data-id="{{med.id}}"></input>
+                </li>
+            </ul>
+            <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
+            <p class="error">{{error}}</p>
+            <a class="button" ng-click="postTodos()"> Add Medication</a>
+            <a class="button" ng-click="deleteTodos()">Delete Selected</a>
+        </div>
+    </div>
 </div>
 
 <div class="form-container">
@@ -14,10 +23,6 @@
             <label for="dateFrom" class="col-sm-2 control-label">FROM</label>
             <div class="col-sm-10">
                 <input type="date" class="form-control" id="dateFrom" ng-model="ev.from">
-            </div>
-            <label for="dateTo" class="col-sm-2 control-label">TO</label>
-            <div class="col-sm-10">
-                <input type="date" class="form-control" id="dateTo" ng-model="ev.to">
             </div>
             <label for="dateTitle" class="col-sm-2 control-label">TITLE</label>
             <div class="col-sm-10">
