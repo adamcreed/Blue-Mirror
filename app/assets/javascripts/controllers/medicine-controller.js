@@ -128,7 +128,8 @@
         $scope.eventRender = function (event, element, view) {
             element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
             $compile(element)($scope);
-            element.append( "<span class='closeon'>X</span>" );
+            element.append( "<span class='closeon'>X</span>");
+            element.append( "<span class='closeon'>⭐</span>");
             element.find(".closeon").click(function() {
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
 
