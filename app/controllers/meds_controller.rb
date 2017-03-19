@@ -21,7 +21,7 @@ class MedsController < ApplicationController
     @med = Med.new(med_params)
 
     if @med.save
-      render json: { status: :created, location: format_med(@med) }
+      render json: { status: :created, location: @med }
     else
       render json: @med.errors, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class MedsController < ApplicationController
   def update
     set_med
     if @med.update(med_params)
-      render json: { status: :ok, location: format_med(@med) }
+      render json: { status: :ok, location: @med }
     else
       render json: @med.errors, status: :unprocessable_entity
     end
