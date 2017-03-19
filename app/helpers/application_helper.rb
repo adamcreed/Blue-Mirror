@@ -15,4 +15,12 @@ module ApplicationHelper
   def mood_list
     %w(Terrible Bad Neutral Good Great)
   end
+
+  def get_day(datetime)
+    datetime.rfc2822.gsub(/ \d{2}:\d{2}:\d{2} \+\d{4}$/, '')
+  end
+
+  def get_time(datetime)
+    datetime.time.to_s(:time)
+  end
 end
