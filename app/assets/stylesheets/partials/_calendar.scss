@@ -1,0 +1,92 @@
+.medication-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    input {
+        width: 20%;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.form-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-horizontal {
+    display: flex;
+}
+
+.calendar-container {
+    width: 65%;
+    margin: 0 auto;
+}
+
+button.btn {
+    width: 20%;
+}
+
+.fc-left h2 {
+    color: black;
+}
+
+.fc-right {
+    display: inline-block;
+}
+
+.fc-button {
+    float: none;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+}
+
+button.btn {
+    width: none;
+}
+/* Allows .modal-backdrop to remain on the page without blocking */
+//  .modal-backdrop {
+//     overflow: hidden;
+//     height: 0;
+//     -webkit-transition: opacity 0.15s linear, height 0 0.2s linear;
+//     -moz-transition: opacity 0.15s linear, height 0 0.2s linear;
+//     -ms-transition: opacity 0.15s linear, height 0 0.2s linear;
+//     -o-transition: opacity 0.15s linear, height 0 0.2s linear;
+//     transition: opacity 0.15s linear, height 0 0.2s linear;
+// }
+// .modal-backdrop.in {
+//     height: 100%;
+//     -webkit-transition: opacity 0.15s linear;
+//     -moz-transition: opacity 0.15s linear;
+//     -ms-transition: opacity 0.15s linear;
+//     -o-transition: opacity 0.15s linear;
+//     transition: opacity 0.15s linear;
+// }
+/*** Calendar ***/
+ .calXBtn {
+    float: right;
+    margin-top: -5px;
+    margin-right: -5px;
+}
+.calWell {
+    float: left;
+    margin: 40px;
+    background: white;
+}
+.fc-event.openSesame {
+    background-color: rgb(229, 229, 11);
+    color: black;
+}
+.fc-event.customFeed {
+    background-color: rgb(132, 222, 175);
+    color: black;
+}
+.calTools {
+    margin-bottom: 10px;
+}

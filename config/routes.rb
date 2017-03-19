@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :users
   resources :todos, only: [:index, :show, :create, :destroy]
   resources :moods, only: [:index, :show, :create, :update]
-
+  resources :notes
+  resources :events
 
   root 'home#index'
 

@@ -1,5 +1,5 @@
 (function(ng) {
-    ng.module('BlueMirrorApp', ['ui.router', 'templates', 'uiGmapgoogle-maps', 'nemLogging', 'ngGeolocation', 'chart.js'])
+    ng.module('BlueMirrorApp', ['ui.router', 'templates', 'uiGmapgoogle-maps', 'nemLogging', 'ngGeolocation', 'chart.js', 'ui.calendar', 'ui.bootstrap'])
 
         .config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProviders) {
             uiGmapGoogleMapApiProviders.configure({
@@ -9,7 +9,7 @@
         }]);
 
     ng.module('BlueMirrorApp').config(function($stateProvider, $locationProvider, $urlRouterProvider) {
-      $locationProvider.hashPrefix('!');
+        $locationProvider.hashPrefix('!');
 
         $urlRouterProvider.otherwise('/');
         $urlRouterProvider.when('/', '/' + 'login');
@@ -45,15 +45,12 @@
             url: 'todo',
             templateUrl: 'todo-template.html',
             controller: "ProfileController as profile"
+        }).state('BlueParent.meds', {
+            url: 'medication',
+            templateUrl: 'meds-template.html',
+            controller: "MedicineController as meds"
         });
-        // }).state('BlueParent.journal', {
-        //     url: 'journal'
-        //     // templateUrl: 'leader.html',
-        //     // controller: "GameController as game"
-        // }).state('BlueParent.logout', {
-        //     url: 'logout'
-        //     // templateUrl: 'login.html',
-        // });
+
     });
 
 })(angular);

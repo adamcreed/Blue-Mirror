@@ -21,6 +21,10 @@
 //= require ngGeolocation/ngGeolocation
 //= require chart.js/dist/Chart
 //= require angular-chart.js/angular-chart
+//= require moment/moment
+//= require fullcalendar/dist/fullcalendar
+//= require angular-ui-calendar/src/calendar
+//= require angular-bootstrap/ui-bootstrap
 //= require underscore/underscore
 //= require_tree ../templates
 //= require_tree .
