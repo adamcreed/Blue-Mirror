@@ -12,6 +12,8 @@
             /* event source that contains custom events on the scope */
             $scope.events = [];
 
+            console.log($scope.events);
+
             /* event source that calls a function on every view switch */
             $scope.eventsF = function (start, end, timezone, callback) {
                 var s = new Date(start).getTime() / 1000;
@@ -57,19 +59,18 @@
             //     $scope.alertMessage = (date.title + ' was clicked ');
             // };
 
+            // /* alert on Drop */
+            // $scope.alertOnDrop = function (event, delta, revertFunc, jsEvent, ui, view) {
+            //     $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);
+            // };
+            //
+            // /* alert on Resize */
+            // $scope.alertOnResize = function (event, delta, revertFunc, jsEvent, ui, view) {
+            //     $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
+            // };
+
             $scope.remove = function(index) {
                 $scope.events.splice(index,1);
-            };
-
-
-            /* alert on Drop */
-            $scope.alertOnDrop = function (event, delta, revertFunc, jsEvent, ui, view) {
-                $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);
-            };
-
-            /* alert on Resize */
-            $scope.alertOnResize = function (event, delta, revertFunc, jsEvent, ui, view) {
-                $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
             };
 
             /* add and removes an event source of choice */
@@ -96,6 +97,7 @@
                     className: ['openSesame'],
                     stick: true
                 });
+                console.log($scope.events);
             };
 
             /* Change View */
@@ -113,11 +115,16 @@
                 });
             };
 
+
+
             /* Event Render */
             $scope.eventRender = function (event, element, view) {
+                element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
+                $compile(element)($scope);
                 element.append( "<span class='closeon'>X</span>" );
                 element.find(".closeon").click(function() {
-                    $('.calendar').fullCalendar('removeEvents',event._id);
+                    $('.calendar').fullCalendar($scope.remove(), event._id);
+                    console.log($scope.events);
                 });
             };
             /* config object */
@@ -127,7 +134,7 @@
                     editable: true,
                     eventClick: function(event){
 				        $(".closon").click(function() {
-			            $('.calendar').fullCalendar($scope.remove, event._id);
+			            $('.calendar').fullCalendar($scope.remove(), event._id);
 		   	              });
                     },
                     header: {
