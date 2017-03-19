@@ -41,6 +41,7 @@ class MedsController < ApplicationController
   # DELETE /meds/1
   # DELETE /meds/1.json
   def destroy
+    set_med
     @med.destroy
   end
 
