@@ -62,7 +62,7 @@ class MoodsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_mood
-    @mood = Mood.find(params[:id])
+    @mood = Mood.find_by_id(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
