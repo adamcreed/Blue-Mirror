@@ -14,7 +14,7 @@ class MoodsController < ApplicationController
   # GET /moods/1
   # GET /moods/1.json
   def show
-    @mood = format_mood(Mood.find_by_id(params['id']))
+    @mood = format_mood(set_mood)
     render json: @mood
   end
 

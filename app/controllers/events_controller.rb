@@ -4,13 +4,17 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.where('user_id = ?', current_user)
-    render json: @events
+    formatted_events = @events.map do |event|
+      format_event event
+    end
+
+    render json: formatted_events
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find_by_id(params['id'])
+    @event = format_event(set_event)
     render json: @event
   end
 
@@ -47,6 +51,18 @@ class EventsController < ApplicationController
 
   private
 
+  def format_event(event)
+    {
+      id: event.id,
+      title: event.title,
+      start: event.from.to_date,
+      frequency: event.frequency,
+      completed: event.completed,
+      user_id: event.user_id,
+      allDay: false
+    }
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find_by_id(params[:id])
@@ -54,6 +70,6 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.permit(:title, :date, :frequency, :completed, :user_id)
+    params.permit(:title, :from, :frequency, :completed, :user_id)
   end
 end
