@@ -1,9 +1,24 @@
-<div class="journal-container">
-    <form name="journalForm" class="journal-form">
+<div class="journal-container" ng-controller="JournalController as entries">
+    <button class="past-journals button" ng-click="past=true" ng-hide="past">view past entries</button>
+    <button class="add-journals button" ng-click="past=false" ng-show="past">aye</button>
+    <form name="journalForm" class="journal-form" ng-hide="past">
         <!-- ng-submit="" -->
-        <label for="journal">Journal Entry</label>
-        <textarea class="journal-entry" id="journal">
+        <input type="text" ng-model="title">
+        <textarea class="journal-entry" type="text" ng-model="text">
     </textarea>
-        <input class="button" type="submit" value="Submit"></input>
+        <p class="error">{{error}}
+        </p>
+        <a class="button" ng-click="postJournals()">submit</a>
     </form>
+
+    <div ng-show="past">
+        <ul>
+            <li ng-repeat="entry in journalsArray">
+                <span class="entry">{{entry.title}}</span>
+                <span class="entry">{{entry.text}}</span>
+                <span class="entry">{{entry.updated_at}}</span>
+            </li>
+        </ul>
+    </div>
+
 </div>
