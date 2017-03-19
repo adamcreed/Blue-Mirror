@@ -4,7 +4,7 @@
         <a ng-hide="show">Add current medications you're taking . . .</a>
         <div class="todo-list">
             <ul class="nav">
-                <li ng-repeat="med in meds">
+                <li ng-repeat="med in medications">
                     <input class="checkbox" type="checkbox" ng-model="med.done" />
                     <span class="med-{{med.done}} todo">{{med.name}}</span>
                     <input style="display: none;" data-id="{{med.id}}"></input>
