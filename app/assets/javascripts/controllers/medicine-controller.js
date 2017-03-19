@@ -90,11 +90,12 @@
             /* add custom event*/
             $scope.addEvent = function () {
                 $scope.events.push({
+                    id: event.id,
                     title: $scope.ev.title,
                     start: moment($scope.ev.from),
                     end: moment($scope.ev.to),
                     allDay: true,
-                    className: ['openSesame'],
+                    // className: ['openSesame'],
                     stick: true
                 });
                 console.log($scope.events);
@@ -119,11 +120,12 @@
 
             /* Event Render */
             $scope.eventRender = function (event, element, view) {
+                console.log(event);
                 element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
                 $compile(element)($scope);
                 element.append( "<span class='closeon'>X</span>" );
                 element.find(".closeon").click(function() {
-                    $('.calendar').fullCalendar($scope.remove(), event._id);
+                    $('.calendar').fullCalendar($scope.remove(), event);
                     console.log($scope.events);
                 });
             };
