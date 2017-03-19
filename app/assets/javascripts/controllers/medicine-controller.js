@@ -7,8 +7,8 @@
         $scope.meds = [];
 
         $scope.medObj = {
-            name: ''
-        };
+                     name: ''
+                    };
 
         // total meds
         $scope.totalmeds = function() {
@@ -130,9 +130,16 @@
             $compile(element)($scope);
             element.append( "<span class='closeon'>X</span>" );
             element.find(".closeon").click(function() {
-                $('.calendar').fullCalendar('removeEvents', event._id);
+                $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
+
+                    $('.calendar').fullCalendar('removeEvents', event._id);
+
+                }).catch((error) => {
+                    console.log(error);
+                });
             });
         };
+
         /* config object */
         $scope.uiConfig = {
             calendar: {
@@ -149,7 +156,6 @@
                     right: 'today prev,next'
                 },
                 dayClick: $scope.alertOnDayClick,
-                // eventClick: $scope.alertOnEventClick,
                 eventDrop: $scope.alertOnDrop,
                 eventResize: $scope.alertOnResize,
                 eventRender: $scope.eventRender
@@ -166,17 +172,16 @@
                             from: ''
                         };
 
-        // GET EVENTS
+        /* get events */
         $q.when(DataRequestService.get('/events')).then((response) => {
 
             $scope.loadedEvents = response.data;
 
             $('.calendar').fullCalendar('addEventSource', $scope.loadedEvents);
 
-
-
         }).catch((error) => {
             console.log(error);
         });
+
     });
 })(angular);

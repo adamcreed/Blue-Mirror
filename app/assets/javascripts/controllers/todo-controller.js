@@ -8,6 +8,7 @@
         };
 
         $scope.todos = [];
+        console.log($scope.todos);
         $scope.randomArray = [];
 
         // total todos
