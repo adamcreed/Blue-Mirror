@@ -55,8 +55,8 @@ class MoodsController < ApplicationController
       id: mood.id,
       mood: mood.mood,
       reason: mood.reason,
-      day: mood.created_at.rfc2822.gsub(/ \d{2}:\d{2}:\d{2} \+\d{4}$/, ''),
-      time: mood.created_at.time.to_s(:time)
+      day: get_day(mood.created_at),
+      time: get_time(mood.created_at)
     }
   end
 
