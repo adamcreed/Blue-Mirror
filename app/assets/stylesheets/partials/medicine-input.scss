@@ -1,16 +1,6 @@
 .medication-container {
     margin-top: 50px;
     margin-bottom: 50px;
-
-
-    // input {
-    // //     width: 20%;
-    // //     margin: 0 auto;
-    // // }
-    // //
-    // // h2 {
-    // //     text-align: center;
-    // // }
 }
 
 .calWell {
@@ -76,18 +66,5 @@ span.todo-true {
         height: 90%;
         width: 45%;
         font-size: 0.9rem;
-    }
-}
-
-.other-todos {
-    padding: 5px;
-    width: 300px;
-    border-radius: $radius;
-    background: rgba($accentCream,.8);
-
-    span {
-        display: flex;
-        justify-content: flex-end;
-        color: $mainColor;
     }
 }
