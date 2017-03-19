@@ -16,50 +16,52 @@
         };
 
         // add meds
-        $scope.addmeds = function() {
+        $scope.addMeds = function() {
             $scope.medObj.name = $scope.input;
             $scope.error = '';
             $scope.input = '';
         };
 
         // get meds
-        // $q.when(DataRequestService.get('/meds')).then((response) => {
-        //
-        //     // console.log(response.data);
-        //
-        //     $scope.defaultTodos = response.data;
-        //
-        //     // for (var todo in $scope.defaultTodos) {
-        //     //     $scope.allTodos = $scope.defaultTodos[todo];
-        //     //     $scope.todos.push($scope.allTodos);
-        //     // }
-        //
-        //
-        // }).catch((error) => {
-        //     console.log(error);
-        // });
+        $q.when(DataRequestService.get('/meds')).then((response) => {
+
+            console.log(response.data);
+
+            // $scope.defaultTodos = response.data;
+
+            // for (var todo in $scope.defaultTodos) {
+            //     $scope.allTodos = $scope.defaultTodos[todo];
+            //     $scope.todos.push($scope.allTodos);
+            // }
+
+
+        }).catch((error) => {
+            console.log(error);
+        });
         //
         //
         // post meds
-        // $scope.postMeds = function() {
-        //
-        //     if ($scope.input === undefined || $scope.input === '') {
-        //
-        //         $scope.error = "Please enter a task";
-        //
-        //     } else {
-        //         $scope.addToDo();
-        //
-        //         $q.when(DataRequestService.postTodo('/todos', $scope.todoObj)).then((response) => {
-        //             $scope.currentTodos = response.data.location;
-        //             $scope.todos.push($scope.currentTodos);
-        //
-        //         }).catch((error) => {
-        //             console.log(error);
-        //         });
-        //     }
-        //
-        // };
+        $scope.postMeds = function() {
+
+            if ($scope.input === undefined || $scope.input === '') {
+
+                $scope.error = "Please enter a medication";
+
+            } else {
+                $scope.addMeds();
+
+                $q.when(DataRequestService.postTodo('/meds', $scope.medObj)).then((response) => {
+
+                    console.log(response);
+                    // $scope.currentTodos = response.data.location;
+                    // $scope.todos.push($scope.currentTodos);
+
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+
+        };
         //
         //
         // delete meds
