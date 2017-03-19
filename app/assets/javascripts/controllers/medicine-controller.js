@@ -1,6 +1,87 @@
 (function(ng) {
     ng.module('BlueMirrorApp').controller('MedicineController', function($state, $scope,  $compile, $timeout, uiCalendarConfig, $q, DataRequestService, UserService) {
 
+
+        /* MEDICATION FUNCTIONS */
+
+        $scope.meds = [];
+
+        $scope.medObj = {
+            name: ''
+        };
+
+        // total meds
+        $scope.totalmeds = function() {
+            return $scope.meds.length;
+        };
+
+        // add meds
+        $scope.addmeds = function() {
+            $scope.medObj.name = $scope.input;
+            $scope.error = '';
+            $scope.input = '';
+        };
+
+        // get meds
+        // $q.when(DataRequestService.get('/meds')).then((response) => {
+        //
+        //     // console.log(response.data);
+        //
+        //     $scope.defaultTodos = response.data;
+        //
+        //     // for (var todo in $scope.defaultTodos) {
+        //     //     $scope.allTodos = $scope.defaultTodos[todo];
+        //     //     $scope.todos.push($scope.allTodos);
+        //     // }
+        //
+        //
+        // }).catch((error) => {
+        //     console.log(error);
+        // });
+        //
+        //
+        // post meds
+        // $scope.postMeds = function() {
+        //
+        //     if ($scope.input === undefined || $scope.input === '') {
+        //
+        //         $scope.error = "Please enter a task";
+        //
+        //     } else {
+        //         $scope.addToDo();
+        //
+        //         $q.when(DataRequestService.postTodo('/todos', $scope.todoObj)).then((response) => {
+        //             $scope.currentTodos = response.data.location;
+        //             $scope.todos.push($scope.currentTodos);
+        //
+        //         }).catch((error) => {
+        //             console.log(error);
+        //         });
+        //     }
+        //
+        // };
+        //
+        //
+        // delete meds
+        // $scope.deleteMeds = function() {
+        //
+        //     for (let i = $scope.todos.length - 1; i >= 0; i--) {
+        //
+        //         if ($scope.todos[i].done === true) {
+        //             $q.when(DataRequestService.delete(`/todos/${$scope.todos[i].id}`)).then((response) => {
+        //
+        //             }).catch((error) => {
+        //                 console.log(error);
+        //             });
+        //
+        //             $scope.todos.splice(i, 1);
+        //         }
+        //     }
+        // };
+
+
+        /* CALENDAR FUNCTIONS  */
+
         $scope.currentView = 'month';
 
         /* event source that contains custom events on the scope */
