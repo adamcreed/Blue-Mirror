@@ -8,63 +8,18 @@
     float: none;
 }
 
-// .error {
-//     color: $accentCream;
-// }
-//
-// .todo-wrapper {
-//     margin-bottom: 50px;
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     align-items: center;
-// }
-//
-// .todo-list ul {
-//     width: 300px;
-//     display: inline-block;
-//     color: #97a0af;
-//     margin-top: 10px;
-//
-//     li {
-//         display: flex;
-//         margin-bottom: 5px;
-//         flex-wrap: nowrap;
-//         align-items: center;
-//         width: 275px;
-//
-//         .checkbox {
-//             width: 10%;
-//         }
-//
-//         span {
-//             width: 80%;
-//         }
-//     }
-// }
-//
-// input {
-//     vertical-align: top;
-//     color: #97a0af;
-// }
-//
 span.med-true {
     text-decoration: line-through;
 }
-//
-// .todo-list input[type="text"] {
-//     display: block;
-//     padding: 10px;
-//     margin: 10px auto;
-// }
-//
-// .button-container {
-//     display: flex;
-//     justify-content: space-between;
-//
-//     .button {
-//         height: 90%;
-//         width: 45%;
-//         font-size: 0.9rem;
-//     }
-// }
+
+.control-label {
+    padding: 5px;
+}
+
+.col-sm-10 {
+    padding-right: 10px;
+}
+
+button.pull-right {
+    margin-left: 25px;
+}
