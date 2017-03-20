@@ -44,7 +44,7 @@
             });
         }
 
-        function patchEntry(text) {
+        function patchEntry(url, inputString) {
             return $http({
                 method: 'PATCH',
                 url: url,
@@ -52,6 +52,9 @@
                 headers: {
                     "content-type": "application/json;charset=utf-8"
                 },
+                data: {
+                    text: inputString
+                }
             });
         }
 
@@ -67,51 +70,6 @@
             });
         }
 
-        //   function postScores(url, dataObj) {
-        //       return $http({
-        //           method: 'POST',
-        //           url: url,
-        //           dataType: "json",
-        //           headers: {
-        //               "content-type": "application/json;charset=utf-8"
-        //           },
-        //           data: dataObj
-        //       });
-        //   }
-        //
-        //   function getScores(url) {
-        //       return $http({
-        //           method: 'GET',
-        //           url: url,
-        //           dataType: "json",
-        //           headers: {
-        //               "content-type": "application/json;charset=utf-8"
-        //           },
-        //       });
-        //   }
-        //
-        //   function loginPost(url, dataObj) {
-        //       return $http({
-        //           method: 'POST',
-        //           url: url,
-        //           dataType: "json",
-        //           headers: {
-        //               "content-type": "application/json;charset=utf-8"
-        //           },
-        //           data: {
-        //               email: dataObj.email,
-        //               password: dataObj.password
-        //           }
-        //       });
-        //   }
-        //
-        //   function putData(url) {
-        //       return $http({
-        //           method: 'PUT',
-        //           url: url
-        //       });
-        //   }
-        //
         function deleteData(url) {
             return $http({
                 method: 'DELETE',
