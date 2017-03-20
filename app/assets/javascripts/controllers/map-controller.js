@@ -1,5 +1,8 @@
 (function(ng) {
-    ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi, $geolocation, $sce) {
+    ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi, uiGmapIsReady, $geolocation, $sce) {
+
+
+        $scope.$watch('placeSearch()', function() {});
 
         $geolocation.getCurrentPosition({
             timeout: 60000
@@ -23,15 +26,18 @@
                 place: '',
                 result: ''
             };
-        }).then(function(maps) {
 
-            $scope.placeSearch = function(place) {
+        });
+
+        uiGmapIsReady.promise().then(function(maps) {
+
+            $scope.placeSearch = function() {
                 var request = {
                     location: {
                         lat: $scope.map.center.latitude,
                         lng: $scope.map.center.longitude
                     },
-                    radius: '50',
+                    radius: '3000',
                     query: 'mental health'
                 };
                 var map = $scope.map.control.getGMap();
@@ -41,6 +47,8 @@
                 return;
             };
 
+            $scope.mapResults = [];
+
             var callback = function(results, status) {
                 if (status == google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
@@ -49,6 +57,18 @@
                 }
             };
 
+
+            $scope.newArr = [];
+
+            $scope.checkRating = function(rating) {
+                    if (rating) {
+                        return 'Rating: ' + rating;
+                    } else {
+                        return 'Rating: no rating';
+                    }
+            };
+
+
             var createMarker = function(place, id) {
                 var request = {
                     reference: place.reference
@@ -56,6 +76,9 @@
                 var detail = new google.maps.places.PlacesService($scope.map.control.getGMap());
                 detail.getDetails(request, function(result, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        $scope.newArr.push(result);
+                        $scope.newArr = _.uniq($scope.newArr, 'formatted_phone_number');
+
                         $scope.map.markers.push({
                             id: id,
                             latitude: place.geometry.location.lat(),
@@ -64,7 +87,7 @@
                             address: result.formatted_address,
                             phone: result.formatted_phone_number,
                             website: result.website,
-                            rating: result.rating,
+                            rating: $scope.checkRating(result.rating),
                         });
                         var help = true;
                         $scope.$apply();
@@ -72,8 +95,6 @@
                 });
             };
 
-            // $scope.closeClick = function(marker) {
-            // };
             $scope.onMarkerClicked = function(marker) {
                 $scope.map.templateParameter = {
                     name: marker.name,

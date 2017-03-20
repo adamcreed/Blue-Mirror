@@ -14,7 +14,7 @@
             <p class="error">{{error}}</p>
             <a class="button" ng-click="postMeds()"> Add Medication</a>
             <a class="button" ng-click="deleteMeds()">Delete Selected</a>
-            <a class="button took-meds" ng-show="checkMedsTaken()" ng-click="tookMeds()">I took my medication today</a>
+            <button class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my medication today</button>
         </div>
     </div>
 </div>

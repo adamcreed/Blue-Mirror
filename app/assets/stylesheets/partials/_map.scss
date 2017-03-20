@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.map-results ul li {
+    margin-bottom: 15px;
+}
+
 .map-container {
     @include bp(mobile) {
         width: 90%;
