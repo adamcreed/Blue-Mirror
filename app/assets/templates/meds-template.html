@@ -14,6 +14,7 @@
             <p class="error">{{error}}</p>
             <a class="button" ng-click="postMeds()"> Add Medication</a>
             <a class="button" ng-click="deleteMeds()">Delete Selected</a>
+            <a class="button took-meds" ng-show="checkMedsTaken()" ng-click="tookMeds()">I took my medication today</a>
         </div>
     </div>
 </div>
@@ -22,11 +23,11 @@
         <form class="form-horizontal clearfix">
             <label for="dateFrom" class="col-sm-2 control-label">Date</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="dateFrom" ng-model="ev.from" required>
+                <input type="date" class="form-control" id="dateFrom" ng-model="from" required>
             </div>
             <label for="dateTitle" class="col-sm-2 control-label">Event</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="dateTitle" ng-model="ev.title" placeholder="your title">
+                <input type="text" class="form-control" id="dateTitle" ng-model="title" placeholder="your title">
             </div>
             <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent()">Create Event</button>
         </form>
