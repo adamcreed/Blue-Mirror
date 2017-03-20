@@ -43,12 +43,14 @@
                 var map = $scope.map.control.getGMap();
                 var service = new google.maps.places.PlacesService(map);
 
-                service.textSearch(request, callback);
+                if ($scope.map.markers.length === 0) {
+                    service.textSearch(request, callback);
+                }
+                
                 return;
             };
 
             $scope.mapResults = [];
-
             var callback = function(results, status) {
                 if (status == google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
