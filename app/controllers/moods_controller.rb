@@ -2,11 +2,11 @@ class MoodsController < ApplicationController
   # GET /moods
   # GET /moods.json
   def index
-    @moods = Mood.where('user_id = ?', current_user).order('created_at')
+    days = params.fetch(:days, 7).to_i
+    @moods = Mood.where('user_id = ? AND created_at > ?',
+                        current_user, (DateTime.now - days)).order('created_at')
 
-    formatted_moods = @moods.map do |mood|
-      format_mood mood
-    end
+    formatted_moods = @moods.map { |mood| format_mood mood }
 
     render json: formatted_moods
   end
@@ -50,6 +50,7 @@ class MoodsController < ApplicationController
   # DELETE /moods/1
   # DELETE /moods/1.json
   def destroy
+    set_mood
     @mood.destroy
   end
 

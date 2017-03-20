@@ -1,16 +1,16 @@
 class NotesController < ApplicationController
-  include ApplicationHelper
   # GET /notes
   # GET /notes.json
   def index
     @notes = Note.where('user_id = ?', current_user).order('created_at')
-    render json: @notes
+    formatted_notes = @notes.map { |note| format_note note }
+    render json: formatted_notes
   end
 
   # GET /notes/1
   # GET /notes/1.json
   def show
-    set_note
+    @note = format_mood set_note
     render json: @note
   end
 

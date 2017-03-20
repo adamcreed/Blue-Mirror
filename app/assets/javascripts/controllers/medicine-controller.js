@@ -80,6 +80,23 @@
             }
         };
 
+        $scope.tookMeds = function() {
+            console.log($scope.events);
+            $scope.title = 'took meds ✅';
+            $scope.eventObj = {
+                                title: $scope.title,
+                                from: moment()
+                            };
+
+            $scope.addEvent();
+        };
+
+        $scope.checkMedsTaken = function() {
+
+            if (moment() > moment().startOf('day') && moment() < moment().endOf('day')) {
+                return true;
+            }
+        };
 
         /* CALENDAR FUNCTIONS  */
 
@@ -88,8 +105,15 @@
         /* event source that contains custom events on the scope */
         $scope.events = [];
 
+
+        $scope.eventObj = {
+                            title: '',
+                            from: ''
+                        };
+
         /* add custom event*/
         $scope.addEvent = function () {
+
           $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
 
               $scope.eventId = response.data.location.id;
@@ -100,14 +124,15 @@
 
             $scope.events.push({
                 _id: $scope.eventId,
-                title: $scope.ev.title,
-                start: moment($scope.ev.from),
+                title: $scope.title,
+                start: moment($scope.from),
                 allDay: true,
                 stick: true
             });
 
-            $scope.eventObj.title = $scope.ev.title;
-            $scope.eventObj.from = moment($scope.ev.from);
+            $scope.eventObj.title = $scope.title;
+            $scope.eventObj.from = moment($scope.from);
+            $scope.title = '';
         };
 
         /* Change View */
@@ -151,15 +176,7 @@
 		        $(".closon").click(function() {
 	            $('.calendar').fullCalendar('removeEvents', event.id);
    	              });
-                },
-                header: {
-                    left: 'title',
-                    center: 'myCustomButton',
-                    right: 'today prev,next'
-                },
-                dayClick: $scope.alertOnDayClick,
-                eventDrop: $scope.alertOnDrop,
-                eventResize: $scope.alertOnResize,
+              },
                 eventRender: $scope.eventRender
             }
         };
@@ -169,10 +186,6 @@
         $scope.eventSources = [$scope.events];
         $scope.eventSources2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
 
-        $scope.eventObj = {
-                            title: '',
-                            from: ''
-                        };
 
         /* get events */
         $q.when(DataRequestService.get('/events')).then((response) => {
