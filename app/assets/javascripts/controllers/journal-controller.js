@@ -8,11 +8,13 @@
         };
 
         $scope.journalsArray = [];
-
+        console.log($scope.journalsArray);
 
         $scope.addJournals = function() {
             $scope.journalObj.title = $scope.title;
             $scope.journalObj.text = $scope.text;
+            $scope.journalObj.day = $scope.day;
+            console.log();
             $scope.title = '';
             $scope.text = '';
             $scope.error = '';
@@ -24,13 +26,14 @@
                 $scope.error = "Please submit your journal entry";
 
             } else {
+                $scope.addJournals();
                 $q.when(DataRequestService.postJournal('/notes', $scope.journalObj)).then((response) => {
-                    $scope.currentJournal = response.data;
+                    $scope.currentJournal = response.data.location;
                     $scope.journalsArray.push($scope.currentJournal);
+                    console.log('journalsArray', $scope.journalsArray);
                 }).catch((error) => {
                     console.log(error);
                 });
-                $scope.addJournals();
             }
         };
         // delete entries
