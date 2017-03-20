@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319214806) do
+ActiveRecord::Schema.define(version: 20170320003823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20170319214806) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_meds_on_user_id", using: :btree
+  end
+
+  create_table "mood_lists", force: :cascade do |t|
+    t.string   "moods"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_mood_lists_on_user_id", using: :btree
   end
 
   create_table "moods", force: :cascade do |t|
@@ -74,6 +82,7 @@ ActiveRecord::Schema.define(version: 20170319214806) do
 
   add_foreign_key "events", "users"
   add_foreign_key "meds", "users"
+  add_foreign_key "mood_lists", "users"
   add_foreign_key "moods", "users"
   add_foreign_key "notes", "users"
   add_foreign_key "todos", "users"
