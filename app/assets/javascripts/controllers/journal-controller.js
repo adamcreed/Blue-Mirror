@@ -2,7 +2,6 @@
     ng.module('BlueMirrorApp').controller('JournalController', function($state, $scope, $q, DataRequestService, UserService) {
 
         $scope.currentUser = UserService.getUser();
-
         $scope.journalObj = {
             text: '',
             title: ''
@@ -35,9 +34,30 @@
                 });
             }
         };
+        // delete entries
+        console.log('id', $scope.journalsArray.id);
+        $scope.deleteJournalEntry = function(entry) {
+            let i = $scope.journalsArray.indexOf(entry);
+            console.log('done');
+            $q.when(DataRequestService.delete(`/notes/${$scope.journalsArray[i].id}`)).then((response) => {}).catch((error) => {
+                console.log(error);
+                $scope.todos.splice(i, 1);
+            });
 
+        };
+        $scope.patchJournalText = function(text) {
+            $q.when(DataService.patch(`/notes/${$scope.journalsArray[i].text}`)).then((response) => {
+                $scope.journalsArray[i].text = response.data.text;
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
 
+        $scope.toggleTextarea = function() {
+            $scope.edit = null;
+        };
 
+        //get past entries
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
             console.log('in');
@@ -45,12 +65,11 @@
                 $scope.pastEntries = $scope.pastJournals[entry];
                 $scope.journalsArray.push($scope.pastEntries);
             }
-            console.log($scope.journalsArray);
+
 
         }).catch((error) => {
             console.log(error);
         });
-
 
     });
 })(angular);

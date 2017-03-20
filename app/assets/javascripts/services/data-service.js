@@ -44,6 +44,17 @@
             });
         }
 
+        function patchEntry(text) {
+            return $http({
+                method: 'PATCH',
+                url: url,
+                dataType: "json",
+                headers: {
+                    "content-type": "application/json;charset=utf-8"
+                },
+            });
+        }
+
         function postJournal(url, journalObj) {
             return $http({
                 method: 'POST',
@@ -116,6 +127,7 @@
             post: postData,
             postTodo: postTodo,
             postJournal: postJournal,
+            patchEntry: patchEntry,
             delete: deleteData,
             patch: patchData
             //   put: putData,
