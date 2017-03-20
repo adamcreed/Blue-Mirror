@@ -1,10 +1,9 @@
 (function(ng) {
     ng.module('BlueMirrorApp').controller('MedicineController', function($state, $scope,  $compile, $timeout, uiCalendarConfig, $q, DataRequestService, UserService) {
 
-
         /* MEDICATION FUNCTIONS */
 
-        $scope.meds = [];
+        $scope.medications = [];
 
         $scope.medObj = {
                      name: ''
@@ -12,7 +11,7 @@
 
         // total meds
         $scope.totalmeds = function() {
-            return $scope.meds.length;
+            return $scope.medications.length;
         };
 
         // add meds
@@ -27,21 +26,21 @@
 
             console.log(response.data);
 
-            // $scope.defaultTodos = response.data;
+            $scope.defaultMeds = response.data;
 
-            // for (var todo in $scope.defaultTodos) {
-            //     $scope.allTodos = $scope.defaultTodos[todo];
-            //     $scope.todos.push($scope.allTodos);
-            // }
+            for (var med in $scope.defaultMeds) {
+                $scope.allMedications = $scope.defaultMeds[med];
+                $scope.medications.push($scope.allMedications);
+            }
 
 
         }).catch((error) => {
             console.log(error);
         });
-        //
-        //
+
         // post meds
         $scope.postMeds = function() {
+            // debugger;
 
             if ($scope.input === undefined || $scope.input === '') {
 
@@ -52,9 +51,8 @@
 
                 $q.when(DataRequestService.postTodo('/meds', $scope.medObj)).then((response) => {
 
-                    console.log(response);
-                    // $scope.currentTodos = response.data.location;
-                    // $scope.todos.push($scope.currentTodos);
+                    $scope.currentMeds = response.data.location;
+                    $scope.medications.push($scope.currentMeds);
 
                 }).catch((error) => {
                     console.log(error);
@@ -62,24 +60,25 @@
             }
 
         };
-        //
-        //
+
         // delete meds
-        // $scope.deleteMeds = function() {
-        //
-        //     for (let i = $scope.todos.length - 1; i >= 0; i--) {
-        //
-        //         if ($scope.todos[i].done === true) {
-        //             $q.when(DataRequestService.delete(`/todos/${$scope.todos[i].id}`)).then((response) => {
-        //
-        //             }).catch((error) => {
-        //                 console.log(error);
-        //             });
-        //
-        //             $scope.todos.splice(i, 1);
-        //         }
-        //     }
-        // };
+        $scope.deleteMeds = function() {
+
+            for (let i = $scope.medications.length - 1; i >= 0; i--) {
+
+                if ($scope.medications[i].done === true) {
+                    $q.when(DataRequestService.delete(`/meds/${$scope.medications[i].id}`)).then((response) => {
+
+                        console.log(response);
+
+                    }).catch((error) => {
+                        console.log(error);
+                    });
+
+                    $scope.medications.splice(i, 1);
+                }
+            }
+        };
 
 
         /* CALENDAR FUNCTIONS  */
@@ -130,7 +129,7 @@
         $scope.eventRender = function (event, element, view) {
             element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
             $compile(element)($scope);
-            element.append( "<span class='closeon'>X</span>");
+            element.append( "<span class='closeon'>❌</span>");
             element.append( "<span class='closeon'>⭐</span>");
             element.find(".closeon").click(function() {
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
