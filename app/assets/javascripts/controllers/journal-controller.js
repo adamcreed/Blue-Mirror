@@ -8,7 +8,6 @@
         };
 
         $scope.journalsArray = [];
-        console.log($scope.journalsArray);
 
 
         $scope.addJournals = function() {
@@ -25,29 +24,34 @@
                 $scope.error = "Please submit your journal entry";
 
             } else {
-                $scope.addJournals();
                 $q.when(DataRequestService.postJournal('/notes', $scope.journalObj)).then((response) => {
                     $scope.currentJournal = response.data;
                     $scope.journalsArray.push($scope.currentJournal);
                 }).catch((error) => {
                     console.log(error);
                 });
+                $scope.addJournals();
             }
         };
         // delete entries
-        console.log('id', $scope.journalsArray.id);
         $scope.deleteJournalEntry = function(entry) {
             let i = $scope.journalsArray.indexOf(entry);
-            console.log('done');
+
             $q.when(DataRequestService.delete(`/notes/${$scope.journalsArray[i].id}`)).then((response) => {}).catch((error) => {
                 console.log(error);
-                $scope.todos.splice(i, 1);
             });
+            $scope.journalsArray.splice(i, 1);
 
         };
-        $scope.patchJournalText = function(text) {
-            $q.when(DataService.patch(`/notes/${$scope.journalsArray[i].text}`)).then((response) => {
-                $scope.journalsArray[i].text = response.data.text;
+        $scope.patchJournalText = function(input, entry) {
+            console.log('input', JSON.stringify(input));
+
+            let i = ($scope.journalsArray.indexOf(entry)) + 1;
+            let inputString = JSON.stringify(input);
+            console.log('blah blah blah', $scope.journalsArray[i].id);
+            $q.when(DataRequestService.patchEntry(`/notes/${$scope.journalsArray[i].id}`, inputString)).then((response) => {
+                console.log('response', response.data);
+                $scope.journalsArray[i].text = response.data;
             }).catch((error) => {
                 console.log(error);
             });
@@ -60,7 +64,6 @@
         //get past entries
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
-            console.log('in');
             for (var entry in $scope.pastJournals) {
                 $scope.pastEntries = $scope.pastJournals[entry];
                 $scope.journalsArray.push($scope.pastEntries);
