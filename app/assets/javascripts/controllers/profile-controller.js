@@ -80,7 +80,7 @@
                     ticks: {
                         fontColor: 'blue',
                         min: 0,
-                        max: 5,
+                        max: moodList.length,
                         stepSize: 1,
                         callback: function(tick, index, ticksArray) {
                             if (tick === 0) {

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :moods, only: [:index, :show, :create, :update]
   resources :notes
   resources :events
+  resources :meds
 
   root 'home#index'
 

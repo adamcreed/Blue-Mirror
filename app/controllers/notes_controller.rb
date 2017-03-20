@@ -47,6 +47,17 @@ class NotesController < ApplicationController
 
   private
 
+  def format_note(note)
+    {
+      id: note.id,
+      title: note.title,
+      text: note.text,
+      tags: note.tags,
+      day: get_day(note.created_at),
+      time: get_time(note.created_at)
+    }
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_note
     @note = Note.find_by_id(params[:id])

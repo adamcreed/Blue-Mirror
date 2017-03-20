@@ -21,7 +21,9 @@ class MoodsController < ApplicationController
   # POST /moods
   # POST /moods.json
   def create
+    max_mood = mood_list(current_user).length
     params['user_id'] = current_user.id
+    params['mood'] = max_mood if params['mood'] > max_mood
     @mood = Mood.new(mood_params)
 
     if @mood.save
@@ -35,6 +37,9 @@ class MoodsController < ApplicationController
   # PATCH/PUT /moods/1.json
   def update
     set_mood
+    max_mood = mood_list(current_user).length
+    params['mood'] = max_mood if params['mood'] > max_mood
+
     if @mood.update(mood_params)
       render json: { status: :ok, location: format_mood(@mood) }
     else
@@ -55,8 +60,8 @@ class MoodsController < ApplicationController
       id: mood.id,
       mood: mood.mood,
       reason: mood.reason,
-      day: mood.created_at.rfc2822.gsub(/ \d{2}:\d{2}:\d{2} \+\d{4}$/, ''),
-      time: mood.created_at.time.to_s(:time)
+      day: get_day(mood.created_at),
+      time: get_time(mood.created_at)
     }
   end
 

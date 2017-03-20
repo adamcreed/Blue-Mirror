@@ -13,10 +13,6 @@
     margin: 0 auto;
 }
 
-button.pull-right {
-    width: 20%;
-}
-
 .fc-left h2 {
     color: black;
 }
@@ -37,24 +33,15 @@ button.pull-right {
 button.btn {
     width: none;
 }
-/* Allows .modal-backdrop to remain on the page without blocking */
-//  .modal-backdrop {
-//     overflow: hidden;
-//     height: 0;
-//     -webkit-transition: opacity 0.15s linear, height 0 0.2s linear;
-//     -moz-transition: opacity 0.15s linear, height 0 0.2s linear;
-//     -ms-transition: opacity 0.15s linear, height 0 0.2s linear;
-//     -o-transition: opacity 0.15s linear, height 0 0.2s linear;
-//     transition: opacity 0.15s linear, height 0 0.2s linear;
-// }
-// .modal-backdrop.in {
-//     height: 100%;
-//     -webkit-transition: opacity 0.15s linear;
-//     -moz-transition: opacity 0.15s linear;
-//     -ms-transition: opacity 0.15s linear;
-//     -o-transition: opacity 0.15s linear;
-//     transition: opacity 0.15s linear;
-// }
+
+
+.fc-day-grid-event .fc-content {
+    white-space: normal !important;
+
+}
+
+
+
 /*** Calendar ***/
  .calXBtn {
     float: right;
