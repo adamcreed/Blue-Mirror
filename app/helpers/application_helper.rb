@@ -13,8 +13,13 @@ module ApplicationHelper
   end
 
   def mood_list(user)
-    unless user and MoodList.find_by(user_id: user.id)
+    if not user
       return %w(Terrible Bad Neutral Good Great)
+    elsif not MoodList.find_by(user_id: user.id)
+      MoodList.create(
+        user: user,
+        moods: 'Terrible, Bad, Neutral, Good, Great'
+      )
     end
     MoodList.find_by(user_id: user.id).moods.split(',').map &:strip
   end
