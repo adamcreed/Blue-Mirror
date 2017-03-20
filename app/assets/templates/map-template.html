@@ -13,8 +13,8 @@
             <li ng-repeat="result in newArr">
                 <span>{{result.name}}</span>
                 <span>{{result.formatted_address}}</span>
-                <span><a ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}}</a></span>
-                <span><a ng-href="{{result.website}}">{{result.website}}</a></span>
+                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}}</a></span>
+                <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span>
                 <span>{{checkRating(result.rating)}}</span>
             </li>
         </ul>
