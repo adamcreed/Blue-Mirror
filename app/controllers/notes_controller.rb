@@ -2,7 +2,10 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
+    page = params.fetch 'page', 1
+    per = params.fetch 'per_page', 10
     @notes = Note.where('user_id = ?', current_user).order('created_at')
+                 .page(page).per(per)
     formatted_notes = @notes.map { |note| format_note note }
     render json: formatted_notes
   end
