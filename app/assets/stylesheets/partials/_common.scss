@@ -76,6 +76,12 @@ label {
     margin-top: 50px;
 }
 
+.disableButton {
+    opacity: 0.35;
+    background: #eee;
+    color: #444;
+}
+
 button {
     text-transform: uppercase;
     font-family: $primaryFont;

@@ -124,6 +124,12 @@
             $scope.list.splice(index, 1);
         };
 
+        $scope.isDisabled = function() {
+                if($scope.list.length === 10) {
+                    return true;
+                }
+        };
+
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
