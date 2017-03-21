@@ -89,10 +89,6 @@
             patchEntry: patchEntry,
             delete: deleteData,
             patch: patchData
-            //   put: putData,
-            //   loginPost: loginPost,
-            //   postScores: postScores,
-            //   getScores: getScores
         };
     }
 
