@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'dotenv-rails'
+gem 'kaminari'
 
 gem 'devise_token_auth'
 gem 'omniauth'
