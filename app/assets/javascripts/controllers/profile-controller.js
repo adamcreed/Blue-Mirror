@@ -121,7 +121,7 @@
                             if (tick === 0) {
                               return '';
                             }
-                            return moodList[tick - 1];
+                            return moodList[tick - 1].text;
                         }
                     }
                 }]

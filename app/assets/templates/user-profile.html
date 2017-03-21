@@ -9,7 +9,7 @@
             <div class="mood-info">
                 <h2>Update Your Mood</h2>
                 <select ng-change="change()" ng-model="value"
-                  ng-options="moodList.indexOf(mood) + 1 as mood for mood in moodList"
+                  ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList"
                   id="mood-selections">
                 </select>
                 <form name="explainForm" class="mood-form" ng-submit="postMoods()">

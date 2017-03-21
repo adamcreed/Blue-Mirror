@@ -14,14 +14,20 @@ module ApplicationHelper
 
   def mood_list(user)
     if not user
-      return %w(Terrible Bad Neutral Good Great)
+      list = %w(Terrible Bad Neutral Good Great).map { |mood| { text: mood } }
+      return list.to_json
     elsif not MoodList.find_by(user_id: user.id)
       MoodList.create(
         user: user,
         moods: 'Terrible, Bad, Neutral, Good, Great'
       )
     end
-    MoodList.find_by(user_id: user.id).moods.split(',').map &:strip
+
+    list = MoodList.find_by(user_id: user.id).moods.split(',').map do |mood|
+      { text: mood.strip }
+    end
+
+    list.to_json
   end
 
   def get_day(datetime)
