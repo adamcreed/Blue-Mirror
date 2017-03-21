@@ -76,7 +76,7 @@
 
         for (let i = 0; i < $scope.moodList.length; i++) {
             $scope.list.push({
-                text: $scope.moodList[i]
+                text: $scope.moodList[i].text
             });
         }
 
