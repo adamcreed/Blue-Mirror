@@ -1,6 +1,7 @@
 (function(ng) {
     ng.module('BlueMirrorApp').controller('JournalController', function($state, $scope, $q, DataRequestService, UserService) {
-
+        $scope.activeEntry = null;
+        $scope.viewEntry = null;
         $scope.currentUser = UserService.getUser();
         $scope.journalObj = {
             text: '',
@@ -8,6 +9,7 @@
         };
 
         $scope.journalsArray = [];
+        $scope.viewEntryArray = [];
         console.log($scope.journalsArray);
 
         $scope.addJournals = function() {
@@ -49,12 +51,13 @@
         $scope.patchJournalText = function(input, entry) {
             console.log('input', JSON.stringify(input));
 
-            let i = ($scope.journalsArray.indexOf(entry)) + 1;
-            let inputString = JSON.stringify(input);
-            console.log('blah blah blah', $scope.journalsArray[i].id);
-            $q.when(DataRequestService.patchEntry(`/notes/${$scope.journalsArray[i].id}`, inputString)).then((response) => {
+            let i = $scope.viewEntryArray.indexOf(entry);
+            let e = $scope.journalsArray.indexOf(entry);
+            let inputString = input;
+            $q.when(DataRequestService.patchEntry(`/notes/${$scope.viewEntryArray[i].id}`, inputString)).then((response) => {
                 console.log('response', response.data);
-                $scope.journalsArray[i].text = response.data;
+                console.log($scope.activeEntry);
+                $scope.journalsArray[e].text = response.data.location.text;
             }).catch((error) => {
                 console.log(error);
             });
@@ -76,6 +79,22 @@
         }).catch((error) => {
             console.log(error);
         });
+
+        //make past entry active
+        $scope.makeActive = function(entry, id) {
+
+            let i = $scope.journalsArray.indexOf(entry);
+            $scope.viewEntryArray = [];
+            $scope.viewEntry = null;
+            $scope.activeEntry = id;
+            if ($scope.activeEntry == $scope.journalsArray[i].id) {
+                $scope.viewEntry = id;
+                $scope.viewEntryArray.push($scope.journalsArray[i]);
+
+            }
+            // $scope.activeEntry = id;
+            // // this.activePlayer = null;
+        };
 
     });
 })(angular);
