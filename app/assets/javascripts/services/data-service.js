@@ -33,14 +33,15 @@
             });
         }
 
-        function patchData(url) {
+        function patchData(url, moodList) {
             return $http({
-                method: 'POST',
+                method: 'PATCH',
                 url: url,
                 dataType: "json",
                 headers: {
                     "content-type": "application/json;charset=utf-8"
                 },
+                data: moodList
             });
         }
 

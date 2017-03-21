@@ -65,8 +65,43 @@
         //     });
         // };
 
-        // CHART MOODS
+        // customize moods
 
+        $scope.$watch('$scope.newList', function() {
+            $scope.moodList = moodList;
+            console.log($scope.moodList);
+        });
+
+        $scope.list = [];
+
+        for (let i = 0; i < $scope.moodList.length; i++) {
+            $scope.list.push({
+                text: $scope.moodList[i]
+            });
+        }
+
+        $scope.save = function () {
+            $scope.newList = '';
+
+            for (let i = 0; i < $scope.list.length; i++) {
+                if ($scope.list[i].text) {
+                    $scope.newList += $scope.list[i].text + ', ';
+                }
+            }
+
+            $scope.newList = $scope.newList.slice(0, -2);
+
+            console.log($scope.newList);
+
+            $q.when(DataRequestService.patch('/mood_lists', { moods: $scope.newList })).then((response) => {
+                $state.go('BlueParent.profile');
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+
+        // CHART MOODS
         $scope.options = {
             responsive: true,
             scales: {

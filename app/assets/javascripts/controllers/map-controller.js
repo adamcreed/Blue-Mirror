@@ -79,7 +79,6 @@
                 detail.getDetails(request, function(result, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                         $scope.newArr.push(result);
-                        $scope.newArr = _.uniq($scope.newArr, 'formatted_phone_number');
 
                         $scope.map.markers.push({
                             id: id,

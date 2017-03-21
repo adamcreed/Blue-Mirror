@@ -49,6 +49,10 @@
             url: 'medication',
             templateUrl: 'meds-template.html',
             controller: "MedicineController as meds"
+        }).state('BlueParent.customize', {
+            url: 'customize',
+            templateUrl: 'customize-template.html',
+            controller: "ProfileController as profile"
         });
 
     });
