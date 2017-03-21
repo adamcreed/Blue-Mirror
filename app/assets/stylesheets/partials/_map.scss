@@ -5,6 +5,25 @@
     justify-content: center;
 }
 
+.map-results ul li {
+    margin-bottom: 15px;
+
+    .list-colored {
+        color: #81dde1;
+    }
+     a.result-website {
+        text-decoration: underline;
+    }
+}
+
+.result-number {
+
+}
+
+.result-website {
+
+}
+
 .map-container {
     @include bp(mobile) {
         width: 90%;

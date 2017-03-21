@@ -9,11 +9,12 @@
             <div class="mood-info">
                 <h2>Update Your Mood</h2>
                 <select ng-change="change()" ng-model="value"
-                  ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList"
+                  ng-options="moodList.indexOf(mood) + 1 as mood for mood in moodList"
                   id="mood-selections">
                 </select>
                 <form name="explainForm" class="mood-form" ng-submit="postMoods()">
-                    <a ui-sref="BlueParent.customize">Customize your moods</a>
+                    <label for="explain">Why do you feel that way?</label>
+                    <input type="text" id="explain" ng-model="explanation.text" maxlength="35" name="explain" placeholder="Please explain">
                     <input class="button" type="submit" value="Submit">
                 </form>
             </div>

@@ -33,14 +33,15 @@
             });
         }
 
-        function patchData(url) {
+        function patchData(url, moodList) {
             return $http({
-                method: 'POST',
+                method: 'PATCH',
                 url: url,
                 dataType: "json",
                 headers: {
                     "content-type": "application/json;charset=utf-8"
                 },
+                data: moodList
             });
         }
 
@@ -88,10 +89,6 @@
             patchEntry: patchEntry,
             delete: deleteData,
             patch: patchData
-            //   put: putData,
-            //   loginPost: loginPost,
-            //   postScores: postScores,
-            //   getScores: getScores
         };
     }
 

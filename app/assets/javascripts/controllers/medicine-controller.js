@@ -91,16 +91,36 @@
             $scope.addEvent();
         };
 
-        $scope.checkMedsTaken = function() {
+        $scope.$watch('calendarWatch', function() {
+            $scope.hasTakenMeds();
+        });
 
-            if (moment() > moment().startOf('day') && moment() < moment().endOf('day')) {
-                return true;
-            }
+
+        $scope.hasTakenMeds = function(event) {
+            if (typeof $('.calendar').fullCalendar('clientEvents') === 'undefined') return false;
+
+            let todaysEvents = $('.calendar').fullCalendar('clientEvents').filter(event => {
+                return moment(event.start).get('date') === moment().get('date');
+            });
+
+            let todaysTakenEvents = todaysEvents.filter(event => {
+                return event.title === "took meds ✅";
+            });
+
+            return todaysTakenEvents.length > 0;
         };
+
+        // $scope.checkMedsTaken = function() {
+        //
+        //     if (moment() > moment().startOf('day') && moment() < moment().endOf('day')) {
+        //         return true;
+        //     }
+        // };
 
         /* CALENDAR FUNCTIONS  */
 
         $scope.currentView = 'month';
+        $scope.calendarWatch = 0;
 
         /* event source that contains custom events on the scope */
         $scope.events = [];
@@ -115,20 +135,24 @@
         $scope.addEvent = function () {
 
           $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
-
+              console.log(response);
               $scope.eventId = response.data.location.id;
+              $scope.postTitle = response.data.location.title;
+
+              $scope.events.push({
+                  _id: $scope.eventId,
+                  title: $scope.postTitle,
+                  start: moment($scope.from),
+                  allDay: true,
+                  stick: true
+              });
+
+              console.log($scope.eventId);
 
           }).catch((error) => {
               console.log(error);
           });
 
-            $scope.events.push({
-                _id: $scope.eventId,
-                title: $scope.title,
-                start: moment($scope.from),
-                allDay: true,
-                stick: true
-            });
 
             $scope.eventObj.title = $scope.title;
             $scope.eventObj.from = moment($scope.from);
@@ -152,15 +176,17 @@
 
         /* Event Render */
         $scope.eventRender = function (event, element, view) {
+            $scope.calendarWatch++;
             element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
             $compile(element)($scope);
             element.append( "<span class='closeon'>❌</span>");
             element.append( "<span class='closeon'>⭐</span>");
             element.find(".closeon").click(function() {
+                // console.log(event);
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
 
                     $('.calendar').fullCalendar('removeEvents', event._id);
-
+                    console.log(event);
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -174,7 +200,7 @@
                 editable: true,
                 eventClick: function(event){
 		        $(".closon").click(function() {
-	            $('.calendar').fullCalendar('removeEvents', event.id);
+	            $('.calendar').fullCalendar('removeEvents', event._id);
    	              });
               },
                 eventRender: $scope.eventRender
