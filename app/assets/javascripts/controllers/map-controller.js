@@ -12,7 +12,7 @@
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 },
-                zoom: 13,
+                zoom: 12,
                 control: {},
                 markers: [],
                 templateUrl: 'place.html',
@@ -46,7 +46,7 @@
                 if ($scope.map.markers.length === 0) {
                     service.textSearch(request, callback);
                 }
-                
+
                 return;
             };
 
