@@ -100,7 +100,7 @@
             if (typeof $('.calendar').fullCalendar('clientEvents') === 'undefined') return false;
 
             let todaysEvents = $('.calendar').fullCalendar('clientEvents').filter(event => {
-                return moment(event.start).isSame(moment(), 'day');
+                return moment(event.start).get('date') === moment().get('date');
             });
 
             let todaysTakenEvents = todaysEvents.filter(event => {
