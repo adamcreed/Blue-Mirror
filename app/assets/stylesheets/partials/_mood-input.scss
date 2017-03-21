@@ -12,6 +12,10 @@
     }
 }
 
+span.todo-true {
+    text-decoration: line-through;
+}
+
 .mood-info {
     display: flex;
     width: 300px;
