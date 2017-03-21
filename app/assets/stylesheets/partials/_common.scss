@@ -33,6 +33,12 @@ h2 {
     padding-top: 10px;
 }
 
+h3 {
+    font-size: 1.5rem;
+    font-family: $headerFont;
+    color: $darkAccentTeal;
+}
+
 span {
     font-family: $primaryFont;
 }
@@ -134,4 +140,23 @@ input {
 .bmirror {
     width: 100px;
     height: 100px;
+}
+
+.data-id {
+    display: none;
+}
+
+textarea {
+    color: $darkAccentTeal;
+    line-height: 1.25rem;
+    font-size: 1rem;
+    padding: 1%;
+    outline: none;
+    border: none;
+}
+
+input {
+    line-height: 1.25rem;
+    font-size: 1rem;
+    padding: 1%;
 }

@@ -1,56 +1,72 @@
 <div class="journal-container" ng-controller="JournalController as entries">
     <div class="journalbtn-container">
         <button class="past-journals button" ng-click="past=true" ng-hide="past">view past entries</button>
-        <button class="add-journals button" ng-click="past=false" ng-show="past">aye</button>
+        <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>
     </div>
     <div class="add-journal-container">
-        <form name="journalForm" class="journal-form" ng-hide="past">
+        <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">
             <!-- ng-submit="" -->
-            <input type="text" class="journal-title" ng-model="title" maxlength="20">
-            <textarea class="journal-entry" type="text" ng-model="text">
+            <input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title">
+            <textarea class="journal-entry" type="text" ng-model="text" placeholder="start typing!">
     </textarea>
             <p class="error">{{error}}
             </p>
             <a class="button" ng-click="postJournals()">submit</a>
         </form>
-    </div>
-    <div class="mobile-past" ng-show="past">
-        <ul>
-            <li ng-repeat="entry in journalsArray">
-                <a class="delete-journals" ng-click="deleteJournalEntry(entry)" ng-show="past">delete</a>
-                <div ng-hide="edit"> <span class="entry">{{entry.title}}</span>
-                    <span class="entry">{{entry.text}}</span>
-                    <span class="entry">{{entry.day}}</span>
-                    <button class="edit-entry" type="submit" ng-click="edit=true"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button>
-                </div>
 
-                <form ng-hide="!edit" class="textarea-container" ng-submit="patchJournalText(text)">
+        <div ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">
+            <div>
+                <a class="edit-entry" ng-click="edit=true">edit entry</a>
+                <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->
+                <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>
+            </div>
+            <ul>
+                <h3 class="entry">{{entry.title}}</h3>
+                <li>{{entry.time}} on {{entry.day}}</li>
+                <li class="view-entry-item">{{entry.text}}</li>
+
+                <form ng-hide="!edit" class="textarea-container" ng-submit="patchJournalText(text, entry)">
                     <label class="textlabel"> edit your entry<label>
-        <textarea type="text" ng-model="text"></textarea>
+        <textarea maxlength="1000" type="text" ng-model="text"></textarea>
 
         <button class="submit-entry" type="submit" ng-click="edit=false">submit entry</button>
               </form>
-          </li>
-      </ul>
+            </ul>
+        </div>
     </div>
-    <div class="web-past">
-        <h1> </h1>
+    <div class="mobile-past" ng-show="past || activeEntry">
+        <h2>Past Entries</h2>
+        <div class="web-list">
         <ul>
-            <li ng-repeat="entry in journalsArray">
-                <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>
-                <div ng-hide="edit"> <span class="entry">{{entry.title}}</span>
+            <li  class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
+
+                <div ng-hide="edit"> <h3 class="entry">{{entry.title}}</h3>
                     <!-- <span class="entry">{{entry.text}}</span> -->
+                    <input class="data-id" data-id="{{entry.id}}"></input>
                     <span class="entry">{{entry.day}}</span>
-                    <!-- <button class="edit-entry" type="submit" ng-click="edit=true"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->
+                    <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->
                 </div>
-
-                <form ng-hide="!edit" class="textarea-container" ng-submit="patchJournalText(text)">
-                    <label class="textlabel"> edit your entry<label>
-          <textarea type="text" ng-model="text"></textarea>
-
-          <button class="submit-entry" type="submit" ng-click="edit=false">submit entry</button>
-                </form>
             </li>
         </ul>
+        <div class="list-end"></div>
+      </div>
+    </div>
+
+    <div class="web-past">
+        <h2>Past Entries</h2>
+        <div class="web-list">
+        <ul>
+            <li  class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
+
+                <div ng-hide="edit"> <h3 class="entry">{{entry.title}}</h3>
+                    <!-- <span class="entry">{{entry.text}}</span> -->
+                    <input class="data-id" data-id="{{entry.id}}"></input>
+                    <span class="entry">{{entry.day}}</span>
+                    <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->
+                </div>
+            </li>
+        </ul>
+        <div class="list-end"></div>
+      </div>
     </div>
 </div>
