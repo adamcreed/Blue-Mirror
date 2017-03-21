@@ -66,9 +66,22 @@
         // };
 
         // customize moods
+        $scope.newList = '';
 
-        $scope.$watch('$scope.newList', function() {
-            $scope.moodList = moodList;
+        // TODO: refactor loops
+
+        $scope.$watch('newList', function() {
+            if ($scope.newList.length === 0) { return }
+
+            console.log($scope.list);
+            moodList = []
+            for (let i = 0; i < $scope.list.length; i++) {
+                if ($scope.list[i].text) {
+                    moodList.push({
+                        text: $scope.list[i].text
+                    });
+                }
+            }
             console.log($scope.moodList);
         });
 
@@ -81,10 +94,10 @@
         }
 
         $scope.save = function () {
-            $scope.newList = '';
+          $scope.newList = '';
 
             for (let i = 0; i < $scope.list.length; i++) {
-                if ($scope.list[i].text) {
+              if ($scope.list[i].text) {
                     $scope.newList += $scope.list[i].text + ', ';
                 }
             }
