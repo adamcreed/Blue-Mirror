@@ -1,4 +1,4 @@
-nati(function(ng) {
+(function(ng) {
     ng.module('BlueMirrorApp').controller('JournalController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.activeEntry = null;
         $scope.viewEntry = null;
