@@ -12,6 +12,7 @@
 //
 //= require jquery/dist/jquery
 //= require angular/angular
+//= require jquery-ui/jquery-ui
 //= require angular-rails-templates
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-simple-logger/dist/angular-simple-logger
@@ -25,6 +26,7 @@
 //= require fullcalendar/dist/fullcalendar
 //= require angular-ui-calendar/src/calendar
 //= require angular-bootstrap/ui-bootstrap
+//= require angular-ui-sortable/sortable
 //= require underscore/underscore
 //= require_tree ../templates
 //= require_tree .

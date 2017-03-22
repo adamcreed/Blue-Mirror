@@ -1,5 +1,5 @@
 (function(ng) {
-    ng.module('BlueMirrorApp', ['ui.router', 'templates', 'uiGmapgoogle-maps', 'nemLogging', 'ngGeolocation', 'chart.js', 'ui.calendar', 'ui.bootstrap'])
+    ng.module('BlueMirrorApp', ['ui.router', 'templates', 'uiGmapgoogle-maps', 'nemLogging', 'ngGeolocation', 'chart.js', 'ui.calendar', 'ui.bootstrap', 'ui.sortable'])
 
         .config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProviders) {
             uiGmapGoogleMapApiProviders.configure({
