@@ -5,6 +5,9 @@
 
 .remove-row {
     cursor: pointer;
+    span {
+        cursor: move;
+    }
     display: inline-table;
 }
 
