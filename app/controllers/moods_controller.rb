@@ -61,8 +61,8 @@ class MoodsController < ApplicationController
       id: mood.id,
       mood: mood.mood,
       reason: mood.reason,
-      day: get_day(mood.created_at),
-      time: get_time(mood.created_at)
+      day: get_day(mood.created_at + Time.now.utc_offset),
+      time: get_time(mood.created_at + Time.now.utc_offset)
     }
   end
 

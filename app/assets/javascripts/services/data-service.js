@@ -45,7 +45,7 @@
             });
         }
 
-        function patchEntry(url, inputString) {
+        function patchEntry(url, inputText, inputTitle, inputTag) {
             return $http({
                 method: 'PATCH',
                 url: url,
@@ -54,7 +54,10 @@
                     "content-type": "application/json;charset=utf-8"
                 },
                 data: {
-                    text: inputString
+                    text: inputText,
+                    title: inputTitle,
+                    tag: inputTag
+
                 }
             });
         }
