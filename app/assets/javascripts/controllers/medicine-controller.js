@@ -24,8 +24,6 @@
         // get meds
         $q.when(DataRequestService.get('/meds')).then((response) => {
 
-            console.log(response.data);
-
             $scope.defaultMeds = response.data;
 
             for (var med in $scope.defaultMeds) {
@@ -57,8 +55,8 @@
                 }).catch((error) => {
                     console.log(error);
                 });
-            }
 
+            }
         };
 
         // delete meds
@@ -69,7 +67,6 @@
                 if ($scope.medications[i].done === true) {
                     $q.when(DataRequestService.delete(`/meds/${$scope.medications[i].id}`)).then((response) => {
 
-                        console.log(response);
 
                     }).catch((error) => {
                         console.log(error);

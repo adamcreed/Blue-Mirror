@@ -3,6 +3,10 @@
     align-items: center;
 }
 
+.remove-row {
+    cursor: pointer;
+}
+
 input#value.custom-mood {
     width: 25%;
 }

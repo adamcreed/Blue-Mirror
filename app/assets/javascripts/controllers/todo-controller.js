@@ -8,7 +8,6 @@
         };
 
         $scope.todos = [];
-        console.log($scope.todos);
         $scope.randomArray = [];
 
         // total todos
@@ -25,8 +24,6 @@
 
         // get todos
         $q.when(DataRequestService.get('/todos')).then((response) => {
-
-            // console.log(response.data);
 
             $scope.defaultTodos = response.data;
 

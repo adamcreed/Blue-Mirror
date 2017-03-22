@@ -148,7 +148,7 @@
                     }],
                     yAxes: [{
                         ticks: {
-                            fontColor: 'red',
+                            fontColor: 'blue',
                             min: 0,
                             max: $scope.highestMood,
                             stepSize: 1,
