@@ -3,7 +3,7 @@
                 <div class="row-list" ng-repeat="row in list">
                     <input type="text" class="form-control" ng-model="row.text" /><span ng-click="del(row)" class="remove-row">❌</span>
                 </div>
-                <input ng-disabled="list.length === 10" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />
+                <input ng-class="{'disableButton': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />
                 <button class="btn btn-default">Submit</button>
                 <p>Note: Altering moods will reflect on your mood chart</p>
             </form>

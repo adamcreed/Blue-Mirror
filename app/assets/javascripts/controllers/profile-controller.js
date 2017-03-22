@@ -124,6 +124,12 @@
             $scope.list.splice(index, 1);
         };
 
+        $scope.isDisabled = function() {
+                if($scope.list.length === 10) {
+                    return true;
+                }
+        };
+
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
@@ -142,7 +148,7 @@
                     }],
                     yAxes: [{
                         ticks: {
-                            fontColor: 'red',
+                            fontColor: 'blue',
                             min: 0,
                             max: $scope.highestMood,
                             stepSize: 1,

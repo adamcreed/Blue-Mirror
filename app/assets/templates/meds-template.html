@@ -10,11 +10,13 @@
                     <input style="display: none;" data-id="{{med.id}}"></input>
                 </li>
             </ul>
-            <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
-            <p class="error">{{error}}</p>
-            <a class="button" ng-click="postMeds()"> Add Medication</a>
-            <a class="button" ng-click="deleteMeds()">Remove Selected</a>
-            <button class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my medication today</button>
+            <form ng-submit="postMeds()">
+                <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
+                <p class="error">{{error}}</p>
+                <button type="submit" class="button" ng-submit"postMeds()"> Add Medication</button>
+                <a class="button" ng-click="deleteMeds()">Remove Selected</a>
+            </form>
+            <button ng-class="{'disableButton': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my medication today</button>
         </div>
     </div>
 </div>
