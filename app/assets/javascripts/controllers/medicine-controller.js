@@ -80,9 +80,10 @@
         $scope.tookMeds = function() {
             console.log($scope.events);
             $scope.title = 'took meds ✅';
+            $scope.from = moment().startOf('day').toDate();
             $scope.eventObj = {
                                 title: $scope.title,
-                                from: moment()
+                                completed: true
                             };
 
             $scope.addEvent();
@@ -122,17 +123,19 @@
         /* event source that contains custom events on the scope */
         $scope.events = [];
 
-
+        $scope.from = ''
         $scope.eventObj = {
                             title: '',
+                            completed: false,
                             from: ''
                         };
 
         /* add custom event*/
         $scope.addEvent = function () {
+          console.log('before ', $scope.eventObj);
 
           $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
-              console.log(response);
+              console.log('after ', $scope.eventObj);
               $scope.eventId = response.data.location.id;
               $scope.postTitle = response.data.location.title;
 
@@ -143,6 +146,12 @@
                   allDay: true,
                   stick: true
               });
+
+              $scope.eventObj = {
+                                  title: '',
+                                  completed: false,
+                                  from: ''
+                              }
 
               console.log($scope.eventId);
 

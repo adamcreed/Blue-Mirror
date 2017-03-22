@@ -56,8 +56,8 @@ class NotesController < ApplicationController
       title: note.title,
       text: note.text,
       tags: note.tags,
-      day: get_day(note.created_at),
-      time: get_time(note.created_at)
+      day: get_day(note.created_at + Time.now.utc_offset),
+      time: get_time(note.created_at + Time.now.utc_offset)
     }
   end
 
