@@ -7,7 +7,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
              ssl: { ca_file: Rails.root.join('cacert.pem').to_s }
            },
            name: 'google',
-           scope: 'email, profile, calendar'
+           scope: 'email, profile'
 
   provider :facebook, ENV.fetch('FACEBOOK_APP_ID'),
            ENV.fetch('FACEBOOK_APP_SECRET')

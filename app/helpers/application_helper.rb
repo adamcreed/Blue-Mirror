@@ -35,6 +35,6 @@ module ApplicationHelper
   end
 
   def get_time(datetime)
-    datetime.time.to_s(:time)
+    ((datetime + Time.now.utc_offset).time + 12 * 3600).strftime('%l:%M %P')
   end
 end

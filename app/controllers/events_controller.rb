@@ -55,7 +55,7 @@ class EventsController < ApplicationController
     {
       id: event.id,
       title: event.title,
-      start: event.from.to_date,
+      start: (event.from + Time.now.utc_offset),
       frequency: event.frequency,
       completed: event.completed,
       user_id: event.user_id,

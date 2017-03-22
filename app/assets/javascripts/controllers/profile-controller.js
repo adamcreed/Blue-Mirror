@@ -75,11 +75,11 @@
         // TODO: refactor loops
 
         $scope.$watch('newList', function() {
+
             if ($scope.newList.length === 0) {
                 return;
             }
 
-            // console.log($scope.list);
             moodList = [];
             for (let i = 0; i < $scope.list.length; i++) {
                 if ($scope.list[i].text) {
@@ -92,43 +92,49 @@
 
         $scope.list = [];
 
-        for (let i = 0; i < $scope.moodList.length; i++) {
-            $scope.list.push({
-                text: $scope.moodList[i].text
-            });
-        }
+        $scope.$watch('list', function() {
 
-        $scope.save = function() {
-            $scope.newList = '';
-
-            for (let i = 0; i < $scope.list.length; i++) {
-                if ($scope.list[i].text) {
-                    $scope.newList += $scope.list[i].text + ', ';
-                }
+            for (let i = 0; i < $scope.moodList.length; i++) {
+                $scope.list.push({
+                    text: $scope.moodList[i].text
+                });
             }
 
-            $scope.newList = $scope.newList.slice(0, -2);
+            $scope.save = function() {
+                $scope.newList = '';
 
-            $q.when(DataRequestService.patch('/mood_lists', {
-                moods: $scope.newList
-            })).then((response) => {
-                $state.go('BlueParent.profile');
+                for (let i = 0; i < $scope.list.length; i++) {
+                    if ($scope.list[i].text) {
+                        $scope.newList += $scope.list[i].text + ', ';
+                    }
+                }
 
-            }).catch((error) => {
-                console.log(error);
-            });
-        };
+                $scope.newList = $scope.newList.slice(0, -2);
 
-        $scope.del = function(item) {
-            let index = $scope.list.indexOf(item);
-            $scope.list.splice(index, 1);
-        };
+                $q.when(DataRequestService.patch('/mood_lists', {
+                    moods: $scope.newList
+                })).then((response) => {
+                    $state.go('BlueParent.profile');
 
-        $scope.isDisabled = function() {
+                }).catch((error) => {
+                    console.log(error);
+                });
+            };
+
+            $scope.del = function(item) {
+                let index = $scope.list.indexOf(item);
+                $scope.list.splice(index, 1);
+            };
+
+            $scope.isDisabled = function() {
                 if($scope.list.length === 10) {
                     return true;
                 }
-        };
+            };
+        });
+
+
+
 
 
         // CHART MOODS
