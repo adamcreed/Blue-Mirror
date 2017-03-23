@@ -11,18 +11,15 @@
     .list-colored {
         color: #81dde1;
     }
-     a.result-website {
+
+    a.result-website {
         text-decoration: underline;
     }
 }
 
-.result-number {
+.result-number {}
 
-}
-
-.result-website {
-
-}
+.result-website {}
 
 .map-container {
     @include bp(mobile) {
@@ -57,7 +54,7 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 15px solid $accentTeal;
+    border: 15px solid $mainColor;
     border-top-color: $darkAccentTeal;
     animation: spin 1s infinite linear;
 }

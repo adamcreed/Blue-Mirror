@@ -6,22 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Depression, Anxiety, Coping">
     <meta name="author" content="Adam Reed, Amineta Lo, Katherine Hill">
+    <link rel="stylesheet" href='font-awesome-4.7.0/css/font-awesome.min.css'>
 </head>
 
 <body>
+  <div class="signout">
+    <span><i class="fa fa-sign-out" aria-hidden="true"></i><a href="signout">sign out</a></span>
+  </div>
+<div class="all-container">
+    <div class="left-aside" ng-show="currentUser">
+      <span class="logo-container"><img class="bmirror" src="images/betalogo.png"/> <span>Blue Mirror</span></span>
+<span class="moti-container"><i class="fa fa-quote-left" aria-hidden="true"></i>
+A coping tool for those with depression and anxiety.<i class="fa fa-quote-right" aria-hidden="true"></i></span>
+<span class='moti-click'><i class="fa fa-smile-o" aria-hidden="true"></i></span>
 
+
+    </div>
     <nav ng-show="currentUser" class="fixed-nav">
       <span class="menu-hover">  <img class="bmirror" src="images/betalogo.png" /></span>
         <ul>
             <li><a ui-sref="BlueParent.profile">Home</a></li>
             <li><a ui-sref="BlueParent.meds">Meds</a></li>
-            <li><a ui-sref="BlueParent.mood">Mood</a></li>
+            <li><a ui-sref="BlueParent.mood">Mood Chart</a></li>
             <li><a ui-sref="BlueParent.journal">Journal</a></li>
         </ul>
     </nav>
-
+    <div class="content-container">
     <ui-view></ui-view>
-
+  </div>
+</div>
 </body>
 
 </html>
