@@ -1,4 +1,4 @@
-nati(function(ng) {
+(function(ng) {
     ng.module('BlueMirrorApp').controller('JournalController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.activeEntry = null;
         $scope.viewEntry = null;
@@ -72,6 +72,7 @@ nati(function(ng) {
                     arrayIndex.text = response.data.location.text;
                     arrayIndex.title = response.data.location.title;
                     arrayIndex.tag = response.data.location.tag;
+
                 }
                 $('ul #edit-text, ul #edit-title, ul #edit-tags').removeClass('editable');
                 $('ul #edit-text, ul #edit-title, ul #edit-tags').attr('contenteditable', false);
