@@ -46,6 +46,9 @@ GEM
       tilt
     arel (7.1.4)
     bcrypt (3.1.11)
+    bourbon (4.3.3)
+      sass (~> 3.4)
+      thor (~> 0.19)
     bower-rails (0.11.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -249,6 +252,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  bourbon
   bower-rails
   devise_token_auth
   dotenv-rails

@@ -15,7 +15,7 @@
                 <li ng-repeat="todo in todos">
                     <input class="checkbox" type="checkbox" ng-model="todo.done" />
                     <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>
-                    <input class="data-id" data-id="{{todo.id}}"></input>
+                    <!-- <input class="data-id" data-id="{{todo.id}}"></input> -->
                 </li>
             </ul>
             <form ng-submit="postTodos()">
