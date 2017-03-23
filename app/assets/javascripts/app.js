@@ -53,6 +53,10 @@
             url: 'customize',
             templateUrl: 'customize-template.html',
             controller: "ProfileController as profile"
+        }).state('BlueParent.hotline', {
+            url: 'helpline',
+            templateUrl: 'hotline-template.html',
+            controller: "ProfileController as profile"
         });
 
     });

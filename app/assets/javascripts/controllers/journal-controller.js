@@ -72,6 +72,7 @@
                     arrayIndex.text = response.data.location.text;
                     arrayIndex.title = response.data.location.title;
                     arrayIndex.tag = response.data.location.tag;
+
                 }
                 $('ul #edit-text, ul #edit-title, ul #edit-tags').removeClass('editable');
                 $('ul #edit-text, ul #edit-title, ul #edit-tags').attr('contenteditable', false);
