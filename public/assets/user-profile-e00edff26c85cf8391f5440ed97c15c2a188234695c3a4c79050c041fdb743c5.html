@@ -1,0 +1,36 @@
+<div class="signout">
+    <a href="signout">sign out</a>
+
+    <span>Hello, {{currentUser.name}}<span>
+</div>
+<div class="background-container">
+    <div class="container mood">
+        <div class="update-mood-container">
+            <div class="mood-info">
+                <h2 ng-show="!isSubmitted">Update Your Mood</h2>
+                <select ng-show="!isSubmitted" ng-change="change()" ng-model="value"
+                  ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList"
+                  id="mood-selections">
+                </select>
+                <form ng-show="!isSubmitted" name="explainForm" class="mood-form" ng-submit="postMoods()">
+                    <a ui-sref="BlueParent.customize">Customize your moods</a>
+                    <input class="button" type="submit" value="Submit">
+                </form>
+                <div ng-show="isSubmitted" class="mood-updated">
+                    <h2>Mood Updated! do you want to write about it in your <a ui-sref="BlueParent.journal">journal</a>?</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="counselors">
+    <div class="local-counselors-container">
+        <button class="counselors" type="submit"><a ui-sref="BlueParent.counselors">Local Counselors</a></button>
+    </div>
+    <div class="emergency-services">
+        <a ui-sref="BlueParent.hotline">helplines</a>
+    </div>
+    <div class="todo-link">
+      <a ui-sref="BlueParent.todo"class='button'>get motivated</a>
+    </div>
+</div>
