@@ -22,12 +22,12 @@ class MoodsController < ApplicationController
   # POST /moods.json
   def create
     max_mood = mood_list(current_user).length
-    params['user_id'] = current_user.id
+    params['user_id'] = current_user.id if current_user
     params['mood'] = max_mood if params['mood'] > max_mood
     @mood = Mood.new(mood_params)
 
     if @mood.save
-      render json: { status: :created, location: format_mood(@mood) }
+      render json: { location: format_mood(@mood) }, status: :created
     else
       render json: @mood.errors, status: :unprocessable_entity
     end

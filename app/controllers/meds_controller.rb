@@ -17,11 +17,11 @@ class MedsController < ApplicationController
   # POST /meds
   # POST /meds.json
   def create
-    params['user_id'] = current_user.id
+    params['user_id'] = current_user.id if current_user
     @med = Med.new(med_params)
 
     if @med.save
-      render json: { status: :created, location: @med }
+      render json: { location: @med }, status: :created
     else
       render json: @med.errors, status: :unprocessable_entity
     end
