@@ -1,6 +1,4 @@
-.error {
-    color: $accentCream;
-}
+.error {}
 
 .todo-wrapper {
     margin-bottom: 50px;
@@ -33,11 +31,6 @@
     }
 }
 
-input {
-    vertical-align: top;
-    color: #97a0af;
-}
-
 span.med-true {
     text-decoration: line-through;
 }
@@ -51,12 +44,6 @@ span.med-true {
 .button-container {
     display: flex;
     justify-content: space-between;
-
-    .button {
-        height: 90%;
-        width: 45%;
-        font-size: 0.9rem;
-    }
 }
 
 .other-todos {
@@ -64,10 +51,8 @@ span.med-true {
     width: 300px;
     border-radius: $radius;
     background: rgba($accentCream,.8);
+}
 
-    span {
-        display: flex;
-        justify-content: flex-end;
-        color: $mainColor;
-    }
+span.todo-true {
+    text-decoration: line-through;
 }
