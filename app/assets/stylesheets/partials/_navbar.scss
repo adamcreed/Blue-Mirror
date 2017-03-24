@@ -1,6 +1,6 @@
 .content-container {
     @include bp (mobile) {
-        margin-top: 50px;
+        padding-top: 70px;
     }
     @include bp (small) {
         // margin-top: 0;
@@ -17,6 +17,12 @@
 }
 
 .signout {
+    @include bp (mobile) {
+        width: 100%;
+    }
+    @include bp (small) {
+        width: 250px;
+    };
     height: 50px;
     position: fixed;
     z-index: 2;
