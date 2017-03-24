@@ -21,9 +21,7 @@ class MoodsController < ApplicationController
   # POST /moods
   # POST /moods.json
   def create
-    max_mood = mood_list(current_user).length
     params['user_id'] = current_user.id if current_user
-    params['mood'] = max_mood if params['mood'] > max_mood
     @mood = Mood.new(mood_params)
 
     if @mood.save
