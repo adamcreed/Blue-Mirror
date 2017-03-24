@@ -1,21 +1,32 @@
 .shapes {
-    margin: 1% auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    @include bp (mobile) {
+        width: 100%;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
     @include bp (small) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 1% auto;
         width: 643px;
         height: 520px;
     }
 
     div {
         background: $mainColor;
-        margin: 5px;
         display: flex;
+        margin: 3px;
         justify-content: center;
         align-items: center;
-        @include bp (mobile) {}
+        @include bp (mobile) {
+            width: 192px;
+            height: 190px;
+        }
         @include bp (small) {
             margin: 5px;
             width: 300px;
@@ -27,6 +38,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            @include bp (mobile) {
+                width: 182px;
+                height: 180px;
+            }
             @include bp (small) {
                 height: 230px;
                 width: 270px;
@@ -35,8 +50,12 @@
             span {
                 font-family: $headerFont;
                 color: white;
+                text-align: center;
+                @include bp (mobile) {
+                    width: 75%;
+                    font-size: 1.5rem;
+                }
                 @include bp (small) {
-                    text-align: center;
                     width: 60%;
                     font-size: 1.8rem;
                 }
@@ -47,9 +66,18 @@
     .four,
     .one {
         a {
+            @include bp (mobile) {
+                border: 3px solid white;
+                border-top-left-radius: 7.9rem;
+                border-bottom-right-radius: 7.9rem;
+            }
             border: 15px double white;
             border-top-left-radius: 9rem;
             border-bottom-right-radius: 9rem;
+        }
+        @include bp (mobile) {
+            border-top-left-radius: 8rem;
+            border-bottom-right-radius: 8rem;
         }
         border-top-left-radius: 9.5rem;
         border-bottom-right-radius: 9.5rem;
@@ -58,9 +86,18 @@
     .three,
     .two {
         a {
+            @include bp (mobile) {
+                border: 3px solid white;
+                border-top-right-radius: 7.9rem;
+                border-bottom-left-radius: 7.9rem;
+            }
             border: 15px double white;
             border-top-right-radius: 9rem;
             border-bottom-left-radius: 9rem;
+        }
+        @include bp (mobile) {
+            border-top-right-radius: 8rem;
+            border-bottom-left-radius: 8rem;
         }
         border-top-right-radius: 9.5rem;
         border-bottom-left-radius: 9.5rem;
