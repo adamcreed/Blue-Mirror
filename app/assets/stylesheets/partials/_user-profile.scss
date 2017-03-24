@@ -13,6 +13,9 @@
         height: 250px;
         background: $mainColor;
         margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 
     .four,
