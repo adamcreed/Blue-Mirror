@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320003823) do
+ActiveRecord::Schema.define(version: 20170323195812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(version: 20170320003823) do
     t.index ["user_id"], name: "index_notes_on_user_id", using: :btree
   end
 
+  create_table "persons", force: :cascade do |t|
+    t.string "last_name"
+  end
+
   create_table "todos", force: :cascade do |t|
     t.string   "todo"
     t.integer  "user_id"
@@ -73,7 +77,6 @@ ActiveRecord::Schema.define(version: 20170320003823) do
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
-    t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false

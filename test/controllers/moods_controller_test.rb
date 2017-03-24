@@ -12,7 +12,7 @@ class MoodsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create mood" do
     assert_difference('Mood.count') do
-      post moods_url, params: { mood: { mood: @mood.mood, reason: @mood.reason, user_id: @mood.user_id } }, as: :json
+      post moods_url, params: { mood: @mood.mood, reason: @mood.reason, user_id: @mood.user_id }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class MoodsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update mood" do
-    patch mood_url(@mood), params: { mood: { mood: @mood.mood, reason: @mood.reason, user_id: @mood.user_id } }, as: :json
+    patch mood_url(@mood), params: { mood: @mood.mood, reason: @mood.reason, user_id: @mood.user_id }, as: :json
     assert_response 200
   end
 
