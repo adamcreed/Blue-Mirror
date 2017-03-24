@@ -102,6 +102,12 @@ button {
     border-radius: $radius;
 }
 
+.disableButton {
+    opacity: 0.35;
+    background: #eee;
+    color: #444;
+}
+
 .bmirror {
     width: 100px;
     height: 100px;
@@ -114,7 +120,7 @@ button {
 //
 
 h2 {
-    // font-size: 2rem;
+    font-size: 2em;
     font-family: $headerFont;
 }
 //
@@ -143,11 +149,6 @@ h3 {
 //     margin-top: 50px;
 // }
 //
-// .disableButton {
-//     opacity: 0.35;
-//     background: #eee;
-//     color: #444;
-// }
 //
 // button {
 //     text-transform: uppercase;
