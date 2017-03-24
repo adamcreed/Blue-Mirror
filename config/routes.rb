@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'auth/current', to: 'sessions#current'
   get 'todos/featured', to: 'todos#featured'
+  get 'inspos', to: 'inspos#index'
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]

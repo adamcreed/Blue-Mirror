@@ -8,7 +8,7 @@ class TodosController < ApplicationController
   end
 
   def featured
-    render json: featured_todos
+    render json: featured('db/data/todos.seed')
   end
 
   # GET /todos/1
