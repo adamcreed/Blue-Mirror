@@ -1,7 +1,34 @@
+.container-mood {
+    display: flex;
+    justify-content: center;
+
+    input.button {
+        margin-top: 20px;
+    }
+}
+
+.update-mood-container {
+    h2 {
+        color: #35635d;
+        padding-bottom: 20px;
+    }
+
+    form {
+        padding-top: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        input.button {
+            align-self: center;
+        }
+    }
+}
+
 .select_style {
 	background: #FFF;
 	overflow: hidden;
-	display: inline-block;
+	// display: inline-block;
 	color: #525252;
 	font-weight: 300;
 	-webkit-border-radius: 5px 4px 4px 5px/5px 5px 4px 4px;
@@ -15,7 +42,7 @@
 	position: relative;
 	cursor: pointer;
 	padding-right: 20px;
-    width: 25%;
+    // width: 25%;
 }
 
 .select_style span {
