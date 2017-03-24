@@ -1,12 +1,8 @@
 .content-container {
     @include bp (mobile) {
-        padding-top: 70px;
+        padding: 70px 15px 15px;
     }
     @include bp (small) {
-        // margin-top: 0;
-        // padding: 50px 10px 10px 50px;
-        // position: fixed;
-        // width: 75%;
         margin-top: 0;
         padding: 73px 22px 10px 300px;
         left: 250px;
