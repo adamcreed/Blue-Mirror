@@ -11,10 +11,13 @@
     h2 {
         color: #35635d;
         padding-bottom: 20px;
+        text-align: center;
+        font-size: 2em;
     }
 
     form {
         padding-top: 20px;
+        padding-bottom: 20px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -26,6 +29,17 @@
         input.button {
             align-self: center;
         }
+    }
+}
+
+.mood-updated {
+    h2 {
+        font-size: 23px;
+    }
+
+    a {
+        font-size: 17px;
+        color: $accentBrightRed;
     }
 }
 
@@ -46,7 +60,8 @@
 	position: relative;
 	cursor: pointer;
 	padding-right: 20px;
-    // width: 25%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .select_style span {
