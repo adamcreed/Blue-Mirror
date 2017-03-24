@@ -3,14 +3,17 @@
         margin-top: 50px;
     }
     @include bp (small) {
+        // margin-top: 0;
+        // padding: 50px 10px 10px 50px;
+        // position: fixed;
+        // width: 75%;
         margin-top: 0;
-        padding: 50px 10px 10px 50px;
-        position: fixed;
+        padding: 73px 22px 10px 300px;
         left: 250px;
         top: 50px;
-        width: 75%;
+        width: 100%;
+        margin: 0 auto;
     }
-    //we need to scroll this container
 }
 
 .signout {
