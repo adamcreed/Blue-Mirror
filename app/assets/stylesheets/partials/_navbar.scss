@@ -3,12 +3,10 @@
         padding: 70px 15px 15px;
     }
     @include bp (small) {
-        margin-top: 0;
         padding: 73px 22px 10px 300px;
         left: 250px;
         top: 50px;
-        width: 100%;
-        margin: 0 auto;
+        width: calc(100% -250px);
     }
 }
 
@@ -31,6 +29,11 @@
     background: white;
 
     span {
+        @include bp (small) {
+            &:hover {
+                font-size: 1.25rem;
+            }
+        }
         text-align: center;
         width: 50%;
 
@@ -96,6 +99,12 @@
         padding: 5px;
         border-top: $border;
         width: 100%;
+
+        i {
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
 
@@ -129,7 +138,8 @@
                 text-align: center;
 
                 &:hover {
-                    font-size: 2rem;
+                    font-size: 1.25rem;
+                    padding-top: 16px;
                 }
             }
         }
