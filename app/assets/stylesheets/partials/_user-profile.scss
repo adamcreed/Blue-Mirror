@@ -29,7 +29,7 @@
         }
         @include bp (small) {
             margin: 5px;
-            width: 300px;
+            width: 290px;
             height: 250px;
         }
 
@@ -76,11 +76,11 @@
             border-bottom-right-radius: 9rem;
         }
         @include bp (mobile) {
-            border-top-left-radius: 8rem;
-            border-bottom-right-radius: 8rem;
+            border-top-left-radius: 8.2rem;
+            border-bottom-right-radius: 8.2rem;
         }
-        border-top-left-radius: 9.5rem;
-        border-bottom-right-radius: 9.5rem;
+        border-top-left-radius: 9.7rem;
+        border-bottom-right-radius: 9.7rem;
     }
 
     .three,
@@ -96,11 +96,11 @@
             border-bottom-left-radius: 9rem;
         }
         @include bp (mobile) {
-            border-top-right-radius: 8rem;
-            border-bottom-left-radius: 8rem;
+            border-top-right-radius: 8.2rem;
+            border-bottom-left-radius: 8.2rem;
         }
-        border-top-right-radius: 9.5rem;
-        border-bottom-left-radius: 9.5rem;
+        border-top-right-radius: 9.7rem;
+        border-bottom-left-radius: 9.7rem;
     }
 }
 // .update-mood-container {
