@@ -16,6 +16,7 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client', require: 'google/apis/calendar_v3'
 
 gem 'angular-rails-templates'
+gem 'bourbon'
 gem 'bower-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

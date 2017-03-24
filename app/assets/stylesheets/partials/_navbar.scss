@@ -116,14 +116,6 @@
                 width: 25%;
                 padding-top: 18px;
                 text-align: center;
-                // border-left: $border;
-                &:first-child {
-                    border-left: none;
-                }
-
-                &:last-child {
-                    // border-right: $border;
-                }
 
                 &:hover {
                     font-size: 2rem;
