@@ -19,6 +19,10 @@
         display: flex;
         flex-direction: column;
 
+        a {
+            color: $accentBrightRed;
+        }
+
         input.button {
             align-self: center;
         }
