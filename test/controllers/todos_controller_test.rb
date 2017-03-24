@@ -12,7 +12,7 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create todo" do
     assert_difference('Todo.count') do
-      post todos_url, params: { todo: { todo: @todo.todo, user_id: @todo.user_id } }, as: :json
+      post todos_url, params: { todo: @todo.todo, user_id: @todo.user_id }, as: :json
     end
 
     assert_response 201
@@ -21,11 +21,6 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
   test "should show todo" do
     get todo_url(@todo), as: :json
     assert_response :success
-  end
-
-  test "should update todo" do
-    patch todo_url(@todo), params: { todo: { todo: @todo.todo, user_id: @todo.user_id } }, as: :json
-    assert_response 200
   end
 
   test "should destroy todo" do
