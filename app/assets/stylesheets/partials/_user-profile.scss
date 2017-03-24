@@ -1,3 +1,32 @@
+.shapes {
+    width: 643px;
+    height: 545px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 5px solid $mainColor;
+    border-radius: 10.4rem;
+
+    div {
+        width: 300px;
+        height: 250px;
+        background: $mainColor;
+        margin: 5px;
+    }
+
+    .four,
+    .one {
+        border-top-left-radius: 9.5rem;
+        border-bottom-right-radius: 9.5rem;
+    }
+
+    .three,
+    .two {
+        border-top-right-radius: 9.5rem;
+        border-bottom-left-radius: 9.5rem;
+    }
+}
 // .update-mood-container {
 //     margin: 20px;
 // }
