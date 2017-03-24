@@ -28,6 +28,11 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        padding-bottom: 10px;
+
+        @include bp(small) {
+            padding-left: 60px;
+        }
 
         li {
             display: flex;
@@ -51,6 +56,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 5px;
 
         input {
             width: 55%
@@ -62,10 +68,23 @@
 .med-buttons {
     display: inline-flex;
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    button:nth-child(2) {
+        background: $accentDullRed;
+    }
+}
+
+button.took-meds {
+    width: 263px;
+    background: #73a739;
 }
 
 
-
+.form-container {
+    padding-top: 20px;
+}
 
 
 // .medication-container {
