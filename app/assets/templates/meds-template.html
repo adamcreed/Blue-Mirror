@@ -1,9 +1,9 @@
 <div class="medication-container">
-    <div class="todo-wrapper">
-        <h2 class="total-items">Current Medication:</h2>
-        <a ng-hide="show">Add current medications you're taking . . .</a>
-        <div class="todo-list">
-            <ul class="nav">
+    <div class="medication-wrapper">
+        <h2 class="total-items">Current Medication</h2>
+        <span ng-hide="show">Add current medications you're taking</span>
+        <div class="med-list">
+            <ul class="med-nav">
                 <li ng-repeat="med in medications">
                     <input class="checkbox" type="checkbox" ng-model="med.done" />
                     <span class="med-{{med.done}} todo">{{med.name}}</span>
@@ -11,7 +11,7 @@
                 </li>
             </ul>
             <form ng-submit="postMeds()">
-                <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
+                <input type="text" Placeholder="Enter Medication" maxlength="100" ng-model="input" />
                 <p class="error">{{error}}</p>
                 <button type="submit" class="button" ng-submit"postMeds()"> Add Medication</button>
                 <a class="button" ng-click="deleteMeds()">Remove Selected</a>
