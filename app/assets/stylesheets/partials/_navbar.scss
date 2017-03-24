@@ -101,11 +101,12 @@
         .bmirror {
             display: none;
         }
+        border-bottom: $border;
         height: 50px;
         background: white;
 
         ul {
-            width: 85%;
+            width: 70%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -115,17 +116,6 @@
                 width: 25%;
                 padding-top: 18px;
                 text-align: center;
-                border-left: $border;
-                border-bottom: $border;
-
-                &:first-child {
-                    border-left: none;
-                }
-
-                &:last-child {
-                    border-right: $border;
-                    margin-right: 43px;
-                }
 
                 &:hover {
                     font-size: 2rem;
