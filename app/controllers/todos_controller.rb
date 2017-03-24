@@ -1,5 +1,4 @@
 class TodosController < ApplicationController
-  include ApplicationHelper
   # GET /todos
   # GET /todos.json
   def index

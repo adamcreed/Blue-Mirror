@@ -1,5 +1,4 @@
 class InsposController < ApplicationController
-  include ApplicationHelper
   # GET /inspos
   # GET /inspos.json
   def index
