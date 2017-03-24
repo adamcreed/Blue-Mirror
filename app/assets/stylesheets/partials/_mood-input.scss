@@ -1,10 +1,6 @@
 .container-mood {
     display: flex;
     justify-content: center;
-
-    input.button {
-        margin-top: 20px;
-    }
 }
 
 .update-mood-container {
@@ -22,8 +18,8 @@
         display: flex;
         flex-direction: column;
 
-        a {
-            color: $accentBrightRed;
+        button.customize-link {
+            width: 262px;
         }
 
         input.button {
