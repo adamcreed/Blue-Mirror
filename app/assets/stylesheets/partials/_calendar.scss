@@ -1,3 +1,7 @@
+.calendar-events {
+    text-align: center;
+}
+
 .form-container {
     display: flex;
     width: 100%;
@@ -105,11 +109,4 @@ div.fc .fc-button-group > * {
 div button.fc-next-button {
     margin-right: 2px !important;
     width: 158px;
-}
-
-.fc-right {
-    // button:nth-child(1) {
-    //     width: 161px;
-    //     margin-right: 5px;
-    // }
 }
