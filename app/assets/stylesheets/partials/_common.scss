@@ -127,7 +127,7 @@ button {
 h2 {
     font-size: 2em;
     font-family: $headerFont;
-    color: darkAccentTeal;
+    color: $darkAccentTeal;
 }
 //
 
@@ -142,6 +142,20 @@ label {
     color: $darkAccentTeal;
     font-weight: 600;
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $darkAccentTeal;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $darkAccentTeal;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $darkAccentTeal;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $darkAccentTeal;
+}
+
 //
 // p {
 //     font-family: $primaryFont;

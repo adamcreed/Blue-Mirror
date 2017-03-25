@@ -6,8 +6,55 @@
     display: flex;
     width: 100%;
     justify-content: center;
-}
 
+    form {
+        @include bp(small) {
+            display: flex;
+            align-items: baseline;
+
+            .pull-right {
+                width: 200px;
+                height: 38px;
+            }
+
+            label {
+                margin-right: 5px;
+                font-size: 20px;
+            }
+
+            button.btn.btn-primary.pull-right {
+                font-size: 13px;
+            }
+
+            .col-sm-10 {
+                margin-right: 20px;
+
+                button[type=submit] {
+                    font-size: 0px;
+                    padding: 11px;
+                }
+
+                input {
+                    padding: 5px;
+                    width: initial;
+                }
+
+                input[type=date] {
+                    font-family: $primaryFont;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                }
+
+                input[type=text] {
+                    font-family: $primaryFont;
+                    font-size: 0.8rem;
+                    width: 200px;
+                    padding: 5.7px;
+                }
+            }
+        }
+    }
+}
 // .form-horizontal {
 //     display: flex;
 // }
@@ -43,11 +90,8 @@
 //     white-space: normal !important;
 //
 // }
-
-
-
 /*** Calendar ***/
- .calXBtn {
+.calXBtn {
     float: right;
     margin-top: -5px;
     margin-right: -5px;
@@ -80,7 +124,6 @@
     button {
         width: 164px;
     }
-
 }
 
 .calendar .fc-toolbar .fc-left {
