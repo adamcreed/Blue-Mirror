@@ -1,5 +1,19 @@
 .medication-container {
     margin-bottom: 50px;
+
+    .line {
+        @include bp(mobile) {
+            margin-top: 20px;
+        }
+        width: 50%;
+        height: 20px;
+        margin: 0 auto;
+        border-bottom: 2px solid $accentTeal;
+
+        @include bp(small) {
+            margin-top: 40px;
+        }
+    }
 }
 
 .medication-wrapper {
@@ -91,7 +105,7 @@
     @include bp(mobile) {
         width: 75%;
         padding-top: 15px;
-        margin-left: -3px;
+        margin-left: 25px;
     }
     @include bp(small) {
         display: inline-flex;
@@ -105,7 +119,8 @@
 button.took-meds {
     background: #73a739;
     @include bp(mobile) {
-        width: 270px;
+        width: 279px;
+        margin-left: 6px;
     }
     @include bp(small) {
         width: 263px;

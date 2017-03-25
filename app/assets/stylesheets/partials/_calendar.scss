@@ -1,5 +1,8 @@
 .calendar-events {
     text-align: center;
+    @include bp(mobile) {
+        padding-bottom: 20px;
+    }
 }
 
 .form-container {
@@ -8,6 +11,29 @@
     justify-content: center;
 
     form {
+
+        input[type=date] {
+            font-family: $primaryFont;
+            text-transform: uppercase;
+        }
+
+        input[type=text] {
+            font-family: $primaryFont;
+            width: 200px;
+            padding: 5.7px;
+        }
+
+        @include bp(mobile) {
+            label {
+                font-size: 18px;
+                border-bottom: 1px solid $accentTeal;
+            }
+            .col-sm-10 {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
         @include bp(small) {
             display: flex;
             align-items: baseline;
@@ -20,6 +46,7 @@
             label {
                 margin-right: 5px;
                 font-size: 20px;
+                border: none;
             }
 
             button.btn.btn-primary.pull-right {
@@ -39,18 +66,6 @@
                     width: initial;
                 }
 
-                input[type=date] {
-                    font-family: $primaryFont;
-                    font-size: 0.8rem;
-                    text-transform: uppercase;
-                }
-
-                input[type=text] {
-                    font-family: $primaryFont;
-                    font-size: 0.8rem;
-                    width: 200px;
-                    padding: 5.7px;
-                }
             }
         }
     }
