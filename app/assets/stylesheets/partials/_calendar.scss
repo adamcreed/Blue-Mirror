@@ -122,7 +122,14 @@ div.fc-button-group {
         width: inherit;
     }
 }
+
 /*** Calendar + FullCalendar Overrides ***/
+
+.fc-day-grid-event .fc-content {
+    word-wrap: break-word !important;
+    white-space: normal !important;
+}
+
 .calXBtn {
     float: right;
     margin-top: -5px;
