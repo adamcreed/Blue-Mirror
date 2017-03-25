@@ -4,41 +4,41 @@
     justify-content: center;
 }
 
-.form-horizontal {
-    display: flex;
-}
-
-.calendar-container {
-    width: 65%;
-    margin: 0 auto;
-}
-
-.fc-left h2 {
-    color: black;
-}
-
-.fc-right {
-    display: inline-block;
-}
-
-.fc-button {
-    float: none;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: center;
-}
-
-button.btn {
-    width: none;
-}
-
-
-.fc-day-grid-event .fc-content {
-    white-space: normal !important;
-
-}
+// .form-horizontal {
+//     display: flex;
+// }
+//
+// .calendar-container {
+//     width: 65%;
+//     margin: 0 auto;
+// }
+//
+// .fc-left h2 {
+//     color: black;
+// }
+//
+// .fc-right {
+//     display: inline-block;
+// }
+//
+// .fc-button {
+//     float: none;
+// }
+//
+// .btn-group {
+//     display: flex;
+//     justify-content: center;
+// }
+//
+// button.btn {
+//     width: none;
+// }
+//
+//
+// .fc-day-grid-event .fc-content {
+//     white-space: normal !important;
+//
+// }
 
 
 
@@ -48,19 +48,68 @@ button.btn {
     margin-top: -5px;
     margin-right: -5px;
 }
+
 .calWell {
     float: left;
     margin: 40px;
     background: white;
 }
+
 .fc-event.openSesame {
     background-color: rgb(229, 229, 11);
     color: black;
 }
+
 .fc-event.customFeed {
     background-color: rgb(132, 222, 175);
     color: black;
 }
+
 .calTools {
     margin-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        width: 164px;
+    }
+
+}
+
+.calendar .fc-toolbar .fc-left {
+    display: inline-block;
+    float: none;
+}
+
+div button.fc-today-button {
+    width: 161px !important;
+    margin-right: 5px !important;
+}
+
+div.fc .fc-toolbar > * > * {
+    margin-left: 0 !important;
+}
+
+div button.fc-prev-button {
+    width: 161px !important;
+    margin-right: 5px !important;
+}
+
+div.fc .fc-button-group > * {
+    margin: 0;
+}
+
+div button.fc-next-button {
+    margin-right: 2px !important;
+    width: 158px;
+}
+
+.fc-right {
+    // button:nth-child(1) {
+    //     width: 161px;
+    //     margin-right: 5px;
+    // }
 }

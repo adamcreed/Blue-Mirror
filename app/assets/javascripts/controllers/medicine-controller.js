@@ -123,7 +123,7 @@
         /* event source that contains custom events on the scope */
         $scope.events = [];
 
-        $scope.from = ''
+        $scope.from = '';
         $scope.eventObj = {
                             title: '',
                             completed: false,
