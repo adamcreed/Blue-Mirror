@@ -32,6 +32,7 @@
 }
 
 .med-list {
+    margin: 0 auto;
 
     @include bp(mobile) {
         width: 79%;
@@ -98,6 +99,7 @@
 
 
 .med-buttons {
+    // margin: 0 auto;
     button:nth-child(2) {
         background: $accentDullRed;
     }

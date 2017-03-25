@@ -171,6 +171,14 @@
             uiCalendarConfig.calendars[calendar].fullCalendar('changeView', view);
         };
 
+        $scope.windowResize= function(view) {
+        if ($(window).width() < 514){
+            $('#calendar').fullCalendar( 'changeView', 'basicDay' );
+        } else {
+            $('#calendar').fullCalendar( 'changeView', 'month' );
+        }
+};
+
         /* Change View */
         $scope.renderCalender = function (calendar) {
             $timeout(function () {
