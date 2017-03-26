@@ -9,6 +9,6 @@ def update
 end
 
 def phone_params
-  params[:phone] = encrypt(params[:phone])
+  params[:phone] = encrypt(params[:phone].gsub(/\D/, ''))
   params.permit(:phone, :phone_provider, :user_id)
 end
