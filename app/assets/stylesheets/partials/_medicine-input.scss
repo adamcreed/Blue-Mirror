@@ -35,7 +35,7 @@
     margin: 0 auto;
 
     @include bp(mobile) {
-        width: 51%;
+        width: 65%;
     }
 
     @include bp(small) {
@@ -124,8 +124,7 @@
 button.took-meds {
     background: #73a739;
     @include bp(mobile) {
-        width: 279px;
-        margin-left: 6px;
+        width: 263px;
     }
     @include bp(small) {
         width: 263px;
@@ -136,6 +135,8 @@ button.took-meds {
 .form-container {
     padding-top: 20px;
 }
+
+
 
 
 // .medication-container {
