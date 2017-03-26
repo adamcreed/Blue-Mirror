@@ -101,18 +101,19 @@
 
 
 .med-buttons {
-    // margin: 0 auto;
     button:nth-child(2) {
         background: $accentDullRed;
     }
 
     @include bp(mobile) {
-        width: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding-top: 15px;
-        margin-left: 25px;
     }
     @include bp(small) {
         display: inline-flex;
+        flex-direction: row;
         width: 100%;
         padding-top: 10px;
         padding-bottom: 5px;
