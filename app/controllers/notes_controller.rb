@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  before_action :set_note, only: [:show, :update, :destroy]
+
   # GET /notes
   # GET /notes.json
   def index
@@ -13,18 +15,17 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
-    @note = format_mood set_note
-    render json: @note
+    render json: format_note(@note)
   end
 
   # POST /notes
   # POST /notes.json
   def create
-    params['user_id'] = current_user.id
+    params['user_id'] = current_user.id if current_user
     @note = Note.new(note_params)
 
     if @note.save
-      render json: { status: :created, location: format_note(@note) }
+      render json: { location: format_note(@note) }, status: :created
     else
       render json: @note.errors, status: :unprocessable_entity
     end
@@ -33,9 +34,8 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1
   # PATCH/PUT /notes/1.json
   def update
-    set_note
     if @note.update(note_params)
-      render json: { status: :ok, location: format_note(@note) }
+      render json: { location: format_note(@note) }
     else
       render json: @note.errors, status: :unprocessable_entity
     end
@@ -44,7 +44,6 @@ class NotesController < ApplicationController
   # DELETE /notes/1
   # DELETE /notes/1.json
   def destroy
-    set_note
     @note.destroy
   end
 
@@ -68,6 +67,6 @@ class NotesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def note_params
-      params.permit(:title, :text, :tags, :user_id)
-    end
+    params.permit(:title, :text, :tags, :user_id)
+  end
 end

@@ -1,0 +1,80 @@
+<div class="journal-container" ng-controller="JournalController as entries">
+    <div class="journalbtn-container">
+        <button class="past-journals button" ng-click="past=true" ng-hide="past">view past entries</button>
+        <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>
+    </div>
+    <div class="add-journal-container">
+        <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">
+            <!-- ng-submit="" -->
+            <input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title">
+            <textarea class="journal-entry" type="text" ng-model="text" placeholder="start typing!">
+    </textarea>
+            <input type="text" class="journal-tag" ng-model="tags" placeholder="tags here">
+            <p class="error">{{error}}
+            </p>
+            <a class="button" ng-click="postJournals()">submit</a>
+        </form>
+
+        <div id="active-entry" ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">
+
+            <div>
+                <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry</a>
+                <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->
+                <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>
+            </div>
+            <ul>
+                <h3 id="edit-title" class="entry" ng-model="title">{{entry.title}}</h3>
+                <li>{{entry.time}} on {{entry.day}}</li>
+                <li id="edit-text" class="view-entry-item" ng-model="text">{{entry.text}}</li>
+                <li id="edit-tags">{{entry.tags}}</li>
+
+                <button ng-hide="!edit" class="submit-entry" type="submit" ng-click="edit=false; patchJournalText(entry)">
+            </ul>
+
+            <!-- <form ng-hide="!edit" class="textarea-container" ng-submit="patchJournalText(text, entry)">
+
+                <textarea class="edit" maxlength="1000" type="text" ng-model="text"></textarea>
+
+                <button class="submit-entry" type="submit" ng-click="edit=false">submit entry</button>
+                <button class="submit-entry" type="submit" ng-click="edit=false"> -->
+        </div>
+    </div>
+    <div class="mobile-past" ng-show="past || activeEntry">
+        <h2>Past Entries</h2>
+        <div class="web-list">
+            <ul>
+                <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
+
+                    <div>
+                        <h3 class="entry">{{entry.title}}</h3>
+                        <!-- <span class="entry">{{entry.text}}</span> -->
+                        <input class="data-id" data-id="{{entry.id}}"></input>
+                        <span class="entry">{{entry.day}}</span>
+                        <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->
+        </div>
+        </li>
+        </ul>
+        <div class="list-end"></div>
+    </div>
+</div>
+
+<div class="web-past">
+    <h2>Past Entries</h2>
+    <div class="web-list">
+        <ul>
+            <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
+
+                <div ng-hide="edit">
+                    <h3 class="entry">{{entry.title}}</h3>
+                    <!-- <span class="entry">{{entry.text}}</span> -->
+                    <input class="data-id" data-id="{{entry.id}}"></input>
+                    <span class="entry">{{entry.day}}</span>
+                    <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->
+                </div>
+            </li>
+            <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>
+        </ul>
+        <div class="list-end"></div>
+    </div>
+</div>
+</div>

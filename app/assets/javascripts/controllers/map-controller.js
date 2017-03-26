@@ -12,7 +12,7 @@
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 },
-                zoom: 12,
+                zoom: 11,
                 control: {},
                 markers: [],
                 templateUrl: 'place.html',
@@ -107,9 +107,22 @@
                 $scope.$apply();
 
             };
+
             $scope.removeMarkers = function() {
                 $scope.map.markers.length = 0;
             };
+
+            $(window).resize(function() {
+
+                if ($(window).width() <= 600) {
+
+                    $scope.map.zoom = 10;
+                } else {
+                    $scope.map.zoom = 11;
+                }
+
+            });
+
         });
     });
 

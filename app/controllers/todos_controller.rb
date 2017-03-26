@@ -8,7 +8,7 @@ class TodosController < ApplicationController
   end
 
   def featured
-    render json: featured_todos
+    render json: featured('db/data/todos.seed')
   end
 
   # GET /todos/1
@@ -21,11 +21,11 @@ class TodosController < ApplicationController
   # POST /todos
   # POST /todos.json
   def create
-    params['user_id'] = current_user.id
+    params['user_id'] = current_user.id if current_user
     @todo = Todo.new(todo_params)
 
     if @todo.save
-      render json: { status: :created, location: @todo }
+      render json: { location: @todo }, status: :created
     else
       render json: @todo.errors, status: :unprocessable_entity
     end

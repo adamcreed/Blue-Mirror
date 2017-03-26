@@ -1,13 +1,13 @@
 (function(ng) {
-    ng.module('BlueMirrorApp').controller('MedicineController', function($state, $scope,  $compile, $timeout, uiCalendarConfig, $q, DataRequestService, UserService) {
+    ng.module('BlueMirrorApp').controller('MedicineController', function($state, $scope, $compile, $timeout, uiCalendarConfig, $q, DataRequestService, UserService) {
 
         /* MEDICATION FUNCTIONS */
 
         $scope.medications = [];
 
         $scope.medObj = {
-                     name: ''
-                    };
+            name: ''
+        };
 
         // total meds
         $scope.totalmeds = function() {
@@ -82,9 +82,9 @@
             $scope.title = 'took meds ✅';
             $scope.from = moment().startOf('day').toDate();
             $scope.eventObj = {
-                                title: $scope.title,
-                                completed: true
-                            };
+                title: $scope.title,
+                completed: true
+            };
 
             $scope.addEvent();
         };
@@ -108,12 +108,6 @@
             return todaysTakenEvents.length > 0;
         };
 
-        // $scope.checkMedsTaken = function() {
-        //
-        //     if (moment() > moment().startOf('day') && moment() < moment().endOf('day')) {
-        //         return true;
-        //     }
-        // };
 
         /* CALENDAR FUNCTIONS  */
 
@@ -123,41 +117,41 @@
         /* event source that contains custom events on the scope */
         $scope.events = [];
 
-        $scope.from = ''
+        $scope.from = '';
         $scope.eventObj = {
-                            title: '',
-                            completed: false,
-                            from: ''
-                        };
+            title: '',
+            completed: false,
+            from: ''
+        };
 
         /* add custom event*/
-        $scope.addEvent = function () {
-          console.log('before ', $scope.eventObj);
+        $scope.addEvent = function() {
+            console.log('before ', $scope.eventObj);
 
-          $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
-              console.log('after ', $scope.eventObj);
-              $scope.eventId = response.data.location.id;
-              $scope.postTitle = response.data.location.title;
+            $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
+                console.log('after ', $scope.eventObj);
+                $scope.eventId = response.data.location.id;
+                $scope.postTitle = response.data.location.title;
 
-              $scope.events.push({
-                  _id: $scope.eventId,
-                  title: $scope.postTitle,
-                  start: moment($scope.from),
-                  allDay: true,
-                  stick: true
-              });
+                $scope.events.push({
+                    _id: $scope.eventId,
+                    title: $scope.postTitle,
+                    start: moment($scope.from),
+                    allDay: true,
+                    stick: true
+                });
 
-              $scope.eventObj = {
-                                  title: '',
-                                  completed: false,
-                                  from: ''
-                              }
+                $scope.eventObj = {
+                    title: '',
+                    completed: false,
+                    from: ''
+                };
 
-              console.log($scope.eventId);
+                console.log($scope.eventId);
 
-          }).catch((error) => {
-              console.log(error);
-          });
+            }).catch((error) => {
+                console.log(error);
+            });
 
 
             $scope.eventObj.title = $scope.title;
@@ -166,14 +160,25 @@
         };
 
         /* Change View */
-        $scope.changeView = function (view, calendar) {
-            $scope.currentView = view;
+        $scope.changeView = function(view, calendar) {
+            $scope.currentView = 'view';
             uiCalendarConfig.calendars[calendar].fullCalendar('changeView', view);
         };
 
+
         /* Change View */
-        $scope.renderCalender = function (calendar) {
-            $timeout(function () {
+        $(window).resize(function() {
+
+            if ($(window).width() <= 600) {
+
+                $('.calendar').fullCalendar('changeView', 'basicDay', 'calendar');
+            } else {
+                $('.calendar').fullCalendar('changeView', 'month', 'calendar');
+            }
+
+        });
+        $scope.renderCalender = function(calendar) {
+            $timeout(function() {
                 if (uiCalendarConfig.calendars[calendar]) {
                     uiCalendarConfig.calendars[calendar].fullCalendar('render');
                 }
@@ -181,12 +186,15 @@
         };
 
         /* Event Render */
-        $scope.eventRender = function (event, element, view) {
+        $scope.eventRender = function(event, element, view) {
             $scope.calendarWatch++;
-            element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
+            element.attr({
+                'tooltip': event.title,
+                'tooltip-append-to-body': true
+            });
             $compile(element)($scope);
-            element.append( "<span class='closeon'>❌</span>");
-            element.append( "<span class='closeon'>⭐</span>");
+            element.append("<span class='closeon'>❌</span>");
+            element.append("<span class='closeon'>⭐</span>");
             element.find(".closeon").click(function() {
                 // console.log(event);
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
@@ -202,13 +210,13 @@
         /* config object */
         $scope.uiConfig = {
             calendar: {
-                height: 450,
+                height: 350,
                 editable: true,
-                eventClick: function(event){
-		        $(".closon").click(function() {
-	            $('.calendar').fullCalendar('removeEvents', event._id);
-   	              });
-              },
+                eventClick: function(event) {
+                    $(".closon").click(function() {
+                        $('.calendar').fullCalendar('removeEvents', event._id);
+                    });
+                },
                 eventRender: $scope.eventRender
             }
         };

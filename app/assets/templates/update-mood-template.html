@@ -1,6 +1,6 @@
 <div class="container-mood">
     <div class="update-mood-container">
-        <h2 ng-show="!isSubmitted">Update Your Mood</h2>
+        <h2 ng-show="!isSubmitted">Update Your Mood <i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>
         <div ng-show="!isSubmitted" class="select_style">
             <select ng-change="change()" ng-model="value" ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList" id="mood-selections">
             <option value=''>-- Select Here -- </option>

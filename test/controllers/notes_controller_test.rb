@@ -12,7 +12,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create note" do
     assert_difference('Note.count') do
-      post notes_url, params: { note: { tags: @note.tags, text: @note.text, title: @note.title, user_id: @note.user_id } }, as: :json
+      post notes_url, params: { tags: @note.tags, text: @note.text, title: @note.title, user_id: @note.user_id }, as: :json
     end
 
     assert_response 201

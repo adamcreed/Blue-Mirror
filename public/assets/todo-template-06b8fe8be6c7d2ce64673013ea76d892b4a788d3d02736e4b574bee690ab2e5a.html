@@ -1,6 +1,6 @@
 <div class="container" ng-controller="TodoController as todo">
     <div class="todo-wrapper">
-        <h2 class="total-items">Doables <i class="fa fa-list-ul" aria-hidden="true"></i></h2>
+        <h2 class="total-items">doables</h2>
         <a ng-click="othersTodos(); show=true" ng-hide="show">View other doable tasks...</a>
         <div class="other-todos" ng-show="show">
             <ul>
@@ -15,13 +15,14 @@
                 <li ng-repeat="todo in todos">
                     <input class="checkbox" type="checkbox" ng-model="todo.done" />
                     <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>
+                    <input class="data-id" data-id="{{todo.id}}"></input>
                 </li>
             </ul>
             <form ng-submit="postTodos()">
                 <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />
                 <p class="error">{{error}}</p>
                 <button type="submit" class="button" ng-submit="postTodos()"> Add New Task</button>
-                <button type="button" class="button remove" ng-click="deleteTodos()">Remove Selected</button>
+                <a class="button" ng-click="deleteTodos()">Remove Selected</a>
             </form>
         </div>
     </div>

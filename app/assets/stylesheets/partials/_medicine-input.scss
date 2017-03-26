@@ -1,3 +1,21 @@
+.medication-container {
+    margin-bottom: 50px;
+
+    .line {
+        @include bp(mobile) {
+            margin-top: 20px;
+        }
+        width: 50%;
+        height: 20px;
+        margin: 0 auto;
+        border-bottom: 2px solid $accentTeal;
+
+        @include bp(small) {
+            margin-top: 40px;
+        }
+    }
+}
+
 .medication-wrapper {
     display: flex;
     flex-direction: column;
@@ -14,11 +32,19 @@
 }
 
 .med-list {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
+    margin: 0 auto;
+
+    @include bp(mobile) {
+        width: 79%;
+    }
+
+    @include bp(small) {
+        width: 40%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     ul.med-nav {
         // width: 300px;
@@ -59,26 +85,48 @@
         padding-bottom: 5px;
 
         input {
-            width: 55%
+            @include bp(mobile) {
+                width: 95%;
+            }
+
+            @include bp(small) {
+                width: 63%;
+            }
+
         }
     }
 }
 
 
 .med-buttons {
-    display: inline-flex;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 5px;
-
+    // margin: 0 auto;
     button:nth-child(2) {
         background: $accentDullRed;
     }
+
+    @include bp(mobile) {
+        width: 75%;
+        padding-top: 15px;
+        margin-left: 25px;
+    }
+    @include bp(small) {
+        display: inline-flex;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
 }
 
 button.took-meds {
-    width: 263px;
     background: #73a739;
+    @include bp(mobile) {
+        width: 279px;
+        margin-left: 6px;
+    }
+    @include bp(small) {
+        width: 263px;
+    }
 }
 
 

@@ -1,66 +1,204 @@
+.calendar-events {
+    text-align: center;
+    @include bp(mobile) {
+        padding-bottom: 20px;
+    }
+}
+
 .form-container {
     display: flex;
     width: 100%;
     justify-content: center;
+
+    form {
+        margin: 0 auto;
+
+        input[type=date] {
+            font-family: $primaryFont;
+            text-transform: uppercase;
+        }
+
+        input[type=text] {
+            font-family: $primaryFont;
+            width: 200px;
+            padding: 5.7px;
+        }
+        @include bp(mobile) {
+            label {
+                font-size: 18px;
+                border-bottom: 1px solid $accentTeal;
+            }
+
+            .col-sm-10 {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        @include bp(small) {
+            display: flex;
+            align-items: baseline;
+
+            .pull-right {
+                width: 200px;
+                height: 38px;
+            }
+
+            label {
+                margin-right: 5px;
+                font-size: 20px;
+                border: none;
+            }
+
+            button.btn.btn-primary.pull-right {
+                font-size: 13px;
+            }
+
+            .col-sm-10 {
+                margin-right: 20px;
+
+                button[type=submit] {
+                    font-size: 0;
+                    padding: 11px;
+                }
+
+                input {
+                    padding: 5px;
+                    width: initial;
+                }
+            }
+        }
+    }
 }
 
-.form-horizontal {
-    display: flex;
+div.fc-toolbar {
+    @include bp(mobile) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @include bp(small) {
+        text-align: center;
+        margin-bottom: 1em;
+        display: block;
+    }
 }
 
-.calendar-container {
-    width: 65%;
-    margin: 0 auto;
+div.fc-left {
+    @include bp(mobile) {
+        float: right;
+        width: 100%;
+    }
+    @include bp(small) {
+        float: none;
+        width: inherit;
+    }
 }
 
-.fc-left h2 {
-    color: black;
+div.fc-right {
+    @include bp(mobile) {
+        display: inline-block;
+        width: 100%;
+    }
+    @include bp(small) {
+        display: block;
+        width: inherit;
+    }
+
+    button.fc-today-button {
+        @include bp(mobile) {
+            display: none;
+        }
+        @include bp(small) {
+            display: block;
+        }
+    }
 }
 
-.fc-right {
-    display: inline-block;
+div.fc-button-group {
+    @include bp(mobile) {
+        display: flex;
+        width: 100%;
+    }
+    @include bp(small) {
+        width: inherit;
+    }
 }
 
-.fc-button {
-    float: none;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: center;
-}
-
-button.btn {
-    width: none;
-}
-
+/*** Calendar + FullCalendar Overrides ***/
 
 .fc-day-grid-event .fc-content {
+    word-wrap: break-word !important;
     white-space: normal !important;
-
 }
 
+.fc-event {
+    border: 1px solid $darkAccentTeal !important;
+    background-color: $accentCream !important;
+}
 
-
-/*** Calendar ***/
- .calXBtn {
+.calXBtn {
     float: right;
     margin-top: -5px;
     margin-right: -5px;
 }
+
 .calWell {
-    float: left;
     margin: 40px;
     background: white;
+    @include bp(mobile) {
+        float: none;
+    }
+    @include bp(small) {
+        float: left;
+    }
 }
+
 .fc-event.openSesame {
     background-color: rgb(229, 229, 11);
     color: black;
 }
+
 .fc-event.customFeed {
     background-color: rgb(132, 222, 175);
     color: black;
 }
+
 .calTools {
     margin-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        width: 164px;
+    }
+}
+
+.calendar .fc-toolbar .fc-left {
+    display: inline-block;
+    float: none;
+}
+
+div button.fc-today-button {
+    width: 161px !important;
+    margin-right: 5px !important;
+}
+
+div.fc .fc-toolbar > * > * {
+    margin-left: 0 !important;
+}
+
+div button.fc-prev-button {
+    width: 161px !important;
+    margin-right: 5px !important;
+}
+
+div.fc .fc-button-group > * {
+    margin: 0;
+}
+
+div button.fc-next-button {
+    margin-right: 2px !important;
+    width: 158px;
 }

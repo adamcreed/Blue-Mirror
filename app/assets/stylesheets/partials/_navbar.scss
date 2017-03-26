@@ -1,3 +1,7 @@
+nav {
+    z-index: 1;
+}
+
 .content-container {
     @include bp (mobile) {
         display: flex;
@@ -47,6 +51,7 @@
 }
 
 .left-aside {
+    z-index: 1;
     @include bp (mobile) {
         display: none;
     }

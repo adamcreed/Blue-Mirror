@@ -115,9 +115,18 @@ h1 {
     font-size: 3rem;
 }
 
+.line {
+    width: 50%;
+    height: 20px;
+    margin: 0 auto;
+    border-bottom: 2px solid $accentTeal;
+    margin-top: 40px;
+}
+
 h2 {
     font-size: 2em;
     font-family: $headerFont;
+    color: $darkAccentTeal;
 }
 //
 
@@ -139,8 +148,29 @@ textarea {
 }
 
 label {
+    font-family: $headerFont;
     color: $darkAccentTeal;
-    font-family: $primaryFont;
+    font-weight: 600;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $accentTeal;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $accentTeal;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $accentTeal;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: $accentTeal;
 }
 //
 // p {
