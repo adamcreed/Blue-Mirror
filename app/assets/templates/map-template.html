@@ -1,5 +1,6 @@
 <div class="row">
     <div class="loading" ng-show="!map.control"></div>
+    <h2 ng-show="map.control">Local Counselors Nearby</h2>
     <div class="map-container">
         <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options"  zoom-to-include-markers="true" control="map.control" event="map.event">
             <ui-gmap-marker ng-repeat="m in map.markers" idkey='m.id' coords="m" click="onMarkerClicked(m)">
@@ -9,8 +10,9 @@
         </ui-gmap-google-map>
     </div>
     <div class="map-results">
+        <h2 ng-show="map.control">Contact Information</h2>
         <ul>
-            <li ng-repeat="result in newArr">
+            <li ng-repeat="result in newArr">👉 
                 <span>{{result.name}}</span>
                 <span>{{result.formatted_address}}</span>
                 <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}}</a></span>
