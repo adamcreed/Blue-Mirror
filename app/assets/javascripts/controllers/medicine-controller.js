@@ -78,7 +78,6 @@
         };
 
         $scope.tookMeds = function() {
-            console.log($scope.events);
             $scope.title = 'took meds ✅';
             $scope.from = moment().startOf('day').toDate();
             $scope.eventObj = {
@@ -126,10 +125,8 @@
 
         /* add custom event*/
         $scope.addEvent = function() {
-            console.log('before ', $scope.eventObj);
 
             $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
-                console.log('after ', $scope.eventObj);
                 $scope.eventId = response.data.location.id;
                 $scope.postTitle = response.data.location.title;
 
@@ -147,7 +144,6 @@
                     from: ''
                 };
 
-                console.log($scope.eventId);
 
             }).catch((error) => {
                 console.log(error);
@@ -170,7 +166,6 @@
         $(window).resize(function() {
 
             if ($(window).width() <= 600) {
-                console.log($scope.uiConfig.calendar.height);
                 $('.calendar').fullCalendar('changeView', 'basicDay', 'calendar');
             } else {
                 $('.calendar').fullCalendar('changeView', 'month', 'calendar');
@@ -196,11 +191,9 @@
             element.append("<span class='closeon'>❌</span>");
             element.append("<span class='star'>⭐</span>");
             element.find(".closeon").click(function() {
-                // console.log(event);
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
 
                     $('.calendar').fullCalendar('removeEvents', event._id);
-                    console.log(event);
                 }).catch((error) => {
                     console.log(error);
                 });

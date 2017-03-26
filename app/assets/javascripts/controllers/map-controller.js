@@ -1,7 +1,6 @@
 (function(ng) {
     ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi, uiGmapIsReady, $geolocation, $sce) {
 
-
         $scope.$watch('placeSearch()', function() {});
 
         $geolocation.getCurrentPosition({
@@ -63,11 +62,11 @@
             $scope.newArr = [];
 
             $scope.checkRating = function(rating) {
-                    if (rating) {
-                        return 'Rating: ' + rating;
-                    } else {
-                        return 'Rating: no rating';
-                    }
+                if (rating) {
+                    return 'Rating: ' + rating;
+                } else {
+                    return null;
+                }
             };
 
 

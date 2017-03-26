@@ -2,7 +2,7 @@
             <form ng-submit="save($event)">
                 <ul ui-sortable="{axis:'y', containment: 'parent'}" ng-model="list">
                 <li class="row-list" ng-repeat="row in list">
-                    <input type="text" class="form-control" ng-model="row.text" /><span ng-click="del(row)" class="remove-row"><span>↕️</span> ❌</span>
+                    <input type="text" maxlength="20" class="form-control" ng-model="row.text" /><span ng-click="del(row)" class="remove-row"><span>↕️</span> ❌</span>
                 </li>
                 <input ng-class="{'disableButton': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />
                 <button class="btn btn-default">Submit</button>
