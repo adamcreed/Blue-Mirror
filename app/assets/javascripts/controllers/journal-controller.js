@@ -82,7 +82,17 @@
         };
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
+            let e = $scope.journalsArray.indexOf(entry);
+            let arrayIndex = $scope.journalsArray[e];
+            for (let i = 0; i < $scope.journalsArray.length; i++) {
+                console.log('yo', $scope.journalsArray[e].title);
+                // if ($scope.journalsArray[i].title === "") {
+                //     $scope.journalsArray[i].title = "Untitled";
+                // }
+            }
+
             for (var entry in $scope.pastJournals) {
+
                 $scope.pastEntries = $scope.pastJournals[entry];
                 $scope.journalsArray.push($scope.pastEntries);
             }

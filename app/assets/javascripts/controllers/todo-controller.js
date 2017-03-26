@@ -40,6 +40,7 @@
         //get others' todos
         $scope.othersTodos = function() {
             $q.when(DataRequestService.get('/todos/featured')).then((response) => {
+                console.log(response.data);
                 let data = response.data;
                 $scope.shuffle(data);
             }).catch((error) => {
