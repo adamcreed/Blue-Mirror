@@ -4,7 +4,7 @@
     .line {
         height: 20px;
         margin: 0 auto;
-        border-bottom: 2px solid $accentTeal;
+        border-bottom: 2px solid #e7e5dc;
         @include bp(mobile) {
             margin-top: 20px;
             width: 62%;

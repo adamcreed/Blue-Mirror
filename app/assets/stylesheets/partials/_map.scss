@@ -11,7 +11,7 @@
             width: 80%;
         }
         @include bp(small) {
-            width: 50%;
+            width: 100%;
         }
     }
 }
@@ -20,6 +20,8 @@
     font-size: 15px;
     line-height: 1.4rem;
     margin-bottom: 15px;
+    border-bottom: $border;
+    padding-bottom: 13px;
 
     .list-colored {
         color: $accentBrightRed;
@@ -31,43 +33,74 @@
     }
 }
 
+.result-rating {
+    display: table;
+}
+
+.result-name {
+    font-size: 22px;
+    font-family: $headerFont;
+    color: $mainColor;
+}
+
 .map-container {
     @include bp(mobile) {
         width: 90%;
         height: 150px;
         margin-top: 30px;
-        padding-bottom: 300px;
+        padding-bottom: 430px
     }
     @include bp(small) {
         width: 600px;
         height: 300px;
         margin-top: 30px;
-        margin-bottom: 150px;
+        margin-bottom: 137px;
+        padding-bottom: 270px;
     }
 }
 
 .map-results {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+        border-top: $border;
+        padding-top: 13px;
+
+        @include bp(mobile) {
+            width: 83%;
+        }
+        @include bp(small) {
+            width: 100%;
+        }
+    }
+
     h2 {
         text-align: center;
         padding-bottom: 40px;
     }
-    @include bp(mobile) {
-        padding-top: 160px;
-        width: 102%;
-    }
-    @include bp(small) {
-        padding-top: 20px;
-        width: 77%;
-    }
+
+    // @include bp(mobile) {
+    //     padding-top: 160px;
+    //     width: 102%;
+    // }
+    // @include bp(small) {
+    //     padding-top: 20px;
+    //     width: 77%;
+    // }
 }
 
 .list-styled {
     .list-colored a {
-        color: $mainColor;
+        color: $accentBrightRed;
     }
 
     .list-underlined a {
         text-decoration: underline;
+        color: $accentTeal;
     }
 }
 
