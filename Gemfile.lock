@@ -44,6 +44,8 @@ GEM
       railties (>= 4.2, < 6)
       sprockets (>= 3.0, < 5)
       tilt
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
     arel (7.1.4)
     bcrypt (3.1.11)
     bourbon (4.3.3)
@@ -64,6 +66,9 @@ GEM
       launchy
     childprocess (0.6.2)
       ffi (~> 1.0, >= 1.0.11)
+    chromedriver-helper (1.1.0)
+      archive-zip (~> 0.7.0)
+      nokogiri (~> 1.6)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
@@ -109,6 +114,7 @@ GEM
     httpclient (2.8.3)
     hurley (0.2)
     i18n (0.8.1)
+    io-like (0.3.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -278,6 +284,7 @@ DEPENDENCIES
   bower-rails
   capybara
   capybara-screenshot
+  chromedriver-helper
   devise_token_auth
   dotenv-rails
   google-api-client

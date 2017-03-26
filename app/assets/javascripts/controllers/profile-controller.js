@@ -127,7 +127,7 @@
             };
 
             $scope.isDisabled = function() {
-                if($scope.list.length === 10) {
+                if ($scope.list.length === 10) {
                     return true;
                 }
             };
@@ -145,13 +145,13 @@
                 scales: {
                     xAxes: [{
                         ticks: {
-                            fontColor: 'blue',
+                            fontColor: '#35635d',
                             minRotation: 20
                         }
                     }],
                     yAxes: [{
                         ticks: {
-                            fontColor: 'blue',
+                            fontColor: '#35635d',
                             min: 0,
                             max: $scope.highestMood,
                             stepSize: 1,
