@@ -10,6 +10,7 @@ $accentCream: #fbfdf2;
 $borderColor: #d6d6d6 #888 #888 #d6d6d6;
 $borderColorRemove: #d6d6d6 $accentBrightRed $accentBrightRed #d6d6d6;
 $border: 0.13rem solid #e7e5dc;
+$placeholder: #c9c5b7;
 $portfolioBorder: 2px solid white;
 $largeBorder: 10px solid $mainColor;
 $radius: 0.3rem;
@@ -156,22 +157,22 @@ label {
 
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: $accentTeal;
+    color: $placeholder;
 }
 
 ::-moz-placeholder {
     /* Firefox 19+ */
-    color: $accentTeal;
+    color: $placeholder;
 }
 
 :-ms-input-placeholder {
     /* IE 10+ */
-    color: $accentTeal;
+    color: $placeholder;
 }
 
 :-moz-placeholder {
     /* Firefox 18- */
-    color: $accentTeal;
+    color: $placeholder;
 }
 //
 // p {
