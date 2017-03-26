@@ -38,13 +38,25 @@ class CapybaraTest < ActionDispatch::IntegrationTest
   #   assert page.has_css? 'option[label="Terrible"]'
   # end
   #
-
-  test 'should get mood chart' do
-    login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
-    click_on 'Mood Chart'
-
-    assert page.has_css? '.chart'
-  end
+  #
+  # test 'should get mood chart' do
+  #   login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+  #   click_on 'Mood Chart'
+  #
+  #   assert page.has_css? '.chart'
+  # end
+  #
+  # test 'should submit mood' do
+  #   login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+  #   click_on 'Update Mood'
+  #   click_button 'Submit'
+  #   refute page.has_content? 'Mood Updated!'
+  #
+  #   select 'Good', from: 'mood-selections'
+  #   click_button 'Submit'
+  #   assert page.has_content? 'Mood Updated!'
+  # end
+  #
   # test 'should log out' do
   #   login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
   #   assert page.has_content? 'Blue Mirror'
