@@ -6,6 +6,14 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
+    h2 {
+        padding-bottom: 10px;
+    }
+
+    a {
+        padding-bottom: 10px;
+    }
 }
 
 .todo-list ul {
@@ -19,7 +27,8 @@
         margin-bottom: 5px;
         flex-wrap: nowrap;
         align-items: center;
-        width: 275px;
+        width: 70%;
+        margin: 0 auto;
 
         .checkbox {
             width: 10%;
@@ -55,4 +64,12 @@ span.med-true {
 
 span.todo-true {
     text-decoration: line-through;
+}
+
+.todo-list {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
