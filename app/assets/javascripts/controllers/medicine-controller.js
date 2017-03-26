@@ -170,7 +170,7 @@
         $(window).resize(function() {
 
             if ($(window).width() <= 600) {
-
+                console.log($scope.uiConfig.calendar.height);
                 $('.calendar').fullCalendar('changeView', 'basicDay', 'calendar');
             } else {
                 $('.calendar').fullCalendar('changeView', 'month', 'calendar');
@@ -210,7 +210,6 @@
         /* config object */
         $scope.uiConfig = {
             calendar: {
-                height: 350,
                 editable: true,
                 eventClick: function(event) {
                     $(".closon").click(function() {

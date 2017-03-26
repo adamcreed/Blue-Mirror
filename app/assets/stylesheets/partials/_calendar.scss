@@ -1,7 +1,26 @@
+.calendar {
+    @include bp(mobile) {
+        height: 350px;
+    }
+
+    @include bp(small) {
+        height: 700px;
+    }
+}
+
 .calendar-events {
     text-align: center;
     @include bp(mobile) {
         padding-bottom: 20px;
+    }
+}
+
+.span8 {
+    @include bp(mobile) {
+        width: 322px;
+    }
+    @include bp(small) {
+        width: inherit;
     }
 }
 
@@ -26,11 +45,9 @@
         @include bp(mobile) {
             label {
                 font-size: 18px;
-                border-bottom: 1px solid $accentTeal;
             }
 
             .col-sm-10 {
-                padding-top: 10px;
                 padding-bottom: 10px;
             }
         }
@@ -86,16 +103,17 @@ div.fc-left {
     @include bp(mobile) {
         float: right;
         width: 100%;
+        display: inline-grid;
     }
     @include bp(small) {
         float: none;
         width: inherit;
+        display: inline;
     }
 }
 
 div.fc-right {
     @include bp(mobile) {
-        display: inline-block;
         width: 100%;
     }
     @include bp(small) {
@@ -142,14 +160,33 @@ div.fc-button-group {
 }
 
 .calWell {
-    margin: 40px;
     background: white;
     @include bp(mobile) {
+        margin: 40px;
         float: none;
+        height: 372px;
     }
     @include bp(small) {
         float: left;
+        margin: 10px;
+        // height: 128vh;
     }
+}
+
+tr, td {
+    background: white;
+}
+
+.fc-unthemed .fc-today {
+    background: white !important;
+}
+
+.fc-view, .fc-view > table {
+    z-index: 0 !important;
+}
+
+.fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td {
+    border-color: rgba(0, 0, 0, 0.07) !important;
 }
 
 .fc-event.openSesame {
@@ -176,8 +213,13 @@ div.fc-button-group {
 }
 
 .calendar .fc-toolbar .fc-left {
-    display: inline-block;
     float: none;
+    @include bp(mobile) {
+        display: inline-grid;
+    }
+    @include bp(small) {
+        display: inline-block;
+    }
 }
 
 div button.fc-today-button {

@@ -8,9 +8,9 @@
             <span></span>
         </div>
             <form ng-show="!isSubmitted" name="explainForm" class="mood-form" ng-submit="postMoods()">
-                <button class="customize-link" ui-sref="BlueParent.customize">Customize your moods</button>
                 <input class="button" type="submit" value="Submit">
             </form>
+            <button class="customize-link" ui-sref="BlueParent.customize">Customize your moods</button>
             <div ng-show="isSubmitted" class="mood-updated">
                 <h2>Mood Updated! Do you want to write about it in your <a ui-sref="BlueParent.journal">journal</a>?</h2>
             </div>

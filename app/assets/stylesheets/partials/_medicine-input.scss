@@ -2,14 +2,17 @@
     margin-bottom: 50px;
 
     .line {
-        @include bp(mobile) {
-            margin-top: 20px;
-        }
-        width: 50%;
         height: 20px;
         margin: 0 auto;
         border-bottom: 2px solid $accentTeal;
+        @include bp(mobile) {
+            margin-top: 20px;
+            width: 62%;
+        }
 
+        @include bp(small) {
+            width: 40%;
+        }
         @include bp(small) {
             margin-top: 40px;
         }
@@ -31,11 +34,16 @@
     }
 }
 
+.med-name {
+    color: $accentCream;
+    font-size: 1px;
+}
+
 .med-list {
     margin: 0 auto;
 
     @include bp(mobile) {
-        width: 79%;
+        width: 65%;
     }
 
     @include bp(small) {
@@ -47,17 +55,19 @@
     }
 
     ul.med-nav {
-        // width: 300px;
-        // display: inline-block;
         color: #97a0af;
         margin-top: 10px;
         display: flex;
         flex-direction: column;
-        width: 100%;
         padding-bottom: 10px;
+
+        @include bp(mobile) {
+            width: inerhit;
+        }
 
         @include bp(small) {
             padding-left: 60px;
+            width: 406px;
         }
 
         li {
@@ -90,7 +100,7 @@
             }
 
             @include bp(small) {
-                width: 63%;
+                width: 68%;
             }
 
         }
@@ -99,18 +109,19 @@
 
 
 .med-buttons {
-    // margin: 0 auto;
     button:nth-child(2) {
         background: $accentDullRed;
     }
 
     @include bp(mobile) {
-        width: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding-top: 15px;
-        margin-left: 25px;
     }
     @include bp(small) {
         display: inline-flex;
+        flex-direction: row;
         width: 100%;
         padding-top: 10px;
         padding-bottom: 5px;
@@ -119,20 +130,25 @@
 }
 
 button.took-meds {
-    background: #73a739;
+    background: $mainColor;
     @include bp(mobile) {
-        width: 279px;
-        margin-left: 6px;
+        width: 263px;
+        margin: 0 auto;
+        padding-bottom: 10px;
     }
     @include bp(small) {
         width: 263px;
+        margin: 0 auto;
+        padding-bottom: 10px;
     }
 }
 
 
 .form-container {
-    padding-top: 20px;
+    padding-top: 40px;
 }
+
+
 
 
 // .medication-container {
