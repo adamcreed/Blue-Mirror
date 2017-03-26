@@ -7,12 +7,58 @@
     display: none;
 }
 
+.web-past {
+    background: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    float: right;
+    border-left: $border;
+
+    h2 {
+        position: fixed;
+        height: 50px;
+        background: white;
+    }
+
+    .web-list {
+        height: 90vh;
+        width: 250px;
+        overflow-y: scroll;
+
+        ul {
+            border-top: $border;
+            margin-bottom: 90px;
+
+            li {
+                display: flex;
+                flex-direction: column-reverse;
+                background: white;
+                border-bottom: $border;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background: red;
+    z-index: 7;
+}
+
 .journal-container {
-    padding-top: 50px;
     height: calc(100% - 50px);
     width: calc(100vw - 250px);
-    display: flex;
-    flex-direction: row;
+
+    h2 {}
 
     .view-entry {
         @include bp (mobile) {
@@ -31,7 +77,9 @@
                 align-items: center;
             }
         }
-        @include bp (small) {}
+        @include bp (small) {
+            background: green;
+        }
     }
 }
 // @include bp (mobile) {
@@ -53,9 +101,10 @@
 @include bp (small) {
     .add-journal-container {
         display: flex;
-        width: 100%;
+        width: calc(100vw - 500px);
         justify-content: center;
         align-items: center;
+        background: blue;
 
         .journal-form {
             width: calc(100vw - 735px);
@@ -83,32 +132,6 @@
             .journal-tag {
                 width: 200px;
                 margin: 0;
-            }
-        }
-    }
-}
-
-.web-past {
-    background: white;
-    width: 250px;
-    height: 100vh;
-    padding-left: calc(50vw - 820px);
-    border-left: $border;
-
-    .web-list {
-        height: 90vh;
-        width: 250px;
-        overflow-y: scroll;
-
-        ul {
-            margin-bottom: 90px;
-
-            li {
-                display: flex;
-                flex-direction: column-reverse;
-                background: white;
-                border-bottom: $border;
-                padding: 5px;
             }
         }
     }
