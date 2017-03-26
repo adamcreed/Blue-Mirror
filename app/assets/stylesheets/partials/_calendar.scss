@@ -2,7 +2,6 @@
     @include bp(mobile) {
         height: 350px;
     }
-
     @include bp(small) {
         height: 700px;
     }
@@ -12,6 +11,9 @@
     text-align: center;
     @include bp(mobile) {
         padding-bottom: 20px;
+    }
+    @include bp(small) {
+        padding-bottom: 0;
     }
 }
 
@@ -140,9 +142,7 @@ div.fc-button-group {
         width: inherit;
     }
 }
-
 /*** Calendar + FullCalendar Overrides ***/
-
 .fc-day-grid-event .fc-content {
     word-wrap: break-word !important;
     white-space: normal !important;
@@ -168,12 +168,13 @@ div.fc-button-group {
     }
     @include bp(small) {
         float: left;
-        margin: 10px;
+        margin: 0;
         // height: 128vh;
     }
 }
 
-tr, td {
+td,
+tr {
     background: white;
 }
 
@@ -181,11 +182,13 @@ tr, td {
     background: white !important;
 }
 
-.fc-view, .fc-view > table {
+.fc-view,
+.fc-view > table {
     z-index: 0 !important;
 }
 
-.fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td {
+.fc-row .fc-content-skeleton td,
+.fc-row .fc-helper-skeleton td {
     border-color: rgba(0, 0, 0, 0.07) !important;
 }
 

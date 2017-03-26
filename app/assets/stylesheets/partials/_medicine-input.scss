@@ -1,25 +1,31 @@
 .medication-container {
-    margin-bottom: 50px;
-
-    .line {
-        height: 20px;
-        margin: 0 auto;
-        border-bottom: 2px solid $accentTeal;
-        @include bp(mobile) {
-            margin-top: 20px;
-            width: 62%;
-        }
-
-        @include bp(small) {
-            width: 40%;
-        }
-        @include bp(small) {
-            margin-top: 40px;
-        }
-    }
+    display: flex;
+    justify-content: center;
+    // margin-bottom: 50px;
+    // .line {
+    //     height: 20px;
+    //     margin: 0 auto;
+    //     border-bottom: 2px solid $accentTeal;
+    //     @include bp(mobile) {
+    //         margin-top: 20px;
+    //         width: 62%;
+    //     }
+    //
+    //     @include bp(small) {
+    //         width: 40%;
+    //     }
+    //     @include bp(small) {
+    //         margin-top: 40px;
+    //     }
+    // }
 }
 
 .medication-wrapper {
+    border-top: $border;
+    border-bottom: $border;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,11 +47,9 @@
 
 .med-list {
     margin: 0 auto;
-
     @include bp(mobile) {
         width: 65%;
     }
-
     @include bp(small) {
         width: 40%;
         text-align: center;
@@ -60,11 +64,9 @@
         display: flex;
         flex-direction: column;
         padding-bottom: 10px;
-
         @include bp(mobile) {
             width: inerhit;
         }
-
         @include bp(small) {
             padding-left: 60px;
             width: 406px;
@@ -98,21 +100,17 @@
             @include bp(mobile) {
                 width: 95%;
             }
-
             @include bp(small) {
                 width: 68%;
             }
-
         }
     }
 }
-
 
 .med-buttons {
     button:nth-child(2) {
         background: $accentDullRed;
     }
-
     @include bp(mobile) {
         display: flex;
         flex-direction: column;
@@ -126,7 +124,6 @@
         padding-top: 10px;
         padding-bottom: 5px;
     }
-
 }
 
 button.took-meds {
@@ -139,18 +136,12 @@ button.took-meds {
     @include bp(small) {
         width: 263px;
         margin: 0 auto;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 }
-
-
-.form-container {
-    padding-top: 40px;
-}
-
-
-
-
+// .form-container {
+//     padding-top: 40px;
+// }
 // .medication-container {
 //     margin-top: 50px;
 //     margin-bottom: 50px;
