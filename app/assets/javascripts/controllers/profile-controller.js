@@ -134,9 +134,6 @@
         });
 
 
-
-
-
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
             $scope.drawChart();

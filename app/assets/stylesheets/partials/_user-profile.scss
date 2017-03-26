@@ -10,10 +10,9 @@
     @include bp (small) {
         display: flex;
         justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
-        margin: 1% auto;
-        width: 643px;
+        padding-top: 15%;
+        width: 600px;
         height: 520px;
     }
 

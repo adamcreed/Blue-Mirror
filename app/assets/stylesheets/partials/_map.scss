@@ -3,36 +3,61 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .line {
+        margin-top: 0;
+        margin-bottom: 40px;
+        @include bp(mobile) {
+            width: 80%;
+        }
+        @include bp(small) {
+            width: 50%;
+        }
+    }
 }
 
 .map-results ul li {
+    font-size: 15px;
+    line-height: 1.4rem;
     margin-bottom: 15px;
 
     .list-colored {
-        color: #81dde1;
+        color: $accentBrightRed;
     }
 
     a.result-website {
         text-decoration: underline;
+        color: $accentTeal;
     }
 }
-
-.result-number {}
-
-.result-website {}
 
 .map-container {
     @include bp(mobile) {
         width: 90%;
         height: 150px;
         margin-top: 30px;
-        margin-bottom: 265px;
+        padding-bottom: 300px;
     }
     @include bp(small) {
         width: 600px;
         height: 300px;
-        margin-top: 75px;
-        margin-bottom: 120px;
+        margin-top: 30px;
+        margin-bottom: 150px;
+    }
+}
+
+.map-results {
+    h2 {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    @include bp(mobile) {
+        padding-top: 160px;
+        width: 102%;
+    }
+    @include bp(small) {
+        padding-top: 20px;
+        width: 77%;
     }
 }
 
@@ -49,14 +74,19 @@
 .loading {
     position: absolute;
     top: 50%;
-    left: 50%;
-    margin: -40px 0 0 -40px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
     border: 15px solid $mainColor;
     border-top-color: $darkAccentTeal;
     animation: spin 1s infinite linear;
+    margin: -40px 0 0 -40px;
+    @include bp(mobile) {
+        left: 55%;
+    }
+    @include bp(small) {
+        left: 60%;
+    }
 }
 @keyframes spin {
     0% {

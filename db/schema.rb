@@ -61,10 +61,6 @@ ActiveRecord::Schema.define(version: 20170323195812) do
     t.index ["user_id"], name: "index_notes_on_user_id", using: :btree
   end
 
-  create_table "persons", force: :cascade do |t|
-    t.string "last_name"
-  end
-
   create_table "todos", force: :cascade do |t|
     t.string   "todo"
     t.integer  "user_id"

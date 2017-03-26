@@ -4,6 +4,13 @@
 }
 
 .update-mood-container {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        width: inherit;
+    }
+
     h2 {
         color: #35635d;
         padding-bottom: 20px;
@@ -17,6 +24,7 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         button.customize-link {
             width: 262px;
