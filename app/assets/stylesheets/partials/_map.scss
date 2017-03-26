@@ -5,7 +5,7 @@
     justify-content: center;
 
     .line {
-        margin-top: 0px;
+        margin-top: 0;
         margin-bottom: 40px;
         @include bp(mobile) {
             width: 80%;
@@ -44,7 +44,6 @@
         margin-top: 30px;
         margin-bottom: 150px;
     }
-
 }
 
 .map-results {
@@ -52,12 +51,10 @@
         text-align: center;
         padding-bottom: 40px;
     }
-
     @include bp(mobile) {
         padding-top: 160px;
         width: 102%;
     }
-
     @include bp(small) {
         padding-top: 20px;
         width: 77%;
@@ -84,11 +81,9 @@
     border-top-color: $darkAccentTeal;
     animation: spin 1s infinite linear;
     margin: -40px 0 0 -40px;
-
     @include bp(mobile) {
-        left: 55%
+        left: 55%;
     }
-
     @include bp(small) {
         left: 60%;
     }
