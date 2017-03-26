@@ -4,12 +4,10 @@
 
 .chart-container {
     display: flex;
-    margin: 0 auto;
-    margin-top: 150px;
     @include bp (mobile) {
         width: 100%;
     }
     @include bp (small) {
-        width: 65%;
+        width: 800px;
     }
 }

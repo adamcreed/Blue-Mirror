@@ -60,10 +60,8 @@
                 data[i] = data[j];
                 data[j] = temp;
             }
-            console.log('data', data);
             for (let i = 0; i < 5; i++) {
                 $scope.randomArray.push(data[i]);
-                console.log('eh', $scope.randomArray);
             }
 
         };

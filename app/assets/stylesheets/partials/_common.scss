@@ -46,7 +46,6 @@ input {
     background: white;
     border-radius: $radius;
     color: $accentTeal;
-    background-color: white !important;
 }
 
 button {
@@ -121,7 +120,7 @@ h1 {
     width: 50%;
     height: 20px;
     margin: 0 auto;
-    border-bottom: 2px solid $accentTeal;
+    border-bottom: 2px solid #e7e5dc;
     margin-top: 40px;
 }
 
