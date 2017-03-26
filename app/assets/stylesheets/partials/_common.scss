@@ -1,6 +1,3 @@
-.angular-google-map-container {
-    height: 300px;
-}
 @import url( 'https://fonts.googleapis.com/css?family=Josefin+Slab|Raleway');
 $headerFont: 'Josefin Slab', serif;
 $primaryFont: 'Raleway', sans-serif;
@@ -71,6 +68,10 @@ button {
     }
 }
 
+.angular-google-map-container {
+    height: 300px;
+}
+
 .button {
     text-transform: uppercase;
     font-family: $primaryFont;
@@ -108,12 +109,11 @@ button {
     width: 100px;
     height: 100px;
 }
-//
-// h1 {
-//     font-family: $headerFont;
-//     font-size: 3rem;
-// }
-//
+
+h1 {
+    font-family: $headerFont;
+    font-size: 3rem;
+}
 
 h2 {
     font-size: 2em;
@@ -126,6 +126,22 @@ h3 {
     font-family: $headerFont;
     color: $darkAccentTeal;
 }
+
+textarea {
+    color: $darkAccentTeal;
+    line-height: 1.25rem;
+    font-size: 1rem;
+    padding: 1%;
+    outline: none;
+    border: $border;
+    decoration: none;
+    border-radius: $radius;
+}
+
+label {
+    color: $darkAccentTeal;
+    font-family: $primaryFont;
+}
 //
 // p {
 //     font-family: $primaryFont;
@@ -135,9 +151,6 @@ h3 {
 //     margin-bottom: 50px;
 // }
 //
-// label {
-//     color: $darkAccentTeal;
-// }
 //
 // .container {
 //     display: flex;
@@ -210,13 +223,4 @@ h3 {
 //
 // .data-id {
 //     display: none;
-// }
-//
-// textarea {
-//     color: $darkAccentTeal;
-//     line-height: 1.25rem;
-//     font-size: 1rem;
-//     padding: 1%;
-//     outline: none;
-//     border: none;
 // }
