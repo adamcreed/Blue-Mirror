@@ -66,7 +66,7 @@
                     if (rating) {
                         return 'Rating: ' + rating;
                     } else {
-                        return 'Rating: no rating';
+                        return null;
                     }
             };
 
