@@ -130,18 +130,22 @@
 }
 
 button.took-meds {
-    background: #73a739;
+    background: $mainColor;
     @include bp(mobile) {
         width: 263px;
+        margin: 0 auto;
+        padding-bottom: 10px;
     }
     @include bp(small) {
         width: 263px;
+        margin: 0 auto;
+        padding-bottom: 10px;
     }
 }
 
 
 .form-container {
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 
