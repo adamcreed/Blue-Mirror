@@ -26,11 +26,9 @@
         @include bp(mobile) {
             label {
                 font-size: 18px;
-                border-bottom: 1px solid $accentTeal;
             }
 
             .col-sm-10 {
-                padding-top: 10px;
                 padding-bottom: 10px;
             }
         }
