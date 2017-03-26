@@ -116051,7 +116051,7 @@ angular.module('ui.sortable', [])
 // source: app/assets/templates/chart-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("chart-template.html", '<div class="chart-container">\n            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride">\n            </canvas>\n</div>')
+  $templateCache.put("chart-template.html", '<div class="chart-headline">\n    <h2>Your Mood History <i class="fa fa-history" aria-hidden="true"></i></h2>\n</div>\n<div class="chart-container">\n            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">\n            </canvas>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116065,14 +116065,14 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/hotline-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("hotline-template.html", '<div>\n    <i class="fa fa-mobile" aria-hidden="true"></i>\n    <i class="fa fa-phone" aria-hidden="true"></i>\n    <i class="fa fa-comments-o" aria-hidden="true"></i>\n    <i class="fa fa-globe" aria-hidden="true"></i>\n    <i class="fa fa-tty" aria-hidden="true"></i>\n    <ul>\n        <li><a href="https://suicidepreventionlifeline.org/ "><h3>Suicide Prevention Lifeline</h3></a></li>\n        <li><a href="http://www.crisistextline.org/"><h3>Crisis Textline</h3></a> </li>\n        <li><a href="http://www.nami.org/Find-Support/NAMI-HelpLine"><h3>NAMI hotline</h3></a>(National Alliance for mental health)</li>\n        <li><a href="https://www.samhsa.gov/find-help/national-helpline "><h3>samhsa</h3></a>substance abuse and mental health helpline (no counseling, just informational)</li>\n        <li><a href="http://www.dbsalliance.org/site/PageServer?pagename=home"><h3>DBS Alliance </h3></a>Depression and Bipolar Disorder</li>\n        <li>\n            <a href="http://www.boystown.org/hotline/Pages/default.aspx ">\n                <h3>Boystown Youth</h3> </a>mental health helpline\n        </li>\n        <li><a href="https://www.nationaleatingdisorders.org/help-support/contact-helpline"><h3>National Eating Disorder</h3> helpline</a></li>\n        <li><a href="http://hopeline.com/"><h3>Hopeline</h3></a> online support-chat, or phone hotline</li>\n        <li>\n            <a href="https://www.rainn.org/ ">\n                <h3>RAINN</h3></a>National Sexual Assault Hotline. Free. Confidential. 24/7. phone and online chat\n        </li>\n        <li><a href="http://www.postpartum.net/"><h3>Postpartum Support International </h3></a>chat with experts, support hotline, online support groups</li>\n        <li><a href="http://www.thehotline.org/ "><h3>The Hotline</h3></a>for victims of domestic abuse</li>\n        <li><a href="http://www.thetrevorproject.org/  "><h3>The Trevor Project</h3></a> , 24/7, crisis intervention and suicide prevention for LGBTQ young people 24/7 helpline, online chat and text availabe, </li>\n        <li><a href="http://www.glbthotline.org/ "><h3>LGBT National </h3></a>help center(hotlines specifically for youth, all ages, and senior LGBT)</li>\n    </ul>\n\n\n</div>')
+  $templateCache.put("hotline-template.html", '<div class="helpline">\n    <h2>Crisis Helplines <i class="fa fa-phone" aria-hidden="true"></i></h2>\n    <span class="crisis-disc">If you or a loved one is in immediate danger, call 911.</span>\n\n    <ul>\n        <li>\n            <a href="https://suicidepreventionlifeline.org/ ">\n                <h3>Suicide Prevention Lifeline</h3>\n            </a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Lifeline provides 24/7, free and confidential support for people in distress,\n              prevention and crisis resources for you or your loved ones, and best practices for professionals.</span>\n                    <span>Phone helpline, spanish language option, TTY and chat available for the deaf and hard of hearing</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n                    <span><i class="fa fa-tty" aria-hidden="true"></i>TTY services</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.crisistextline.org/">\n                <h3>Crisis Textline</h3>\n            </a>\n            <div class="helpline-info">\n                <div>\n                    <span>Crisis Text Line is free, 24/7 support for those in crisis.\n              Text 741741 from anywhere in the USA to text with a trained Crisis Counselor.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true">\n            </i>Text services</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.nami.org/Find-Support/NAMI-HelpLine">\n                <h3>NAMI</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The National Alliance on Mental Illness HelpLine is a free service that provides information, referrals and support to people living\n                  with a mental health condition, family members and caregivers, mental health providers and the public.</span>\n                </div>\n                <div class="services-avail">\n                    <span>call only m-f 10am-6pm ET</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="https://www.samhsa.gov/find-help/national-helpline ">\n                <h3>SAMHSA</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Substance Abuse and Mental Health Services Administration offers information service for\n          individuals and family members facing mental and/or substance use disorders. This service provides referrals to local\n          treatment facilities, support groups, and community-based organizations. Callers can also order free publications and\n          other information.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.boystown.org/hotline/Pages/default.aspx ">\n                <h3>Boystown</h3> </a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Boystown National Hotline is a free hotline available to kids, teens and\n                  young adults at any time. We provide help when you need it most. Call, chat, text or email. We are here to talk\n                  if you\'re depressed, contemplating suicide, being physically or sexually abused, on the run, addicted, threatened\n                  by gang violence, fighting with a friend or parent, or if you are faced with an overwhelming challenge.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true"></i>Text services</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish, translation services for 140 other languages</span>\n                    <span><i class="fa fa-tty" aria-hidden="true"></i>TTY services</span>\n                </div>\n\n            </div>\n        </li>\n        <li>\n            <a href="https://www.nationaleatingdisorders.org/help-support/contact-helpline">\n                <h3>National Eating Disorder hotline</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>National Eating Disorders hotline provides support, resources and treatment options for yourself or a loved one.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true"></i>Text services</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n                <span>monday-thursday 9am-9pm\n        friday 9am-5pm\n        holiday closures calling, texting, live chat available</span>\n            </div>\n        </li>\n        <li>\n            <a href="http://hopeline.com/">\n                <h3>Hopeline</h3>\n            </a>\n            <div class="helpline-info">\n                <span>Christian based service for teenagers and young adults about whatever challenges they are facing.</span>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n            </div>\n        </li>\n\n        <li>\n            <a href="https://www.rainn.org/ ">\n                <h3>RAINN</h3></a>\n            <div class="helpline-info">\n                <span>Hotline for those dealing with sexual assault.</span>\n\n                <div class="services-avail">\n                    <span>24/7</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.postpartum.net/">\n                <h3>Postpartum Support International </h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The PSI Warmline is a toll-free telephone number anyone can call to get basic information, support, and resources.\n              Dial extension 1 for Spanish and extension 2 for English. The Warmline messages are returned every day of the week.\n               You are welcome to leave a confidential message any time,\n              and one of the warmline volunteers will return your call as soon as possible. If you are not able to talk when\n              the volunteer calls you, you can arrange another time to connect.\n              The volunteer will give you information, encouragement, and names of resources near you.</span>\n                    <span>Postpartum Support International hosts free, live phone sessions every week, including\n              Wednesday chats for moms and first Monday chats for dads.\n              During these sessions you can connect with other moms and dads, and talk with a PSI expert about resources,\n              symptoms, options and general information\n              about perinatal mood and anxiety disorders from the privacy of your own phone. </span>\n                    <span>Weekly online support meetings available.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.thehotline.org/ ">\n                <h3>The Hotline</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>A hotline for anyone experiencing domestic violence, seeking resources or information, or questioning unhealthy\n          aspects of their relationship. The Hotline provides lifesaving tools and immediate support to enable victims to find safety and live lives free of abuse. </span>\n                    <span>Our advocates offer the same support through our live chat services.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>Support available in over 170 languages</span>\n                    <span><i class="fa fa-tty" aria-hidden="true"></i>TTY services available</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.thetrevorproject.org/  ">\n                <h3>The Trevor Project</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Trevor Project is the leading national organization providing crisis intervention and suicide prevention services\n          to lesbian, gay, bisexual, transgender and questioning (LGBTQ) young people ages 13-24.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true"></i>Text services</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat </span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.glbthotline.org/ ">\n                <h3>LGBT National </h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Lesbian, Gay, Bisexual and Transgender (LGBT) Youth Talkline provides telephone, online private one-to-one chat and email peer-support,\n              as well as factual information and local resources for cities and towns across the United States.</span>\n                    <div>\n                        <span>Monday-Friday 1pm - 9pm PT</span>\n                        <span>Saturday 9am - 2pm PT</span>\n                    </div>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span>  <i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n            </div>\n        </li>\n    </ul>\n</div>')
 }]);
 
 // Angular Rails Template
 // source: app/assets/templates/journal-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("journal-template.html", '<div class="journal-container" ng-controller="JournalController as entries">\n    <div class="journalbtn-container">\n        <button class="past-journals button" ng-click="past=true" ng-hide="past">view past entries</button>\n        <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>\n    </div>\n    <div class="add-journal-container">\n        <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">\n            <!-- ng-submit="" -->\n            <input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title">\n            <textarea class="journal-entry" type="text" ng-model="text" placeholder="start typing!">\n    </textarea>\n            <input type="text" class="journal-tag" ng-model="tags" placeholder="tags here">\n            <p class="error">{{error}}\n            </p>\n            <a class="button" ng-click="postJournals()">submit</a>\n        </form>\n\n        <div id="active-entry" ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">\n\n            <div>\n                <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry</a>\n                <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->\n                <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>\n            </div>\n            <ul>\n                <h3 id="edit-title" class="entry" ng-model="title">{{entry.title}}</h3>\n                <li>{{entry.time}} on {{entry.day}}</li>\n                <li id="edit-text" class="view-entry-item" ng-model="text">{{entry.text}}</li>\n                <li id="edit-tags">{{entry.tags}}</li>\n\n                <button ng-hide="!edit" class="submit-entry" type="submit" ng-click="edit=false; patchJournalText(entry)">\n            </ul>\n\n            <!-- <form ng-hide="!edit" class="textarea-container" ng-submit="patchJournalText(text, entry)">\n\n                <textarea class="edit" maxlength="1000" type="text" ng-model="text"></textarea>\n\n                <button class="submit-entry" type="submit" ng-click="edit=false">submit entry</button>\n                <button class="submit-entry" type="submit" ng-click="edit=false"> -->\n        </div>\n    </div>\n    <div class="mobile-past" ng-show="past || activeEntry">\n        <h2>Past Entries</h2>\n        <div class="web-list">\n            <ul>\n                <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">\n\n                    <div>\n                        <h3 class="entry">{{entry.title}}</h3>\n                        <!-- <span class="entry">{{entry.text}}</span> -->\n                        <input class="data-id" data-id="{{entry.id}}"></input>\n                        <span class="entry">{{entry.day}}</span>\n                        <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->\n        </div>\n        </li>\n        </ul>\n        <div class="list-end"></div>\n    </div>\n</div>\n\n<div class="web-past">\n    <h2>Past Entries</h2>\n    <div class="web-list">\n        <ul>\n            <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">\n\n                <div ng-hide="edit">\n                    <h3 class="entry">{{entry.title}}</h3>\n                    <!-- <span class="entry">{{entry.text}}</span> -->\n                    <input class="data-id" data-id="{{entry.id}}"></input>\n                    <span class="entry">{{entry.day}}</span>\n                    <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->\n                </div>\n            </li>\n            <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>\n        </ul>\n        <div class="list-end"></div>\n    </div>\n</div>\n</div>')
+  $templateCache.put("journal-template.html", '<div ng-controller="JournalController as entries">\n    <div class="web-past">\n        <h2>Past Entries</h2>\n        <div class="web-list">\n            <ul>\n                <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">\n\n                    <div ng-hide="edit">\n                        <h3 class="entry">{{entry.title}}</h3>\n                        <!-- <span class="entry">{{entry.text}}</span> -->\n                        <input class="data-id" data-id="{{entry.id}}">\n                        </input>\n                        <span class="entry">{{entry.day}}</span>\n                        <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->\n                    </div>\n                </li>\n                <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>\n            </ul>\n            <div class="list-end"></div>\n        </div>\n    </div>\n    <div class="journal-container">\n        <h2 class="title">Journal <i class="fa fa-file-text-o" aria-hidden="true"></i></h2>\n        <div class="add-journal-container">\n            <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">\n                <!-- ng-submit="" -->\n\n                <div class="journal-input-container"><label>Title</label><input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title"></div>\n                <div class="journal-input-container"><label>Journal Entry</label><textarea class="journal-entry" type="text" ng-model="text" placeholder="start typing!">\n    </textarea></div>\n                <div class="journal-input-container"><label>Tags</label><input type="text" class="journal-tag" ng-model="tags" placeholder="tags here"></div>\n                <p class="error">{{error}}\n                </p>\n                <a class="button" name="submit journal" ng-click="postJournals()">submit</a>\n            </form>\n\n            <div id="active-entry" ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">\n\n                <div>\n                    <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry</a>\n                    <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->\n                    <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>\n                </div>\n                <ul>\n                    <h3 id="edit-title" class="entry" ng-model="title">{{entry.title}}</h3>\n                    <li>{{entry.time}} on {{entry.day}}</li>\n                    <li id="edit-text" class="view-entry-item" ng-model="text">{{entry.text}}</li>\n                    <li id="edit-tags">{{entry.tags}}</li>\n\n                    <button ng-hide="!edit" class="submit-entry" type="submit" ng-click="edit=false; patchJournalText(entry)">\n            </ul>\n        </div>\n    </div>\n</div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116086,14 +116086,14 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/map-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("map-template.html", '<div class="row">\n    <div class="loading" ng-show="!map.control"></div>\n    <div class="map-container">\n        <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options"  zoom-to-include-markers="true" control="map.control" event="map.event">\n            <ui-gmap-marker ng-repeat="m in map.markers" idkey=\'m.id\' coords="m" click="onMarkerClicked(m)">\n                <ui-gmap-window templateUrl="map.templateUrl" templateParameter="map.templateParameter">\n                </ui-gmap-window>\n            </ui-gmap-marker>\n        </ui-gmap-google-map>\n    </div>\n    <div class="map-results">\n        <ul>\n            <li ng-repeat="result in newArr">\n                <span>{{result.name}}</span>\n                <span>{{result.formatted_address}}</span>\n                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}}</a></span>\n                <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span>\n                <span>{{checkRating(result.rating)}}</span>\n            </li>\n        </ul>\n    </div>\n</div>')
+  $templateCache.put("map-template.html", '<div class="row">\n    <div class="loading" ng-show="!map.control"></div>\n    <h2 ng-show="map.control">Local Counselors Nearby <i class="fa fa-map-marker" aria-hidden="true"></i></h2>\n    <div class="map-container">\n        <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options"  zoom-to-include-markers="true" control="map.control" event="map.event">\n            <ui-gmap-marker ng-repeat="m in map.markers" idkey=\'m.id\' coords="m" click="onMarkerClicked(m)">\n                <ui-gmap-window templateUrl="map.templateUrl" templateParameter="map.templateParameter">\n                </ui-gmap-window>\n            </ui-gmap-marker>\n        </ui-gmap-google-map>\n    </div>\n    <div class="map-results">\n        <div ng-show="map.control" class="line"></div>\n        <h2 ng-show="map.control">Contact Information <i class="fa fa-address-card-o" aria-hidden="true"></i></h2>\n        <ul>\n            <li ng-repeat="result in newArr">👉\n                <span>{{result.name}}</span>\n                <span>{{result.formatted_address}}</span>\n                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}}</a></span>\n                <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span>\n                <span>{{checkRating(result.rating)}}</span>\n            </li>\n        </ul>\n    </div>\n</div>')
 }]);
 
 // Angular Rails Template
 // source: app/assets/templates/meds-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("meds-template.html", '<div class="medication-container">\n    <div class="medication-wrapper">\n        <h2 class="total-items">Current Medication</h2>\n        <span ng-hide="show">Add current medications you\'re taking</span>\n        <div class="med-list">\n            <ul class="med-nav">\n                <li ng-repeat="med in medications">\n                    <input class="checkbox" type="checkbox" ng-model="med.done" />\n                    <span class="med-{{med.done}} todo">{{med.name}}</span>\n                    <input style="display: none;" data-id="{{med.id}}"></input>\n                </li>\n            </ul>\n            <form ng-submit="postMeds()">\n                <input type="text" Placeholder="Enter Medication" maxlength="100" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <div class="med-buttons">\n                    <button type="submit" ng-submit"postMeds()"> Add Medication</button>\n                    <button type="button" ng-click="deleteMeds()">Remove Selected</button>\n                </div>\n            </form>\n            <button ng-class="{\'disableButton\': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my medication today</button>\n        </div>\n    </div>\n</div>\n\n<div class="form-container">\n        <form class="form-horizontal clearfix">\n            <label for="dateFrom" class="col-sm-2 control-label">Date</label>\n            <div class="col-sm-10">\n                <input type="date" class="form-control" id="dateFrom" ng-model="from" required>\n            </div>\n            <label for="dateTitle" class="col-sm-2 control-label">Event</label>\n            <div class="col-sm-10">\n                <input type="text" class="form-control" id="dateTitle" ng-model="title" placeholder="your title">\n            </div>\n            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent()">Create Event</button>\n        </form>\n    </div>\n    <div class="calendar-container">\n        <div class="well calWell">\n            <div class="row-fluid">\n                <div class="span8">\n                    <div class="btn-toolbar">\n                        <div class="btn-group">\n                            <button class="btn btn-success" ng-class="{active: currentView === \'basicDay\'}" ng-click="changeView(\'basicDay\', \'calendar\')">Day</button>\n                            <button class="btn btn-success" ng-class="{active: currentView === \'basicWeek\'}" ng-click="changeView(\'basicWeek\', \'calendar\')">Week</button>\n                            <button class="btn btn-success" ng-class="{active: currentView === \'month\'}" ng-click="changeView(\'month\', \'calendar\')">Month</button>\n                        </div>\n                    </div>\n                    <div class="calendar" ng-model="eventSources" calendar="calendar" ui-calendar="uiConfig.calendar">\n\n                    </div>\n                 </div>\n             </div>\n        </div>\n    </div>')
+  $templateCache.put("meds-template.html", '<div class="medication-container">\n    <div class="medication-wrapper">\n        <h2 class="total-items">Current Medication <i class="fa fa-medkit" aria-hidden="true"></i></h2>\n        <span ng-hide="show">Add current medications you\'re taking</span>\n        <div class="med-list">\n            <ul class="med-nav">\n                <li ng-repeat="med in medications">\n                    <input class="checkbox" type="checkbox" ng-model="med.done" />\n                    <span class="med-{{med.done}} todo">{{med.name}}</span>\n                    <input style="display: none;" data-id="{{med.id}}"></input>\n                </li>\n            </ul>\n            <form ng-submit="postMeds()">\n                    <label class="med-name" for="medication-name">Name</label>\n                    <input id="medication-name" type="text" Placeholder="Enter Medication" maxlength="100" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <div class="med-buttons">\n                    <button type="submit" ng-submit"postMeds()"> Add Medication</button>\n                    <button type="button" ng-click="deleteMeds()">Remove Selected</button>\n                </div>\n            </form>\n        </div>\n    </div>\n    <div class="line"></div>\n</div>\n\n<h2 class="calendar-events">Calendar Events <i class="fa fa-calendar" aria-hidden="true"></i></h2>\n<button ng-class="{\'disableButton\': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my medication today</button>\n<div class="form-container">\n        <form class="form-horizontal clearfix">\n            <label for="dateFrom" class="col-sm-2 control-label">Date</label>\n            <div class="col-sm-10">\n                <input type="date" class="form-control" id="dateFrom" ng-model="from" required>\n            </div>\n            <label for="dateTitle" class="col-sm-2 control-label">Event</label>\n            <div class="col-sm-10">\n                <input type="text" class="form-control" id="dateTitle" ng-model="title" placeholder="Title">\n            </div>\n            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent()">Create Event</button>\n        </form>\n    </div>\n    <div class="calendar-container">\n        <div class="well calWell">\n            <div class="row-fluid">\n                <div class="span8">\n                    <div class="btn-toolbar">\n                        <div class="btn-group">\n                            <button class="btn btn-success" ng-class="{active: currentView === \'basicDay\'}" ng-click="changeView(\'basicDay\', \'calendar\')">Day</button>\n                            <button class="btn btn-success" ng-class="{active: currentView === \'basicWeek\'}" ng-click="changeView(\'basicWeek\', \'calendar\')">Week</button>\n                            <button class="btn btn-success" ng-class="{active: currentView === \'month\'}" ng-click="changeView(\'month\', \'calendar\')">Month</button>\n                        </div>\n                    </div>\n                    <div class="calendar" ng-model="eventSources" calendar="calendar" ui-calendar="uiConfig.calendar">\n\n                    </div>\n                 </div>\n             </div>\n        </div>\n    </div>')
 }]);
 
 // Angular Rails Template
@@ -116107,14 +116107,14 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/todo-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("todo-template.html", '<div class="container" ng-controller="TodoController as todo">\n    <div class="todo-wrapper">\n        <h2 class="total-items">doables</h2>\n        <a ng-click="othersTodos(); show=true" ng-hide="show">View other doable tasks...</a>\n        <div class="other-todos" ng-show="show">\n            <ul>\n                <li ng-repeat="featTodo in randomArray">\n                    <div>{{featTodo}}</div>\n                </li>\n                <div><span>some <cite>tasks</cite> yanked from <a href="http://bit.ly/1Cewmd1">Eponis Sinope</a> and modified for our purposes</span></div>\n            </ul>\n            <a ng-click="clearOthers();show=false">close</a></div>\n        <div class="todo-list">\n            <ul class="nav">\n                <li ng-repeat="todo in todos">\n                    <input class="checkbox" type="checkbox" ng-model="todo.done" />\n                    <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>\n                </li>\n            </ul>\n            <form ng-submit="postTodos()">\n                <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <button type="submit" class="button" ng-submit="postTodos()"> Add New Task</button>\n                <button type="button" class="button remove" ng-click="deleteTodos()">Remove Selected</button>\n            </form>\n        </div>\n    </div>\n</div>')
+  $templateCache.put("todo-template.html", '<div class="container" ng-controller="TodoController as todo">\n    <div class="todo-wrapper">\n        <h2 class="total-items">Doables <i class="fa fa-list-ul" aria-hidden="true"></i></h2>\n        <a ng-click="othersTodos(); show=true" ng-hide="show">View other doable tasks...</a>\n        <div class="other-todos" ng-show="show">\n            <ul>\n                <li ng-repeat="featTodo in randomArray">\n                    <div>{{featTodo}}</div>\n                </li>\n                <div><span>some <cite>tasks</cite> yanked from <a href="http://bit.ly/1Cewmd1">Eponis Sinope</a> and modified for our purposes</span></div>\n            </ul>\n            <a ng-click="clearOthers();show=false">close</a></div>\n        <div class="todo-list">\n            <ul class="nav">\n                <li ng-repeat="todo in todos">\n                    <input class="checkbox" type="checkbox" ng-model="todo.done" />\n                    <span class="todo-{{todo.done}} todo">{{todo.todo}}</span>\n                </li>\n            </ul>\n            <form ng-submit="postTodos()">\n                <input type="text" Placeholder="Enter Task" maxlength="100" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <button type="submit" class="button" ng-submit="postTodos()"> Add New Task</button>\n                <button type="button" class="button remove" ng-click="deleteTodos()">Remove Selected</button>\n            </form>\n        </div>\n    </div>\n</div>')
 }]);
 
 // Angular Rails Template
 // source: app/assets/templates/update-mood-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("update-mood-template.html", '<div class="container-mood">\n    <div class="update-mood-container">\n        <h2 ng-show="!isSubmitted">Update Your Mood</h2>\n        <div ng-show="!isSubmitted" class="select_style">\n            <select ng-change="change()" ng-model="value" ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList" id="mood-selections">\n            <option value=\'\'>-- Select Here -- </option>\n            </select>\n            <span></span>\n        </div>\n            <form ng-show="!isSubmitted" name="explainForm" class="mood-form" ng-submit="postMoods()">\n                <button class="customize-link" ui-sref="BlueParent.customize">Customize your moods</button>\n                <input class="button" type="submit" value="Submit">\n            </form>\n            <div ng-show="isSubmitted" class="mood-updated">\n                <h2>Mood Updated! Do you want to write about it in your <a ui-sref="BlueParent.journal">journal</a>?</h2>\n            </div>\n        </div>\n    </div>')
+  $templateCache.put("update-mood-template.html", '<div class="container-mood">\n    <div class="update-mood-container">\n        <h2 ng-show="!isSubmitted">Update Your Mood <i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>\n        <div ng-show="!isSubmitted" class="select_style">\n            <select ng-change="change()" ng-model="value" ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList" id="mood-selections">\n            <option value=\'\'>-- Select Here -- </option>\n            </select>\n            <span></span>\n        </div>\n            <form ng-show="!isSubmitted" name="explainForm" class="mood-form" ng-submit="postMoods()">\n                <input class="button" type="submit" value="Submit">\n            </form>\n            <button class="customize-link" ui-sref="BlueParent.customize">Customize your moods</button>\n            <div ng-show="isSubmitted" class="mood-updated">\n                <h2>Mood Updated! Do you want to write about it in your <a ui-sref="BlueParent.journal">journal</a>?</h2>\n            </div>\n        </div>\n    </div>')
 }]);
 
 // Angular Rails Template
@@ -116919,7 +116919,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 },
-                zoom: 12,
+                zoom: 11,
                 control: {},
                 markers: [],
                 templateUrl: 'place.html',
@@ -117014,23 +117014,36 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 $scope.$apply();
 
             };
+
             $scope.removeMarkers = function() {
                 $scope.map.markers.length = 0;
             };
+
+            $(window).resize(function() {
+
+                if ($(window).width() <= 600) {
+
+                    $scope.map.zoom = 10;
+                } else {
+                    $scope.map.zoom = 11;
+                }
+
+            });
+
         });
     });
 
 })(angular);
 (function(ng) {
-    ng.module('BlueMirrorApp').controller('MedicineController', function($state, $scope,  $compile, $timeout, uiCalendarConfig, $q, DataRequestService, UserService) {
+    ng.module('BlueMirrorApp').controller('MedicineController', function($state, $scope, $compile, $timeout, uiCalendarConfig, $q, DataRequestService, UserService) {
 
         /* MEDICATION FUNCTIONS */
 
         $scope.medications = [];
 
         $scope.medObj = {
-                     name: ''
-                    };
+            name: ''
+        };
 
         // total meds
         $scope.totalmeds = function() {
@@ -117105,9 +117118,9 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             $scope.title = 'took meds ✅';
             $scope.from = moment().startOf('day').toDate();
             $scope.eventObj = {
-                                title: $scope.title,
-                                completed: true
-                            };
+                title: $scope.title,
+                completed: true
+            };
 
             $scope.addEvent();
         };
@@ -117131,12 +117144,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             return todaysTakenEvents.length > 0;
         };
 
-        // $scope.checkMedsTaken = function() {
-        //
-        //     if (moment() > moment().startOf('day') && moment() < moment().endOf('day')) {
-        //         return true;
-        //     }
-        // };
 
         /* CALENDAR FUNCTIONS  */
 
@@ -117146,41 +117153,41 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         /* event source that contains custom events on the scope */
         $scope.events = [];
 
-        $scope.from = ''
+        $scope.from = '';
         $scope.eventObj = {
-                            title: '',
-                            completed: false,
-                            from: ''
-                        };
+            title: '',
+            completed: false,
+            from: ''
+        };
 
         /* add custom event*/
-        $scope.addEvent = function () {
-          console.log('before ', $scope.eventObj);
+        $scope.addEvent = function() {
+            console.log('before ', $scope.eventObj);
 
-          $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
-              console.log('after ', $scope.eventObj);
-              $scope.eventId = response.data.location.id;
-              $scope.postTitle = response.data.location.title;
+            $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
+                console.log('after ', $scope.eventObj);
+                $scope.eventId = response.data.location.id;
+                $scope.postTitle = response.data.location.title;
 
-              $scope.events.push({
-                  _id: $scope.eventId,
-                  title: $scope.postTitle,
-                  start: moment($scope.from),
-                  allDay: true,
-                  stick: true
-              });
+                $scope.events.push({
+                    _id: $scope.eventId,
+                    title: $scope.postTitle,
+                    start: moment($scope.from),
+                    allDay: true,
+                    stick: true
+                });
 
-              $scope.eventObj = {
-                                  title: '',
-                                  completed: false,
-                                  from: ''
-                              }
+                $scope.eventObj = {
+                    title: '',
+                    completed: false,
+                    from: ''
+                };
 
-              console.log($scope.eventId);
+                console.log($scope.eventId);
 
-          }).catch((error) => {
-              console.log(error);
-          });
+            }).catch((error) => {
+                console.log(error);
+            });
 
 
             $scope.eventObj.title = $scope.title;
@@ -117189,14 +117196,25 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         };
 
         /* Change View */
-        $scope.changeView = function (view, calendar) {
-            $scope.currentView = view;
+        $scope.changeView = function(view, calendar) {
+            $scope.currentView = 'view';
             uiCalendarConfig.calendars[calendar].fullCalendar('changeView', view);
         };
 
+
         /* Change View */
-        $scope.renderCalender = function (calendar) {
-            $timeout(function () {
+        $(window).resize(function() {
+
+            if ($(window).width() <= 600) {
+                console.log($scope.uiConfig.calendar.height);
+                $('.calendar').fullCalendar('changeView', 'basicDay', 'calendar');
+            } else {
+                $('.calendar').fullCalendar('changeView', 'month', 'calendar');
+            }
+
+        });
+        $scope.renderCalender = function(calendar) {
+            $timeout(function() {
                 if (uiCalendarConfig.calendars[calendar]) {
                     uiCalendarConfig.calendars[calendar].fullCalendar('render');
                 }
@@ -117204,12 +117222,15 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         };
 
         /* Event Render */
-        $scope.eventRender = function (event, element, view) {
+        $scope.eventRender = function(event, element, view) {
             $scope.calendarWatch++;
-            element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
+            element.attr({
+                'tooltip': event.title,
+                'tooltip-append-to-body': true
+            });
             $compile(element)($scope);
-            element.append( "<span class='closeon'>❌</span>");
-            element.append( "<span class='star'>⭐</span>");
+            element.append("<span class='closeon'>❌</span>");
+            element.append("<span class='star'>⭐</span>");
             element.find(".closeon").click(function() {
                 // console.log(event);
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
@@ -117225,13 +117246,12 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         /* config object */
         $scope.uiConfig = {
             calendar: {
-                height: 450,
                 editable: true,
-                eventClick: function(event){
-		        $(".closon").click(function() {
-	            $('.calendar').fullCalendar('removeEvents', event._id);
-   	              });
-              },
+                eventClick: function(event) {
+                    $(".closon").click(function() {
+                        $('.calendar').fullCalendar('removeEvents', event._id);
+                    });
+                },
                 eventRender: $scope.eventRender
             }
         };
@@ -117389,9 +117409,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 }
             };
         });
-
-
-
 
 
         // CHART MOODS

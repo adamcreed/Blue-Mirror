@@ -11,12 +11,12 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
 
     # test 'should log in' do
-      login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      login username: ENV['EMAIL'], password: ENV['PASSWORD']
       assert page.has_content? 'Blue Mirror'
     # end
 
     # test 'should customize mood' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
 
       click_on 'Update Mood'
       assert page.has_css? 'option[label="Terrible"]'
@@ -39,14 +39,14 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
 
     # test 'should get mood chart' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       click_on 'Mood Chart'
 
       assert page.has_css? '.chart'
     # end
 
     # test 'should submit mood' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       click_on 'Home'
       click_on 'Update Mood'
       click_button 'Submit'
@@ -58,7 +58,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
 
     # test 'should find counselors' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       click_on 'Home'
       click_on 'Local Counselors'
       refute page.has_css? '#map-canvas'
@@ -75,7 +75,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
 
     # test 'should get crisis helplines' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       page.driver.go_back
       click_on 'Home'
       click_on 'Crisis helplines'
@@ -83,7 +83,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
 
     # test 'should get motivations' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       click_on 'Home'
       click_on 'get motivated'
       assert page.has_css? '.todo-list'
@@ -109,7 +109,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     refute page.has_css? '.other-todos ul li'
 
     # test 'should write a journal entry' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       click_on 'Journal'
       assert page.has_content? 'Past Entries'
       refute page.has_content? 'Horse-Title'
@@ -129,7 +129,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
 
     # test 'should view and add events' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       click_on 'Meds'
       refute page.has_content? 'took meds ✅'
       refute page.has_css? '.disableButton'
@@ -150,7 +150,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
     #
     # test 'should view and add meds' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       click_on 'Meds'
       refute page.has_content? 'Horse tranquilizers'
 
@@ -164,7 +164,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     # end
 
     # test 'should log out' do
-      # login username: ENV['TEST_USER'], password: ENV['TEST_PASSWORD']
+      # login username: ENV['EMAIL'], password: ENV['PASSWORD']
       assert page.has_content? 'Blue Mirror'
 
       click_on 'sign out'
