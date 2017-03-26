@@ -35,7 +35,7 @@
     margin: 0 auto;
 
     @include bp(mobile) {
-        width: 79%;
+        width: 51%;
     }
 
     @include bp(small) {
@@ -47,17 +47,19 @@
     }
 
     ul.med-nav {
-        // width: 300px;
-        // display: inline-block;
         color: #97a0af;
         margin-top: 10px;
         display: flex;
         flex-direction: column;
-        width: 100%;
         padding-bottom: 10px;
+
+        @include bp(mobile) {
+            width: inerhit;
+        }
 
         @include bp(small) {
             padding-left: 60px;
+            width: 406px;
         }
 
         li {
