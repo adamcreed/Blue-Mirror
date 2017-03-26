@@ -3,7 +3,7 @@ module ApplicationHelper
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def featured(file)
+  def get_featured(file)
     items = []
     File.readlines(file, quote_char: "\x00").each do |row|
       items << row.strip

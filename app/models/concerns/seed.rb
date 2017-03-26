@@ -5,7 +5,7 @@ module Seed
 
   module ClassMethods
     def seed_todos(user_id)
-      featured('db/data/todos.seed').sample(5).each do |row|
+      get_featured('db/data/todos.seed').sample(5).each do |row|
         Todo.create(
           todo: row.strip,
           user_id: user_id

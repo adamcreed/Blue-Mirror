@@ -7,7 +7,7 @@ class TodosController < ApplicationController
   end
 
   def featured
-    render json: featured('db/data/todos.seed')
+    render json: get_featured('db/data/todos.seed')
   end
 
   # GET /todos/1
