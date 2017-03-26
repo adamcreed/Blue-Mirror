@@ -32,7 +32,6 @@
 }
 
 .map-container {
-    z-index: -1;
     @include bp(mobile) {
         width: 90%;
         height: 150px;
