@@ -117209,7 +117209,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             element.attr({'tooltip': event.title, 'tooltip-append-to-body': true});
             $compile(element)($scope);
             element.append( "<span class='closeon'>❌</span>");
-            element.append( "<span class='closeon'>⭐</span>");
+            element.append( "<span class='star'>⭐</span>");
             element.find(".closeon").click(function() {
                 // console.log(event);
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
