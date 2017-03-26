@@ -48,6 +48,7 @@ nav {
 }
 
 .left-aside {
+    z-index: 1;
     @include bp (mobile) {
         display: none;
     }
