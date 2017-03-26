@@ -108,12 +108,6 @@
             return todaysTakenEvents.length > 0;
         };
 
-        // $scope.checkMedsTaken = function() {
-        //
-        //     if (moment() > moment().startOf('day') && moment() < moment().endOf('day')) {
-        //         return true;
-        //     }
-        // };
 
         /* CALENDAR FUNCTIONS  */
 
@@ -151,7 +145,7 @@
                     title: '',
                     completed: false,
                     from: ''
-                }
+                };
 
                 console.log($scope.eventId);
 
