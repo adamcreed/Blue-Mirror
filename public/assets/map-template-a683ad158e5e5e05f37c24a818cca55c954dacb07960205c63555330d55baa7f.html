@@ -13,12 +13,13 @@
         <div ng-show="map.control" class="line"></div>
         <h2 ng-show="map.control">Contact Information <i class="fa fa-address-card-o" aria-hidden="true"></i></h2>
         <ul>
-            <li ng-repeat="result in newArr">👉
-                <span>{{result.name}}</span>
-                <span>{{result.formatted_address}}</span>
-                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}}</a></span>
+            <li ng-repeat="result in newArr"><i class="fa fa-circle-o" aria-hidden="true"></i>
+                <span class="result-name">{{result.name}} <br/></span>
+                <span class="result-rating">{{checkRating(result.rating)}}</span>
+                <span>{{result.formatted_address}} <br/></span>
+                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}} <br/></a></span>
                 <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span>
-                <span>{{checkRating(result.rating)}}</span>
+                <!-- <span>{{checkRating(result.rating)}}</span> -->
             </li>
         </ul>
     </div>

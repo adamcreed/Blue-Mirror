@@ -116058,7 +116058,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/customize-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("customize-template.html", '<div class="container">\n            <form ng-submit="save($event)">\n                <ul ui-sortable="{axis:\'y\', containment: \'parent\'}" ng-model="list">\n                <li class="row-list" ng-repeat="row in list">\n                    <input type="text" class="form-control" ng-model="row.text" /><span ng-click="del(row)" class="remove-row"><span>↕️</span> ❌</span>\n                </li>\n                <input ng-class="{\'disableButton\': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />\n                <button class="btn btn-default">Submit</button>\n                <p>Note: Altering moods will reflect on your mood chart</p>\n            </ul>\n        </form>\n            <br>\n            <pre ng-show="isShow">list={{list}}</pre>\n        </div>')
+  $templateCache.put("customize-template.html", '<div class="container">\n            <form ng-submit="save($event)">\n                <ul ui-sortable="{axis:\'y\', containment: \'parent\'}" ng-model="list">\n                <li class="row-list" ng-repeat="row in list">\n                    <input type="text" maxlength="20" class="form-control" ng-model="row.text" /><span ng-click="del(row)" class="remove-row"><span>↕️</span> ❌</span>\n                </li>\n                <input ng-class="{\'disableButton\': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />\n                <button class="btn btn-default">Submit</button>\n                <p>Note: Altering moods will reflect on your mood chart</p>\n            </ul>\n        </form>\n            <br>\n            <pre ng-show="isShow">list={{list}}</pre>\n        </div>')
 }]);
 
 // Angular Rails Template
@@ -116086,7 +116086,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/map-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("map-template.html", '<div class="row">\n    <div class="loading" ng-show="!map.control"></div>\n    <h2 ng-show="map.control">Local Counselors Nearby <i class="fa fa-map-marker" aria-hidden="true"></i></h2>\n    <div class="map-container">\n        <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options"  zoom-to-include-markers="true" control="map.control" event="map.event">\n            <ui-gmap-marker ng-repeat="m in map.markers" idkey=\'m.id\' coords="m" click="onMarkerClicked(m)">\n                <ui-gmap-window templateUrl="map.templateUrl" templateParameter="map.templateParameter">\n                </ui-gmap-window>\n            </ui-gmap-marker>\n        </ui-gmap-google-map>\n    </div>\n    <div class="map-results">\n        <div ng-show="map.control" class="line"></div>\n        <h2 ng-show="map.control">Contact Information <i class="fa fa-address-card-o" aria-hidden="true"></i></h2>\n        <ul>\n            <li ng-repeat="result in newArr">👉\n                <span>{{result.name}}</span>\n                <span>{{result.formatted_address}}</span>\n                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}}</a></span>\n                <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span>\n                <span>{{checkRating(result.rating)}}</span>\n            </li>\n        </ul>\n    </div>\n</div>')
+  $templateCache.put("map-template.html", '<div class="row">\n    <div class="loading" ng-show="!map.control"></div>\n    <h2 ng-show="map.control">Local Counselors Nearby <i class="fa fa-map-marker" aria-hidden="true"></i></h2>\n    <div class="map-container">\n        <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options"  zoom-to-include-markers="true" control="map.control" event="map.event">\n            <ui-gmap-marker ng-repeat="m in map.markers" idkey=\'m.id\' coords="m" click="onMarkerClicked(m)">\n                <ui-gmap-window templateUrl="map.templateUrl" templateParameter="map.templateParameter">\n                </ui-gmap-window>\n            </ui-gmap-marker>\n        </ui-gmap-google-map>\n    </div>\n    <div class="map-results">\n        <div ng-show="map.control" class="line"></div>\n        <h2 ng-show="map.control">Contact Information <i class="fa fa-address-card-o" aria-hidden="true"></i></h2>\n        <ul>\n            <li ng-repeat="result in newArr"><i class="fa fa-circle-o" aria-hidden="true"></i>\n                <span class="result-name">{{result.name}} <br/></span>\n                <span class="result-rating">{{checkRating(result.rating)}}</span>\n                <span>{{result.formatted_address}} <br/></span>\n                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}} <br/></a></span>\n                <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span>\n                <!-- <span>{{checkRating(result.rating)}}</span> -->\n            </li>\n        </ul>\n    </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116114,7 +116114,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/update-mood-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("update-mood-template.html", '<div class="container-mood">\n    <div class="update-mood-container">\n        <h2 ng-show="!isSubmitted">Update Your Mood <i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>\n        <div ng-show="!isSubmitted" class="select_style">\n            <select ng-change="change()" ng-model="value" ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList" id="mood-selections">\n            <option value=\'\'>-- Select Here -- </option>\n            </select>\n            <span></span>\n        </div>\n            <form ng-show="!isSubmitted" name="explainForm" class="mood-form" ng-submit="postMoods()">\n                <input class="button" type="submit" value="Submit">\n            </form>\n            <button class="customize-link" ui-sref="BlueParent.customize">Customize your moods</button>\n            <div ng-show="isSubmitted" class="mood-updated">\n                <h2>Mood Updated! Do you want to write about it in your <a ui-sref="BlueParent.journal">journal</a>?</h2>\n            </div>\n        </div>\n    </div>')
+  $templateCache.put("update-mood-template.html", '<div class="container-mood">\n    <div class="update-mood-container">\n        <h2 ng-show="!isSubmitted">Update Your Mood <i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>\n        <div ng-show="!isSubmitted" class="select_style">\n            <select ng-change="change()" ng-model="value" ng-options="moodList.indexOf(mood) + 1 as mood.text for mood in moodList" id="mood-selections">\n            <option value=\'\'>-- Select Here -- </option>\n            </select>\n            <span></span>\n        </div>\n            <form ng-show="!isSubmitted" name="explainForm" class="mood-form" ng-submit="postMoods()">\n                <input class="button" type="submit" value="Submit">\n            </form>\n            <button ng-show="!isSubmitted" class="customize-link" ui-sref="BlueParent.customize">Customize your moods</button>\n            <div ng-show="isSubmitted" class="mood-updated">\n                <h2>Mood Updated! Do you want to write about it in your <a ui-sref="BlueParent.journal"> journal</a>?</h2>\n            </div>\n        </div>\n    </div>')
 }]);
 
 // Angular Rails Template
@@ -116886,7 +116886,17 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         };
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
+            let e = $scope.journalsArray.indexOf(entry);
+            let arrayIndex = $scope.journalsArray[e];
+            for (let i = 0; i < $scope.journalsArray.length; i++) {
+                console.log('yo', $scope.journalsArray[e].title);
+                // if ($scope.journalsArray[i].title === "") {
+                //     $scope.journalsArray[i].title = "Untitled";
+                // }
+            }
+
             for (var entry in $scope.pastJournals) {
+
                 $scope.pastEntries = $scope.pastJournals[entry];
                 $scope.journalsArray.push($scope.pastEntries);
             }
@@ -116907,7 +116917,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 })(angular);
 (function(ng) {
     ng.module('BlueMirrorApp').controller('MapController', function($state, $scope, $q, DataRequestService, UserService, uiGmapGoogleMapApi, uiGmapIsReady, $geolocation, $sce) {
-
 
         $scope.$watch('placeSearch()', function() {});
 
@@ -116970,11 +116979,11 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             $scope.newArr = [];
 
             $scope.checkRating = function(rating) {
-                    if (rating) {
-                        return 'Rating: ' + rating;
-                    } else {
-                        return 'Rating: no rating';
-                    }
+                if (rating) {
+                    return 'Rating: ' + rating;
+                } else {
+                    return null;
+                }
             };
 
 
@@ -117114,7 +117123,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         };
 
         $scope.tookMeds = function() {
-            console.log($scope.events);
             $scope.title = 'took meds ✅';
             $scope.from = moment().startOf('day').toDate();
             $scope.eventObj = {
@@ -117162,10 +117170,8 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 
         /* add custom event*/
         $scope.addEvent = function() {
-            console.log('before ', $scope.eventObj);
 
             $q.when(DataRequestService.post('/events', $scope.eventObj)).then((response) => {
-                console.log('after ', $scope.eventObj);
                 $scope.eventId = response.data.location.id;
                 $scope.postTitle = response.data.location.title;
 
@@ -117183,7 +117189,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                     from: ''
                 };
 
-                console.log($scope.eventId);
 
             }).catch((error) => {
                 console.log(error);
@@ -117206,7 +117211,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         $(window).resize(function() {
 
             if ($(window).width() <= 600) {
-                console.log($scope.uiConfig.calendar.height);
                 $('.calendar').fullCalendar('changeView', 'basicDay', 'calendar');
             } else {
                 $('.calendar').fullCalendar('changeView', 'month', 'calendar');
@@ -117232,11 +117236,9 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             element.append("<span class='closeon'>❌</span>");
             element.append("<span class='star'>⭐</span>");
             element.find(".closeon").click(function() {
-                // console.log(event);
                 $q.when(DataRequestService.delete(`/events/${event._id}`)).then((response) => {
 
                     $('.calendar').fullCalendar('removeEvents', event._id);
-                    console.log(event);
                 }).catch((error) => {
                     console.log(error);
                 });
@@ -117404,7 +117406,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             };
 
             $scope.isDisabled = function() {
-                if($scope.list.length === 10) {
+                if ($scope.list.length === 10) {
                     return true;
                 }
             };
@@ -117422,13 +117424,13 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 scales: {
                     xAxes: [{
                         ticks: {
-                            fontColor: 'blue',
+                            fontColor: '#35635d',
                             minRotation: 20
                         }
                     }],
                     yAxes: [{
                         ticks: {
-                            fontColor: 'blue',
+                            fontColor: '#35635d',
                             min: 0,
                             max: $scope.highestMood,
                             stepSize: 1,
@@ -117511,10 +117513,8 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 data[i] = data[j];
                 data[j] = temp;
             }
-            console.log('data', data);
             for (let i = 0; i < 5; i++) {
                 $scope.randomArray.push(data[i]);
-                console.log('eh', $scope.randomArray);
             }
 
         };
