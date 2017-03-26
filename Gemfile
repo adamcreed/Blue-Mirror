@@ -19,6 +19,8 @@ gem 'angular-rails-templates'
 gem 'bourbon'
 gem 'bower-rails'
 
+gem 'sms-easy'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record

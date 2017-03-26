@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'auth/current', to: 'sessions#current'
   get 'todos/featured', to: 'todos#featured'
   get 'inspos', to: 'inspos#index'
+  patch 'mood_lists', to: 'mood_lists#update'
+  patch 'users/phone', to: 'phone#update'
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
@@ -17,7 +19,6 @@ Rails.application.routes.draw do
   resources :events
   resources :meds
 
-  patch '/mood_lists', to: 'mood_lists#update'
   root 'home#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
