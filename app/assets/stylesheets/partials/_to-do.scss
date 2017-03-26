@@ -27,11 +27,14 @@
         margin-bottom: 5px;
         flex-wrap: nowrap;
         align-items: center;
-        width: 70%;
+        // width: 70%;
+        width: 100%;
         margin: 0 auto;
+        padding-bottom: 10px;
 
         .checkbox {
-            width: 10%;
+            // width: 10%;
+            width: 7%
         }
 
         span {
@@ -50,6 +53,14 @@ span.med-true {
     margin: 10px auto;
 }
 
+.todo-list {
+    form {
+        input {
+            width: 287px;
+        }
+    }
+}
+
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -60,6 +71,32 @@ span.med-true {
     width: 300px;
     border-radius: $radius;
     background: rgba($accentCream,.8);
+    border: $border;
+
+    ul li {
+        padding-bottom: 10px;
+    }
+}
+
+.cite {
+    padding-bottom: 10px;
+
+    span {
+        font-size: 11px;
+    }
+    a {
+        color: $accentBrightRed;
+    }
+}
+
+.feat-todo div i {
+    font-size: 10px;
+    padding-right: 8px;
+}
+
+.feat-todo div {
+    display: flex;
+    align-items: baseline;
 }
 
 span.todo-true {
