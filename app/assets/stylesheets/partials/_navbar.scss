@@ -85,6 +85,7 @@ nav {
             display: flex;
             flex-direction: column;
             line-height: 1.5rem;
+            display: none;
 
             i {
                 color: $mainColor;
@@ -121,12 +122,23 @@ nav {
     @include bp (mobile) {
         position: fixed;
         display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
         align-items: center;
-        background: red;
+        background: white;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 60px;
+
+        i {
+            font-size: 2.5rem;
+        }
+
+        .text-opt {
+            font-size: 1.5rem;
+            color: $mainColor;
+        }
 
         ul {
             display: none;
@@ -143,6 +155,10 @@ nav {
         }
 
         .bmirror {
+            display: none;
+        }
+
+        .text-opt {
             display: none;
         }
         border-bottom: $border;
