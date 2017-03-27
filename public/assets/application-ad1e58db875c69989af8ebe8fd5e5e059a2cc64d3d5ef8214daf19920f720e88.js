@@ -117041,7 +117041,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         /* MEDICATION FUNCTIONS */
 
         $scope.medications = [];
-        
+
         $scope.medObj = {
             name: ''
         };
@@ -117134,7 +117134,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             if (typeof $('.calendar').fullCalendar('clientEvents') === 'undefined') return false;
 
             let todaysEvents = $('.calendar').fullCalendar('clientEvents').filter(event => {
-                return moment(event.start).get('date') === moment().get('date');
+                return moment(event.start).format('YYYY MM DD') === moment().format('YYYY MM DD');
             });
 
             let todaysTakenEvents = todaysEvents.filter(event => {
@@ -117499,9 +117499,9 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         //shuffle and push featured to dos
         $scope.shuffle = function(data) {
 
-            for (var i = data.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var temp = data[i];
+            for (let i = data.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let temp = data[i];
                 data[i] = data[j];
                 data[j] = temp;
             }
