@@ -56,11 +56,12 @@ class CapybaraTest < ActionDispatch::IntegrationTest
 
   test 'should find counselors' do
     login username: ENV['EMAIL'], password: ENV['PASSWORD']
-    click_on 'Local Counselors'
+    click_on 'Local Health Centers'
     refute page.has_css? '#map-canvas'
     assert page.has_css? '.loading'
 
-    sleep 10
+    sleep 1 until page.has_css? '#map-canvas'
+
     refute page.has_css? '.loading'
     assert page.has_css? '#map-canvas'
     assert page.has_css? '.map-results'
@@ -128,7 +129,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     refute page.has_content? 'took meds ✅'
     refute page.has_css? '.disableButton'
 
-    click_on 'I took my medication today'
+    click_on 'I took my meds today'
     assert page.has_content? 'took meds ✅'
     assert page.has_css? '.disableButton'
 
@@ -137,15 +138,18 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     refute page.has_css? '.disableButton'
 
     refute page.has_content? 'Horse-Dagger'
-    fill_in 'dateFrom', with: Date.today
-    fill_in 'dateTitle', with: 'Horse-Dagger'
+    scroll_to find('.calbutton-container')
     click_on 'Create Event'
+    fill_in 'dateFrom', with: DateTime.now.strftime('%m/%d/%Y')
+    fill_in 'dateTitle', with: 'Horse-Dagger'
+    click_on 'Submit'
     assert page.has_content? 'Horse-Dagger'
   end
 
   test 'should view and add meds' do
     login username: ENV['EMAIL'], password: ENV['PASSWORD']
     click_on 'Meds'
+    click_on 'View Medications'
     refute page.has_content? 'Horse tranquilizers'
 
     fill_in placeholder: 'Enter Medication', with: 'Horse tranquilizers'
