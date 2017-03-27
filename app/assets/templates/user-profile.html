@@ -25,25 +25,27 @@
 
 <div class="sms-container">
     <a ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
-    <div class="other-todos">
-        <div><span>Opt in to recive sms messages<br/></span></div>
+    <div class="sms-popup" ng-show="show">
+        <div><span>Opt in to recieve sms messages<br/></span></div>
         <form name="smsForm" class="smsForm" ng-submit="submitSms()">
             <label for="phonenum">Phone Number (10 digits) <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
-            <input ng-model="num" name="number" ng-click="submitCarriers()" id="phonenum" type="tel" pattern="^(\D*\d){10}\D*$" required>
+            <input ng-model="num" name="number" ng-click="submitCarriers()" id="phonenum" type="tel" pattern="^(\D*\d){10}\D*$" placeholder="Number (required)"required>
             <!-- <span ng-show="smsForm.number.$dirty && smsForm.number.$error.required">Number is required</span> -->
 
             <label for="provider">Carrier <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
             <select name="phonecarrier" ng-change="currentCarrier" ng-model="smsCarrier" ng-options="carrier[1] as carrier[0] for carrier in phoneCarriers" id="provider" required>
+                <option value=''>Carrier (required) </option>
             </select><br/>
 
             <label for="frequency">How Often Would You Like to Recieve SMS? <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
             <select name="frequency" ng-change="currentFrequency" ng-model="smsFrequency" id="frequency" required>
+                <option value=''>Frequency (required) </option>
                 <option value='Daily'>Daily</option>
                 <option value='Weekly'>Weekly</option>
-                <option value='Reminder'>On 3 day abscence</option>
+                <option value='Reminder'>On 3 Day Abscence</option>
             </select>
 
             <button ng-click="submitSms()" ng-class="{'disableButton': smsFormValid()}" type="submit" ng-disabled="smsFormValid()">Opt In</button>
         </form>
-        <a ng-click="clearOthers();show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>
+        <a ng-click="show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>
 </div>

@@ -110,9 +110,16 @@
     bottom: 20px;
 }
 
+.sms-popup {
+    padding: 5px;
+    width: 333px;
+    border-radius: 0.3rem;
+    background: #fdf2f2;
+    }
+
 form.smsForm label i {
-    color: red;
-    font-size: 10px;
+    color: #bc2c2c;
+    font-size: 8px;
 }
 
 
