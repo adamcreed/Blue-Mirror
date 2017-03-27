@@ -5,14 +5,9 @@
     justify-content: center;
 
     .line {
+        width: 100%;
         margin-top: 0;
         margin-bottom: 40px;
-        @include bp(mobile) {
-            width: 87%;
-        }
-        @include bp(small) {
-            width: 80%;
-        }
     }
 }
 
@@ -39,9 +34,11 @@
 }
 
 .result-name {
-    font-size: 22px;
-    font-family: $headerFont;
-    color: $mainColor;
+    a {
+        font-size: 22px;
+        font-family: $headerFont;
+        color: $mainColor;
+    }
 }
 
 .map-container {
@@ -61,29 +58,29 @@
 }
 
 .map-results {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    @include bp(mobile) {
-        width: 320px;
-    }
-
-    @include bp(small) {
-        width: 50%;
-    }
+    width: 100%;
+    //
+    // @include bp(mobile) {
+    //     width: 50%;
+    // }
+    //
+    // @include bp(small) {
+    //     width: 100%;
+    // }
 
     ul {
         border-top: $border;
         padding-top: 13px;
 
         @include bp(mobile) {
-            width: 87%;
+            width: 320px;
         }
         @include bp(small) {
-            width: 81%;
+            width: 100%;
         }
     }
 
