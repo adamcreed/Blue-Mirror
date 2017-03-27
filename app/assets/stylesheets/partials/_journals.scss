@@ -92,6 +92,7 @@
             #edit-title {
                 text-align: center;
                 padding: 10px;
+                border-bottom: $border;
             }
 
             #edit-text {
@@ -106,6 +107,7 @@
             .journal-time {
                 width: 300px;
                 padding-bottom: 5px;
+                padding-top: 5px;
             }
 
             .journal-buttons {
