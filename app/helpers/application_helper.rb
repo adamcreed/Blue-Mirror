@@ -1,5 +1,3 @@
-require '~/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sms-easy-1.3.2/lib/sms-easy.rb'
-
 module ApplicationHelper
   include SMSEasyHelper
 

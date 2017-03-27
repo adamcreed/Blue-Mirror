@@ -19,7 +19,7 @@ gem 'angular-rails-templates'
 gem 'bourbon'
 gem 'bower-rails'
 
-gem 'sms-easy'
+gem 'sms-easy', require: true
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
