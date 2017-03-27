@@ -16,13 +16,9 @@ module ApplicationHelper
 
   def mood_list(user)
     if not user
-      list = %w(Terrible Bad Neutral Good Great).map { |mood| { text: mood } }
-      return list.to_json
+      return default_list.to_json
     elsif not MoodList.find_by(user_id: user.id)
-      MoodList.create(
-        user: user,
-        moods: 'Terrible, Bad, Neutral, Good, Great'
-      )
+      create_mood_list user
     end
 
     list = MoodList.find_by(user_id: user.id).moods.split(',').map do |mood|
@@ -30,6 +26,17 @@ module ApplicationHelper
     end
 
     list.to_json
+  end
+
+  def default_list
+    %w(Terrible Bad Neutral Good Great).map { |mood| { text: mood } }
+  end
+
+  def create_mood_list(user)
+    MoodList.create(
+      user: user,
+      moods: 'Terrible, Bad, Neutral, Good, Great'
+    )
   end
 
   def get_day(datetime)

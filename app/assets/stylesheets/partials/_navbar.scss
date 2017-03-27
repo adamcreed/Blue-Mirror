@@ -6,12 +6,12 @@ nav {
     @include bp (mobile) {
         display: flex;
         justify-content: center;
+        padding-top: 50px;
     }
     @include bp (small) {
         float: right;
         width: calc(100% - 250px);
         height: 100vh;
-        padding-top: 50px;
         overflow-y: scroll;
         display: flex;
         justify-content: center;
@@ -85,6 +85,7 @@ nav {
             display: flex;
             flex-direction: column;
             line-height: 1.5rem;
+            display: none;
 
             i {
                 color: $mainColor;
@@ -121,13 +122,43 @@ nav {
     @include bp (mobile) {
         position: fixed;
         display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+        background: white;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 50px;
+        height: 60px;
+
+        i {
+            font-size: 2.5rem;
+        }
+
+        .text-opt {
+            font-size: 1.5rem;
+            color: $mainColor;
+        }
+
+        ul {
+            display: none;
+        }
+
+        .bmirror {
+            height: 50px;
+            width: 50px;
+        }
     }
     @include bp(small) {
+        i {
+            display: none;
+        }
+
         .bmirror {
+            display: none;
+        }
+
+        .text-opt {
             display: none;
         }
         border-bottom: $border;
@@ -135,6 +166,7 @@ nav {
         background: white;
 
         ul {
+            height: 100%;
             width: 70%;
             display: flex;
             justify-content: space-between;

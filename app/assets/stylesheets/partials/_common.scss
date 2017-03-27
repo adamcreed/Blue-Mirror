@@ -158,9 +158,11 @@ textarea {
 }
 
 label {
-    font-family: $headerFont;
+    font-family: $primaryFont;
     color: $darkAccentTeal;
-    font-weight: 600;
+    font-size: 0.75rem;
+    padding-bottom: 2px;
+    font-weight: 300;
 }
 
 ::-webkit-input-placeholder {

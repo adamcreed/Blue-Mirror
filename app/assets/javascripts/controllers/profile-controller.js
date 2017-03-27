@@ -114,7 +114,7 @@
                 $q.when(DataRequestService.patch('/mood_lists', {
                     moods: $scope.newList
                 })).then((response) => {
-                    $state.go('BlueParent.profile');
+                    $state.go('BlueParent.update');
 
                 }).catch((error) => {
                     console.log(error);
@@ -134,6 +134,10 @@
         });
 
         // SMS OPT IN
+
+        
+
+        // SMS OPTING
 
         
 
