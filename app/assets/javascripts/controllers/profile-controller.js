@@ -135,7 +135,24 @@
 
         // SMS OPT IN
 
-        
+        $scope.phoneCarriers = carriers;
+
+        $scope.submitSms = function() {
+            $scope.smsForm.$setSubmitted();
+            $scope.currentFrequency = $scope.smsFrequency;
+            $scope.currentCarrier = $scope.smsCarrier;
+            $scope.telNumber = $scope.num;
+
+
+            console.log($scope.currentFrequency);
+            console.log($scope.currentCarrier);
+            console.log($scope.telNumber);
+        };
+
+        $scope.smsFormValid = function() {
+            return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
+        };
+
 
         // SMS OPTING
 
