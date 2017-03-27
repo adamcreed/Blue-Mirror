@@ -22,3 +22,15 @@
     </div>
 
 </div>
+
+<div class="sms-container">
+    <a ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
+    <div class="other-todos" ng-show="show">
+        <ul>
+            <li class="feat-todo" ng-repeat="featTodo in randomArray">
+                <div><i class="fa fa-circle-thin" aria-hidden="true"></i> {{featTodo}}</div>
+            </li>
+            <div class="cite"><span>Some <cite>tasks</cite> yanked from <a href="http://bit.ly/1Cewmd1">Eponis Sinope</a> and modified for our purposes</span></div>
+        </ul>
+        <a ng-click="clearOthers();show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>
+</div>
