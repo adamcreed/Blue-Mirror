@@ -1,0 +1,36 @@
+<div class="background-container">
+    <div class="shapes">
+        <div class="one">
+
+            <a ui-sref="BlueParent.update"><span>Update Mood</span></a>
+
+        </div>
+        <div class="two">
+
+            <a ui-sref="BlueParent.counselors"><span>Local Health Centers</span></a>
+
+        </div>
+        <div class="three">
+
+            <a ui-sref="BlueParent.hotline"><span>Crisis helplines</span></a>
+
+        </div>
+        <div class="four">
+
+            <a ui-sref="BlueParent.todo"><span>get motivated</span></a>
+        </div>
+    </div>
+
+</div>
+
+<div class="sms-container">
+    <a ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
+    <div class="other-todos" ng-show="show">
+        <ul>
+            <li class="feat-todo" ng-repeat="featTodo in randomArray">
+                <div><i class="fa fa-circle-thin" aria-hidden="true"></i> {{featTodo}}</div>
+            </li>
+            <div class="cite"><span>Some <cite>tasks</cite> yanked from <a href="http://bit.ly/1Cewmd1">Eponis Sinope</a> and modified for our purposes</span></div>
+        </ul>
+        <a ng-click="clearOthers();show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>
+</div>

@@ -116086,7 +116086,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/map-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("map-template.html", '<div class="row">\n    <div class="loading" ng-show="!map.control"></div>\n    <h2 ng-show="map.control">Local Health Centers</h2>\n    <div class="map-container">\n        <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options" zoom-to-include-markers="true" control="map.control" event="map.event">\n            <ui-gmap-marker ng-repeat="m in map.markers" idkey=\'m.id\' coords="m" click="onMarkerClicked(m)">\n                <ui-gmap-window templateUrl="map.templateUrl" templateParameter="map.templateParameter">\n                </ui-gmap-window>\n            </ui-gmap-marker>\n        </ui-gmap-google-map>\n    </div>\n    <div ng-show="map.control" class="map-results">\n        <div class="line"></div>\n        <h2>Contact Information</h2>\n        <ul>\n            <li ng-repeat="result in newArr"><i class="fa fa-circle-o" aria-hidden="true"></i>\n                <span class="result-name">{{result.name}} <br/></span>\n                <span class="result-rating">{{checkRating(result.rating)}}</span>\n                <span>{{result.formatted_address}} <br/></span>\n                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}} <br/></a></span>\n                <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span>\n                <!-- <span>{{checkRating(result.rating)}}</span> -->\n            </li>\n        </ul>\n    </div>\n</div>')
+  $templateCache.put("map-template.html", '<div class="row">\n    <div class="loading" ng-show="!map.control"></div>\n    <h2 ng-show="map.control">Local Health Centers</h2>\n    <div class="map-container">\n        <ui-gmap-google-map ng-if="map.center" id="map-canvas" center="map.center" zoom="map.zoom" draggable="true" options="map.options" zoom-to-include-markers="true" control="map.control" event="map.event">\n            <ui-gmap-marker ng-repeat="m in map.markers" idkey=\'m.id\' coords="m" click="onMarkerClicked(m)">\n                <ui-gmap-window templateUrl="map.templateUrl" templateParameter="map.templateParameter">\n                </ui-gmap-window>\n            </ui-gmap-marker>\n        </ui-gmap-google-map>\n    </div>\n    <div ng-show="map.control" class="map-results">\n        <div class="line"></div>\n        <h2>Contact Information</h2>\n        <ul>\n            <li ng-repeat="result in newArr"><i class="fa fa-circle-o" aria-hidden="true"></i>\n                <span class="result-name"><a ng-href="{{result.website}}">{{result.name}}</a><br/></span>\n                <span class="result-rating">{{checkRating(result.rating)}}</span>\n                <span>{{result.formatted_address}} <br/></span>\n                <span><a class="list-colored" ng-href="tel:{{result.formatted_phone_number}}">{{result.formatted_phone_number}} <br/></a></span>\n                <!-- <span><a class="result-website list-underlined" ng-href="{{result.website}}">{{result.website}}</a></span> -->\n                <!-- <span>{{checkRating(result.rating)}}</span> -->\n            </li>\n        </ul>\n    </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116121,7 +116121,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/user-profile.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("user-profile.html", '<div class="background-container">\n    <div class="shapes">\n        <div class="one">\n\n            <a ui-sref="BlueParent.update"><span>Update Mood</span></a>\n\n        </div>\n        <div class="two">\n\n            <a ui-sref="BlueParent.counselors"><span>Local Health Centers</span></a>\n\n        </div>\n        <div class="three">\n\n            <a ui-sref="BlueParent.hotline"><span>Crisis helplines</span></a>\n\n        </div>\n        <div class="four">\n\n            <a ui-sref="BlueParent.todo"><span>get motivated</span></a>\n        </div>\n    </div>\n\n</div>')
+  $templateCache.put("user-profile.html", '<div class="background-container">\n    <div class="shapes">\n        <div class="one">\n\n            <a ui-sref="BlueParent.update"><span>Update Mood</span></a>\n\n        </div>\n        <div class="two">\n\n            <a ui-sref="BlueParent.counselors"><span>Local Health Centers</span></a>\n\n        </div>\n        <div class="three">\n\n            <a ui-sref="BlueParent.hotline"><span>Crisis helplines</span></a>\n\n        </div>\n        <div class="four">\n\n            <a ui-sref="BlueParent.todo"><span>get motivated</span></a>\n        </div>\n    </div>\n\n</div>\n\n<div class="sms-container">\n    <a ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>\n    <div class="other-todos" ng-show="show">\n        <ul>\n            <li class="feat-todo" ng-repeat="featTodo in randomArray">\n                <div><i class="fa fa-circle-thin" aria-hidden="true"></i> {{featTodo}}</div>\n            </li>\n            <div class="cite"><span>Some <cite>tasks</cite> yanked from <a href="http://bit.ly/1Cewmd1">Eponis Sinope</a> and modified for our purposes</span></div>\n        </ul>\n        <a ng-click="clearOthers();show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>\n</div>')
 }]);
 
 (function(ng) {
@@ -117240,7 +117240,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         /* config object */
         $scope.uiConfig = {
             calendar: {
-                editable: true,
+                editable: false,
                 eventClick: function(event) {
                     $(".closon").click(function() {
                         $('.calendar').fullCalendar('removeEvents', event._id);
@@ -117404,6 +117404,10 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             };
         });
 
+
+        // SMS OPTING
+
+        
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
@@ -117608,7 +117612,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 data: {
                     text: inputText,
                     title: inputTitle,
-                    tag: inputTag
+                    tags: inputTag
 
                 }
             });
