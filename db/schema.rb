@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326205258) do
+ActiveRecord::Schema.define(version: 20170327181703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20170326205258) do
     t.datetime "updated_at",       null: false
     t.string   "phone"
     t.string   "phone_provider"
+    t.string   "sms_frequency"
   end
 
   add_foreign_key "events", "users"

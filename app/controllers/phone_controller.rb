@@ -10,5 +10,5 @@ end
 
 def phone_params
   params[:phone] = encrypt(params[:phone].gsub(/\D/, ''))
-  params.permit(:phone, :phone_provider, :user_id)
+  params.permit(:phone, :phone_provider, :sms_frequency, :user_id)
 end
