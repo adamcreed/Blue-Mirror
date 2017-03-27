@@ -25,12 +25,25 @@
 
 <div class="sms-container">
     <a ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
-    <div class="other-todos" ng-show="show">
-        <ul>
-            <li class="feat-todo" ng-repeat="featTodo in randomArray">
-                <div><i class="fa fa-circle-thin" aria-hidden="true"></i> {{featTodo}}</div>
-            </li>
-            <div class="cite"><span>Some <cite>tasks</cite> yanked from <a href="http://bit.ly/1Cewmd1">Eponis Sinope</a> and modified for our purposes</span></div>
-        </ul>
+    <div class="other-todos">
+        <div><span>Opt in to recive sms messages<br/></span></div>
+        <form name="smsForm" class="smsForm" ng-submit="submitSms()">
+            <label for="phonenum">Phone Number (10 digits) <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
+            <input ng-model="num" name="number" ng-click="submitCarriers()" id="phonenum" type="tel" pattern="^(\D*\d){10}\D*$" required>
+            <!-- <span ng-show="smsForm.number.$dirty && smsForm.number.$error.required">Number is required</span> -->
+
+            <label for="provider">Carrier <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
+            <select name="phonecarrier" ng-change="currentCarrier" ng-model="smsCarrier" ng-options="carrier[1] as carrier[0] for carrier in phoneCarriers" id="provider" required>
+            </select><br/>
+
+            <label for="frequency">How Often Would You Like to Recieve SMS? <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
+            <select name="frequency" ng-change="currentFrequency" ng-model="smsFrequency" id="frequency" required>
+                <option value='Daily'>Daily</option>
+                <option value='Weekly'>Weekly</option>
+                <option value='Reminder'>On 3 day abscence</option>
+            </select>
+
+            <button ng-click="submitSms()" ng-class="{'disableButton': smsFormValid()}" type="submit" ng-disabled="smsFormValid()">Opt In</button>
+        </form>
         <a ng-click="clearOthers();show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>
 </div>
