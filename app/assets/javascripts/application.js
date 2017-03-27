@@ -13,6 +13,7 @@
 //= require jquery/dist/jquery
 //= require angular/angular
 //= require jquery-ui/jquery-ui
+//= require jqueryui-touch-punch/jquery.ui.touch-punch.min
 //= require angular-rails-templates
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-simple-logger/dist/angular-simple-logger

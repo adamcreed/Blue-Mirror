@@ -1,5 +1,6 @@
 asset 'jquery'
 asset 'jquery-ui'
+asset 'jqueryui-touch-punch'
 asset 'angular'
 asset 'lodash'
 asset 'underscore'
