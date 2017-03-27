@@ -54,9 +54,9 @@
         //shuffle and push featured to dos
         $scope.shuffle = function(data) {
 
-            for (var i = data.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var temp = data[i];
+            for (let i = data.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let temp = data[i];
                 data[i] = data[j];
                 data[j] = temp;
             }
