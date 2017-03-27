@@ -45,7 +45,6 @@ class CapybaraTest < ActionDispatch::IntegrationTest
 
   test 'should submit mood' do
     login username: ENV['EMAIL'], password: ENV['PASSWORD']
-    # click_on 'Home'
     click_on 'Update Mood'
     click_button 'Submit'
     refute page.has_content? 'Mood Updated!'
@@ -57,7 +56,6 @@ class CapybaraTest < ActionDispatch::IntegrationTest
 
   test 'should find counselors' do
     login username: ENV['EMAIL'], password: ENV['PASSWORD']
-    # click_on 'Home'
     click_on 'Local Counselors'
     refute page.has_css? '#map-canvas'
     assert page.has_css? '.loading'
@@ -75,14 +73,12 @@ class CapybaraTest < ActionDispatch::IntegrationTest
 
   test 'should get crisis helplines' do
     login username: ENV['EMAIL'], password: ENV['PASSWORD']
-    # click_on 'Home'
     click_on 'Crisis helplines'
     assert page.has_content? 'Suicide Prevention Lifeline'
   end
 
   test 'should get motivations' do
     login username: ENV['EMAIL'], password: ENV['PASSWORD']
-    # click_on 'Home'
     click_on 'get motivated'
     assert page.has_css? '.todo-list'
     refute page.has_content? 'Please enter a task'
