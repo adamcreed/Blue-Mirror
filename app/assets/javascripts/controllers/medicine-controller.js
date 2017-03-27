@@ -97,7 +97,7 @@
             if (typeof $('.calendar').fullCalendar('clientEvents') === 'undefined') return false;
 
             let todaysEvents = $('.calendar').fullCalendar('clientEvents').filter(event => {
-                return moment(event.start).get('date') === moment().get('date');
+                return moment(event.start).format('YYYY MM DD') === moment().format('YYYY MM DD');
             });
 
             let todaysTakenEvents = todaysEvents.filter(event => {
@@ -203,7 +203,7 @@
         /* config object */
         $scope.uiConfig = {
             calendar: {
-                editable: true,
+                editable: false,
                 eventClick: function(event) {
                     $(".closon").click(function() {
                         $('.calendar').fullCalendar('removeEvents', event._id);
