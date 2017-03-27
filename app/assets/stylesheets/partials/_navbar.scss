@@ -138,14 +138,19 @@ nav {
         }
     }
     @include bp(small) {
+        i {
+            display: none;
+        }
+
         .bmirror {
             display: none;
         }
         border-bottom: $border;
         height: 50px;
-        background: red;
+        background: white;
 
         ul {
+            height: 100%;
             width: 70%;
             display: flex;
             justify-content: space-between;
