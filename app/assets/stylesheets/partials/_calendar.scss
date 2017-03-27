@@ -1,8 +1,23 @@
+.calbutton-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    @include bp (mobile) {
+        flex-direction: column;
+        align-items: center;
+    };
+    @include bp (small) {
+        flex-direction: row;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    };
+}
+
 .calendar {
     @include bp(mobile) {
         height: 350px;
     }
-
     @include bp(small) {
         height: 700px;
     }
@@ -13,6 +28,9 @@
     @include bp(mobile) {
         padding-bottom: 20px;
     }
+    @include bp(small) {
+        padding-bottom: 0;
+    }
 }
 
 .span8 {
@@ -20,7 +38,7 @@
         width: 322px;
     }
     @include bp(small) {
-        width: inherit;
+        width: 800px;
     }
 }
 

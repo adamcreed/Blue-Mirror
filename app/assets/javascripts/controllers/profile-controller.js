@@ -114,7 +114,7 @@
                 $q.when(DataRequestService.patch('/mood_lists', {
                     moods: $scope.newList
                 })).then((response) => {
-                    $state.go('BlueParent.profile');
+                    $state.go('BlueParent.update');
 
                 }).catch((error) => {
                     console.log(error);
@@ -153,6 +153,10 @@
             return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
         };
 
+
+        // SMS OPTING
+
+        
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {

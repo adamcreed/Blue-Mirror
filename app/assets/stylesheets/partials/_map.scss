@@ -5,14 +5,9 @@
     justify-content: center;
 
     .line {
+        width: 100%;
         margin-top: 0;
         margin-bottom: 40px;
-        @include bp(mobile) {
-            width: 80%;
-        }
-        @include bp(small) {
-            width: 100%;
-        }
     }
 }
 
@@ -30,6 +25,7 @@
     a.result-website {
         text-decoration: underline;
         color: $accentTeal;
+        word-wrap: break-word;
     }
 }
 
@@ -38,14 +34,16 @@
 }
 
 .result-name {
-    font-size: 22px;
-    font-family: $headerFont;
-    color: $mainColor;
+    a {
+        font-size: 22px;
+        font-family: $headerFont;
+        color: $mainColor;
+    }
 }
 
 .map-container {
     @include bp(mobile) {
-        width: 90%;
+        width: 100%;
         height: 150px;
         margin-top: 30px;
         padding-bottom: 430px
@@ -60,18 +58,26 @@
 }
 
 .map-results {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    //
+    // @include bp(mobile) {
+    //     width: 50%;
+    // }
+    //
+    // @include bp(small) {
+    //     width: 100%;
+    // }
 
     ul {
         border-top: $border;
         padding-top: 13px;
 
         @include bp(mobile) {
-            width: 83%;
+            width: 320px;
         }
         @include bp(small) {
             width: 100%;
@@ -81,6 +87,7 @@
     h2 {
         text-align: center;
         padding-bottom: 40px;
+        font-size: 1.8em;
     }
 
     // @include bp(mobile) {

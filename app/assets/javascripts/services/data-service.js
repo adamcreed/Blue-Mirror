@@ -56,7 +56,7 @@
                 data: {
                     text: inputText,
                     title: inputTitle,
-                    tag: inputTag
+                    tags: inputTag
 
                 }
             });
