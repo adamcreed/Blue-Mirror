@@ -5,7 +5,8 @@
 .chart-container {
     display: flex;
     @include bp (mobile) {
-        width: 100%;
+        width: 400px;
+        padding-top: 40px;
     }
     @include bp (small) {
         width: 800px;
