@@ -203,7 +203,7 @@
         /* config object */
         $scope.uiConfig = {
             calendar: {
-                editable: true,
+                editable: false,
                 eventClick: function(event) {
                     $(".closon").click(function() {
                         $('.calendar').fullCalendar('removeEvents', event._id);
