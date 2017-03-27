@@ -12,4 +12,11 @@ module CapybaraTestHelper
       click_on 'submit_approve_access'
     end
   end
+
+  def scroll_to(element)
+    script = <<-JS
+      arguments[0].scrollIntoView(false);
+    JS
+    Capybara.current_session.driver.browser.execute_script(script, element.native)
+  end
 end
