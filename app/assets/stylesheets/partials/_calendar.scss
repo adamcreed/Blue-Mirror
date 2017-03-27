@@ -1,3 +1,19 @@
+.calbutton-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    @include bp (mobile) {
+        flex-direction: column;
+        align-items: center;
+    };
+    @include bp (small) {
+        flex-direction: row;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    };
+}
+
 .calendar {
     @include bp(mobile) {
         height: 350px;
@@ -22,7 +38,7 @@
         width: 322px;
     }
     @include bp(small) {
-        width: inherit;
+        width: 800px;
     }
 }
 
@@ -142,7 +158,9 @@ div.fc-button-group {
         width: inherit;
     }
 }
+
 /*** Calendar + FullCalendar Overrides ***/
+
 .fc-day-grid-event .fc-content {
     word-wrap: break-word !important;
     white-space: normal !important;
@@ -168,13 +186,12 @@ div.fc-button-group {
     }
     @include bp(small) {
         float: left;
-        margin: 0;
+        margin: 10px;
         // height: 128vh;
     }
 }
 
-td,
-tr {
+tr, td {
     background: white;
 }
 
@@ -182,13 +199,11 @@ tr {
     background: white !important;
 }
 
-.fc-view,
-.fc-view > table {
+.fc-view, .fc-view > table {
     z-index: 0 !important;
 }
 
-.fc-row .fc-content-skeleton td,
-.fc-row .fc-helper-skeleton td {
+.fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td {
     border-color: rgba(0, 0, 0, 0.07) !important;
 }
 

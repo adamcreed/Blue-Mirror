@@ -1,8 +1,14 @@
-<h2 class="calendar-events">Calendar<i class="fa fa-calendar" aria-hidden="true"></i></h2>
-<div class="medication-container">
+<h2 class="calendar-events">Calendar</h2>
+<div class="calbutton-container">
+    <button ng-class="{'disableButton': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my meds today</button>
+    <button type="button" ng-click="meds=false">View Medications</button>
+    <button type="button" ng-click="events=false">Create Event</button>
+</div>
+<div class="medication-container" ng-show="!meds">
     <div class="medication-wrapper">
-        <h3 class="total-items">Current Medication <i class="fa fa-medkit" aria-hidden="true"></i></h3>
+        <h3 class="total-items">Current Medication</h3>
         <span ng-hide="show">Add current medications</span>
+        <a ng-click="meds=true" class="meds-close"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
         <div class="med-list">
             <ul class="med-nav">
                 <li ng-repeat="med in medications">
@@ -23,9 +29,8 @@
         </div>
     </div>
 </div>
-<button ng-class="{'disableButton': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my medication today</button>
 <div class="calendar-container">
-    <div class="form-container">
+    <div class="form-container" ng-show="!events">
         <form class="form-horizontal clearfix">
             <label for="dateFrom" class="col-sm-2 control-label">Date</label>
             <div class="col-sm-10">
@@ -35,7 +40,7 @@
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="dateTitle" ng-model="title" placeholder="Title">
             </div>
-            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent()">Create Event</button>
+            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent(); events=true">Submit</button>
         </form>
     </div>
     <div class="well calWell">
