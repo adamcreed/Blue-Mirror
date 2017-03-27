@@ -133,6 +133,9 @@
             };
         });
 
+        // SMS OPT IN
+
+        
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
