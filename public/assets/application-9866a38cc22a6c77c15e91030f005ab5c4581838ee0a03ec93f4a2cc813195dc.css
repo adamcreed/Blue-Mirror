@@ -181,10 +181,9 @@ input {
   background: white;
   border-radius: 0.3rem;
   color: #2e7a81;
-  background-color: white !important;
 }
 
-/* line 52, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 51, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 button {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
@@ -201,17 +200,17 @@ button {
   border-color: none;
   border-radius: 0.3rem;
 }
-/* line 68, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 67, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 button:hover {
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
 }
 
-/* line 73, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 72, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 .angular-google-map-container {
   height: 300px;
 }
 
-/* line 77, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 76, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 .button {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
@@ -228,47 +227,47 @@ button:hover {
   border-color: none;
   border-radius: 0.3rem;
 }
-/* line 93, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 .button:hover {
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
 }
 
-/* line 98, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 97, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 .remove {
   background: #bd7556;
   color: #fbfdf2;
   border-radius: 0.3rem;
 }
 
-/* line 104, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 103, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 .disableButton {
   opacity: 0.35;
   background: #eee;
   color: #444;
 }
 
-/* line 110, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 109, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 .bmirror {
   width: 100px;
   height: 100px;
 }
 
-/* line 115, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 114, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 h1 {
   font-family: "Josefin Slab", serif;
   font-size: 3rem;
 }
 
-/* line 120, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 119, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 .line {
   width: 50%;
   height: 20px;
   margin: 0 auto;
-  border-bottom: 2px solid #2e7a81;
+  border-bottom: 2px solid #e7e5dc;
   margin-top: 40px;
 }
 
-/* line 128, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 127, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 h2 {
   font-size: 2em;
   font-family: "Josefin Slab", serif;
@@ -278,20 +277,20 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-/* line 137, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 136, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 h2 i {
   padding-left: 5px;
   padding-bottom: 5px;
 }
 
-/* line 144, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 143, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 h3 {
   font-size: 1.5rem;
   font-family: "Josefin Slab", serif;
   color: #35635d;
 }
 
-/* line 150, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 149, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 textarea {
   color: #35635d;
   line-height: 1.25rem;
@@ -303,32 +302,34 @@ textarea {
   border-radius: 0.3rem;
 }
 
-/* line 161, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 160, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 label {
-  font-family: "Josefin Slab", serif;
+  font-family: "Raleway", sans-serif;
   color: #35635d;
-  font-weight: 600;
+  font-size: 0.75rem;
+  padding-bottom: 2px;
+  font-weight: 300;
 }
 
-/* line 167, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 168, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #c9c5b7;
 }
 
-/* line 172, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 173, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #c9c5b7;
 }
 
-/* line 177, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 178, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 :-ms-input-placeholder {
   /* IE 10+ */
   color: #c9c5b7;
 }
 
-/* line 182, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
+/* line 183, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_common.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: #c9c5b7;
@@ -417,6 +418,7 @@ nav {
   .content-container {
     display: flex;
     justify-content: center;
+    padding-top: 50px;
   }
 }
 @media screen and (min-width: 661px) {
@@ -425,7 +427,6 @@ nav {
     float: right;
     width: calc(100% - 250px);
     height: 100vh;
-    padding-top: 50px;
     overflow-y: scroll;
     display: flex;
     justify-content: center;
@@ -855,7 +856,7 @@ nav {
 @media screen and (min-width: 661px) {
   /* line 7, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
   .row .line {
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -864,66 +865,92 @@ nav {
   font-size: 15px;
   line-height: 1.4rem;
   margin-bottom: 15px;
+  border-bottom: 0.13rem solid #e7e5dc;
+  padding-bottom: 13px;
 }
-/* line 24, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+/* line 26, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
 .map-results ul li .list-colored {
   color: #df7236;
 }
-/* line 28, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+/* line 30, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
 .map-results ul li a.result-website {
   text-decoration: underline;
   color: #2e7a81;
 }
 
+/* line 36, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+.result-rating {
+  display: table;
+}
+
+/* line 40, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+.result-name {
+  font-size: 22px;
+  font-family: "Josefin Slab", serif;
+  color: #399ea7;
+}
+
 @media screen and (min-width: 320px) {
-  /* line 34, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+  /* line 46, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
   .map-container {
     width: 90%;
     height: 150px;
     margin-top: 30px;
-    padding-bottom: 300px;
+    padding-bottom: 430px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 34, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+  /* line 46, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
   .map-container {
     width: 600px;
     height: 300px;
     margin-top: 30px;
-    margin-bottom: 150px;
+    margin-bottom: 137px;
+    padding-bottom: 270px;
   }
 }
 
-/* line 50, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+/* line 62, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+.map-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+.map-results ul {
+  border-top: 0.13rem solid #e7e5dc;
+  padding-top: 13px;
+}
+@media screen and (min-width: 320px) {
+  /* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+  .map-results ul {
+    width: 83%;
+  }
+}
+@media screen and (min-width: 661px) {
+  /* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+  .map-results ul {
+    width: 100%;
+  }
+}
+/* line 81, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
 .map-results h2 {
   text-align: center;
   padding-bottom: 40px;
 }
-@media screen and (min-width: 320px) {
-  /* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
-  .map-results {
-    padding-top: 160px;
-    width: 102%;
-  }
-}
-@media screen and (min-width: 661px) {
-  /* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
-  .map-results {
-    padding-top: 20px;
-    width: 77%;
-  }
-}
 
-/* line 65, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+/* line 97, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
 .list-styled .list-colored a {
-  color: #399ea7;
+  color: #df7236;
 }
-/* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+/* line 101, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
 .list-styled .list-underlined a {
   text-decoration: underline;
+  color: #2e7a81;
 }
 
-/* line 74, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+/* line 107, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
 .loading {
   position: absolute;
   top: 50%;
@@ -936,13 +963,13 @@ nav {
   margin: -40px 0 0 -40px;
 }
 @media screen and (min-width: 320px) {
-  /* line 74, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+  /* line 107, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
   .loading {
     left: 55%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 74, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
+  /* line 107, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_map.scss */
   .loading {
     left: 60%;
   }
@@ -964,8 +991,6 @@ nav {
 /* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_chart.scss */
 .chart-container {
   display: flex;
-  margin: 0 auto;
-  margin-top: 150px;
 }
 @media screen and (min-width: 320px) {
   /* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_chart.scss */
@@ -976,7 +1001,7 @@ nav {
 @media screen and (min-width: 661px) {
   /* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_chart.scss */
   .chart-container {
-    width: 65%;
+    width: 800px;
   }
 }
 
@@ -1010,50 +1035,86 @@ nav {
   margin-bottom: 5px;
   flex-wrap: nowrap;
   align-items: center;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
+  padding-bottom: 10px;
 }
-/* line 33, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 35, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 .todo-list ul li .checkbox {
-  width: 10%;
+  width: 7%;
 }
-/* line 37, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 40, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 .todo-list ul li span {
   width: 80%;
 }
 
-/* line 43, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 46, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 span.med-true {
   text-decoration: line-through;
 }
 
-/* line 47, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 50, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 .todo-list input[type="text"] {
   display: block;
   padding: 10px;
   margin: 10px auto;
 }
 
-/* line 53, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 58, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+.todo-list form input {
+  width: 287px;
+}
+
+/* line 64, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 .button-container {
   display: flex;
   justify-content: space-between;
 }
 
-/* line 58, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 .other-todos {
   padding: 5px;
   width: 300px;
   border-radius: 0.3rem;
   background: rgba(251, 253, 242, 0.8);
+  border: 0.13rem solid #e7e5dc;
+}
+/* line 76, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+.other-todos ul li {
+  padding-bottom: 10px;
 }
 
-/* line 65, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 81, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+.cite {
+  padding-bottom: 10px;
+}
+/* line 84, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+.cite span {
+  font-size: 11px;
+}
+/* line 87, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+.cite a {
+  color: #df7236;
+}
+
+/* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+.feat-todo div i {
+  font-size: 10px;
+  padding-right: 8px;
+}
+
+/* line 97, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+.feat-todo div {
+  display: flex;
+  align-items: baseline;
+}
+
+/* line 102, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 span.todo-true {
   text-decoration: line-through;
 }
 
-/* line 70, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
+/* line 107, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_to-do.scss */
 .todo-list form {
   display: flex;
   flex-direction: column;
@@ -1068,8 +1129,6 @@ span.todo-true {
 /* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_chart.scss */
 .chart-container {
   display: flex;
-  margin: 0 auto;
-  margin-top: 150px;
 }
 @media screen and (min-width: 320px) {
   /* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_chart.scss */
@@ -1080,25 +1139,24 @@ span.todo-true {
 @media screen and (min-width: 661px) {
   /* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_chart.scss */
   .chart-container {
-    width: 65%;
+    width: 800px;
   }
 }
 
 /* line 1, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .editable {
   background: #EAEAEA;
-  border: 2px dotted #399ea7;
 }
 
-/* line 6, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .data-id {
   display: none;
 }
 
-/* line 10, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 9, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past {
   background: white;
-  background: yellow;
+  background: #e7e5dc;
   width: 250px;
   height: 100vh;
   position: fixed;
@@ -1109,7 +1167,7 @@ span.todo-true {
   float: right;
   border-left: 0.13rem solid #e7e5dc;
 }
-/* line 23, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 22, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past h2 {
   position: fixed;
   width: 250px;
@@ -1120,18 +1178,18 @@ span.todo-true {
   justify-content: center;
   align-items: center;
 }
-/* line 34, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 33, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past .web-list {
   height: 100%;
   width: 250px;
   overflow-y: scroll;
 }
-/* line 39, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 38, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past .web-list ul {
   padding-top: 61px;
   padding-bottom: 40px;
 }
-/* line 43, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past .web-list ul li {
   height: 60px;
   display: flex;
@@ -1141,7 +1199,7 @@ span.todo-true {
   padding: 10px;
 }
 
-/* line 55, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 54, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .title {
   display: flex;
   justify-content: center;
@@ -1149,34 +1207,61 @@ span.todo-true {
   z-index: 7;
 }
 
-/* line 62, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 61, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .journal-container {
   height: calc(100% - 50px);
   width: calc(100vw - 250px);
 }
-/* line 66, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 65, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .journal-container h2 {
   height: 65px;
   display: flex;
   align-items: center;
   width: calc(100vw - 500px);
 }
-/* line 72, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 71, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .journal-container h2 i {
   padding-left: 5px;
 }
 @media screen and (min-width: 320px) {
-  /* line 77, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 76, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .journal-container .view-entry {
-    height: 250px;
-    width: 300px;
+    background: white;
+    border: 0.13rem solid #e7e5dc;
+    border-radius: 0.3rem;
+    height: 500px;
+    width: 400px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: column;
     overflow-y: scroll;
-  }
-  /* line 87, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
-  .journal-container .view-entry div {
     padding: 5px;
+  }
+  /* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  .journal-container .view-entry #edit-title {
+    text-align: center;
+    padding: 10px;
+  }
+  /* line 97, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  .journal-container .view-entry #edit-text {
+    border-top: 0.13rem solid #e7e5dc;
+    padding-top: 10px;
+  }
+  /* line 102, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  .journal-container .view-entry #edit-tags {
+    margin-top: 10px;
+  }
+  /* line 106, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  .journal-container .view-entry .journal-time {
+    width: 300px;
+    padding-bottom: 5px;
+  }
+  /* line 111, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  .journal-container .view-entry .journal-buttons {
+    border-top: 0.13rem solid #e7e5dc;
+    padding: 5px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1184,14 +1269,14 @@ span.todo-true {
 }
 
 @media screen and (min-width: 661px) {
-  /* line 114, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 140, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container {
     display: flex;
     width: calc(100vw - 500px);
     justify-content: center;
     align-items: center;
   }
-  /* line 120, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 146, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form {
     width: calc(100vw - 735px);
     display: flex;
@@ -1200,34 +1285,34 @@ span.todo-true {
     align-items: center;
     height: 500px;
   }
-  /* line 128, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 154, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-input-container {
     display: flex;
     flex-direction: column;
   }
-  /* line 133, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 159, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-title {
     width: 400px;
     margin: 0;
   }
-  /* line 138, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 164, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-entry {
     width: 400px;
     height: 300px;
   }
-  /* line 143, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 169, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-tag {
     width: 200px;
     margin: 0;
   }
 }
-/* line 164, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 180, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .edit-entry img {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-/* line 170, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 186, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .view-entry-item {
   white-space: pre-wrap;
 }
@@ -1245,92 +1330,98 @@ span.todo-true {
   }
 }
 
-/* line 11, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 10, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calendar-events {
   text-align: center;
 }
 @media screen and (min-width: 320px) {
-  /* line 11, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 10, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar-events {
     padding-bottom: 20px;
   }
 }
+@media screen and (min-width: 661px) {
+  /* line 10, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  .calendar-events {
+    padding-bottom: 0;
+  }
+}
 
 @media screen and (min-width: 320px) {
-  /* line 18, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 20, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .span8 {
     width: 322px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 18, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 20, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .span8 {
     width: inherit;
   }
 }
 
-/* line 27, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 29, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container {
   display: flex;
   width: 100%;
   justify-content: center;
 }
-/* line 32, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 34, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container form {
   margin: 0 auto;
 }
-/* line 35, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 37, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container form input[type=date] {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
 }
-/* line 40, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container form input[type=text] {
   font-family: "Raleway", sans-serif;
   width: 200px;
   padding: 5.7px;
 }
 @media screen and (min-width: 320px) {
-  /* line 46, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 48, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form label {
     font-size: 18px;
   }
-  /* line 50, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 52, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 {
     padding-bottom: 10px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 32, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 34, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form {
     display: flex;
     align-items: baseline;
   }
-  /* line 58, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 60, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .pull-right {
     width: 200px;
     height: 38px;
   }
-  /* line 63, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 65, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form label {
     margin-right: 5px;
     font-size: 20px;
     border: none;
   }
-  /* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 71, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form button.btn.btn-primary.pull-right {
     font-size: 13px;
   }
-  /* line 73, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 75, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 {
     margin-right: 20px;
   }
-  /* line 76, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 78, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 button[type=submit] {
     font-size: 0;
     padding: 11px;
   }
-  /* line 81, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 83, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 input {
     padding: 5px;
     width: initial;
@@ -1338,14 +1429,14 @@ span.todo-true {
 }
 
 @media screen and (min-width: 320px) {
-  /* line 90, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-toolbar {
     display: flex;
     flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 90, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-toolbar {
     text-align: center;
     margin-bottom: 1em;
@@ -1354,7 +1445,7 @@ span.todo-true {
 }
 
 @media screen and (min-width: 320px) {
-  /* line 102, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 104, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-left {
     float: right;
     width: 100%;
@@ -1362,7 +1453,7 @@ span.todo-true {
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 102, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 104, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-left {
     float: none;
     width: inherit;
@@ -1371,40 +1462,40 @@ span.todo-true {
 }
 
 @media screen and (min-width: 320px) {
-  /* line 115, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 117, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right {
     width: 100%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 115, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 117, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right {
     display: block;
     width: inherit;
   }
 }
 @media screen and (min-width: 320px) {
-  /* line 124, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 126, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right button.fc-today-button {
     display: none;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 124, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 126, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right button.fc-today-button {
     display: block;
   }
 }
 
 @media screen and (min-width: 320px) {
-  /* line 134, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 136, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-button-group {
     display: flex;
     width: 100%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 134, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 136, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-button-group {
     width: inherit;
   }
@@ -1446,97 +1537,100 @@ span.todo-true {
   /* line 162, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calWell {
     float: left;
-    margin: 10px;
+    margin: 0;
   }
 }
 
 /* line 176, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
-tr, td {
+td,
+tr {
   background: white;
 }
 
-/* line 180, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 181, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-unthemed .fc-today {
   background: white !important;
 }
 
-/* line 184, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
-.fc-view, .fc-view > table {
+/* line 185, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+.fc-view,
+.fc-view > table {
   z-index: 0 !important;
 }
 
-/* line 188, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
-.fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td {
+/* line 190, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+.fc-row .fc-content-skeleton td,
+.fc-row .fc-helper-skeleton td {
   border-color: rgba(0, 0, 0, 0.07) !important;
 }
 
-/* line 192, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 195, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-event.openSesame {
   background-color: #e5e50b;
   color: black;
 }
 
-/* line 197, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 200, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-event.customFeed {
   background-color: #84deaf;
   color: black;
 }
 
-/* line 202, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 205, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calTools {
   margin-bottom: 10px;
 }
 
-/* line 206, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 209, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .btn-group {
   display: flex;
   justify-content: flex-end;
 }
-/* line 210, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 213, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .btn-group button {
   width: 164px;
 }
 
-/* line 215, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 218, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calendar .fc-toolbar .fc-left {
   float: none;
 }
 @media screen and (min-width: 320px) {
-  /* line 215, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 218, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar .fc-toolbar .fc-left {
     display: inline-grid;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 215, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 218, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar .fc-toolbar .fc-left {
     display: inline-block;
   }
 }
 
-/* line 225, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 228, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 div button.fc-today-button {
   width: 161px !important;
   margin-right: 5px !important;
 }
 
-/* line 230, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 233, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 div.fc .fc-toolbar > * > * {
   margin-left: 0 !important;
 }
 
-/* line 234, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 237, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 div button.fc-prev-button {
   width: 161px !important;
   margin-right: 5px !important;
 }
 
-/* line 239, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 242, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 div.fc .fc-button-group > * {
   margin: 0;
 }
 
-/* line 243, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 246, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_calendar.scss */
 div button.fc-next-button {
   margin-right: 2px !important;
   width: 158px;
@@ -1544,68 +1638,49 @@ div button.fc-next-button {
 
 /* line 1, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .medication-container {
-  margin-bottom: 50px;
-}
-/* line 4, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
-.medication-container .line {
-  height: 20px;
-  margin: 0 auto;
-  border-bottom: 2px solid #2e7a81;
-}
-@media screen and (min-width: 320px) {
-  /* line 4, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
-  .medication-container .line {
-    margin-top: 20px;
-    width: 62%;
-  }
-}
-@media screen and (min-width: 661px) {
-  /* line 4, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
-  .medication-container .line {
-    width: 40%;
-  }
-}
-@media screen and (min-width: 661px) {
-  /* line 4, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
-  .medication-container .line {
-    margin-top: 40px;
-  }
+  display: flex;
+  justify-content: center;
 }
 
-/* line 22, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 23, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .medication-wrapper {
+  border-top: 0.13rem solid #e7e5dc;
+  border-bottom: 0.13rem solid #e7e5dc;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #35635d;
 }
-/* line 28, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 34, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .medication-wrapper h2 {
   padding-bottom: 10px;
 }
-/* line 32, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 38, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .medication-wrapper span {
   padding-bottom: 5px;
 }
 
-/* line 37, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 43, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-name {
   color: #fbfdf2;
   font-size: 1px;
 }
 
-/* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 48, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-list {
   margin: 0 auto;
 }
 @media screen and (min-width: 320px) {
-  /* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 48, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-list {
     width: 65%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 48, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-list {
     width: 40%;
     text-align: center;
@@ -1614,7 +1689,7 @@ div button.fc-next-button {
     align-items: center;
   }
 }
-/* line 57, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 61, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-list ul.med-nav {
   color: #97a0af;
   margin-top: 10px;
@@ -1623,36 +1698,36 @@ div button.fc-next-button {
   padding-bottom: 10px;
 }
 @media screen and (min-width: 320px) {
-  /* line 57, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 61, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-list ul.med-nav {
     width: inerhit;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 57, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 61, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-list ul.med-nav {
     padding-left: 60px;
     width: 406px;
   }
 }
-/* line 73, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 75, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-list ul.med-nav li {
   display: flex;
   align-items: baseline;
 }
-/* line 77, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 79, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-list ul.med-nav li input {
   display: inline-block;
 }
-/* line 81, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 83, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-list ul.med-nav li .checkbox {
   width: 7%;
 }
-/* line 85, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 87, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-list ul.med-nav li span {
   padding-left: 5px;
 }
-/* line 91, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 93, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-list form {
   display: flex;
   flex-direction: column;
@@ -1660,24 +1735,24 @@ div button.fc-next-button {
   padding-bottom: 5px;
 }
 @media screen and (min-width: 320px) {
-  /* line 97, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 99, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-list form input {
     width: 95%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 97, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 99, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-list form input {
     width: 68%;
   }
 }
 
-/* line 112, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 111, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 .med-buttons button:nth-child(2) {
   background: #bd7556;
 }
 @media screen and (min-width: 320px) {
-  /* line 111, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 110, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-buttons {
     display: flex;
     flex-direction: column;
@@ -1686,7 +1761,7 @@ div button.fc-next-button {
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 111, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 110, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   .med-buttons {
     display: inline-flex;
     flex-direction: row;
@@ -1696,20 +1771,20 @@ div button.fc-next-button {
   }
 }
 
-/* line 132, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+/* line 129, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
 button.took-meds {
   background: #399ea7;
 }
 @media screen and (min-width: 320px) {
-  /* line 132, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 129, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   button.took-meds {
     width: 263px;
     margin: 0 auto;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 132, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
+  /* line 129, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
   button.took-meds {
     width: 263px;
     margin: 0 auto;
@@ -1717,9 +1792,81 @@ button.took-meds {
   }
 }
 
-/* line 147, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_medicine-input.scss */
-.form-container {
-  padding-top: 40px;
+/* line 1, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 8, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container {
+  display: flex;
+}
+/* line 11, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .smile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5px;
+  padding-bottom: 130px;
+}
+/* line 18, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .smile-container i {
+  height: 33.9%;
+  border-right: 0.13rem solid #e7e5dc;
+  font-size: 3rem;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 26, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .smile-container i:nth-child(2) {
+  justify-content: center;
+}
+/* line 30, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .smile-container i:last-child {
+  justify-content: flex-end;
+}
+/* line 36, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .row-list {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+/* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .row-list .cust-move i {
+  color: #399ea7;
+  padding-right: 5px;
+}
+/* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .row-list .cust-delete i {
+  color: #bd7556;
+  font-size: 2.2rem;
+}
+/* line 56, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .remove-row {
+  cursor: pointer;
+  display: inline-table;
+}
+/* line 59, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container .remove-row span {
+  cursor: move;
+}
+/* line 65, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container input#value.custom-mood {
+  width: 25%;
+}
+/* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.customize-container button {
+  margin-left: 5px;
+}
+
+/* line 74, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_mood-customize.scss */
+.cust-note {
+  padding: 10px 10px 10px 25px;
+  width: 240px;
 }
 
 /* line 1, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_helpline.scss */
