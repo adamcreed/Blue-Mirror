@@ -1,6 +1,7 @@
 <div ng-controller="JournalController as entries">
     <div class="web-past">
         <h2>Past Entries</h2>
+        <a ng-click="nextPage()">HEY HEY</a>
         <div class="web-list">
             <ul>
                 <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">

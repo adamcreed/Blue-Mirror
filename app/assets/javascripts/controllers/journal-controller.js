@@ -2,12 +2,14 @@
     ng.module('BlueMirrorApp').controller('JournalController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.activeEntry = null;
         $scope.viewEntry = null;
+        $scope.page = 1;
         $scope.currentUser = UserService.getUser();
         $scope.journalObj = {
             text: '',
             title: 'Untitled',
             tags: ''
         };
+        // console.log(page);
         $scope.journalsArray = [];
         $scope.viewEntryArray = [];
         console.log($scope.journalsArray);
@@ -80,6 +82,16 @@
                 console.log(error);
             });
         };
+
+        $scope.nextPage = function() {
+            // let inputPage = $scope.page + 1;
+            $q.when(DataRequestService.flipPage('/notes')).then((response) => {
+                $scope.page = response.data;
+                console.log(response.data);
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
             let e = $scope.journalsArray.indexOf(entry);
@@ -99,6 +111,7 @@
             if ($scope.activeEntry == $scope.journalsArray[i].id) {
                 $scope.viewEntry = id;
                 $scope.viewEntryArray.push($scope.journalsArray[i]);
+
             }
         };
     });

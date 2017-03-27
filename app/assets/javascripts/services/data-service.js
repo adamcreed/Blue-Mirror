@@ -62,6 +62,14 @@
             });
         }
 
+        function flipPage(url) {
+            return $http({
+                method: 'GET',
+                url: url
+            });
+
+        }
+
         function postJournal(url, journalObj) {
             return $http({
                 method: 'POST',
@@ -86,6 +94,7 @@
 
         return {
             get: getData,
+            flipPage: flipPage,
             post: postData,
             postTodo: postTodo,
             postJournal: postJournal,

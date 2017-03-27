@@ -2,7 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+
+    .phone-service {
+        a {
+            color: $accentBrightRed;
+        }
+    }
 
     .helpline-info {
         width: 100%;
@@ -10,7 +15,17 @@
         display: flex;
         flex-direction: column;
         border-bottom: $border;
-        border-top: $border;
+    }
+
+    .helpline-title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        h3 {
+            font-size: 1.5rem;
+            height: 100%;
+        }
     }
 
     ul {
@@ -20,11 +35,9 @@
 
         li {
             h3 {
-                font-size: 1.7rem;
                 color: $mainColor;
                 text-align: center;
                 padding-top: 5px;
-                margin-bottom: 5px;
             }
             padding: 5px;
             display: flex;
