@@ -129,13 +129,9 @@
 button.took-meds {
     background: $mainColor;
     @include bp(mobile) {
-        width: 263px;
-        margin: 0 auto;
         padding-bottom: 7px;
     }
     @include bp(small) {
-        width: 263px;
-        margin: 0 auto;
         padding-bottom: 10px;
     }
 }

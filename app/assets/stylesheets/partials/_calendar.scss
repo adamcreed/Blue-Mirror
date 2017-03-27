@@ -1,3 +1,16 @@
+.calbutton-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include bp (mobile) {
+        flex-direction: column;
+        align-items: center;
+    };
+    @include bp (small) {
+        flex-direction: row;
+    };
+}
+
 .calendar {
     @include bp(mobile) {
         height: 350px;
