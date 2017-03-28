@@ -5,7 +5,7 @@
         $scope.moodList = moodList;
         $scope.fullMoodList;
         $scope.highestMood = 1;
-
+        $scope.currentMotivation = ["Trust yourself. You know more than you think you do. – Ben Spock"];
         $scope.explanation = {
             text: ''
         };
@@ -133,10 +133,48 @@
             };
         });
 
+        // MOTIVATIONAL QUOTE
+
+        $scope.motivationalOther = function() {
+            $q.when(DataRequestService.get('/inspos')).then((response) => {
+                $scope.currentMotivation = [];
+                $scope.defaultQuote = response.data;
+                console.log('quote', $scope.defaultQuote);
+
+                for (var quote in $scope.defaultQuote) {
+
+                    $scope.motivation = $scope.defaultQuote[quote];
+                    console.log('ayyyeye bruh', $scope.motivation);
+                    $scope.oneQuote = $scope.defaultQuote[Math.floor(Math.random() * $scope.defaultQuote.length)];
+                    console.log($scope.oneQuote);
+                    if ($scope.currentMotivation < 1) {
+                        $scope.currentMotivation.push($scope.oneQuote);
+                    }
+                }
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+        //
+        //
+        // $q.when(DataRequestService.get('/inspos')).then((response) => {
+        //
+        //     $scope.defaultQuote = response.data;
+        //     console.log('quote', $scope.defaultQuote);
+        //
+        //     for (var quote in $scope.defaultQuote) {
+        //         $scope.motivation = $scope.defaultQuote[quote];
+        //         console.log('ayyyeye bruh', $scope.motivation);
+        //         $scope.currentMotivation.push($scope.motivation);
+        //     }
+        // }).catch((error) => {
+        //     console.log(error);
+        // });
+
 
         // SMS OPTING
 
-        
+
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
