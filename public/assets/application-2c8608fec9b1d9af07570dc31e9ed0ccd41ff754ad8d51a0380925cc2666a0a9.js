@@ -57769,6 +57769,192 @@ var widgetsTooltip = $.ui.tooltip;
 
 
 }));
+/*!
+ * jQuery UI Touch Punch 0.2.3
+ *
+ * Copyright 2011–2014, Dave Furfero
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * Depends:
+ *  jquery.ui.widget.js
+ *  jquery.ui.mouse.js
+ */
+
+(function ($) {
+
+  // Detect touch support
+  $.support.touch = 'ontouchend' in document;
+
+  // Ignore browsers without touch support
+  if (!$.support.touch) {
+    return;
+  }
+
+  var mouseProto = $.ui.mouse.prototype,
+      _mouseInit = mouseProto._mouseInit,
+      _mouseDestroy = mouseProto._mouseDestroy,
+      touchHandled;
+
+  /**
+   * Simulate a mouse event based on a corresponding touch event
+   * @param {Object} event A touch event
+   * @param {String} simulatedType The corresponding mouse event
+   */
+   function simulateMouseEvent (event, simulatedType) {
+
+     // Ignore multi-touch events
+     if (event.originalEvent.touches.length > 1) {
+       return;
+     }
+
+     var touch = event.originalEvent.changedTouches[0],
+         simulatedEvent = document.createEvent('MouseEvents');
+
+     //Check if element is an input or a textarea
+     if ($(touch.target).is("input") || $(touch.target).is("textarea")) {
+         event.stopPropagation();
+     } else {
+         event.preventDefault();
+     }
+
+    // Initialize the simulated mouse event using the touch event's coordinates
+    simulatedEvent.initMouseEvent(
+      simulatedType,    // type
+      true,             // bubbles
+      true,             // cancelable
+      window,           // view
+      1,                // detail
+      touch.screenX,    // screenX
+      touch.screenY,    // screenY
+      touch.clientX,    // clientX
+      touch.clientY,    // clientY
+      false,            // ctrlKey
+      false,            // altKey
+      false,            // shiftKey
+      false,            // metaKey
+      0,                // button
+      null              // relatedTarget
+    );
+
+    // Dispatch the simulated event to the target element
+    event.target.dispatchEvent(simulatedEvent);
+  }
+
+  /**
+   * Handle the jQuery UI widget's touchstart events
+   * @param {Object} event The widget element's touchstart event
+   */
+  mouseProto._touchStart = function (event) {
+
+    var self = this;
+
+    // Ignore the event if another widget is already being handled
+    if (touchHandled || !self._mouseCapture(event.originalEvent.changedTouches[0])) {
+      return;
+    }
+
+    // Set the flag to prevent other widgets from inheriting the touch event
+    touchHandled = true;
+
+    // Track movement to determine if interaction was a click
+    self._touchMoved = false;
+
+    // Simulate the mouseover event
+    simulateMouseEvent(event, 'mouseover');
+
+    // Simulate the mousemove event
+    simulateMouseEvent(event, 'mousemove');
+
+    // Simulate the mousedown event
+    simulateMouseEvent(event, 'mousedown');
+  };
+
+  /**
+   * Handle the jQuery UI widget's touchmove events
+   * @param {Object} event The document's touchmove event
+   */
+  mouseProto._touchMove = function (event) {
+
+    // Ignore event if not handled
+    if (!touchHandled) {
+      return;
+    }
+
+    // Interaction was not a click
+    this._touchMoved = true;
+
+    // Simulate the mousemove event
+    simulateMouseEvent(event, 'mousemove');
+  };
+
+  /**
+   * Handle the jQuery UI widget's touchend events
+   * @param {Object} event The document's touchend event
+   */
+  mouseProto._touchEnd = function (event) {
+
+    // Ignore event if not handled
+    if (!touchHandled) {
+      return;
+    }
+
+    // Simulate the mouseup event
+    simulateMouseEvent(event, 'mouseup');
+
+    // Simulate the mouseout event
+    simulateMouseEvent(event, 'mouseout');
+
+    // If the touch interaction did not move, it should trigger a click
+    if (!this._touchMoved) {
+
+      // Simulate the click event
+      simulateMouseEvent(event, 'click');
+    }
+
+    // Unset the flag to allow other widgets to inherit the touch event
+    touchHandled = false;
+  };
+
+  /**
+   * A duck punch of the $.ui.mouse _mouseInit method to support touch events.
+   * This method extends the widget with bound touch event handlers that
+   * translate touch events to mouse events and pass them to the widget's
+   * original mouse event handling methods.
+   */
+  mouseProto._mouseInit = function () {
+
+    var self = this;
+
+    // Delegate the touch handlers to the widget's element
+    self.element.bind({
+      touchstart: $.proxy(self, '_touchStart'),
+      touchmove: $.proxy(self, '_touchMove'),
+      touchend: $.proxy(self, '_touchEnd')
+    });
+
+    // Call the original $.ui.mouse init method
+    _mouseInit.call(self);
+  };
+
+  /**
+   * Remove the touch event handlers
+   */
+  mouseProto._mouseDestroy = function () {
+
+    var self = this;
+
+    // Delegate the touch handlers to the widget's element
+    self.element.unbind({
+      touchstart: $.proxy(self, '_touchStart'),
+      touchmove: $.proxy(self, '_touchMove'),
+      touchend: $.proxy(self, '_touchEnd')
+    });
+
+    // Call the original $.ui.mouse destroy method
+    _mouseDestroy.call(self);
+  };
+
+})(jQuery);
 // Angular Rails Templates 1.0.2
 //
 // angular_templates.ignore_prefix: ["templates/"]
@@ -101143,6 +101329,14 @@ DayGrid.mixin({
 
 		classes.unshift('fc-day-grid-event', 'fc-h-event');
 
+		// Only display a timed events time if it is the starting segment
+		// if (seg.isStart) {
+		// 	timeText = this.getEventTimeText(event);
+		// 	if (timeText) {
+		// 		timeHtml = '<span class="fc-time">' + htmlEscape(timeText) + '</span>';
+		// 	}
+		// }
+
 		titleHtml =
 			'<span class="fc-title">' +
 				(htmlEscape(event.title || '') || '&nbsp;') + // we always want one line of height
@@ -116058,7 +116252,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/customize-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("customize-template.html", '<div class="customize-flex">\n    <h2>Customize Moods</h2>\n    <div class="customize-container">\n        <div class="smile-container">\n            <i class="fa fa-frown-o" aria-hidden="true"></i>\n            <i class="fa fa-meh-o" aria-hidden="true"></i>\n            <i class="fa fa-smile-o" aria-hidden="true"></i>\n        </div>\n        <form ng-submit="save($event)">\n\n            <div>\n                <ul ui-sortable="{axis:\'y\', containment: \'parent\'}" ng-model="list">\n                    <li class="row-list" ng-repeat="row in list">\n                        <input type="text" class="form-control" ng-model="row.text" /><span ng-click="del(row)" class="remove-row">\n                      <span class="cust-move"><i class="fa fa-arrows-v" aria-hidden="true"></i></span><span class="cust-delete"><i class="fa fa-times-circle" aria-hidden="true"></i></span></span>\n                    </li>\n                    <input ng-class="{\'disableButton\': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />\n                    <button class="btn btn-default">Submit</button>\n                </ul>\n            </div>\n        </form>\n        <br>\n        <pre ng-show="isShow">list={{list}}</pre>\n    </div>\n    <span class="cust-note">*Altering moods will reflect on your mood chart</span>\n</div>')
+  $templateCache.put("customize-template.html", '<div class="customize-flex">\n    <h2>Customize Moods</h2>\n    <div class="customize-container">\n        <div class="smile-container">\n            <i class="fa fa-frown-o" aria-hidden="true"></i>\n            <i class="fa fa-meh-o" aria-hidden="true"></i>\n            <i class="fa fa-smile-o" aria-hidden="true"></i>\n        </div>\n        <form ng-submit="save($event)">\n\n            <div>\n                <ul ui-sortable="{axis:\'y\', containment: \'parent\'}" ng-model="list">\n                    <li class="row-list" ng-repeat="row in list">\n                        <input type="text" class="form-control" ng-model="row.text" maxlength="20" /><span ng-click="del(row)" class="remove-row">\n                      <span class="cust-move"><i class="fa fa-arrows-v" aria-hidden="true"></i></span><span class="cust-delete"><i class="fa fa-times-circle" aria-hidden="true"></i></span></span>\n                    </li>\n                    <input ng-class="{\'disableButton\': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />\n                    <button class="btn btn-default">Submit</button>\n                </ul>\n            </div>\n        </form>\n        <br>\n        <pre ng-show="isShow">list={{list}}</pre>\n    </div>\n    <span class="cust-note">*Altering moods will reflect on your mood chart</span>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116093,7 +116287,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/meds-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("meds-template.html", '<h2 class="calendar-events">Calendar</h2>\n<div class="calbutton-container">\n    <button ng-class="{\'disableButton\': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my meds today</button>\n    <button type="button" ng-click="showMeds=true; showEvents=false">View Medications</button>\n    <button type="button" ng-click="showEvents=true; showMeds=false">Create Event</button>\n</div>\n<div class="medication-container" ng-show="showMeds">\n    <div class="medication-wrapper">\n        <h3 class="total-items">Current Medication</h3>\n        <span ng-hide="show">Add current medications</span>\n        <a ng-click="showMeds=false" class="meds-close"><i class="fa fa-times-circle" aria-hidden="true"></i></a>\n        <div class="med-list">\n            <ul class="med-nav">\n                <li ng-repeat="med in medications">\n                    <input class="checkbox" type="checkbox" ng-model="med.done" />\n                    <span class="med-{{med.done}} todo">{{med.name}}</span>\n                    <input style="display: none;" data-id="{{med.id}}"></input>\n                </li>\n            </ul>\n            <form ng-submit="postMeds()">\n                <label class="med-name" for="medication-name">Name</label>\n                <input id="medication-name" type="text" Placeholder="Enter Medication" maxlength="100" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <div class="med-buttons">\n                    <button type="submit" ng-submit "postMeds()"> Add Medication</button>\n                    <button type="button" ng-click="deleteMeds()">Remove Selected</button>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n<div class="calendar-container">\n    <div class="form-container" ng-show="showEvents">\n        <form class="form-horizontal clearfix">\n            <label for="dateFrom" class="col-sm-2 control-label">Date</label>\n            <div class="col-sm-10">\n                <input type="date" class="form-control" id="dateFrom" ng-model="from" required>\n            </div>\n            <label for="dateTitle" class="col-sm-2 control-label">Event</label>\n            <div class="col-sm-10">\n                <input type="text" class="form-control" id="dateTitle" ng-model="title" placeholder="Title">\n            </div>\n            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent(); showEvents=false">Submit</button>\n        </form>\n    </div>\n    <div class="well calWell">\n        <div class="row-fluid">\n            <div class="span8">\n                <div class="btn-toolbar">\n                    <div class="btn-group">\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicDay\'}" ng-click="changeView(\'basicDay\', \'calendar\')">Day</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicWeek\'}" ng-click="changeView(\'basicWeek\', \'calendar\')">Week</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'month\'}" ng-click="changeView(\'month\', \'calendar\')">Month</button>\n                    </div>\n                </div>\n                <div class="calendar" ng-model="eventSources" calendar="calendar" ui-calendar="uiConfig.calendar">\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>')
+  $templateCache.put("meds-template.html", '<h2 class="calendar-events">Calendar</h2>\n<div class="calbutton-container">\n    <button ng-class="{\'disableButton\': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my meds today</button>\n    <button type="button" ng-click="showMeds=true; showEvents=false">View Medications</button>\n    <button type="button" ng-click="showEvents=true; showMeds=false">Create Event</button>\n</div>\n<div class="medication-container" ng-show="showMeds">\n    <div class="medication-wrapper">\n        <h3 class="total-items">Current Medication</h3>\n        <span ng-hide="show">Add current medications</span>\n        <a ng-click="showMeds=false" class="meds-close"><i class="fa fa-times-circle" aria-hidden="true"></i></a>\n        <div class="med-list">\n            <ul class="med-nav">\n                <li ng-repeat="med in medications">\n                    <input class="checkbox" type="checkbox" ng-model="med.done" />\n                    <span class="med-{{med.done}} todo">{{med.name}}</span>\n                    <input style="display: none;" data-id="{{med.id}}"></input>\n                </li>\n            </ul>\n            <form ng-submit="postMeds()">\n                <label class="med-name" for="medication-name">Name</label>\n                <input id="medication-name" type="text" Placeholder="Enter Medication" maxlength="20" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <div class="med-buttons">\n                    <button type="submit" ng-submit "postMeds()"> Add Medication</button>\n                    <button type="button" ng-click="deleteMeds()">Remove Selected</button>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n<div class="calendar-container">\n    <div class="form-container" ng-show="showEvents">\n        <form class="form-horizontal clearfix">\n            <label for="dateFrom" class="col-sm-2 control-label">Date</label>\n            <div class="col-sm-10">\n                <input type="date" class="form-control" id="dateFrom" ng-model="from" required>\n            </div>\n            <label for="dateTitle" class="col-sm-2 control-label">Event</label>\n            <div class="col-sm-10">\n                <input type="text" class="form-control" id="dateTitle" ng-model="title" placeholder="Title">\n            </div>\n            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent(); showEvents=false">Submit</button>\n        </form>\n    </div>\n    <div class="well calWell">\n        <div class="row-fluid">\n            <div class="span8">\n                <div class="btn-toolbar">\n                    <div class="btn-group">\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicDay\'}" ng-click="changeView(\'basicDay\', \'calendar\')">Day</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicWeek\'}" ng-click="changeView(\'basicWeek\', \'calendar\')">Week</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'month\'}" ng-click="changeView(\'month\', \'calendar\')">Month</button>\n                    </div>\n                </div>\n                <div class="calendar" ng-model="eventSources" calendar="calendar" ui-calendar="uiConfig.calendar">\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -117682,6 +117876,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 
 
 
