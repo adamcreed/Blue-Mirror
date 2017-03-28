@@ -12,7 +12,10 @@ class PhoneController < ApplicationController
     private
 
     def phone_params
-      params[:phone] = encrypt(params[:phone].gsub(/\D/, ''))
+      unless params[:phone].blank?
+        params[:phone] = encrypt(params[:phone].gsub(/\D/, ''))
+      end
+
       params.permit(:phone, :phone_provider, :sms_frequency, :user_id)
     end
 end
