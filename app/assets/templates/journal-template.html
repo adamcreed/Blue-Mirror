@@ -15,12 +15,17 @@
                         <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->
                     </div>
                 </li>
-                <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>
+                <!-- <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button> -->
             </ul>
             <div class="list-end"></div>
         </div>
     </div>
     <div class="journal-container">
+        <form>
+            <input id="tag-search"></input>
+            <button ng-click="searchTags()">
+                </button>
+        </form>
         <h2 class="title">Journal</h2>
         <div class="add-journal-container">
             <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">

@@ -31,9 +31,6 @@
                 $scope.addJournals();
                 $q.when(DataRequestService.postJournal('/notes', $scope.journalObj)).then((response) => {
                     $scope.currentJournal = response.data.location;
-                    console.log('why hello there', $scope.tags.split(','));
-
-                    console.log(response.data.location);
                     $scope.journalsArray.push($scope.currentJournal);
                 }).catch((error) => {
                     console.log(error);
@@ -61,10 +58,8 @@
             let inputTag = document.getElementById('edit-tags').innerText;
             let i = $scope.journalsArray.indexOf(entry);
             let arrayIndex = $scope.journalsArray[i];
-            console.log('inputText and title', inputText, inputTitle, inputTag);
             $q.when(DataRequestService.patchEntry(`/notes/${$scope.viewEntryArray[0].id}`, inputText, inputTitle, inputTag)).then((response) => {
-                console.log('response', response.data);
-                console.log($scope.activeEntry);
+
                 for (var i = 0; i < $scope.journalsArray.length; i++) {
                     if (arrayIndex.id == e) {
                         arrayIndex.text = response.data.location.text;
@@ -103,6 +98,17 @@
         }).catch((error) => {
             console.log(error);
         });
+        $scope.searchTags = function() {
+            $scope.tagInput = document.getElementById('tag-search').value;
+            for (let i = 0; i < $scope.journalsArray[i].length; i++) {
+                console.log('wut');
+                if ($scope.tagInput == $scope.journalsArray[i]) {
+                    console.log('yas');
+                } else {
+                    console.log('boo');
+                }
+            }
+        };
         $scope.makeActive = function(entry, id) {
             let i = $scope.journalsArray.indexOf(entry);
             $scope.viewEntryArray = [];
