@@ -2,6 +2,10 @@
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.currentUser = UserService.getUser();
 
+        $( function() {
+            $( document ).tooltip();
+        });
+
         $scope.moodList = moodList;
         $scope.fullMoodList;
         $scope.highestMood = 1;
@@ -143,6 +147,13 @@
             $scope.currentCarrier = $scope.smsCarrier;
             $scope.telNumber = $scope.num;
 
+            $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
+                console.log(response);
+
+            }).catch((error) => {
+                console.log(error);
+            });
+
 
             console.log($scope.currentFrequency);
             console.log($scope.currentCarrier);
@@ -156,7 +167,7 @@
 
         // SMS OPTING
 
-        
+
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
