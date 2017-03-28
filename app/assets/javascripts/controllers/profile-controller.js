@@ -2,6 +2,10 @@
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.currentUser = UserService.getUser();
 
+        $('input').bind('click', function () {
+          $(this).focus();
+        });
+
         $scope.moodList = moodList;
         $scope.fullMoodList;
         $scope.highestMood = 1;
@@ -136,7 +140,7 @@
 
         // SMS OPTING
 
-        
+
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
