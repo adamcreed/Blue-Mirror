@@ -77,9 +77,6 @@ ActiveRecord::Schema.define(version: 20170327201056) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "phone"
-    t.string   "phone_provider"
-    t.string   "sms_frequency"
   end
 
   add_foreign_key "events", "users"

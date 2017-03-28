@@ -16,10 +16,15 @@
 <div class="all-container">
     <div class="left-aside" ng-show="currentUser">
       <span class="logo-container"><img class="bmirror" src="images/betalogo.png"/> <span>Blue Mirror</span></span>
-<a class="text-opt">Text Opt In</a>
+
 <span class="moti-container"><i class="fa fa-quote-left" aria-hidden="true"></i>
-A coping tool for those with depression and anxiety.<i class="fa fa-quote-right" aria-hidden="true"></i></span>
-<span class='moti-click'><i class="fa fa-smile-o" aria-hidden="true"></i></span>
+  <span ng-repeat="quote in currentMotivation track by $index">
+
+{{quote}}
+
+</span>
+<i class="fa fa-quote-right" aria-hidden="true"></i></span>
+<a class='moti-click'><i class="fa fa-smile-o" aria-hidden="true" ng-click="motivationalOther()"></i></a>
 
 
     </div>

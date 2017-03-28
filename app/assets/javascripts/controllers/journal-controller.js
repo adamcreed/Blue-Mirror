@@ -2,6 +2,7 @@
     ng.module('BlueMirrorApp').controller('JournalController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.activeEntry = null;
         $scope.viewEntry = null;
+        $scope.page = 1;
         $scope.currentUser = UserService.getUser();
         $scope.journalObj = {
             text: '',
@@ -10,6 +11,7 @@
         };
         $scope.journalsArray = [];
         $scope.viewEntryArray = [];
+        $scope.searchEntryArray = [];
         console.log($scope.journalsArray);
         $scope.addJournals = function() {
             $scope.journalObj.title = $scope.title;
@@ -29,9 +31,6 @@
                 $scope.addJournals();
                 $q.when(DataRequestService.postJournal('/notes', $scope.journalObj)).then((response) => {
                     $scope.currentJournal = response.data.location;
-                    console.log('why hello there', $scope.tags.split(','));
-
-                    console.log(response.data.location);
                     $scope.journalsArray.push($scope.currentJournal);
                 }).catch((error) => {
                     console.log(error);
@@ -59,11 +58,9 @@
             let inputTag = document.getElementById('edit-tags').innerText;
             let i = $scope.journalsArray.indexOf(entry);
             let arrayIndex = $scope.journalsArray[i];
-            console.log('inputText and title', inputText, inputTitle, inputTag);
             $q.when(DataRequestService.patchEntry(`/notes/${$scope.viewEntryArray[0].id}`, inputText, inputTitle, inputTag)).then((response) => {
-                console.log('response', response.data);
-                console.log($scope.activeEntry);
-                for (var i = 0; i < $scope.journalsArray.length; i++) {
+
+                for (let i = 0; i < $scope.journalsArray.length; i++) {
                     if (arrayIndex.id == e) {
                         arrayIndex.text = response.data.location.text;
                         arrayIndex.title = response.data.location.title;
@@ -80,17 +77,41 @@
                 console.log(error);
             });
         };
+
+        $scope.nextPage = function() {
+            // let inputPage = $scope.page + 1;
+            $q.when(DataRequestService.flipPage('/notes')).then((response) => {
+                $scope.page = response.data;
+                console.log(response.data);
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
-            let e = $scope.journalsArray.indexOf(entry);
+            let e = $scope.journalsArray.indexOf();
             let arrayIndex = $scope.journalsArray[e];
-            for (var entry in $scope.pastJournals) {
+            for (let entry in $scope.pastJournals) {
                 $scope.pastEntries = $scope.pastJournals[entry];
                 $scope.journalsArray.push($scope.pastEntries);
             }
         }).catch((error) => {
             console.log(error);
         });
+        $scope.searchTags = function() {
+            $scope.tagInput = document.getElementById('tag-search').value;
+            console.log($scope.tagInput);
+            for (let i = 0; i < $scope.journalsArray.length; i++) {
+                console.log(i);
+                for (let e = 0; e < $scope.journalsArray[i].tags.length; e++) {
+                    console.log(e);
+                    if ($scope.tagInput == $scope.journalsArray[i].tags[e]) {
+                        $scope.searchEntryArray.push($scope.journalsArray[i]);
+
+                    }
+                }
+            }
+        };
         $scope.makeActive = function(entry, id) {
             let i = $scope.journalsArray.indexOf(entry);
             $scope.viewEntryArray = [];
@@ -99,6 +120,7 @@
             if ($scope.activeEntry == $scope.journalsArray[i].id) {
                 $scope.viewEntry = id;
                 $scope.viewEntryArray.push($scope.journalsArray[i]);
+
             }
         };
     });
