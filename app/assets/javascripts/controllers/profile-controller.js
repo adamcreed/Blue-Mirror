@@ -136,7 +136,7 @@
 
         // SMS OPTING
 
-        
+
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {

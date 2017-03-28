@@ -117601,7 +117601,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 
         // SMS OPTING
 
-        
+
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {
