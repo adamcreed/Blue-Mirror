@@ -141,6 +141,7 @@
 
         $scope.phoneCarriers = carriers;
 
+        // SMS OPTING
         $scope.submitSms = function() {
             $scope.smsForm.$setSubmitted();
             $scope.currentFrequency = $scope.smsFrequency;
@@ -154,7 +155,7 @@
                 console.log(error);
             });
 
-
+            $scope.success = true;
             console.log($scope.currentFrequency);
             console.log($scope.currentCarrier);
             console.log($scope.telNumber);
@@ -164,8 +165,19 @@
             return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
         };
 
+        $scope.deleteSms = function() {
+            $scope.currentFrequency = null;
+            $scope.currentCarrier = null;
+            $scope.telNumber = nul;
 
-        // SMS OPTING
+            $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
+                console.log(response);
+
+            }).catch((error) => {
+                console.log(error);
+            });
+
+        };
 
 
 
