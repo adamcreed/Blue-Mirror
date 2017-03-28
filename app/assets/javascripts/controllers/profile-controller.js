@@ -181,6 +181,11 @@
             $scope.currentCarrier = null;
             $scope.telNumber = '';
 
+            // resets
+            $scope.smsCarrier = '';
+            $scope.smsFrequency = '';
+            $scope.num = '';
+
             $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
                 console.log(response);
 
