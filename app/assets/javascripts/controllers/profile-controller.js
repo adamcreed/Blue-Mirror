@@ -164,6 +164,10 @@
             $scope.success = true;
         };
 
+        $scope.optedIn = function() {
+          return $scope.currentUser.phone
+        }
+
         $scope.smsFormValid = function() {
             return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
         };
@@ -171,7 +175,7 @@
         $scope.deleteSms = function() {
             $scope.currentFrequency = null;
             $scope.currentCarrier = null;
-            $scope.telNumber = null;
+            $scope.telNumber = '';
 
             $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
                 console.log(response);

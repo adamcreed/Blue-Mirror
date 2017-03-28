@@ -12,7 +12,9 @@ class PhoneController < ApplicationController
     private
 
     def phone_params
-      unless params[:phone].blank?
+      params[:phone] = nil if params[:phone].blank?
+
+      unless params[:phone].nil?
         params[:phone] = encrypt(params[:phone].gsub(/\D/, ''))
       end
 
