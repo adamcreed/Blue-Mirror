@@ -79,14 +79,37 @@
         };
 
         $scope.nextPage = function() {
-            // let inputPage = $scope.page + 1;
-            $q.when(DataRequestService.flipPage('/notes')).then((response) => {
-                $scope.page = response.data;
-                console.log(response.data);
+            $scope.page++;
+            $scope.pastJournals = [];
+            $q.when(DataRequestService.get(`/notes?page=${$scope.page}`)).then((response) => {
+                console.log('page', response.data);
+                $scope.pastJournals = response.data;
+                let e = $scope.journalsArray.indexOf();
+                let arrayIndex = $scope.journalsArray[e];
+                for (let entry in $scope.pastJournals) {
+                    $scope.pastEntries = $scope.pastJournals[entry];
+                    $scope.journalsArray.push($scope.pastEntries);
+                }
             }).catch((error) => {
                 console.log(error);
             });
         };
+        $scope.prevPage = function() {
+            $scope.page--;
+            $scope.pastJournals = [];
+            $q.when(DataRequestService.get(`/notes?page=${$scope.page}`)).then((response) => {
+                $scope.pastJournals = response.data;
+                let e = $scope.journalsArray.indexOf();
+                let arrayIndex = $scope.journalsArray[e];
+                for (let entry in $scope.pastJournals) {
+                    $scope.pastEntries = $scope.pastJournals[entry];
+                    $scope.journalsArray.push($scope.pastEntries);
+                }
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
             let e = $scope.journalsArray.indexOf();

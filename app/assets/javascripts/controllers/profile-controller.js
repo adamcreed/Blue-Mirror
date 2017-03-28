@@ -56,30 +56,23 @@
         $scope.change = function() {
             $scope.moodObj.mood = Number($scope.value);
         };
-
         // post moods
         $scope.postMoods = function() {
             $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
                 $scope.moodObj.mood = 1;
                 $scope.isSubmitted = true;
-
             }).catch((error) => {
                 console.log(error);
             });
         };
-
-
+        console.log($scope.moodObj.mood);
         // customize moods
         $scope.newList = '';
-
         // TODO: refactor loops
-
         $scope.$watch('newList', function() {
-
             if ($scope.newList.length === 0) {
                 return;
             }
-
             moodList = [];
             for (let i = 0; i < $scope.list.length; i++) {
                 if ($scope.list[i].text) {
@@ -89,9 +82,7 @@
                 }
             }
         });
-
         $scope.list = [];
-
         $scope.$watch('list', function() {
 
             for (let i = 0; i < $scope.moodList.length; i++) {
@@ -108,9 +99,7 @@
                         $scope.newList += $scope.list[i].text + ', ';
                     }
                 }
-
                 $scope.newList = $scope.newList.slice(0, -2);
-
                 $q.when(DataRequestService.patch('/mood_lists', {
                     moods: $scope.newList
                 })).then((response) => {
@@ -120,12 +109,10 @@
                     console.log(error);
                 });
             };
-
             $scope.del = function(item) {
                 let index = $scope.list.indexOf(item);
                 $scope.list.splice(index, 1);
             };
-
             $scope.isDisabled = function() {
                 if ($scope.list.length === 10) {
                     return true;
@@ -139,14 +126,9 @@
             $q.when(DataRequestService.get('/inspos')).then((response) => {
                 $scope.currentMotivation = [];
                 $scope.defaultQuote = response.data;
-                console.log('quote', $scope.defaultQuote);
-
                 for (var quote in $scope.defaultQuote) {
-
                     $scope.motivation = $scope.defaultQuote[quote];
-                    console.log('ayyyeye bruh', $scope.motivation);
                     $scope.oneQuote = $scope.defaultQuote[Math.floor(Math.random() * $scope.defaultQuote.length)];
-                    console.log($scope.oneQuote);
                     if ($scope.currentMotivation < 1) {
                         $scope.currentMotivation.push($scope.oneQuote);
                     }
@@ -155,21 +137,6 @@
                 console.log(error);
             });
         };
-        //
-        //
-        // $q.when(DataRequestService.get('/inspos')).then((response) => {
-        //
-        //     $scope.defaultQuote = response.data;
-        //     console.log('quote', $scope.defaultQuote);
-        //
-        //     for (var quote in $scope.defaultQuote) {
-        //         $scope.motivation = $scope.defaultQuote[quote];
-        //         console.log('ayyyeye bruh', $scope.motivation);
-        //         $scope.currentMotivation.push($scope.motivation);
-        //     }
-        // }).catch((error) => {
-        //     console.log(error);
-        // });
 
 
         // SMS OPTING
@@ -177,6 +144,95 @@
 
 
         // CHART MOODS
+        $scope.oneWeek = function() {
+            $q.when(DataRequestService.get('/moods?days=7')).then((response) => {
+
+                $scope.allMoods = response.data;
+
+
+                $scope.labels = [];
+                $scope.data = [];
+                $scope.reasons = [];
+
+                for (let i = 0; i < $scope.allMoods.length; i++) {
+                    $scope.labels.push($scope.allMoods[i].day);
+                    $scope.data.push($scope.allMoods[i].mood);
+                }
+
+
+                if (_.max($scope.data) > $scope.moodList.length) {
+                    $scope.highestMood = _.max($scope.data);
+                } else {
+                    $scope.highestMood = $scope.moodList.length;
+                }
+                $scope.fullMoodList = $scope.getList($scope.moodList, $scope.highestMood);
+                $scope.data = [$scope.data];
+
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+        $scope.oneMonth = function() {
+            $q.when(DataRequestService.get('/moods?days=30')).then((response) => {
+
+                $scope.allMoods = response.data;
+
+
+                $scope.labels = [];
+                $scope.data = [];
+                $scope.reasons = [];
+
+                for (let i = 0; i < $scope.allMoods.length; i++) {
+                    $scope.labels.push($scope.allMoods[i].day);
+                    $scope.data.push($scope.allMoods[i].mood);
+                }
+
+
+                if (_.max($scope.data) > $scope.moodList.length) {
+                    $scope.highestMood = _.max($scope.data);
+                } else {
+                    $scope.highestMood = $scope.moodList.length;
+                }
+                $scope.fullMoodList = $scope.getList($scope.moodList, $scope.highestMood);
+                $scope.data = [$scope.data];
+
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+        $scope.sixMonth = function() {
+            $q.when(DataRequestService.get('/moods?days=180')).then((response) => {
+
+                $scope.allMoods = response.data;
+
+
+                $scope.labels = [];
+                $scope.data = [];
+                $scope.reasons = [];
+
+                for (let i = 0; i < $scope.allMoods.length; i++) {
+                    $scope.labels.push($scope.allMoods[i].day);
+                    $scope.data.push($scope.allMoods[i].mood);
+                }
+
+
+                if (_.max($scope.data) > $scope.moodList.length) {
+                    $scope.highestMood = _.max($scope.data);
+                } else {
+                    $scope.highestMood = $scope.moodList.length;
+                }
+                $scope.fullMoodList = $scope.getList($scope.moodList, $scope.highestMood);
+                $scope.data = [$scope.data];
+
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+
+
         $scope.$watch('fullMoodList', function() {
             $scope.drawChart();
         });
@@ -211,6 +267,5 @@
                 }
             };
         };
-
     });
 })(angular);

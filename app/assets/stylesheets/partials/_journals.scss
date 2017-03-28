@@ -2,6 +2,23 @@
     background: #EAEAEA;
 }
 
+.arrows {
+    position: fixed;
+    height: 43px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 5px;
+    background: white;
+    width: 250px;
+    top: 110px;
+    border-bottom: $border;
+
+    i {
+        font-size: 2rem;
+    }
+}
+
 .data-id {
     display: none;
 }
@@ -22,7 +39,8 @@
         height: 100vh;
         right: 0;
     }
-    background: #e7e5dc;
+    padding-top: 80px;
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,13 +52,12 @@
         }
         @include bp(small) {
             width: 250px;
-            position: relative;
             right: 0;
+            top: 50px;
         }
         position: fixed;
-        height: 65px;
+        height: 75px;
         background: white;
-        border-bottom: $border;
         display: flex;
         justify-content: center;
         align-items: center;
