@@ -26,13 +26,11 @@
 <div class="sms-container">
     <a ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
     <div class="sms-popup" ng-show="show">
-        <form name="smsForm" class="smsForm" ng-submit="submitSms()">
-            <div class="success" ng-show="success">You are now opted in to sms services!</div>
-            <div ng-hide="success">
+        <div ng-show="optedIn()"><span>You are currently receiving {{currentFrequency}} messages</span></div>
+        <form name="smsForm" ng-hide="optedIn()" class="smsForm" ng-submit="submitSms()">
                 <div><span>Opt in to recieve sms messages<br/></span></div>
                 <label for="phonenum">Phone Number (10 digits) <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
                 <input ng-model="num" name="number" ng-click="submitCarriers()" id="phonenum" type="tel" pattern="^(\D*\d){10}\D*$" placeholder="Number (required)"required>
-                <!-- <span ng-show="smsForm.number.$dirty && smsForm.number.$error.required">Number is required</span> -->
 
                 <label for="provider">Carrier <i class="fa fa-asterisk" aria-hidden="true"></i></label><br/>
                 <select name="phonecarrier" ng-change="currentCarrier" ng-model="smsCarrier" ng-options="carrier[1] as carrier[0] for carrier in phoneCarriers" id="provider" required>
@@ -46,7 +44,6 @@
                     <option value='Weekly'>Weekly</option>
                     <option value='Reminder'>On 3 Day Abscence</option>
                 </select>
-            </div>
             <button ng-hide="optedIn()" ng-class="{'disableButton': smsFormValid()}" type="submit" ng-disabled="smsFormValid()">Opt In</button>
         </form>
         <button ng-show="optedIn()" ng-click="deleteSms()">Opt Out</button>
