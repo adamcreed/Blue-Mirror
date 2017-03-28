@@ -47,8 +47,8 @@
                     <option value='Reminder'>On 3 Day Abscence</option>
                 </select>
             </div>
-            <button ng-hide="success" ng-click="submitSms()" ng-class="{'disableButton': smsFormValid()}" type="submit" ng-disabled="smsFormValid()">Opt In</button>
-            <button ng-show="success" ng-click="deleteSms()">Opt Out</button>
+            <button ng-hide="success" ng-class="{'disableButton': smsFormValid()}" type="submit" ng-disabled="smsFormValid()">Opt In</button>
         </form>
+        <button ng-show="success" ng-click="deleteSms()">Opt Out</button>
         <a ng-click="show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>
 </div>
