@@ -2,9 +2,22 @@
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.currentUser = UserService.getUser();
 
-        $('input').bind('click', function () {
-          $(this).focus();
-        });
+        function simulateMouseEvent (event, simulatedType) {
+
+          // Ignore multi-touch events
+          if (event.originalEvent.touches.length > 1) {
+            return;
+          }
+          var touch = event.originalEvent.changedTouches[0],
+              simulatedEvent = document.createEvent('MouseEvents');
+
+          //Check if element is an input or a textarea
+          if ($(touch.target).is("input") || $(touch.target).is("textarea")) {
+              event.stopPropagation();
+          } else {
+              event.preventDefault();
+          }
+        }
 
         $scope.moodList = moodList;
         $scope.fullMoodList;
