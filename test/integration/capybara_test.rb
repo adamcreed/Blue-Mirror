@@ -60,14 +60,14 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     refute page.has_css? '#map-canvas'
     assert page.has_css? '.loading'
 
-    sleep 1 until page.has_css? '#map-canvas'
+    sleep 1 until page.has_css? '.map-results'
 
     refute page.has_css? '.loading'
     assert page.has_css? '#map-canvas'
     assert page.has_css? '.map-results'
 
     assert_equal page.current_host, 'http://localhost'
-    find('li:first-of-type .result-website').click
+    find('li:first-of-type .result-name').click
     refute_equal page.current_host, 'http://localhost'
     page.driver.go_back
   end
@@ -117,6 +117,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     assert page.has_content? 'Horse-Title'
     assert page.has_css? '.web-entries'
 
+    scroll_to find('li:last-of-type h3')
     find('li:last-of-type h3').click
     find('.delete-journals').click
     refute page.has_css? '.web-entries'
