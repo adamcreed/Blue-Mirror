@@ -97,7 +97,7 @@
             @include bp (mobile) {
                 padding-top: 0;
             }
-            // padding-bottom: 40px;
+
             li {
                 height: 60px;
                 display: flex;
@@ -198,22 +198,6 @@
         @include bp (small) {}
     }
 }
-// @include bp (mobile) {
-//     flex-flow: column-reverse;
-//     align-items: center;
-//     justify-content: center;
-//
-//     .journal-form {
-//         .journal-title {
-//             width: 300px;
-//             margin: 0;
-//         }
-//         top: 30px;
-//         margin: 1% auto;
-//         display: flex;
-//         flex-direction: column;
-//     }
-// }
 @include bp (small) {
     .add-journal-container {
         display: flex;
