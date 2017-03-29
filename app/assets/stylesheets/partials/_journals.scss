@@ -111,6 +111,23 @@
     }
 }
 
+.web-entries div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    i {
+        font-size: 1.3rem;
+        padding-left: 6px;
+    }
+}
+
+.entry {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
 .title {
     display: flex;
     justify-content: center;
@@ -239,9 +256,17 @@
 .submit-entry {}
 
 .edit-entry {
+    display: flex;
+    align-items: center;
+
     img {
         width: 1.5rem;
         height: 1.5rem;
+    }
+
+    i {
+        font-size: 1rem;
+        padding-left: 6px;
     }
 }
 
