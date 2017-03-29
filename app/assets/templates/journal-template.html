@@ -5,6 +5,12 @@
             <a ng-click="nextPage()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
             <a ng-click="prevPage()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></i></a>
         </div>
+        <form class="tag-container">
+            <label for="tag-search">Search Tags</label>
+            <input id="tag-search"></input>
+            <a ng-click="searchTags(); searchEntry=true; activeEntry=false"> <i class="fa fa-search" aria-hidden="true"></i>Search Tags
+            </a>
+        </form>
         <div class="web-list">
             <ul>
                 <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
@@ -20,11 +26,6 @@
         </div>
     </div>
     <div class="journal-container">
-        <form>
-            <input id="tag-search"></input>
-            <button ng-click="searchTags(); searchEntry=true; activeEntry=false">Search Tags
-                </button>
-        </form>
         <h2 class="title">Journal</h2>
         <div class="add-journal-container">
             <form name="journalForm" class="journal-form" ng-hide="past || activeEntry ||searchEntry">
