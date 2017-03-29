@@ -16,7 +16,7 @@
                 <a href="signout">sign out</a>
             </span>
         </div>
-        <div class="all-container">
+        <div ng-cloak class="all-container">
             <div class="left-aside" ng-show="currentUser">
                 <span class="logo-container"><img class="bmirror" src="images/betalogo.png"/>
                     <span>Blue Mirror</span>
@@ -37,7 +37,7 @@
 
 
 
-        <nav ng-controller="ProfileController as profile" ng-show="currentUser" class="fixed-nav">
+        <nav ng-cloak ng-controller="ProfileController as profile" ng-show="currentUser" class="fixed-nav">
             <a ng-click="othersTodos(); show=!show" class="text-opt">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
             <div class="sms-container mobile-sms">
                 <div class="sms-popup" ng-show="show">
