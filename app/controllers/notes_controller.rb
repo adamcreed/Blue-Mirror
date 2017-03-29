@@ -58,7 +58,7 @@ class NotesController < ApplicationController
       id: note.id,
       title: note.title,
       text: note.text,
-      tags: note.tags.split(',').map(&:strip),
+      tags: note.tags,
       day: get_day(note.created_at + Time.now.utc_offset),
       time: get_time(note.created_at + Time.now.utc_offset)
     }
