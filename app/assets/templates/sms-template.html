@@ -1,30 +1,4 @@
-<div class="background-container">
-    <div class="shapes">
-        <div class="one">
-
-            <a ui-sref="BlueParent.update"><span>Update Mood</span></a>
-
-        </div>
-        <div class="two">
-
-            <a ui-sref="BlueParent.counselors"><span>Local Health Centers</span></a>
-
-        </div>
-        <div class="three">
-
-            <a ui-sref="BlueParent.hotline"><span>Crisis helplines</span></a>
-
-        </div>
-        <div class="four">
-
-            <a ui-sref="BlueParent.todo"><span>get motivated</span></a>
-        </div>
-    </div>
-
-</div>
-
 <div class="sms-container">
-    <a class="desktop-sms" ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
     <div class="sms-popup" ng-show="show">
         <div class="receiving-message" ng-show="optedIn()"><span>You are currently receiving <span class="reminder">{{currentFrequency}}</span> messages</span></div>
         <form name="smsForm" ng-hide="optedIn()" class="smsForm" ng-submit="submitSms()">

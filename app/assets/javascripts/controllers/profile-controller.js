@@ -1,6 +1,10 @@
 (function(ng, currentUser) {
-    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
+    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService, $compile) {
         $scope.currentUser = UserService.getUser();
+
+        $( function() {
+            $( document ).tooltip();
+        });
 
         $scope.moodList = moodList;
         $scope.fullMoodList;
@@ -133,10 +137,63 @@
             };
         });
 
+        // sms options
+        $scope.phoneCarriers = carriers;
+        // $scope.smsForm = '';
+        $scope.currentFrequency = $scope.currentUser.sms_frequency;
+        $scope.currentCarrier = '';
 
-        // SMS OPTING
+        // sms opting in
+        $scope.submitSms = function() {
+            $scope.smsForm.$setSubmitted();
+            $scope.currentFrequency = $scope.smsFrequency;
+            $scope.currentCarrier = $scope.smsCarrier;
+            $scope.telNumber = $scope.num;
 
-        
+            $( '.smsForm' ).each(function(){
+                this.reset();
+            });
+
+            $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
+                console.log(response);
+
+                $scope.currentFrequency = response.data.location.sms_frequency;
+
+            }).catch((error) => {
+                console.log(error);
+            });
+            $scope.success = true;
+        };
+
+
+        $scope.optedIn = function() {
+            return $scope.currentFrequency;
+        };
+
+
+        $scope.smsFormValid = function() {
+            return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
+        };
+
+        // sms opting out
+        $scope.deleteSms = function() {
+            $scope.currentFrequency = null;
+            $scope.currentCarrier = null;
+            $scope.telNumber = '';
+
+            // resets
+            $scope.smsCarrier = '';
+            $scope.smsFrequency = '';
+            $scope.num = '';
+
+            $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
+                console.log(response);
+
+            }).catch((error) => {
+                console.log(error);
+            });
+
+        };
 
         // CHART MOODS
         $scope.$watch('fullMoodList', function() {

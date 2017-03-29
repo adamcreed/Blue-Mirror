@@ -19,6 +19,11 @@ gem 'angular-rails-templates'
 gem 'bourbon'
 gem 'bower-rails'
 
+gem 'daemons'
+gem 'delayed_job_active_record'
+gem 'delayed_job_recurring'
+gem 'sms-easy', require: true
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record
