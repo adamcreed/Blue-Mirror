@@ -1,28 +1,34 @@
 <div ng-controller="JournalController as entries">
     <div class="web-past">
         <h2>Past Entries</h2>
+        <div class="arrows">
+            <a ng-click="nextPage()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+            <a ng-click="prevPage()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></i></a>
+        </div>
+        <form class="tag-container">
+            <label for="tag-search">Search Tags</label>
+            <input id="tag-search"></input>
+            <a ng-click="searchTags(); searchEntry=true; activeEntry=false"> <i class="fa fa-search" aria-hidden="true"></i>Search Tags
+            </a>
+        </form>
         <div class="web-list">
             <ul>
                 <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
 
                     <div ng-hide="edit">
-                        <h3 class="entry">{{entry.title}}</h3>
-                        <!-- <span class="entry">{{entry.text}}</span> -->
+                        <h3 class="entry">{{entry.title}} <i class="fa fa-pencil" aria-hidden="true"></i></h3>
                         <input class="data-id" data-id="{{entry.id}}">
                         </input>
                         <span class="entry">{{entry.day}}</span>
-                        <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->
                     </div>
                 </li>
-                <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>
             </ul>
-            <div class="list-end"></div>
         </div>
     </div>
     <div class="journal-container">
         <h2 class="title">Journal</h2>
         <div class="add-journal-container">
-            <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">
+            <form name="journalForm" class="journal-form" ng-hide="past || activeEntry ||searchEntry">
                 <!-- ng-submit="" -->
 
                 <div class="journal-input-container"><label>Title</label><input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title"></div>
@@ -34,6 +40,21 @@
                 <a class="button" name="submit journal" ng-click="postJournals()">submit</a>
             </form>
 
+            <div ng-hide="!searchEntry || activeEntry">
+
+                <ul>
+                    <li class="search-entries" ng-repeat="entry in searchEntryArray" ng-class="{active: searchEntry === {{entry.id}}}" ng-click="searchEntry=false; makeActive(entry, entry.id)">
+
+                        <div ng-hide="edit">
+                            <h3 class="entry">{{entry.title}}</h3>
+                            <input class="data-id" data-id="{{entry.id}}">
+                            </input>
+                            <span class="entry">{{entry.day}}</span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
             <div id="active-entry" ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">
 
                 <ul>
@@ -44,7 +65,7 @@
 
                 </ul>
                 <div class="journal-buttons" ng-hide="edit">
-                    <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry</a>
+                    <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                     <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->
                     <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>
                 </div>

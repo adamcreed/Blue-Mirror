@@ -16,7 +16,7 @@
                 <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
 
                     <div ng-hide="edit">
-                        <h3 class="entry">{{entry.title}}</h3>
+                        <h3 class="entry">{{entry.title}} <i class="fa fa-pencil" aria-hidden="true"></i></h3>
                         <input class="data-id" data-id="{{entry.id}}">
                         </input>
                         <span class="entry">{{entry.day}}</span>

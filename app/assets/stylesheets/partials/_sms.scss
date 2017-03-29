@@ -2,7 +2,7 @@
     @include bp(mobile) {
         position: fixed;
         bottom: 65px;
-        right: 33px;
+        right: 20px;
     }
     @include bp(small) {
         position: absolute;
@@ -39,7 +39,7 @@
         padding-bottom: 18px;
     }
     @include bp(mobile) {
-        width: 331px;
+        width: 319px;
     }
     @include bp(small) {
         width: 368px;
