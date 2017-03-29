@@ -19,8 +19,8 @@
             </ul>
             <form ng-submit="postMeds()">
                 <label class="med-name" for="medication-name">Name</label>
-                <input id="medication-name" type="text" Placeholder="Enter Medication" maxlength="20" ng-model="input" />
                 <p class="error">{{error}}</p>
+                <input id="medication-name" type="text" Placeholder="Enter Medication" maxlength="20" ng-model="input" />
                 <div class="med-buttons">
                     <button type="submit" ng-submit "postMeds()"> Add Medication</button>
                     <button type="button" ng-click="deleteMeds()">Remove Selected</button>

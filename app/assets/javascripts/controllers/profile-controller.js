@@ -7,10 +7,6 @@
             $window.location.href = '/#!/profile';
         }
 
-        $(function() {
-            $(document).tooltip();
-        });
-
         $scope.moodList = moodList;
         $scope.fullMoodList;
         $scope.highestMood = 1;
@@ -74,13 +70,19 @@
         };
         // post moods
         $scope.postMoods = function() {
-            $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
-                $scope.moodObj.mood = 1;
-                $scope.isSubmitted = true;
+            if ($scope.value === undefined || $scope.value === '') {
+
+                $scope.error = "Please select a mood";
+
+            } else {
+                $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
+                    $scope.moodObj.mood = 1;
+                    $scope.isSubmitted = true;
             }).catch((error) => {
                 console.log(error);
             });
-        };
+        }
+    };
 
         // customize moods
         $scope.newList = '';
