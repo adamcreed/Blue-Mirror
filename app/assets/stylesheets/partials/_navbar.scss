@@ -85,7 +85,6 @@ nav {
             display: flex;
             flex-direction: column;
             line-height: 1.5rem;
-            display: none;
 
             i {
                 color: $mainColor;
@@ -109,6 +108,13 @@ nav {
         padding: 5px;
         border-top: $border;
         width: 100%;
+
+        @include bp(mobile) {
+            visibility: hidden;
+        }
+        @include bp(small) {
+            visibility: visible;
+        }
 
         i {
             &:hover {

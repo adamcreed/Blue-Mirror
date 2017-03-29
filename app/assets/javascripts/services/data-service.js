@@ -45,6 +45,21 @@
             });
         }
 
+        function patchNumber(url, number, provider, frequency) {
+            return $http({
+                method: 'PATCH',
+                url: url,
+                headers: {
+                    "content-type": "application/json;charset=utf-8"
+                },
+                data: {
+                    phone: number,
+                    phone_provider: provider,
+                    sms_frequency: frequency
+                }
+            });
+        }
+
         function patchEntry(url, inputText, inputTitle, inputTag) {
             return $http({
                 method: 'PATCH',
@@ -60,6 +75,14 @@
 
                 }
             });
+        }
+
+        function flipPage(url) {
+            return $http({
+                method: 'GET',
+                url: url
+            });
+
         }
 
         function postJournal(url, journalObj) {
@@ -86,10 +109,12 @@
 
         return {
             get: getData,
+            flipPage: flipPage,
             post: postData,
             postTodo: postTodo,
             postJournal: postJournal,
             patchEntry: patchEntry,
+            patchNumber: patchNumber,
             delete: deleteData,
             patch: patchData
         };

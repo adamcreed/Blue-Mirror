@@ -116245,28 +116245,28 @@ angular.module('ui.sortable', [])
 // source: app/assets/templates/chart-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("chart-template.html", '<div class="chart-headline">\n    <h2>Your Mood History</h2>\n</div>\n<div class="chart-container">\n            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">\n            </canvas>\n</div>')
+  $templateCache.put("chart-template.html", '<div class="chart-headline">\n    <h2>Your Mood History</h2>\n</div>\n<div class="day-param">\n    <a id=\'oneweek\' class="button" ng-click="oneWeek()">One Week</a>\n    <a id=\'onemonth\' class="button" ng-click="oneMonth()">One Month</a>\n    <a id=\'sixmonth\' class="button" ng-click="sixMonth()">Six Months</a>\n</div>\n<div class="chart-container">\n    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">\n            </canvas>\n</div>')
 }]);
 
 // Angular Rails Template
 // source: app/assets/templates/customize-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("customize-template.html", '<div class="customize-flex">\n    <h2>Customize Moods</h2>\n    <div class="customize-container">\n        <div class="smile-container">\n            <i class="fa fa-frown-o" aria-hidden="true"></i>\n            <i class="fa fa-meh-o" aria-hidden="true"></i>\n            <i class="fa fa-smile-o" aria-hidden="true"></i>\n        </div>\n        <form ng-submit="save($event)">\n\n            <div>\n                <ul ui-sortable="{axis:\'y\', containment: \'parent\'}" ng-model="list">\n                    <li class="row-list" ng-repeat="row in list">\n                        <input type="text" class="form-control" ng-model="row.text" maxlength="20" /><span ng-click="del(row)" class="remove-row">\n                      <span class="cust-move"><i class="fa fa-arrows-v" aria-hidden="true"></i></span><span class="cust-delete"><i class="fa fa-times-circle" aria-hidden="true"></i></span></span>\n                    </li>\n                    <input ng-class="{\'disableButton\': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />\n                    <button class="btn btn-default">Submit</button>\n                </ul>\n            </div>\n        </form>\n        <br>\n        <pre ng-show="isShow">list={{list}}</pre>\n    </div>\n    <span class="cust-note">*Altering moods will reflect on your mood chart</span>\n</div>')
+  $templateCache.put("customize-template.html", '<div class="customize-flex">\n    <h2>Customize Moods</h2>\n    <div class="customize-container">\n        <div class="smile-container">\n            <i class="fa fa-frown-o" aria-hidden="true"></i>\n            <i class="fa fa-meh-o" aria-hidden="true"></i>\n            <i class="fa fa-smile-o" aria-hidden="true"></i>\n        </div>\n        <form ng-submit="save($event)">\n\n            <div>\n                <ul ui-sortable="{axis:\'y\', containment: \'parent\'}" ng-model="list">\n                    <li class="row-list" ng-repeat="row in list">\n                        <input type="text" class="form-control" ng-model="row.text" maxlength="20" /><span ng-click="del(row)" class="remove-row">\n                      <span class="cust-move"><i class="fa fa-arrows-v" aria-hidden="true"></i></span><span class="cust-delete"><i class="fa fa-times-circle" aria-hidden="true"></i></span></span>\n                    </li>\n                    <input ng-class="{\'disableButton\': isDisabled()}" ng-disabled="isDisabled()" type="button" class="btn btn-primary" ng-click="list.push({})" value="Add Row" />\n                </ul>\n                <button class="btn btn-default">Submit</button>\n            </div>\n        </form>\n        <br>\n        <pre ng-show="isShow">list={{list}}</pre>\n    </div>\n    <span class="cust-note">*Altering moods will reflect on your mood chart</span>\n</div>')
 }]);
 
 // Angular Rails Template
 // source: app/assets/templates/hotline-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("hotline-template.html", '<div class="helpline">\n    <h2>Crisis Helplines</h2>\n    <span class="crisis-disc">If you or a loved one is in immediate danger, call 911.</span>\n\n    <ul>\n        <li>\n            <a href="https://suicidepreventionlifeline.org/ ">\n                <h3>Suicide Prevention Lifeline</h3>\n            </a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Lifeline provides 24/7, free and confidential support for people in distress,\n              prevention and crisis resources for you or your loved ones, and best practices for professionals.</span>\n                    <span>Phone helpline, spanish language option, TTY and chat available for the deaf and hard of hearing</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n                    <span><i class="fa fa-tty" aria-hidden="true"></i>TTY services</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.crisistextline.org/">\n                <h3>Crisis Textline</h3>\n            </a>\n            <div class="helpline-info">\n                <div>\n                    <span>Crisis Text Line is free, 24/7 support for those in crisis.\n              Text 741741 from anywhere in the USA to text with a trained Crisis Counselor.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true">\n            </i>Text services</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.nami.org/Find-Support/NAMI-HelpLine">\n                <h3>NAMI</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The National Alliance on Mental Illness HelpLine is a free service that provides information, referrals and support to people living\n                  with a mental health condition, family members and caregivers, mental health providers and the public.</span>\n                </div>\n                <div class="services-avail">\n                    <span>call only m-f 10am-6pm ET</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="https://www.samhsa.gov/find-help/national-helpline ">\n                <h3>SAMHSA</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Substance Abuse and Mental Health Services Administration offers information service for\n          individuals and family members facing mental and/or substance use disorders. This service provides referrals to local\n          treatment facilities, support groups, and community-based organizations. Callers can also order free publications and\n          other information.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.boystown.org/hotline/Pages/default.aspx ">\n                <h3>Boystown</h3> </a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Boystown National Hotline is a free hotline available to kids, teens and\n                  young adults at any time. We provide help when you need it most. Call, chat, text or email. We are here to talk\n                  if you\'re depressed, contemplating suicide, being physically or sexually abused, on the run, addicted, threatened\n                  by gang violence, fighting with a friend or parent, or if you are faced with an overwhelming challenge.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true"></i>Text services</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish, translation services for 140 other languages</span>\n                    <span><i class="fa fa-tty" aria-hidden="true"></i>TTY services</span>\n                </div>\n\n            </div>\n        </li>\n        <li>\n            <a href="https://www.nationaleatingdisorders.org/help-support/contact-helpline">\n                <h3>National Eating Disorder hotline</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>National Eating Disorders hotline provides support, resources and treatment options for yourself or a loved one.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true"></i>Text services</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n                <span>monday-thursday 9am-9pm\n        friday 9am-5pm\n        holiday closures calling, texting, live chat available</span>\n            </div>\n        </li>\n        <li>\n            <a href="http://hopeline.com/">\n                <h3>Hopeline</h3>\n            </a>\n            <div class="helpline-info">\n                <span>Christian based service for teenagers and young adults about whatever challenges they are facing.</span>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n            </div>\n        </li>\n\n        <li>\n            <a href="https://www.rainn.org/ ">\n                <h3>RAINN</h3></a>\n            <div class="helpline-info">\n                <span>Hotline for those dealing with sexual assault.</span>\n\n                <div class="services-avail">\n                    <span>24/7</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.postpartum.net/">\n                <h3>Postpartum Support International </h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The PSI Warmline is a toll-free telephone number anyone can call to get basic information, support, and resources.\n              Dial extension 1 for Spanish and extension 2 for English. The Warmline messages are returned every day of the week.\n               You are welcome to leave a confidential message any time,\n              and one of the warmline volunteers will return your call as soon as possible. If you are not able to talk when\n              the volunteer calls you, you can arrange another time to connect.\n              The volunteer will give you information, encouragement, and names of resources near you.</span>\n                    <span>Postpartum Support International hosts free, live phone sessions every week, including\n              Wednesday chats for moms and first Monday chats for dads.\n              During these sessions you can connect with other moms and dads, and talk with a PSI expert about resources,\n              symptoms, options and general information\n              about perinatal mood and anxiety disorders from the privacy of your own phone. </span>\n                    <span>Weekly online support meetings available.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Call services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.thehotline.org/ ">\n                <h3>The Hotline</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>A hotline for anyone experiencing domestic violence, seeking resources or information, or questioning unhealthy\n          aspects of their relationship. The Hotline provides lifesaving tools and immediate support to enable victims to find safety and live lives free of abuse. </span>\n                    <span>Our advocates offer the same support through our live chat services.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>Support available in over 170 languages</span>\n                    <span><i class="fa fa-tty" aria-hidden="true"></i>TTY services available</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.thetrevorproject.org/  ">\n                <h3>The Trevor Project</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Trevor Project is the leading national organization providing crisis intervention and suicide prevention services\n          to lesbian, gay, bisexual, transgender and questioning (LGBTQ) young people ages 13-24.</span>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-mobile" aria-hidden="true"></i>Text services</span>\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span><i class="fa fa-comments-o" aria-hidden="true"></i>Live chat </span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a href="http://www.glbthotline.org/ ">\n                <h3>LGBT National </h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Lesbian, Gay, Bisexual and Transgender (LGBT) Youth Talkline provides telephone, online private one-to-one chat and email peer-support,\n              as well as factual information and local resources for cities and towns across the United States.</span>\n                    <div>\n                        <span>Monday-Friday 1pm - 9pm PT</span>\n                        <span>Saturday 9am - 2pm PT</span>\n                    </div>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span>  <i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n            </div>\n        </li>\n    </ul>\n</div>')
+  $templateCache.put("hotline-template.html", '<div class="helpline">\n    <h2>Crisis Helplines</h2>\n    <span class="crisis-disc">If you or a loved one is in immediate danger, call 911.</span>\n\n    <ul>\n        <li>\n            <a class="helpline-title" href="https://suicidepreventionlifeline.org/ ">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3> Suicide Prevention Lifeline</h3>\n            </a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Lifeline provides 24/7, free and confidential support for people in distress,\n              prevention and crisis resources for you or your loved ones, and best practices for professionals.</span>\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:1-800-273-8255">1-800-273-8255</a></span>\n                    <span class="phone-service"><i class="fa fa-tty" aria-hidden="true"></i>TTY <a href="tel:1-800-799-4889">1-800-799-4889</a></span>\n                    <span class="phone-service"><i class="fa fa-comments-o" aria-hidden="true"></i><a href="http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx">Live chat</a></span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="http://www.crisistextline.org/">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>Crisis Textline</h3>\n            </a>\n            <div class="helpline-info">\n                <div>\n                    <span>Crisis Text Line is free, 24/7 support for those in crisis.\n              Text 741741 from anywhere in the USA to text with a trained Crisis Counselor.</span>\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-mobile" aria-hidden="true">\n            </i>Text <a href="tel:741741"> 741741</a></span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="http://www.nami.org/Find-Support/NAMI-HelpLine">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>NAMI</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The National Alliance on Mental Illness HelpLine is a free service that provides information, referrals and support to people living\n                  with a mental health condition, family members and caregivers, mental health providers and the public.</span>\n                </div>\n                <div class="services-avail">\n                    <span>m-f 10am-6pm ET</span>\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:1-800-950-6264">1-800-950-6264</a></span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="https://www.samhsa.gov/find-help/national-helpline ">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>SAMHSA</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Substance Abuse and Mental Health Services Administration offers information services and referrals for\n          individuals and family members facing mental and/or substance use disorders.</span>\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:1-800-662-4357">1-800-662-4357</a></span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n\n                </div>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="http://www.boystown.org/hotline/Pages/default.aspx ">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>Boystown</h3> </a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Boystown National Hotline is a free hotline available to kids, teens and\n                  young adults at any time.</span>\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:800-448-3000">800-448-3000</a></span>\n                    <span class="phone-service"><i class="fa fa-tty" aria-hidden="true"></i>TTY <a href="tel:1-800-448-1833">1-800-448-1833</a></span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish, translation services for 140 other languages</span>\n                </div>\n\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="https://www.nationaleatingdisorders.org/help-support/contact-helpline">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>National Eating Disorder hotline</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>National Eating Disorders hotline provides support, resources and treatment options for yourself or a loved one.</span>\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:800-931-2237">800-931-2237</a></span>\n                    <span class="phone-service"><i class="fa fa-mobile" aria-hidden="true"></i>Text "NEDA" to <a href="tel:741741">741741</a> </span>\n                    <span class="phone-service"><i class="fa fa-comments-o" aria-hidden="true"></i><a href="https://chatserver.comm100.com/ChatWindow.aspx?siteId=144464&planId=467&visitType=1&byHref=1&partnerId=-1">Live chat</a></span>\n                </div>\n                <span>monday-thursday 9am-9pm\n        friday 9am-5pm\n        holiday closures</span>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="http://hopeline.com/">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>Hopeline</h3>\n            </a>\n            <div class="helpline-info">\n                <span>Christian based service for teenagers and young adults about whatever challenges they are facing.</span>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:1-800-273-8255">1-800-273-8255 </a></span>\n                    <span class="phone-service"><i class="fa fa-comments-o" aria-hidden="true"></i><a href="https://www.thehopeline.com/gethelp">Live chat</a></span>\n                </div>\n            </div>\n        </li>\n\n        <li>\n            <a class="helpline-title" href="https://www.rainn.org/ ">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>RAINN</h3></a>\n            <div class="helpline-info">\n                <span>Hotline for those dealing with sexual assault.</span>\n\n                <div class="services-avail">\n                    <span>24/7</span>\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:800-656-4673">800-656-4673</a></span>\n                    <spanclass="phone-service"><i class="fa fa-comments-o" aria-hidden="true"></i><a href="https://hotline.rainn.org/online/terms-of-service.jsp">Live chat</a></span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="http://www.postpartum.net/">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>Postpartum Support International </h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The PSI Warmline is a toll-free telephone number anyone can call to get basic information, support, and resources.\n            </span>\n\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:1-800-944-4773">1-800-944-4773</a></span>\n                    <span class="phone-service"><i class="fa fa-comments-o" aria-hidden="true"></i><a href="http://www.postpartum.net/chat-with-an-expert/">Weekly group chat</a></span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="http://www.thehotline.org/ ">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>The Hotline</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>A hotline for anyone experiencing domestic violence, seeking resources or information, or questioning unhealthy\n          aspects of their relationship.</span>\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:1-800-799-7233">1-800-799-7233</a></span>\n                    <span class="phone-service"><i class="fa fa-tty" aria-hidden="true"></i>TTY <a href="tel:1-800-787-3224">1-800-787-3224</a></span>\n                    <span class="phone-service"><i class="fa fa-comments-o" aria-hidden="true"></i><a href="http://www.thehotline.org/">Live chat</a></span>\n                    <span><i class="fa fa-globe" aria-hidden="true"></i>English and Spanish, support available in over other 170 languages</span>\n                </div>\n            </div>\n        </li>\n        <li>\n            <a class="helpline-title" href="http://www.thetrevorproject.org/  ">\n                <i class="fa fa-circle-o" aria-hidden="true"></i>\n                <h3>The Trevor Project</h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Trevor Project is the leading national organization providing crisis intervention and suicide prevention services\n          to lesbian, gay, bisexual, transgender and questioning (LGBTQ) young people ages 13-24.</span>\n                </div>\n                <div class="services-avail">\n                    <span class="phone-service"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:866-488-7386">866-488-7386</a></span>\n                    <span class="phone-service"><i class="fa fa-mobile" aria-hidden="true"></i>Text "Trevor" to <a href="tel:1-202-304-1200">1-202-304-1200</a></span>\n                    <span class="phone-service"><i class="fa fa-comments-o" aria-hidden="true"></i><a href="http://www.thetrevorproject.org/pages/get-help-now">Live chat</a></span>\n                </div>\n            </div>\n            <!-- </li>\n        <li>\n            <a href="http://www.glbthotline.org/ ">\n                <h3>LGBT National </h3></a>\n            <div class="helpline-info">\n                <div>\n                    <span>The Lesbian, Gay, Bisexual and Transgender (LGBT) Youth Talkline provides telephone, online private one-to-one chat and email peer-support,\n              as well as factual information and local resources for cities and towns across the United States.</span>\n                    <div>\n                        <span>Monday-Friday 1pm - 9pm PT</span>\n                        <span>Saturday 9am - 2pm PT</span>\n                    </div>\n                </div>\n                <div class="services-avail">\n                    <span><i class="fa fa-phone" aria-hidden="true"></i>Phone services</span>\n                    <span>  <i class="fa fa-comments-o" aria-hidden="true"></i>Live chat</span>\n                </div>\n            </div>\n        </li> -->\n    </ul>\n</div>')
 }]);
 
 // Angular Rails Template
 // source: app/assets/templates/journal-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("journal-template.html", '<div ng-controller="JournalController as entries">\n    <div class="web-past">\n        <h2>Past Entries</h2>\n        <div class="web-list">\n            <ul>\n                <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">\n\n                    <div ng-hide="edit">\n                        <h3 class="entry">{{entry.title}}</h3>\n                        <!-- <span class="entry">{{entry.text}}</span> -->\n                        <input class="data-id" data-id="{{entry.id}}">\n                        </input>\n                        <span class="entry">{{entry.day}}</span>\n                        <!-- <button class="edit-entry"><span>edit entry</span><img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"></button> -->\n                    </div>\n                </li>\n                <button class="add-journals button" ng-click="past=false" ng-hide="!past">make new post</button>\n            </ul>\n            <div class="list-end"></div>\n        </div>\n    </div>\n    <div class="journal-container">\n        <h2 class="title">Journal</h2>\n        <div class="add-journal-container">\n            <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">\n                <!-- ng-submit="" -->\n\n                <div class="journal-input-container"><label>Title</label><input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title"></div>\n                <div class="journal-input-container"><label>Journal Entry</label><textarea class="journal-entry" type="text" ng-model="text" placeholder="start typing!">\n    </textarea></div>\n                <div class="journal-input-container"><label>Tags</label><input type="text" class="journal-tag" ng-model="tags" placeholder="tags here"></div>\n                <p class="error">{{error}}\n                </p>\n                <a class="button" name="submit journal" ng-click="postJournals()">submit</a>\n            </form>\n\n            <div id="active-entry" ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">\n\n                <ul>\n                    <h3 id="edit-title" class="entry" ng-model="title">{{entry.title}}</h3>\n                    <li class="journal-time">{{entry.time}} on {{entry.day}}</li>\n                    <li id="edit-text" class="view-entry-item" ng-model="text">{{entry.text}}</li>\n                    <li id="edit-tags">{{entry.tags}}</li>\n\n                </ul>\n                <div class="journal-buttons" ng-hide="edit">\n                    <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry</a>\n                    <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->\n                    <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>\n                </div>\n                <button ng-hide="!edit" class="submit-entry" type="submit" ng-click="edit=false; patchJournalText(entry)">Submit</button>\n            </div>\n        </div>\n    </div>\n</div>')
+  $templateCache.put("journal-template.html", '<div ng-controller="JournalController as entries">\n    <div class="web-past">\n        <h2>Past Entries</h2>\n        <div class="arrows">\n            <a ng-click="nextPage()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>\n            <a ng-click="prevPage()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></i></a>\n        </div>\n        <div class="web-list">\n            <ul>\n                <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">\n\n                    <div ng-hide="edit">\n                        <h3 class="entry">{{entry.title}}</h3>\n                        <input class="data-id" data-id="{{entry.id}}">\n                        </input>\n                        <span class="entry">{{entry.day}}</span>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <div class="journal-container">\n        <form>\n            <input id="tag-search"></input>\n            <button ng-click="searchTags(); searchEntry=true; activeEntry=false">Search Tags\n                </button>\n        </form>\n        <h2 class="title">Journal</h2>\n        <div class="add-journal-container">\n            <form name="journalForm" class="journal-form" ng-hide="past || activeEntry ||searchEntry">\n                <!-- ng-submit="" -->\n\n                <div class="journal-input-container"><label>Title</label><input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title"></div>\n                <div class="journal-input-container"><label>Journal Entry</label><textarea class="journal-entry" type="text" ng-model="text" placeholder="start typing!">\n    </textarea></div>\n                <div class="journal-input-container"><label>Tags</label><input type="text" class="journal-tag" ng-model="tags" placeholder="tags here"></div>\n                <p class="error">{{error}}\n                </p>\n                <a class="button" name="submit journal" ng-click="postJournals()">submit</a>\n            </form>\n\n            <div ng-hide="!searchEntry || activeEntry">\n\n                <ul>\n                    <li class="search-entries" ng-repeat="entry in searchEntryArray" ng-class="{active: searchEntry === {{entry.id}}}" ng-click="searchEntry=false; makeActive(entry, entry.id)">\n\n                        <div ng-hide="edit">\n                            <h3 class="entry">{{entry.title}}</h3>\n                            <input class="data-id" data-id="{{entry.id}}">\n                            </input>\n                            <span class="entry">{{entry.day}}</span>\n                        </div>\n                    </li>\n                </ul>\n\n            </div>\n            <div id="active-entry" ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">\n\n                <ul>\n                    <h3 id="edit-title" class="entry" ng-model="title">{{entry.title}}</h3>\n                    <li class="journal-time">{{entry.time}} on {{entry.day}}</li>\n                    <li id="edit-text" class="view-entry-item" ng-model="text">{{entry.text}}</li>\n                    <li id="edit-tags">{{entry.tags}}</li>\n\n                </ul>\n                <div class="journal-buttons" ng-hide="edit">\n                    <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry</a>\n                    <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->\n                    <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>\n                </div>\n                <button ng-hide="!edit" class="submit-entry" type="submit" ng-click="edit=false; patchJournalText(entry)">Submit</button>\n            </div>\n        </div>\n    </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116287,7 +116287,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/meds-template.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("meds-template.html", '<h2 class="calendar-events">Calendar</h2>\n<div class="calbutton-container">\n    <button ng-class="{\'disableButton\': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my meds today</button>\n    <button type="button" ng-click="showMeds=true; showEvents=false">View Medications</button>\n    <button type="button" ng-click="showEvents=true; showMeds=false">Create Event</button>\n</div>\n<div class="medication-container" ng-show="showMeds">\n    <div class="medication-wrapper">\n        <h3 class="total-items">Current Medication</h3>\n        <span ng-hide="show">Add current medications</span>\n        <a ng-click="showMeds=false" class="meds-close"><i class="fa fa-times-circle" aria-hidden="true"></i></a>\n        <div class="med-list">\n            <ul class="med-nav">\n                <li ng-repeat="med in medications">\n                    <input class="checkbox" type="checkbox" ng-model="med.done" />\n                    <span class="med-{{med.done}} todo">{{med.name}}</span>\n                    <input style="display: none;" data-id="{{med.id}}"></input>\n                </li>\n            </ul>\n            <form ng-submit="postMeds()">\n                <label class="med-name" for="medication-name">Name</label>\n                <input id="medication-name" type="text" Placeholder="Enter Medication" maxlength="20" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <div class="med-buttons">\n                    <button type="submit" ng-submit "postMeds()"> Add Medication</button>\n                    <button type="button" ng-click="deleteMeds()">Remove Selected</button>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n<div class="calendar-container">\n    <div class="form-container" ng-show="showEvents">\n        <form class="form-horizontal clearfix">\n            <label for="dateFrom" class="col-sm-2 control-label">Date</label>\n            <div class="col-sm-10">\n                <input type="date" class="form-control" id="dateFrom" ng-model="from" required>\n            </div>\n            <label for="dateTitle" class="col-sm-2 control-label">Event</label>\n            <div class="col-sm-10">\n                <input type="text" class="form-control" id="dateTitle" ng-model="title" placeholder="Title">\n            </div>\n            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent(); showEvents=false">Submit</button>\n        </form>\n    </div>\n    <div class="well calWell">\n        <div class="row-fluid">\n            <div class="span8">\n                <div class="btn-toolbar">\n                    <div class="btn-group">\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicDay\'}" ng-click="changeView(\'basicDay\', \'calendar\')">Day</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicWeek\'}" ng-click="changeView(\'basicWeek\', \'calendar\')">Week</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'month\'}" ng-click="changeView(\'month\', \'calendar\')">Month</button>\n                    </div>\n                </div>\n                <div class="calendar" ng-model="eventSources" calendar="calendar" ui-calendar="uiConfig.calendar">\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>')
+  $templateCache.put("meds-template.html", '<h2 class="calendar-events">Calendar</h2>\n<div class="calbutton-container">\n    <button ng-class="{\'disableButton\': hasTakenMeds()}" class="button took-meds" ng-disabled="hasTakenMeds()" ng-click="tookMeds()">I took my meds today</button>\n    <button type="button" ng-click="showMeds=true; showEvents=false">View Medications</button>\n    <button type="button" ng-click="showEvents=true; showMeds=false">Create Event</button>\n</div>\n<div class="medication-container" ng-show="showMeds">\n    <div class="medication-wrapper">\n        <h3 class="total-items">Current Medication</h3>\n        <span ng-hide="show">Add current medications</span>\n        <a ng-click="showMeds=false" class="meds-close"><i class="fa fa-times-circle" aria-hidden="true"></i></a>\n        <div class="med-list">\n            <ul class="med-nav">\n                <li ng-repeat="med in medications">\n                    <input class="checkbox" type="checkbox" ng-model="med.done" />\n                    <span class="med-{{med.done}} todo">{{med.name}}</span>\n                    <input style="display: none;" data-id="{{med.id}}"></input>\n                </li>\n            </ul>\n            <form ng-submit="postMeds()">\n                <label class="med-name" for="medication-name">Name</label>\n                <input id="medication-name" type="text" Placeholder="Enter Medication" maxlength="20" ng-model="input" />\n                <p class="error">{{error}}</p>\n                <div class="med-buttons">\n                    <button type="submit" ng-submit "postMeds()"> Add Medication</button>\n                    <button type="button" ng-click="deleteMeds()">Remove Selected</button>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n<div class="calendar-container">\n    <div class="form-container" ng-show="showEvents">\n        <form class="form-horizontal clearfix">\n            <label for="dateFrom" class="col-sm-2 control-label">Date</label>\n            <div class="col-sm-10">\n                <input type="date" class="form-control" id="dateFrom" ng-model="from" required>\n            </div>\n            <label for="dateTitle" class="col-sm-2 control-label">Event</label>\n            <div class="col-sm-10">\n                <input type="text" class="form-control" id="dateTitle" ng-model="title" maxlength="40" placeholder="Title">\n            </div>\n            <button type="submit" class="btn btn-primary pull-right" ng-click="addEvent(); showEvents=false">Submit</button>\n        </form>\n    </div>\n    <div class="well calWell">\n        <div class="row-fluid">\n            <div class="span8">\n                <div class="btn-toolbar">\n                    <div class="btn-group">\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicDay\'}" ng-click="changeView(\'basicDay\', \'calendar\')">Day</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'basicWeek\'}" ng-click="changeView(\'basicWeek\', \'calendar\')">Week</button>\n                        <button class="btn btn-success" ng-class="{active: currentView === \'month\'}" ng-click="changeView(\'month\', \'calendar\')">Month</button>\n                    </div>\n                </div>\n                <div class="calendar" ng-model="eventSources" calendar="calendar" ui-calendar="uiConfig.calendar">\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116295,6 +116295,13 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
   $templateCache.put("place.html", '<div>\n    <ul class="list-styled">\n     <li>{{parameter.name}}</li>\n     <li>{{parameter.address}}</li>\n     <li class="list-colored"><a ng-href="tel:{{parameter.phone}}">{{parameter.phone}}</a></li>\n     <li class="list-underlined"><a ng-href="{{parameter.website}}">{{parameter.website}}</a></li>\n     <li>{{parameter.rating}}</li>\n   </ul>\n</div>')
+}]);
+
+// Angular Rails Template
+// source: app/assets/templates/sms-template.html
+
+angular.module("templates").run(["$templateCache", function($templateCache) {
+  $templateCache.put("sms-template.html", '<div class="sms-container">\n    <div class="sms-popup" ng-show="show">\n        <div class="receiving-message" ng-show="optedIn()"><span>You are currently receiving <span class="reminder">{{currentFrequency}}</span> messages</span></div>\n        <form name="smsForm" ng-hide="optedIn()" class="smsForm" ng-submit="submitSms()">\n                <div class="opt-in"><span>Opt in to recieve SMS messages<br/></span></div>\n                <label for="phonenum">Phone Number (10 digits) <i class="fa fa-asterisk" aria-hidden="true"></i></label>\n                <div><input ng-model="num" name="number" ng-click="submitCarriers()" id="phonenum" type="tel" pattern="^(\\D*\\d){10}\\D*$" placeholder="Number (required)"required></div>\n\n                <label class="provider" for="provider">Carrier <i class="fa fa-asterisk" aria-hidden="true"></i></label>\n                <select name="phonecarrier" ng-change="currentCarrier" ng-model="smsCarrier" ng-options="carrier[1] as carrier[0] for carrier in phoneCarriers" id="provider" required>\n                    <option value=\'\'>Carrier (required) </option>\n                </select><br/>\n\n                <div class="frequency"><label for="frequency">How Often Would You Like to Recieve SMS? <i class="fa fa-asterisk" aria-hidden="true"></i></label>\n                <select name="frequency" ng-change="currentFrequency" ng-model="smsFrequency" id="frequency" required>\n                    <option value=\'\'>Frequency (required) </option>\n                    <option value=\'Daily\'>Daily</option>\n                    <option value=\'Weekly\'>Weekly</option>\n                    <option value=\'Reminder\'>On 3 Day Abscence</option>\n                </select></div>\n            <button ng-hide="optedIn()" ng-class="{\'disableButton\': smsFormValid()}" type="submit" ng-disabled="smsFormValid()">Opt In</button>\n        </form>\n        <button ng-show="optedIn()" ng-click="deleteSms()">Opt Out</button>\n        <a ng-click="show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>\n</div>')
 }]);
 
 // Angular Rails Template
@@ -116315,7 +116322,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/user-profile.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("user-profile.html", '<div class="background-container">\n    <div class="shapes">\n        <div class="one">\n\n            <a ui-sref="BlueParent.update"><span>Update Mood</span></a>\n\n        </div>\n        <div class="two">\n\n            <a ui-sref="BlueParent.counselors"><span>Local Health Centers</span></a>\n\n        </div>\n        <div class="three">\n\n            <a ui-sref="BlueParent.hotline"><span>Crisis helplines</span></a>\n\n        </div>\n        <div class="four">\n\n            <a ui-sref="BlueParent.todo"><span>get motivated</span></a>\n        </div>\n    </div>\n\n</div>\n\n<div class="sms-container">\n    <a ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>\n    <div class="other-todos" ng-show="show">\n        <ul>\n            <li class="feat-todo" ng-repeat="featTodo in randomArray">\n                <div><i class="fa fa-circle-thin" aria-hidden="true"></i> {{featTodo}}</div>\n            </li>\n            <div class="cite"><span>Some <cite>tasks</cite> yanked from <a href="http://bit.ly/1Cewmd1">Eponis Sinope</a> and modified for our purposes</span></div>\n        </ul>\n        <a ng-click="clearOthers();show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>\n</div>')
+  $templateCache.put("user-profile.html", '<div class="background-container">\n    <div class="shapes">\n        <div class="one">\n\n            <a ui-sref="BlueParent.update"><span>Update Mood</span></a>\n\n        </div>\n        <div class="two">\n\n            <a ui-sref="BlueParent.counselors"><span>Local Health Centers</span></a>\n\n        </div>\n        <div class="three">\n\n            <a ui-sref="BlueParent.hotline"><span>Crisis helplines</span></a>\n\n        </div>\n        <div class="four">\n\n            <a ui-sref="BlueParent.todo"><span>get motivated</span></a>\n        </div>\n    </div>\n\n</div>\n\n<div class="sms-container">\n    <a class="desktop-sms" ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>\n    <div class="sms-popup" ng-show="show">\n        <div class="receiving-message" ng-show="optedIn()"><span>You are currently receiving <span class="reminder">{{currentFrequency}}</span> messages</span></div>\n        <form name="smsForm" ng-hide="optedIn()" class="smsForm" ng-submit="submitSms()">\n                <div class="opt-in"><span>Opt in to recieve SMS messages<br/></span></div>\n                <label for="phonenum">Phone Number (10 digits) <i class="fa fa-asterisk" aria-hidden="true"></i></label>\n                <div><input ng-model="num" name="number" ng-click="submitCarriers()" id="phonenum" type="tel" pattern="^(\\D*\\d){10}\\D*$" placeholder="Number (required)"required></div>\n\n                <label class="provider" for="provider">Carrier <i class="fa fa-asterisk" aria-hidden="true"></i></label>\n                <select name="phonecarrier" ng-change="currentCarrier" ng-model="smsCarrier" ng-options="carrier[1] as carrier[0] for carrier in phoneCarriers" id="provider" required>\n                    <option value=\'\'>Carrier (required) </option>\n                </select><br/>\n\n                <div class="frequency"><label for="frequency">How Often Would You Like to Recieve SMS? <i class="fa fa-asterisk" aria-hidden="true"></i></label>\n                <select name="frequency" ng-change="currentFrequency" ng-model="smsFrequency" id="frequency" required>\n                    <option value=\'\'>Frequency (required) </option>\n                    <option value=\'Daily\'>Daily</option>\n                    <option value=\'Weekly\'>Weekly</option>\n                    <option value=\'Reminder\'>On 3 Day Abscence</option>\n                </select></div>\n            <button ng-hide="optedIn()" ng-class="{\'disableButton\': smsFormValid()}" type="submit" ng-disabled="smsFormValid()">Opt In</button>\n        </form>\n        <button ng-show="optedIn()" ng-click="deleteSms()">Opt Out</button>\n        <a ng-click="show=false">close <i class="fa fa-times" aria-hidden="true"></i></a></div>\n</div>')
 }]);
 
 (function(ng) {
@@ -117000,6 +117007,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
     ng.module('BlueMirrorApp').controller('JournalController', function($state, $scope, $q, DataRequestService, UserService) {
         $scope.activeEntry = null;
         $scope.viewEntry = null;
+        $scope.page = 1;
         $scope.currentUser = UserService.getUser();
         $scope.journalObj = {
             text: '',
@@ -117008,6 +117016,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         };
         $scope.journalsArray = [];
         $scope.viewEntryArray = [];
+        $scope.searchEntryArray = [];
         console.log($scope.journalsArray);
         $scope.addJournals = function() {
             $scope.journalObj.title = $scope.title;
@@ -117027,9 +117036,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 $scope.addJournals();
                 $q.when(DataRequestService.postJournal('/notes', $scope.journalObj)).then((response) => {
                     $scope.currentJournal = response.data.location;
-                    console.log('why hello there', $scope.tags.split(','));
-
-                    console.log(response.data.location);
                     $scope.journalsArray.push($scope.currentJournal);
                 }).catch((error) => {
                     console.log(error);
@@ -117057,11 +117063,9 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             let inputTag = document.getElementById('edit-tags').innerText;
             let i = $scope.journalsArray.indexOf(entry);
             let arrayIndex = $scope.journalsArray[i];
-            console.log('inputText and title', inputText, inputTitle, inputTag);
             $q.when(DataRequestService.patchEntry(`/notes/${$scope.viewEntryArray[0].id}`, inputText, inputTitle, inputTag)).then((response) => {
-                console.log('response', response.data);
-                console.log($scope.activeEntry);
-                for (var i = 0; i < $scope.journalsArray.length; i++) {
+
+                for (let i = 0; i < $scope.journalsArray.length; i++) {
                     if (arrayIndex.id == e) {
                         arrayIndex.text = response.data.location.text;
                         arrayIndex.title = response.data.location.title;
@@ -117078,17 +117082,64 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 console.log(error);
             });
         };
+
+        $scope.nextPage = function() {
+            $scope.page++;
+            $scope.journalsArray = [];
+            $q.when(DataRequestService.get(`/notes?page=${$scope.page}`)).then((response) => {
+                console.log('page', response.data);
+                $scope.pastJournals = response.data;
+                let e = $scope.journalsArray.indexOf();
+                let arrayIndex = $scope.journalsArray[e];
+                for (let entry in $scope.pastJournals) {
+                    $scope.pastEntries = $scope.pastJournals[entry];
+                    $scope.journalsArray.push($scope.pastEntries);
+                }
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+        $scope.prevPage = function() {
+            $scope.page--;
+            $scope.journalsArray = [];
+            $q.when(DataRequestService.get(`/notes?page=${$scope.page}`)).then((response) => {
+                $scope.pastJournals = response.data;
+                let e = $scope.journalsArray.indexOf();
+                let arrayIndex = $scope.journalsArray[e];
+                for (let entry in $scope.pastJournals) {
+                    $scope.pastEntries = $scope.pastJournals[entry];
+                    $scope.journalsArray.push($scope.pastEntries);
+                }
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+
         $q.when(DataRequestService.get('/notes')).then((response) => {
             $scope.pastJournals = response.data;
-            let e = $scope.journalsArray.indexOf(entry);
+            let e = $scope.journalsArray.indexOf();
             let arrayIndex = $scope.journalsArray[e];
-            for (var entry in $scope.pastJournals) {
+            for (let entry in $scope.pastJournals) {
                 $scope.pastEntries = $scope.pastJournals[entry];
                 $scope.journalsArray.push($scope.pastEntries);
             }
         }).catch((error) => {
             console.log(error);
         });
+        $scope.searchTags = function() {
+            $scope.tagInput = document.getElementById('tag-search').value;
+            console.log($scope.tagInput);
+            for (let i = 0; i < $scope.journalsArray.length; i++) {
+                console.log(i);
+                for (let e = 0; e < $scope.journalsArray[i].tags.length; e++) {
+                    console.log(e);
+                    if ($scope.tagInput == $scope.journalsArray[i].tags[e]) {
+                        $scope.searchEntryArray.push($scope.journalsArray[i]);
+
+                    }
+                }
+            }
+        };
         $scope.makeActive = function(entry, id) {
             let i = $scope.journalsArray.indexOf(entry);
             $scope.viewEntryArray = [];
@@ -117097,6 +117148,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             if ($scope.activeEntry == $scope.journalsArray[i].id) {
                 $scope.viewEntry = id;
                 $scope.viewEntryArray.push($scope.journalsArray[i]);
+
             }
         };
     });
@@ -117464,13 +117516,17 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
     });
 })(angular);
 (function(ng, currentUser) {
-    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
+    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService, $compile) {
         $scope.currentUser = UserService.getUser();
+
+        $( function() {
+            $( document ).tooltip();
+        });
 
         $scope.moodList = moodList;
         $scope.fullMoodList;
         $scope.highestMood = 1;
-
+        $scope.currentMotivation = ["Trust yourself. You know more than you think you do. – Ben Spock"];
         $scope.explanation = {
             text: ''
         };
@@ -117521,30 +117577,23 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
         $scope.change = function() {
             $scope.moodObj.mood = Number($scope.value);
         };
-
         // post moods
         $scope.postMoods = function() {
             $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
                 $scope.moodObj.mood = 1;
                 $scope.isSubmitted = true;
-
             }).catch((error) => {
                 console.log(error);
             });
         };
-
-
+        console.log($scope.moodObj.mood);
         // customize moods
         $scope.newList = '';
-
         // TODO: refactor loops
-
         $scope.$watch('newList', function() {
-
             if ($scope.newList.length === 0) {
                 return;
             }
-
             moodList = [];
             for (let i = 0; i < $scope.list.length; i++) {
                 if ($scope.list[i].text) {
@@ -117554,9 +117603,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 }
             }
         });
-
         $scope.list = [];
-
         $scope.$watch('list', function() {
 
             for (let i = 0; i < $scope.moodList.length; i++) {
@@ -117573,9 +117620,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                         $scope.newList += $scope.list[i].text + ', ';
                     }
                 }
-
                 $scope.newList = $scope.newList.slice(0, -2);
-
                 $q.when(DataRequestService.patch('/mood_lists', {
                     moods: $scope.newList
                 })).then((response) => {
@@ -117585,12 +117630,10 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                     console.log(error);
                 });
             };
-
             $scope.del = function(item) {
                 let index = $scope.list.indexOf(item);
                 $scope.list.splice(index, 1);
             };
-
             $scope.isDisabled = function() {
                 if ($scope.list.length === 10) {
                     return true;
@@ -117598,12 +117641,171 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             };
         });
 
+        // motivational quote
+        $scope.motivationalOther = function() {
+            $q.when(DataRequestService.get('/inspos')).then((response) => {
+                $scope.currentMotivation = [];
+                $scope.defaultQuote = response.data;
+                for (var quote in $scope.defaultQuote) {
+                    $scope.motivation = $scope.defaultQuote[quote];
+                    $scope.oneQuote = $scope.defaultQuote[Math.floor(Math.random() * $scope.defaultQuote.length)];
+                    if ($scope.currentMotivation < 1) {
+                        $scope.currentMotivation.push($scope.oneQuote);
+                    }
+                }
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
 
-        // SMS OPTING
+        // sms options
+        $scope.phoneCarriers = carriers;
+        if ($scope.currentUser) {
+          $scope.currentFrequency = $scope.currentUser.sms_frequency;
+        }
+        $scope.currentCarrier = '';
 
+        // sms opting in
+        $scope.submitSms = function() {
+            $scope.smsForm.$setSubmitted();
+            $scope.currentFrequency = $scope.smsFrequency;
+            $scope.currentCarrier = $scope.smsCarrier;
+            $scope.telNumber = $scope.num;
+
+            $( '.smsForm' ).each(function(){
+                this.reset();
+            });
+
+            $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
+                console.log(response);
+
+                $scope.currentFrequency = response.data.location.sms_frequency;
+
+            }).catch((error) => {
+                console.log(error);
+            });
+            $scope.success = true;
+        }
+
+        $scope.optedIn = function() {
+            return $scope.currentFrequency;
+        };
+
+
+        $scope.smsFormValid = function() {
+            return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
+        };
+
+        // sms opting out
+        $scope.deleteSms = function() {
+            $scope.currentFrequency = null;
+            $scope.currentCarrier = null;
+            $scope.telNumber = '';
+
+            // resets
+            $scope.smsCarrier = '';
+            $scope.smsFrequency = '';
+            $scope.num = '';
+
+            $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
+                console.log(response);
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
 
 
         // CHART MOODS
+        $scope.oneWeek = function() {
+            $q.when(DataRequestService.get('/moods?days=7')).then((response) => {
+
+                $scope.allMoods = response.data;
+
+
+                $scope.labels = [];
+                $scope.data = [];
+                $scope.reasons = [];
+
+                for (let i = 0; i < $scope.allMoods.length; i++) {
+                    $scope.labels.push($scope.allMoods[i].day);
+                    $scope.data.push($scope.allMoods[i].mood);
+                }
+
+
+                if (_.max($scope.data) > $scope.moodList.length) {
+                    $scope.highestMood = _.max($scope.data);
+                } else {
+                    $scope.highestMood = $scope.moodList.length;
+                }
+                $scope.fullMoodList = $scope.getList($scope.moodList, $scope.highestMood);
+                $scope.data = [$scope.data];
+
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+        $scope.oneMonth = function() {
+            $q.when(DataRequestService.get('/moods?days=30')).then((response) => {
+
+                $scope.allMoods = response.data;
+
+
+                $scope.labels = [];
+                $scope.data = [];
+                $scope.reasons = [];
+
+                for (let i = 0; i < $scope.allMoods.length; i++) {
+                    $scope.labels.push($scope.allMoods[i].day);
+                    $scope.data.push($scope.allMoods[i].mood);
+                }
+
+
+                if (_.max($scope.data) > $scope.moodList.length) {
+                    $scope.highestMood = _.max($scope.data);
+                } else {
+                    $scope.highestMood = $scope.moodList.length;
+                }
+                $scope.fullMoodList = $scope.getList($scope.moodList, $scope.highestMood);
+                $scope.data = [$scope.data];
+
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+        $scope.sixMonth = function() {
+            $q.when(DataRequestService.get('/moods?days=180')).then((response) => {
+
+                $scope.allMoods = response.data;
+
+
+                $scope.labels = [];
+                $scope.data = [];
+                $scope.reasons = [];
+
+                for (let i = 0; i < $scope.allMoods.length; i++) {
+                    $scope.labels.push($scope.allMoods[i].day);
+                    $scope.data.push($scope.allMoods[i].mood);
+                }
+
+
+                if (_.max($scope.data) > $scope.moodList.length) {
+                    $scope.highestMood = _.max($scope.data);
+                } else {
+                    $scope.highestMood = $scope.moodList.length;
+                }
+                $scope.fullMoodList = $scope.getList($scope.moodList, $scope.highestMood);
+                $scope.data = [$scope.data];
+
+
+            }).catch((error) => {
+                console.log(error);
+            });
+        };
+
+
         $scope.$watch('fullMoodList', function() {
             $scope.drawChart();
         });
@@ -117638,7 +117840,6 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
                 }
             };
         };
-
     });
 })(angular);
 (function(ng) {
@@ -117795,6 +117996,21 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
             });
         }
 
+        function patchNumber(url, number, provider, frequency) {
+            return $http({
+                method: 'PATCH',
+                url: url,
+                headers: {
+                    "content-type": "application/json;charset=utf-8"
+                },
+                data: {
+                    phone: number,
+                    phone_provider: provider,
+                    sms_frequency: frequency
+                }
+            });
+        }
+
         function patchEntry(url, inputText, inputTitle, inputTag) {
             return $http({
                 method: 'PATCH',
@@ -117810,6 +118026,14 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 
                 }
             });
+        }
+
+        function flipPage(url) {
+            return $http({
+                method: 'GET',
+                url: url
+            });
+
         }
 
         function postJournal(url, journalObj) {
@@ -117836,10 +118060,12 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 
         return {
             get: getData,
+            flipPage: flipPage,
             post: postData,
             postTodo: postTodo,
             postJournal: postJournal,
             patchEntry: patchEntry,
+            patchNumber: patchNumber,
             delete: deleteData,
             patch: patchData
         };
