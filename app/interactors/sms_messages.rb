@@ -2,7 +2,7 @@ class SMSMessages
   include Delayed::RecurringJob
   include ApplicationHelper
   run_every 1.day
-  run_at '5:12pm'
+  run_at '5:23pm'
   timezone 'US/Eastern'
   queue 'slow-jobs'
 
