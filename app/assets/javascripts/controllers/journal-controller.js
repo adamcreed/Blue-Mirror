@@ -80,7 +80,7 @@
 
         $scope.nextPage = function() {
             $scope.page++;
-            $scope.pastJournals = [];
+            $scope.journalsArray = [];
             $q.when(DataRequestService.get(`/notes?page=${$scope.page}`)).then((response) => {
                 console.log('page', response.data);
                 $scope.pastJournals = response.data;
@@ -96,7 +96,7 @@
         };
         $scope.prevPage = function() {
             $scope.page--;
-            $scope.pastJournals = [];
+            $scope.journalsArray = [];
             $q.when(DataRequestService.get(`/notes?page=${$scope.page}`)).then((response) => {
                 $scope.pastJournals = response.data;
                 let e = $scope.journalsArray.indexOf();
