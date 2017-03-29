@@ -19,6 +19,13 @@
             mood: null,
             reason: null
         };
+        // $('.button').click(function(){
+        //     if($(this).hasClass('active')){
+        //         $(this).removeClass('active')
+        //     } else {
+        //         $(this).addClass('active')
+        //     }
+        // });
 
         // get moods
         $q.when(DataRequestService.get('/moods')).then((response) => {
@@ -181,6 +188,14 @@
             return $scope.currentFrequency;
         };
 
+        $scope.mobileNav = function() {
+            // console.log('in');
+            // $('.mobile-nav-click').click(function(e) {
+            //     console.log('innnn');
+            $('.mobile-nav-click').addClass('active');
+            //     e.preventDefault();
+            // });
+        };
 
         $scope.smsFormValid = function() {
             return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
