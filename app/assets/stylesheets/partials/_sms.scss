@@ -39,10 +39,15 @@
         padding-bottom: 18px;
     }
 
+
     @include bp(mobile) {
         width: 319px;
     }
 
+    @media screen and (min-width: 414px) {
+        width: 370px;
+    }
+    
     @include bp(small) {
 
         width: 368px;
