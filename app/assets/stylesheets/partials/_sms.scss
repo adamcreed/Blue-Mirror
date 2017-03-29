@@ -50,11 +50,14 @@
 
 a.text-opt {
     position: fixed;
-    right: 5px;
-    bottom: 15px;
+    right: 15px;
+    bottom: 12px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    @include bp (mobile) {
+        font-size: 1.5rem;
+    }
 
     i {
         padding-left: 11px;

@@ -233,13 +233,9 @@ nav {
                 }
             }
 
-            ul {
-                display: none;
-            }
-
             &:hover {}
 
-            &:active ul {
+            ul {
                 background: white;
                 display: flex;
                 position: relative;
