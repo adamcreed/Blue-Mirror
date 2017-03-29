@@ -8,6 +8,7 @@
             <span></span>
         </div>
         <form ng-show="!isSubmitted" name="explainForm" class="mood-form" ng-submit="postMoods()">
+            <span>{{error}}</span>
             <input class="button" type="submit" value="Submit">
         </form>
         <button ng-show="!isSubmitted" class="customize-link" ui-sref="BlueParent.customize">Customize your moods</button>
