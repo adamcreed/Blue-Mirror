@@ -38,7 +38,7 @@
             align-items: center;
             justify-content: center;
             @include bp (mobile) {
-                width: 149px;
+                width: 140px;
                 height: 152px;
             }
             @include bp (small) {
