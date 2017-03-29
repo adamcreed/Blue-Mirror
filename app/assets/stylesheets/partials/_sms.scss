@@ -1,11 +1,11 @@
 .sms-container {
-    position: absolute;
     @include bp(mobile) {
+        position: fixed;
         bottom: 65px;
         right: 33px;
     }
-
     @include bp(small) {
+        position: absolute;
         right: 50px;
         bottom: 20px;
     }
@@ -22,7 +22,7 @@
 
 .mobile-sms {
     @include bp(mobile) {
-        visibility: visible;;
+        visibility: visible;
     }
     @include bp(small) {
         visibility: hidden;
@@ -38,13 +38,10 @@
     form div {
         padding-bottom: 18px;
     }
-
     @include bp(mobile) {
         width: 331px;
     }
-
     @include bp(small) {
-
         width: 368px;
     }
     // width: 333px;
@@ -52,6 +49,9 @@
 }
 
 a.text-opt {
+    position: fixed;
+    right: 5px;
+    bottom: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,7 +64,6 @@ a.text-opt {
 .opt-in {
     text-align: center;
 }
-
 // .opt-in span {
 //     @include bp(mobile) {
 //         display: block;
@@ -89,7 +88,7 @@ form.smsForm label i {
 
 input#phonenum {
     margin: 0;
-    padding: 3px
+    padding: 3px;
 }
 
 .smsForm div span {
