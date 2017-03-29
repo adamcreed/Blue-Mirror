@@ -1,5 +1,5 @@
 (function(ng, currentUser) {
-    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService) {
+    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService, $compile) {
         $scope.currentUser = UserService.getUser();
 
         $( function() {
