@@ -1,6 +1,11 @@
 (function(ng, currentUser) {
-    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService, $compile) {
+    ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, $window, DataRequestService, UserService, $compile) {
         $scope.currentUser = UserService.getUser();
+
+        let urlSuffix = $window.location.href.replace($window.location.origin, '')
+        if ($scope.currentUser && urlSuffix == '/') {
+          $window.location.href = '/#!/profile';
+        }
 
         $(function() {
             $(document).tooltip();
@@ -148,7 +153,7 @@
         if ($scope.currentUser) {
           $scope.currentFrequency = $scope.currentUser.sms_frequency;
         }
-        
+
         // sms opting in
         $scope.submitSms = function() {
             $scope.smsForm.$setSubmitted();
