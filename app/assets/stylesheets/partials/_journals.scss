@@ -2,6 +2,26 @@
     background: #EAEAEA;
 }
 
+.tag-container {
+    input {
+        width: 50%;
+        height: 30px;
+    }
+
+    label {
+        display: none;
+    }
+    padding: 2px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 43px;
+    top: 150px;
+    width: 250px;
+    background: white;
+    border-bottom: $border;
+}
+
 .arrows {
     position: fixed;
     height: 43px;
@@ -12,7 +32,6 @@
     background: white;
     width: 250px;
     top: 110px;
-    border-bottom: $border;
 
     i {
         font-size: 2rem;
@@ -39,7 +58,7 @@
         height: 100vh;
         right: 0;
     }
-    padding-top: 80px;
+    padding-top: 140px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -90,6 +109,23 @@
             }
         }
     }
+}
+
+.web-entries div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    i {
+        font-size: 1.3rem;
+        padding-left: 6px;
+    }
+}
+
+.entry {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
 }
 
 .title {
@@ -220,9 +256,17 @@
 .submit-entry {}
 
 .edit-entry {
+    display: flex;
+    align-items: center;
+
     img {
         width: 1.5rem;
         height: 1.5rem;
+    }
+
+    i {
+        font-size: 1rem;
+        padding-left: 6px;
     }
 }
 
