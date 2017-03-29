@@ -109,6 +109,13 @@ nav {
         border-top: $border;
         width: 100%;
 
+        @include bp(mobile) {
+            visibility: hidden;
+        }
+        @include bp(small) {
+            visibility: visible;
+        }
+
         i {
             &:hover {
                 cursor: pointer;
