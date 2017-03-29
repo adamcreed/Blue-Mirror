@@ -1,11 +1,12 @@
 .sms-container {
     position: absolute;
-    right: 50px;
     @include bp(mobile) {
-        bottom: 65px
+        bottom: 65px;
+        right: 33px;
     }
 
     @include bp(small) {
+        right: 50px;
         bottom: 20px;
     }
 }
