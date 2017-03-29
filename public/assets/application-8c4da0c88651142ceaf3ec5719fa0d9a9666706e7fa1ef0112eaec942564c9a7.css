@@ -648,7 +648,6 @@ nav {
 @media screen and (min-width: 320px) {
   /* line 1, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes {
-    margin-top: 13%;
     width: 100%;
     height: 80%;
     justify-content: center;
@@ -662,13 +661,12 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 6%;
+    padding-top: 15%;
     width: 600px;
     height: 520px;
-    margin-top: auto;
   }
 }
-/* line 21, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+/* line 19, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
 .shapes div {
   background: #399ea7;
   display: flex;
@@ -677,21 +675,21 @@ nav {
   align-items: center;
 }
 @media screen and (min-width: 320px) {
-  /* line 21, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 19, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes div {
-    width: 177px;
-    height: 180px;
+    width: 150px;
+    height: 160px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 21, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 19, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes div {
     margin: 5px;
     width: 290px;
     height: 250px;
   }
 }
-/* line 37, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+/* line 35, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
 .shapes div a {
   text-transform: capitalize;
   display: flex;
@@ -699,46 +697,46 @@ nav {
   justify-content: center;
 }
 @media screen and (min-width: 320px) {
-  /* line 37, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 35, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes div a {
-    width: 169px;
-    height: 172px;
+    width: 149px;
+    height: 152px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 37, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 35, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes div a {
     height: 230px;
     width: 270px;
   }
 }
-/* line 51, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+/* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
 .shapes div a span {
   font-family: "Josefin Slab", serif;
   color: white;
   text-align: center;
 }
 @media screen and (min-width: 320px) {
-  /* line 51, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes div a span {
     width: 75%;
     font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 51, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes div a span {
     width: 60%;
     font-size: 1.8rem;
   }
 }
-/* line 67, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+/* line 65, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
 .shapes .four,
 .shapes .one {
   border-top-left-radius: 9.7rem;
   border-bottom-right-radius: 9.7rem;
 }
-/* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+/* line 67, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
 .shapes .four a,
 .shapes .one a {
   border: 15px double white;
@@ -746,7 +744,7 @@ nav {
   border-bottom-right-radius: 9rem;
 }
 @media screen and (min-width: 320px) {
-  /* line 69, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 67, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes .four a,
   .shapes .one a {
     border: 3px solid white;
@@ -755,20 +753,20 @@ nav {
   }
 }
 @media screen and (min-width: 320px) {
-  /* line 67, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 65, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes .four,
   .shapes .one {
     border-top-left-radius: 6rem;
     border-bottom-right-radius: 6rem;
   }
 }
-/* line 87, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+/* line 85, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
 .shapes .three,
 .shapes .two {
   border-top-right-radius: 9.7rem;
   border-bottom-left-radius: 9.7rem;
 }
-/* line 89, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+/* line 87, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
 .shapes .three a,
 .shapes .two a {
   border: 15px double white;
@@ -776,7 +774,7 @@ nav {
   border-bottom-left-radius: 9rem;
 }
 @media screen and (min-width: 320px) {
-  /* line 89, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 87, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes .three a,
   .shapes .two a {
     border: 3px solid white;
@@ -785,7 +783,7 @@ nav {
   }
 }
 @media screen and (min-width: 320px) {
-  /* line 87, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
+  /* line 85, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_user-profile.scss */
   .shapes .three,
   .shapes .two {
     border-top-right-radius: 6rem;
