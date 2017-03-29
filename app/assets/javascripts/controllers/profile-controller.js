@@ -7,10 +7,6 @@
             $window.location.href = '/#!/profile';
         }
 
-        $(function() {
-            $(document).tooltip();
-        });
-
         $scope.moodList = moodList;
         $scope.fullMoodList;
         $scope.highestMood = 1;
