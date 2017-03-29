@@ -12,3 +12,17 @@
         width: 800px;
     }
 }
+
+.day-param {
+    display: flex;
+    @include bp (mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @include bp (small) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+}

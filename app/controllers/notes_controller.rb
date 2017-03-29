@@ -9,7 +9,7 @@ class NotesController < ApplicationController
     tag = params.fetch 'tag', ''
 
     @notes = Note.where('user_id = ? AND tags ILIKE ?',
-                        current_user, "%#{tag}%").order('created_at')
+                        current_user, "%#{tag}%").order('created_at DESC')
                  .page(page).per(per)
 
     formatted_notes = @notes.map { |note| format_note note }
