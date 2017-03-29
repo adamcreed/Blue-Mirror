@@ -10,7 +10,7 @@
     }
 }
 
-a.desktop-sms {
+.sms-container {
     @include bp(mobile) {
         visibility: hidden;
     }
