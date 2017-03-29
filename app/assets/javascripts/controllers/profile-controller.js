@@ -143,7 +143,10 @@
 
         // sms options
         $scope.phoneCarriers = carriers;
-        $scope.currentFrequency = $scope.currentUser.sms_frequency;
+
+        if($scope.currentUser) {
+            $scope.currentFrequency = $scope.currentUser.sms_frequency;
+        }
         $scope.currentCarrier = '';
 
         // sms opting in
