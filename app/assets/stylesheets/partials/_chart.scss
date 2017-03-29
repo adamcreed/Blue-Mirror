@@ -15,6 +15,12 @@
 
 .day-param {
     display: flex;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     @include bp (mobile) {
         flex-direction: column;
         justify-content: center;
@@ -22,7 +28,7 @@
     }
     @include bp (small) {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         padding-top: 20px;
     }
 }

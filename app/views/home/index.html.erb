@@ -38,7 +38,7 @@
         <nav ng-cloak ng-controller="ProfileController as profile" ng-show="currentUser" class="fixed-nav">
 
             <a ng-click="othersTodos(); show=!show" class="text-opt">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
-            <div class="sms-container mobile-sms">
+             <div class="sms-container mobile-sms">
                 <div class="sms-popup" ng-show="show">
                     <div class="receiving-message" ng-show="optedIn()">
                         <span>You are currently receiving
@@ -79,13 +79,25 @@
                     <button ng-show="optedIn()" ng-click="deleteSms()">Opt Out</button>
                 </div>
             </div>
-
-
-
-            <a class="mobile-nav-click"><i class="fa fa-bars" aria-hidden="true"></i></a>
             <span class="menu-click">
-                <img class="bmirror" src="images/betalogo.png"/></span>
-            <ul>
+              <a class="mobile-nav-click"><i class="fa fa-bars" aria-hidden="true"></i></a>
+              <ul>
+                <li>
+                  <a ui-sref="BlueParent.profile">Home</a>
+                </li>
+                <li>
+                  <a ui-sref="BlueParent.meds">Meds</a>
+                </li>
+                <li>
+                  <a ui-sref="BlueParent.mood">Mood Chart</a>
+                </li>
+                <li>
+                  <a ui-sref="BlueParent.journal">Journal</a>
+                </li>
+              </ul>
+                <img class="bmirror" src="images/betalogo.png"/>
+                </span>
+             <ul class="web-navbar">
                 <li>
                     <a ui-sref="BlueParent.profile">Home</a>
                 </li>

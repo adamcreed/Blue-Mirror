@@ -8,7 +8,7 @@
         <form class="tag-container">
             <label for="tag-search">Search Tags</label>
             <input id="tag-search"></input>
-            <a ng-click="searchTags(); searchEntry=true; activeEntry=false"> <i class="fa fa-search" aria-hidden="true"></i>Search Tags
+            <a ng-click="searchTags(); activeEntry=false"> <i class="fa fa-search" aria-hidden="true"></i>Search Tags
             </a>
         </form>
         <div class="web-list">
@@ -28,9 +28,7 @@
     <div class="journal-container">
         <h2 class="title">Journal</h2>
         <div class="add-journal-container">
-            <form name="journalForm" class="journal-form" ng-hide="past || activeEntry ||searchEntry">
-                <!-- ng-submit="" -->
-
+            <form name="journalForm" class="journal-form" ng-hide="past || activeEntry">
                 <div class="journal-input-container"><label>Title</label><input type="text" class="journal-title" ng-model="title" maxlength="20" placeholder="your title"></div>
                 <div class="journal-input-container"><label>Journal Entry</label><textarea class="journal-entry" type="text" ng-model="text" placeholder="start typing!">
     </textarea></div>
@@ -39,34 +37,15 @@
                 </p>
                 <a class="button" name="submit journal" ng-click="postJournals()">submit</a>
             </form>
-
-            <div ng-hide="!searchEntry || activeEntry">
-
-                <ul>
-                    <li class="search-entries" ng-repeat="entry in searchEntryArray" ng-class="{active: searchEntry === {{entry.id}}}" ng-click="searchEntry=false; makeActive(entry, entry.id)">
-
-                        <div ng-hide="edit">
-                            <h3 class="entry">{{entry.title}}</h3>
-                            <input class="data-id" data-id="{{entry.id}}">
-                            </input>
-                            <span class="entry">{{entry.day}}</span>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
             <div id="active-entry" ng-repeat="entry in viewEntryArray" class="view-entry" ng-show="activeEntry">
-
                 <ul>
                     <h3 id="edit-title" class="entry" ng-model="title">{{entry.title}}</h3>
                     <li class="journal-time">{{entry.time}} on {{entry.day}}</li>
                     <li id="edit-text" class="view-entry-item" ng-model="text">{{entry.text}}</li>
                     <li id="edit-tags">{{entry.tags}}</li>
-
                 </ul>
                 <div class="journal-buttons" ng-hide="edit">
-                    <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                    <!-- <img ng-src="http://simpleicon.com/wp-content/uploads/pencil.svg"> -->
+                    <a id="edit-click" class="edit-entry" ng-click="editJournal(entry); edit=true">edit entry</a>
                     <a class="delete-journals" ng-click="deleteJournalEntry(entry)">delete</a>
                 </div>
                 <button ng-hide="!edit" class="submit-entry" type="submit" ng-click="edit=false; patchJournalText(entry)">Submit</button>
