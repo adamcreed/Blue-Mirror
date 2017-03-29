@@ -19,6 +19,15 @@ a.desktop-sms {
     }
 }
 
+.mobile-sms {
+    @include bp(mobile) {
+        visibility: visible;;
+    }
+    @include bp(small) {
+        visibility: hidden;
+    }
+}
+
 .sms-popup {
     padding: 5px;
     border-radius: 0.3rem;
@@ -39,7 +48,16 @@ a.desktop-sms {
     }
     // width: 333px;
     // background: rgba(251, 253, 242, 0.8);
+}
 
+a.text-opt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    i {
+        padding-left: 11px;
+    }
 }
 
 .opt-in {
