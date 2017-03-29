@@ -2,8 +2,8 @@
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, DataRequestService, UserService, $compile) {
         $scope.currentUser = UserService.getUser();
 
-        $( function() {
-            $( document ).tooltip();
+        $(function() {
+            $(document).tooltip();
         });
 
         $scope.moodList = moodList;
@@ -143,11 +143,12 @@
 
         // sms options
         $scope.phoneCarriers = carriers;
+        $scope.currentCarrier = '';
+
         if ($scope.currentUser) {
           $scope.currentFrequency = $scope.currentUser.sms_frequency;
         }
-        $scope.currentCarrier = '';
-
+        
         // sms opting in
         $scope.submitSms = function() {
             $scope.smsForm.$setSubmitted();
@@ -155,7 +156,7 @@
             $scope.currentCarrier = $scope.smsCarrier;
             $scope.telNumber = $scope.num;
 
-            $( '.smsForm' ).each(function(){
+            $('.smsForm').each(function() {
                 this.reset();
             });
 
