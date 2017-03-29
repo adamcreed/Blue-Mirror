@@ -376,11 +376,14 @@ label {
 .login-container {
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
   height: 100vh;
   width: 100vw;
   background: #399ea7;
 }
-/* line 39, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
+/* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
 .login-container .login {
   display: flex;
   flex-direction: column;
@@ -391,24 +394,24 @@ label {
   height: 100vh;
   width: 50vh;
 }
-/* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
+/* line 52, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
 .login-container .login .bmirror {
   margin-top: 20vh;
   margin-bottom: 10px;
 }
 @media screen and (min-width: 661px) {
-  /* line 39, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
+  /* line 42, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
   .login-container .login {
     width: 70vh;
   }
 }
 
-/* line 59, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
+/* line 62, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
 a {
   text-decoration: none;
 }
 
-/* line 63, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
+/* line 66, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_login.scss */
 .angular-google-map-container {
   height: 400px;
 }
@@ -1246,6 +1249,28 @@ span.todo-true {
 }
 
 /* line 5, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.tag-container {
+  padding: 2px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 43px;
+  top: 150px;
+  width: 250px;
+  background: white;
+  border-bottom: 0.13rem solid #e7e5dc;
+}
+/* line 6, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.tag-container input {
+  width: 50%;
+  height: 30px;
+}
+/* line 11, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.tag-container label {
+  display: none;
+}
+
+/* line 25, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .arrows {
   position: fixed;
   height: 43px;
@@ -1256,21 +1281,20 @@ span.todo-true {
   background: white;
   width: 250px;
   top: 110px;
-  border-bottom: 0.13rem solid #e7e5dc;
 }
-/* line 17, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 36, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .arrows i {
   font-size: 2rem;
 }
 
-/* line 22, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 41, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .data-id {
   display: none;
 }
 
-/* line 26, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 45, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past {
-  padding-top: 80px;
+  padding-top: 140px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -1278,7 +1302,7 @@ span.todo-true {
   border-left: 0.13rem solid #e7e5dc;
 }
 @media screen and (min-width: 320px) {
-  /* line 26, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 45, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .web-past {
     position: fixed;
     bottom: 0;
@@ -1289,7 +1313,7 @@ span.todo-true {
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 26, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 45, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .web-past {
     width: 250px;
     float: right;
@@ -1298,7 +1322,7 @@ span.todo-true {
     right: 0;
   }
 }
-/* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 68, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past h2 {
   position: fixed;
   height: 75px;
@@ -1308,48 +1332,48 @@ span.todo-true {
   align-items: center;
 }
 @media screen and (min-width: 320px) {
-  /* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 68, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .web-past h2 {
     width: 100%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 49, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 68, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .web-past h2 {
     width: 250px;
     right: 0;
     top: 50px;
   }
 }
-/* line 66, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 85, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past .web-list {
   height: 100%;
   width: 250px;
 }
 @media screen and (min-width: 320px) {
-  /* line 66, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 85, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .web-past .web-list {
     width: 100%;
   }
 }
-/* line 73, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past .web-list ul {
   overflow-y: scroll;
   padding-bottom: 40px;
 }
 @media screen and (min-width: 320px) {
-  /* line 73, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .web-past .web-list ul {
     padding-top: 81px;
   }
 }
 @media screen and (min-width: 320px) {
-  /* line 73, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 92, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .web-past .web-list ul {
     padding-top: 0;
   }
 }
-/* line 83, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 102, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .web-past .web-list ul li {
   height: 60px;
   display: flex;
@@ -1359,7 +1383,26 @@ span.todo-true {
   padding: 10px;
 }
 
-/* line 95, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 114, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.web-entries div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* line 119, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.web-entries div i {
+  font-size: 1.3rem;
+  padding-left: 6px;
+}
+
+/* line 125, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.entry {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+/* line 131, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .title {
   display: flex;
   justify-content: center;
@@ -1367,24 +1410,24 @@ span.todo-true {
   z-index: 7;
 }
 
-/* line 102, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 138, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .journal-container {
   height: calc(100% - 50px);
   width: calc(100vw - 250px);
 }
-/* line 106, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 142, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .journal-container h2 {
   height: 65px;
   display: flex;
   align-items: center;
   width: calc(100vw - 500px);
 }
-/* line 112, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 148, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .journal-container h2 i {
   padding-left: 5px;
 }
 @media screen and (min-width: 320px) {
-  /* line 117, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 153, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .journal-container .view-entry {
     background: white;
     border: 0.13rem solid #e7e5dc;
@@ -1398,28 +1441,28 @@ span.todo-true {
     overflow-y: scroll;
     padding: 5px;
   }
-  /* line 133, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 169, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .journal-container .view-entry #edit-title {
     text-align: center;
     padding: 10px;
     border-bottom: 0.13rem solid #e7e5dc;
   }
-  /* line 139, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 175, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .journal-container .view-entry #edit-text {
     border-top: 0.13rem solid #e7e5dc;
     padding-top: 10px;
   }
-  /* line 144, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 180, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .journal-container .view-entry #edit-tags {
     margin-top: 10px;
   }
-  /* line 148, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 184, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .journal-container .view-entry .journal-time {
     width: 300px;
     padding-bottom: 5px;
     padding-top: 5px;
   }
-  /* line 154, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 190, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .journal-container .view-entry .journal-buttons {
     border-top: 0.13rem solid #e7e5dc;
     padding: 5px;
@@ -1431,14 +1474,14 @@ span.todo-true {
 }
 
 @media screen and (min-width: 661px) {
-  /* line 183, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 219, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container {
     display: flex;
     width: calc(100vw - 500px);
     justify-content: center;
     align-items: center;
   }
-  /* line 189, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 225, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form {
     width: calc(100vw - 735px);
     display: flex;
@@ -1447,34 +1490,44 @@ span.todo-true {
     align-items: center;
     height: 500px;
   }
-  /* line 197, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 233, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-input-container {
     display: flex;
     flex-direction: column;
   }
-  /* line 202, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 238, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-title {
     width: 400px;
     margin: 0;
   }
-  /* line 207, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 243, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-entry {
     width: 400px;
     height: 300px;
   }
-  /* line 212, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+  /* line 248, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
   .add-journal-container .journal-form .journal-tag {
     width: 200px;
     margin: 0;
   }
 }
-/* line 223, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 258, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.edit-entry {
+  display: flex;
+  align-items: center;
+}
+/* line 262, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .edit-entry img {
   width: 1.5rem;
   height: 1.5rem;
 }
+/* line 267, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+.edit-entry i {
+  font-size: 1rem;
+  padding-left: 6px;
+}
 
-/* line 229, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
+/* line 273, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_journals.scss */
 .view-entry-item {
   white-space: pre-wrap;
 }
@@ -2178,7 +2231,7 @@ button.took-meds {
 @media screen and (min-width: 320px) {
   /* line 32, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_sms.scss */
   .sms-popup {
-    width: 331px;
+    width: 320px;
   }
 }
 @media screen and (min-width: 661px) {
