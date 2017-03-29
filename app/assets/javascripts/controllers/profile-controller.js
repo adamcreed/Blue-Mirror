@@ -2,9 +2,9 @@
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, $window, DataRequestService, UserService, $compile) {
         $scope.currentUser = UserService.getUser();
 
-        let urlSuffix = $window.location.href.replace($window.location.origin, '')
+        let urlSuffix = $window.location.href.replace($window.location.origin, '');
         if ($scope.currentUser && urlSuffix == '/') {
-          $window.location.href = '/#!/profile';
+            $window.location.href = '/#!/profile';
         }
 
         $(function() {
@@ -74,7 +74,7 @@
                 console.log(error);
             });
         };
-        console.log($scope.moodObj.mood);
+
         // customize moods
         $scope.newList = '';
         // TODO: refactor loops
@@ -151,7 +151,7 @@
         $scope.currentCarrier = '';
 
         if ($scope.currentUser) {
-          $scope.currentFrequency = $scope.currentUser.sms_frequency;
+            $scope.currentFrequency = $scope.currentUser.sms_frequency;
         }
 
         // sms opting in
@@ -166,7 +166,6 @@
             });
 
             $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
-                console.log(response);
 
                 $scope.currentFrequency = response.data.location.sms_frequency;
 
@@ -174,7 +173,7 @@
                 console.log(error);
             });
             $scope.success = true;
-        }
+        };
 
         $scope.optedIn = function() {
             return $scope.currentFrequency;
@@ -197,13 +196,11 @@
             $scope.num = '';
 
             $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
-                console.log(response);
 
             }).catch((error) => {
                 console.log(error);
             });
         };
-
 
         // CHART MOODS
         $scope.oneWeek = function() {
@@ -264,6 +261,7 @@
                 console.log(error);
             });
         };
+
         $scope.sixMonth = function() {
             $q.when(DataRequestService.get('/moods?days=180')).then((response) => {
 
