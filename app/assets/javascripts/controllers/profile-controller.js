@@ -166,6 +166,7 @@
                 console.log(error);
             });
             $scope.success = true;
+        }
 
         $scope.optedIn = function() {
             return $scope.currentFrequency;
