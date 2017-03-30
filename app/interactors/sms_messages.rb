@@ -10,8 +10,6 @@ class SMSMessages
     easy = SMSEasy::Client.new
     inspos = get_featured('db/data/inspos.seed')
 
-    # SMS limit of 105 chars per chunk?
-
     daily = 'Hello from Blue Mirror! ' \
     'We hope you have a terrific day! Visit ' \
     'https://blue-mirror.herokuapp.com to reflect, or to change SMS settings.'
