@@ -2,9 +2,25 @@
     background: #EAEAEA;
 }
 
+.mobile-less {
+    @include bp (mobile) {
+        position: fixed;
+        top: 52px;
+        left: 3px;
+    }
+    @include bp (small) {
+        display: none;
+    }
+}
+
 .tag-container {
     input {
-        width: 50%;
+        @include bp(mobile) {
+            width: 60%;
+        }
+        @include bp(mobile) {
+            width: 50%;
+        }
         height: 30px;
     }
 
@@ -16,22 +32,42 @@
     display: flex;
     align-items: center;
     height: 43px;
-    top: 150px;
-    width: 250px;
     background: white;
     border-bottom: $border;
+    @include bp(mobile) {
+        width: 100%;
+        top: 398px;
+        height: 43px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    @include bp (small) {
+        top: 150px;
+        width: 250px;
+        border-left: $border;
+    }
 }
 
 .arrows {
     position: fixed;
-    height: 43px;
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    padding: 5px;
     background: white;
-    width: 250px;
-    top: 110px;
+    @include bp(mobile) {
+        width: 100%;
+        top: 368px;
+        height: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    @include bp (small) {
+        border-left: $border;
+        padding: 5px;
+        height: 43px;
+        width: 250px;
+        top: 110px;
+    }
 
     i {
         font-size: 2rem;
@@ -45,33 +81,42 @@
 .web-past {
     @include bp (mobile) {
         position: fixed;
-        bottom: 0;
         left: 0;
-        height: 200px;
+        bottom: 50px;
+        overflow-y: scroll;
+        height: 250px;
         width: 100%;
-        padding-bottom: 40px;
+        padding-top: 120px;
     }
     @include bp(small) {
+        padding-top: 100px;
+        padding-top: 140px;
+        padding-bottom: 40px;
         width: 250px;
         float: right;
         position: relative;
         height: 100vh;
         right: 0;
+        bottom: 0;
     }
-    padding-top: 140px;
     background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-left: $border;
 
     h2 {
         @include bp (mobile) {
+            border-top: $border;
             width: 100%;
+            bottom: 250px;
+            height: 50px;
         }
         @include bp(small) {
+            border-top: none;
+            border-left: $border;
             width: 250px;
             right: 0;
+            height: 65px;
             top: 50px;
         }
         position: fixed;
@@ -91,13 +136,7 @@
 
         ul {
             overflow-y: scroll;
-            @include bp (mobile) {
-                padding-top: 81px;
-            }
-            @include bp (mobile) {
-                padding-top: 0;
-            }
-            padding-bottom: 40px;
+            border-left: $border;
 
             li {
                 height: 60px;
@@ -136,14 +175,27 @@
 }
 
 .journal-container {
-    height: calc(100% - 50px);
-    width: calc(100vw - 250px);
+    @include bp (mobile) {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow-y: scroll;
+        padding-bottom: 50px;
+    }
+    @include bp (small) {
+        display: inline-block;
+        height: calc(100% - 50px);
+        width: calc(100vw - 500px);
+    }
 
     h2 {
         height: 65px;
         display: flex;
         align-items: center;
-        width: calc(100vw - 500px);
+        width: calc(100vw - 50%;);
 
         i {
             padding-left: 5px;
@@ -178,7 +230,18 @@
             }
 
             #edit-tags {
+                border-top: $border;
                 margin-top: 10px;
+                font-size: 1rem;
+                color: $mainColor;
+                position: relative;
+                padding: 10px;
+                margin-top: calc(100% - 20px);
+
+                span {
+                    font-family: $headerFont;
+                    font-size: 1.3rem;
+                }
             }
 
             .journal-time {
@@ -189,32 +252,58 @@
 
             .journal-buttons {
                 border-top: $border;
-                padding: 5px;
+                padding: 10px;
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
             }
         }
-        @include bp (small) {}
+        @include bp (small) {
+            height: 500px;
+            width: 400px;
+        }
     }
 }
-// @include bp (mobile) {
-//     flex-flow: column-reverse;
-//     align-items: center;
-//     justify-content: center;
-//
-//     .journal-form {
-//         .journal-title {
-//             width: 300px;
-//             margin: 0;
-//         }
-//         top: 30px;
-//         margin: 1% auto;
-//         display: flex;
-//         flex-direction: column;
-//     }
-// }
+@include bp (mobile) {
+    .add-journal-container {
+        display: flex;
+        width: 400px;
+        height: 100%;
+        overflow-y: scroll;
+        justify-content: center;
+        align-items: center;
+
+        .journal-form {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            height: 500px;
+
+            .journal-input-container {
+                display: flex;
+                width: 300px;
+                flex-direction: column;
+            }
+
+            .journal-title {
+                width: 200px;
+                margin: 0;
+            }
+
+            .journal-entry {
+                height: 300px;
+            }
+
+            .journal-tag {
+                width: 200px;
+                margin: 0;
+            }
+        }
+    }
+}
 @include bp (small) {
     .add-journal-container {
         display: flex;

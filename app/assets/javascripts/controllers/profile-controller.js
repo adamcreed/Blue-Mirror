@@ -2,14 +2,10 @@
     ng.module('BlueMirrorApp').controller('ProfileController', function($state, $scope, $q, $window, DataRequestService, UserService, $compile) {
         $scope.currentUser = UserService.getUser();
 
-        let urlSuffix = $window.location.href.replace($window.location.origin, '')
+        let urlSuffix = $window.location.href.replace($window.location.origin, '');
         if ($scope.currentUser && urlSuffix == '/') {
-          $window.location.href = '/#!/profile';
+            $window.location.href = '/#!/profile';
         }
-
-        $(function() {
-            $(document).tooltip();
-        });
 
         $scope.moodList = moodList;
         $scope.fullMoodList;
@@ -22,6 +18,11 @@
         $scope.moodObj = {
             mood: null
         };
+
+        // tool tip
+        $(function() {
+            $(document).tooltip();
+        });
 
         // get moods
         $q.when(DataRequestService.get('/moods')).then((response) => {
@@ -65,14 +66,20 @@
         };
         // post moods
         $scope.postMoods = function() {
-            $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
-                $scope.moodObj.mood = 1;
-                $scope.isSubmitted = true;
-            }).catch((error) => {
-                console.log(error);
-            });
+            if ($scope.value === undefined || $scope.value === '') {
+
+                $scope.error = "Please select a mood";
+
+            } else {
+                $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
+                    $scope.moodObj.mood = 1;
+                    $scope.isSubmitted = true;
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
         };
-        console.log($scope.moodObj.mood);
+
         // customize moods
         $scope.newList = '';
         // TODO: refactor loops
@@ -149,7 +156,7 @@
         $scope.currentCarrier = '';
 
         if ($scope.currentUser) {
-          $scope.currentFrequency = $scope.currentUser.sms_frequency;
+            $scope.currentFrequency = $scope.currentUser.sms_frequency;
         }
 
         // sms opting in
@@ -164,7 +171,6 @@
             });
 
             $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
-                console.log(response);
 
                 $scope.currentFrequency = response.data.location.sms_frequency;
 
@@ -172,12 +178,15 @@
                 console.log(error);
             });
             $scope.success = true;
-        }
+        };
 
         $scope.optedIn = function() {
             return $scope.currentFrequency;
         };
 
+        $scope.mobileNav = function() {
+            $('.mobile-nav-click').addClass('active');
+        };
 
         $scope.smsFormValid = function() {
             return $scope.smsForm.number.$invalid || $scope.smsForm.phonecarrier.$invalid || $scope.smsForm.frequency.$invalid;
@@ -195,13 +204,11 @@
             $scope.num = '';
 
             $q.when(DataRequestService.patchNumber('/users/phone', $scope.telNumber, $scope.currentCarrier, $scope.currentFrequency)).then((response) => {
-                console.log(response);
 
             }).catch((error) => {
                 console.log(error);
             });
         };
-
 
         // CHART MOODS
         $scope.oneWeek = function() {
@@ -260,6 +267,7 @@
                 console.log(error);
             });
         };
+
         $scope.sixMonth = function() {
             $q.when(DataRequestService.get('/moods?days=180')).then((response) => {
 

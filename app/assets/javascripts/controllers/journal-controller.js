@@ -12,7 +12,6 @@
         $scope.journalsArray = [];
         $scope.viewEntryArray = [];
         $scope.searchEntryArray = [];
-        console.log($scope.journalsArray);
         $scope.addJournals = function() {
             $scope.journalObj.title = $scope.title;
             $scope.journalObj.text = $scope.text;
@@ -24,7 +23,6 @@
             $scope.error = '';
         };
         $scope.postJournals = function() {
-            console.log('tags', $scope.tags);
             if ($scope.text === undefined || $scope.text === '') {
                 $scope.error = "Please submit your journal entry";
             } else {
@@ -82,7 +80,6 @@
             $scope.page++;
             $scope.journalsArray = [];
             $q.when(DataRequestService.get(`/notes?page=${$scope.page}`)).then((response) => {
-                console.log('page', response.data);
                 $scope.pastJournals = response.data;
                 let e = $scope.journalsArray.indexOf();
                 let arrayIndex = $scope.journalsArray[e];
@@ -123,17 +120,18 @@
         });
         $scope.searchTags = function() {
             $scope.tagInput = document.getElementById('tag-search').value;
-            console.log($scope.tagInput);
-            for (let i = 0; i < $scope.journalsArray.length; i++) {
-                console.log(i);
-                for (let e = 0; e < $scope.journalsArray[i].tags.length; e++) {
-                    console.log(e);
-                    if ($scope.tagInput == $scope.journalsArray[i].tags[e]) {
-                        $scope.searchEntryArray.push($scope.journalsArray[i]);
-
-                    }
+            $q.when(DataRequestService.get(`/notes?tag=${$scope.tagInput}`)).then((response) => {
+                $scope.journalsArray = [];
+                $scope.pastJournals = response.data;
+                let e = $scope.journalsArray.indexOf();
+                let arrayIndex = $scope.journalsArray[e];
+                for (let entry in $scope.pastJournals) {
+                    $scope.pastEntries = $scope.pastJournals[entry];
+                    $scope.journalsArray.push($scope.pastEntries);
                 }
-            }
+            }).catch((error) => {
+                console.log(error);
+            });
         };
         $scope.makeActive = function(entry, id) {
             let i = $scope.journalsArray.indexOf(entry);

@@ -101,7 +101,7 @@
             });
 
             let todaysTakenEvents = todaysEvents.filter(event => {
-                return event.title === "Took meds";
+                return event.title === "Took meds" || event.title === "Took meds ✅";
             });
 
             return todaysTakenEvents.length > 0;
@@ -196,7 +196,7 @@
             if (event.title == 'Took meds') {
                 element.append(" ✅");
             }
-            
+
             element.append("<span class='closeon'>❌</span>");
             element.append("<span class='star'>⭐</span>");
             element.find(".closeon").click(function() {

@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :update, :destroy]
-
   # GET /notes
   # GET /notes.json
   def index
@@ -8,9 +7,14 @@ class NotesController < ApplicationController
     per = params.fetch 'per_page', 10
     tag = encrypt_param(params.fetch('tag', ''))
 
+    if tag.blank?
+      @notes = Note.where('user_id = ?', current_user).order('created_at DESC')
+                   .page(page).per(per)
+    else
     @notes = Note.where('user_id = ? AND tags ILIKE ?',
                         current_user, "%#{tag}%").order('created_at DESC')
                  .page(page).per(per)
+    end
 
     formatted_notes = @notes.map { |note| format_note note }
     render json: formatted_notes
