@@ -1,7 +1,6 @@
 nav {
     z-index: 1;
 }
-
 .content-container {
     @include bp (mobile) {
         display: flex;
@@ -17,7 +16,6 @@ nav {
         justify-content: center;
     }
 }
-
 .signout {
     @include bp (mobile) {
         width: 100%;
@@ -39,7 +37,6 @@ nav {
     justify-content: center;
     align-items: center;
     background: white;
-
     span {
         @include bp (small) {
             &:hover {
@@ -48,13 +45,11 @@ nav {
         }
         text-align: center;
         width: 50%;
-
         a {
             padding-left: 5px;
         }
     }
 }
-
 .left-aside {
     z-index: 1;
     @include bp (mobile) {
@@ -73,42 +68,34 @@ nav {
         text-align: center;
         border-right: $border;
         border-top: $border;
-
         .logo-container {
             display: flex;
             flex-direction: column;
             padding-top: 25px;
-
             .bmirror {
                 height: 75px;
                 width: 75px;
             }
         }
-
         .moti-container {
             width: 205px;
             display: flex;
             flex-direction: column;
             line-height: 1.5rem;
-
             i {
                 color: $mainColor;
-
                 &:first-child {
                     padding-right: 160px;
                 }
-
                 &:last-child {
                     padding-left: 160px;
                 }
             }
         }
-
         i {
             font-size: 1.5rem;
         }
     }
-
     .moti-click {
         padding: 5px;
         border-top: $border;
@@ -119,7 +106,6 @@ nav {
         @include bp(small) {
             visibility: visible;
         }
-
         i {
             &:hover {
                 cursor: pointer;
@@ -127,13 +113,11 @@ nav {
         }
     }
 }
-
 .fixed-nav {
     @include bp (mobile) {
         .web-navbar {
             display: none;
         }
-
         .bmirror {
             position: fixed;
             bottom: 5px;
@@ -151,7 +135,6 @@ nav {
         width: 100%;
         height: 55px;
         border-top: $border;
-
         .menu-click {
             i {
                 position: fixed;
@@ -161,16 +144,13 @@ nav {
                 bottom: 0;
                 right: 48%;
                 height: 50px;
-
                 &:active {
                     margin-left: 87.5px;
                     bottom: 0;
                     right: 48%;
                 }
             }
-
             &:hover {}
-
             ul {
                 background: white;
                 display: flex;
@@ -181,12 +161,10 @@ nav {
                 height: 140px;
                 bottom: 142px;
                 font-size: 2rem;
-
                 li {
                     @include bp (mobile) {
                         border-top: $border;
                         text-align: center;
-
                         &:active {}
                     }
                 }
@@ -197,32 +175,26 @@ nav {
         .web-navbar {
             display: flex;
         }
-
         .menu-click {
             display: none;
         }
     }
 }
-
 .fixed-nav {
     @include bp(small) {
         border-bottom: $border;
         border-top: none;
-
         i {
             display: none;
         }
-
         .bmirror {
             display: none;
         }
-
         .text-opt {
             display: none;
         }
         height: 50px;
         background: white;
-
         ul {
             margin-right: 30%;
             height: 100%;
@@ -230,13 +202,11 @@ nav {
             display: flex;
             justify-content: space-around;
             align-items: center;
-
             li {
                 height: 100%;
                 width: 25%;
                 padding-top: 18px;
                 text-align: center;
-
                 &:hover {
                     font-size: 1.25rem;
                     padding-top: 16px;
@@ -247,7 +217,6 @@ nav {
         left: 250px;
     }
 }
-
 div.ui-helper-hidden-accessible div {
     @include bp(mobile) {
         display: none;
@@ -256,7 +225,6 @@ div.ui-helper-hidden-accessible div {
         display: none;
     }
 }
-
 .ui-tooltip-content {
     font-size: 10pt;
     font-family: $primaryFont;
