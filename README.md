@@ -14,7 +14,7 @@ A coping tool for those with depression and anxiety, this Angular-Rails web appl
 
 * Mood chart
 
-* Personal journal entries
+* Personal journal
 
 * Local health centers
 
@@ -41,3 +41,12 @@ A coping tool for those with depression and anxiety, this Angular-Rails web appl
  * Choosing to customize your moods will allow you to edit any of our premade mood selections or add more of your very own. You can also sort your moods by dragging and dropping the order in which you want to place your moods. Note that editing and deleting moods will reflect on your mood chart.
  
   ###  * Mood chart
+  * After updating your moods, they become reflected on the mood chart which displays a collection of the moods submitted. These can be filtered by the past week, month, and six months. This was integrated using Chart.js
+  
+  
+  ### * Personal journal 
+  * This feature allows users to write about their day and express their thoughts. They can add tags to their entries, search for specific tags, view past entries, delete, and edit entries as well.
+  
+  
+  ###  * Local Health Centers
+  *
