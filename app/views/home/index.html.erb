@@ -31,12 +31,11 @@
                 </span>
             </span>
             <a class='moti-click'>
-                <i class="fa fa-smile-o" aria-hidden="true" ng-click="motivationalOther()"></i>
+                <i title="Click to view more motivational quotes" class="fa fa-smile-o" aria-hidden="true" ng-click="motivationalOther()"></i>
             </a>
         </div>
 
         <nav ng-cloak ng-controller="ProfileController as profile" ng-show="currentUser" class="fixed-nav">
-
             <a ng-click="othersTodos(); show=!show" class="text-opt">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
              <div class="sms-container mobile-sms">
                 <div class="sms-popup" ng-show="show">

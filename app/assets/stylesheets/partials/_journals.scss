@@ -120,7 +120,14 @@
 
         ul {
             overflow-y: scroll;
-            border-left: $border;
+            border-left: $border; // =======
+            //             @include bp (mobile) {
+            //                 padding-top: 81px;
+            //             }
+            //             @include bp (mobile) {
+            //                 padding-top: 0;
+            //             }
+            // >>>>>>> 1dc5cc497a367da9c65a95a1c1c8342d780681d3
 
             li {
                 height: 60px;
