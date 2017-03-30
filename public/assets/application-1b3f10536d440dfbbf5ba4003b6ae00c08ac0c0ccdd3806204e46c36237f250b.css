@@ -1767,6 +1767,11 @@ span.todo-true {
 }
 
 /* line 1, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+.calendar-containr {
+  padding-bottom: 100px;
+}
+
+/* line 5, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calbutton-container {
   width: 100%;
   display: flex;
@@ -1774,14 +1779,14 @@ span.todo-true {
   padding-bottom: 20px;
 }
 @media screen and (min-width: 320px) {
-  /* line 1, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 5, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calbutton-container {
     flex-direction: column;
     align-items: center;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 1, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 5, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calbutton-container {
     flex-direction: row;
     padding-top: 20px;
@@ -1790,110 +1795,110 @@ span.todo-true {
 }
 
 @media screen and (min-width: 320px) {
-  /* line 17, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 21, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar {
     height: 350px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 17, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 21, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar {
     height: 700px;
   }
 }
 
-/* line 26, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 30, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calendar-events {
   text-align: center;
 }
 @media screen and (min-width: 320px) {
-  /* line 26, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 30, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar-events {
     padding-bottom: 20px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 26, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 30, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar-events {
     padding-bottom: 0;
   }
 }
 
 @media screen and (min-width: 320px) {
-  /* line 36, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 40, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .span8 {
     width: 322px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 36, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 40, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .span8 {
     width: 800px;
   }
 }
 
-/* line 45, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 49, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container {
   display: flex;
   width: 100%;
   justify-content: center;
 }
-/* line 50, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 54, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container form {
   margin: 0 auto;
 }
-/* line 53, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 57, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container form input[type=date] {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
 }
-/* line 58, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 62, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .form-container form input[type=text] {
   font-family: "Raleway", sans-serif;
   width: 200px;
   padding: 5.7px;
 }
 @media screen and (min-width: 320px) {
-  /* line 64, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 68, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form label {
     font-size: 18px;
   }
-  /* line 68, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 72, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 {
     padding-bottom: 10px;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 50, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 54, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form {
     display: flex;
     align-items: baseline;
   }
-  /* line 76, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 80, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .pull-right {
     width: 200px;
     height: 38px;
   }
-  /* line 81, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 85, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form label {
     margin-right: 5px;
     font-size: 20px;
     border: none;
   }
-  /* line 87, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 91, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form button.btn.btn-primary.pull-right {
     font-size: 13px;
   }
-  /* line 91, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 95, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 {
     margin-right: 20px;
   }
-  /* line 94, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 98, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 button[type=submit] {
     font-size: 0;
     padding: 11px;
   }
-  /* line 99, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 103, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .form-container form .col-sm-10 input {
     padding: 5px;
     width: initial;
@@ -1901,14 +1906,14 @@ span.todo-true {
 }
 
 @media screen and (min-width: 320px) {
-  /* line 108, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 112, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-toolbar {
     display: flex;
     flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 108, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 112, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-toolbar {
     text-align: center;
     margin-bottom: 1em;
@@ -1917,7 +1922,7 @@ span.todo-true {
 }
 
 @media screen and (min-width: 320px) {
-  /* line 120, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 124, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-left {
     float: right;
     width: 100%;
@@ -1925,7 +1930,7 @@ span.todo-true {
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 120, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 124, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-left {
     float: none;
     width: inherit;
@@ -1934,71 +1939,71 @@ span.todo-true {
 }
 
 @media screen and (min-width: 320px) {
-  /* line 133, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 137, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right {
     width: 100%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 133, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 137, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right {
     display: block;
     width: inherit;
   }
 }
 @media screen and (min-width: 320px) {
-  /* line 142, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 146, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right button.fc-today-button {
     display: none;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 142, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 146, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-right button.fc-today-button {
     display: block;
   }
 }
 
 @media screen and (min-width: 320px) {
-  /* line 152, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 156, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-button-group {
     display: flex;
     width: 100%;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 152, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 156, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   div.fc-button-group {
     width: inherit;
   }
 }
 
 /*** Calendar + FullCalendar Overrides ***/
-/* line 164, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 168, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-day-grid-event .fc-content {
   word-wrap: break-word !important;
   white-space: normal !important;
 }
 
-/* line 169, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 173, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-event {
   border: 1px solid #35635d !important;
   background-color: #fbfdf2 !important;
 }
 
-/* line 174, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 178, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calXBtn {
   float: right;
   margin-top: -5px;
   margin-right: -5px;
 }
 
-/* line 180, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 184, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calWell {
   background: white;
 }
 @media screen and (min-width: 320px) {
-  /* line 180, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 184, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calWell {
     margin: 40px;
     float: none;
@@ -2006,100 +2011,100 @@ span.todo-true {
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 180, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 184, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calWell {
     float: left;
     margin: 10px;
   }
 }
 
-/* line 193, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 197, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 tr, td {
   background: white;
 }
 
-/* line 197, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 201, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-unthemed .fc-today {
   background: white !important;
 }
 
-/* line 201, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 205, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-view, .fc-view > table {
   z-index: 0 !important;
 }
 
-/* line 205, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 209, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-row .fc-content-skeleton td, .fc-row .fc-helper-skeleton td {
   border-color: rgba(0, 0, 0, 0.07) !important;
 }
 
-/* line 209, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 213, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-event.openSesame {
   background-color: #e5e50b;
   color: black;
 }
 
-/* line 214, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 218, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .fc-event.customFeed {
   background-color: #84deaf;
   color: black;
 }
 
-/* line 219, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 223, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calTools {
   margin-bottom: 10px;
 }
 
-/* line 223, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 227, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .btn-group {
   display: flex;
   justify-content: flex-end;
 }
-/* line 227, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 231, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .btn-group button {
   width: 164px;
 }
 
-/* line 232, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 236, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 .calendar .fc-toolbar .fc-left {
   float: none;
 }
 @media screen and (min-width: 320px) {
-  /* line 232, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 236, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar .fc-toolbar .fc-left {
     display: inline-grid;
   }
 }
 @media screen and (min-width: 661px) {
-  /* line 232, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+  /* line 236, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
   .calendar .fc-toolbar .fc-left {
     display: inline-block;
   }
 }
 
-/* line 242, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 246, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 div button.fc-today-button {
   width: 161px !important;
   margin-right: 5px !important;
 }
 
-/* line 247, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 251, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 div.fc .fc-toolbar > * > * {
   margin-left: 0 !important;
 }
 
-/* line 251, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 255, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 div button.fc-prev-button {
   width: 161px !important;
   margin-right: 5px !important;
 }
 
-/* line 256, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 260, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 div.fc .fc-button-group > * {
   margin: 0;
 }
 
-/* line 260, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
+/* line 264, /Users/Amiee/Documents/Clones/Week-9/Blue-Mirror/app/assets/stylesheets/partials/_calendar.scss */
 div button.fc-next-button {
   margin-right: 2px !important;
   width: 158px;
