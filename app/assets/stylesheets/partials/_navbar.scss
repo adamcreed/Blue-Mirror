@@ -224,10 +224,11 @@ nav {
         background: white;
 
         ul {
+            margin-right: 30%;
             height: 100%;
             width: 70%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
 
             li {
