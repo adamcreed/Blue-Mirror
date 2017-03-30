@@ -19,13 +19,11 @@
             mood: null,
             reason: null
         };
-        // $('.button').click(function(){
-        //     if($(this).hasClass('active')){
-        //         $(this).removeClass('active')
-        //     } else {
-        //         $(this).addClass('active')
-        //     }
-        // });
+
+        // tool tip
+        $(function() {
+            $(document).tooltip();
+        });
 
         // get moods
         $q.when(DataRequestService.get('/moods')).then((response) => {
@@ -78,11 +76,11 @@
                 $q.when(DataRequestService.post('/moods', $scope.moodObj)).then((response) => {
                     $scope.moodObj.mood = 1;
                     $scope.isSubmitted = true;
-            }).catch((error) => {
-                console.log(error);
-            });
-        }
-    };
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+        };
 
         // customize moods
         $scope.newList = '';

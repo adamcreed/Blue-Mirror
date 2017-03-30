@@ -230,3 +230,17 @@ nav {
         }
     }
 }
+
+div.ui-helper-hidden-accessible div {
+    @include bp(mobile) {
+        display: none;
+    }
+    @include bp(small) {
+        display: none;
+    }
+}
+
+.ui-tooltip-content {
+    font-size: 10pt;
+    font-family: $primaryFont;
+}
