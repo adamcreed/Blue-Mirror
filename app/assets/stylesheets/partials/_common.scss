@@ -55,9 +55,12 @@ input {
     background: white;
     border-radius: $radius;
     color: $accentTeal;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 }
+
+ input[type=submit] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+   }
 
 button {
     text-transform: uppercase;
