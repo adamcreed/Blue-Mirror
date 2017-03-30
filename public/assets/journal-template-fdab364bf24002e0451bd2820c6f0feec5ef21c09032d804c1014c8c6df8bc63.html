@@ -15,6 +15,7 @@ View Less Posts</i>
             <a ng-click="searchTags(); activeEntry=false"> <i class="fa fa-search" aria-hidden="true"></i>Search Tags
             </a>
         </form>
+
         <div class="web-list">
             <ul>
                 <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
