@@ -2,6 +2,9 @@
 
 A coping tool for those with depression and anxiety, this Angular-Rails web application takes on a mobile-first design approach and focuses on promoting mindfulness and self-motivation when life gets hard. Users can track moods over a long period of time as well as keep up with medications and view counselors in their local area.
 
+View Our App on Heroku: https://blue-mirror.herokuapp.com/#!/login
+Follow us on Twitter: https://twitter.com/BlueMirrorApp
+
 # Features
 
 * Google & Facebook login
