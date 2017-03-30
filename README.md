@@ -49,4 +49,13 @@ A coping tool for those with depression and anxiety, this Angular-Rails web appl
   
   
   ###  * Local Health Centers
-  *
+  * Local mental health centers nearest you can be located using Google Maps Places and Angular-Google-Maps while utilizing Geolocation. Contact information is also provided for each of those local centers.
+  
+  ###  * Crisis helplines
+    * We provide a list of crisis helplines with a variety of options that may suit the users needs. All of the contact information for each of those helplines are provided.
+    
+  ### * Doables list
+    * This feature provides the user with doable taks to help motivate them, and if they aren't sure what to write, we provide a list of suggested doable tasks that were curated from us and Eponis Sinope. 
+    
+  ###  *Medication input
+  * 
