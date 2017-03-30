@@ -454,7 +454,7 @@ nav {
 /* line 20, /Users/adamreed/IronYard/final-project/blue-mirror/app/assets/stylesheets/partials/_navbar.scss */
 .signout {
   position: fixed;
-  z-index: 5;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
