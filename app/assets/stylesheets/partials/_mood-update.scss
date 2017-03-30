@@ -5,7 +5,12 @@
     margin-top: 10px;
 
     a {
-        padding-left: 7px;
         font-size: 1.1rem;
+    }
+
+    h2 {
+        @include bp(mobile) {
+            display: inline;
+        }
     }
 }

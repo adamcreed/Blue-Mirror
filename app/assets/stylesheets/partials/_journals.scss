@@ -1,7 +1,6 @@
 .editable {
     background: #EAEAEA;
 }
-
 .mobile-less {
     @include bp (mobile) {
         position: fixed;
@@ -12,7 +11,6 @@
         display: none;
     }
 }
-
 .tag-container {
     input {
         @include bp(mobile) {
@@ -23,7 +21,6 @@
         }
         height: 30px;
     }
-
     label {
         display: none;
     }
@@ -36,7 +33,7 @@
     border-bottom: $border;
     @include bp(mobile) {
         width: 100%;
-        top: 398px;
+        top: 440px;
         height: 43px;
         padding-left: 5px;
         padding-right: 5px;
@@ -47,7 +44,6 @@
         border-left: $border;
     }
 }
-
 .arrows {
     position: fixed;
     display: flex;
@@ -56,7 +52,7 @@
     background: white;
     @include bp(mobile) {
         width: 100%;
-        top: 368px;
+        top: 410px;
         height: 30px;
         padding-left: 5px;
         padding-right: 5px;
@@ -68,16 +64,13 @@
         width: 250px;
         top: 110px;
     }
-
     i {
         font-size: 2rem;
     }
 }
-
 .data-id {
     display: none;
 }
-
 .web-past {
     @include bp (mobile) {
         position: fixed;
@@ -103,7 +96,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     h2 {
         @include bp (mobile) {
             border-top: $border;
@@ -126,18 +118,15 @@
         justify-content: center;
         align-items: center;
     }
-
     .web-list {
         @include bp (mobile) {
             width: 100%;
         }
         height: 100%;
         width: 250px;
-
         ul {
             overflow-y: scroll;
             border-left: $border;
-
             li {
                 height: 60px;
                 display: flex;
@@ -149,31 +138,26 @@
         }
     }
 }
-
 .web-entries div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     i {
         font-size: 1.3rem;
         padding-left: 6px;
     }
 }
-
 .entry {
     display: flex;
     flex-direction: row;
     cursor: pointer;
 }
-
 .title {
     display: flex;
     justify-content: center;
     height: 50px;
     z-index: 7;
 }
-
 .journal-container {
     @include bp (mobile) {
         width: 100vw;
@@ -190,18 +174,15 @@
         height: calc(100% - 50px);
         width: calc(100vw - 500px);
     }
-
     h2 {
         height: 65px;
         display: flex;
         align-items: center;
         width: calc(100vw - 50%;);
-
         i {
             padding-left: 5px;
         }
     }
-
     .view-entry {
         @include bp (mobile) {
             background: white;
@@ -215,20 +196,16 @@
             flex-direction: column;
             overflow-y: scroll;
             padding: 5px;
-
             a {}
-
             #edit-title {
                 text-align: center;
                 padding: 10px;
                 border-bottom: $border;
             }
-
             #edit-text {
                 border-top: $border;
                 padding-top: 10px;
             }
-
             #edit-tags {
                 border-top: $border;
                 margin-top: 10px;
@@ -237,19 +214,16 @@
                 position: relative;
                 padding: 10px;
                 margin-top: calc(100% - 20px);
-
                 span {
                     font-family: $headerFont;
                     font-size: 1.3rem;
                 }
             }
-
             .journal-time {
                 width: 300px;
                 padding-bottom: 5px;
                 padding-top: 5px;
             }
-
             .journal-buttons {
                 border-top: $border;
                 padding: 10px;
@@ -273,7 +247,6 @@
         overflow-y: scroll;
         justify-content: center;
         align-items: center;
-
         .journal-form {
             display: flex;
             justify-content: space-around;
@@ -281,22 +254,18 @@
             align-items: center;
             width: 100vw;
             height: 500px;
-
             .journal-input-container {
                 display: flex;
                 width: 300px;
                 flex-direction: column;
             }
-
             .journal-title {
                 width: 200px;
                 margin: 0;
             }
-
             .journal-entry {
                 height: 300px;
             }
-
             .journal-tag {
                 width: 200px;
                 margin: 0;
@@ -310,7 +279,6 @@
         width: calc(100vw - 500px);
         justify-content: center;
         align-items: center;
-
         .journal-form {
             width: calc(100vw - 735px);
             display: flex;
@@ -318,22 +286,18 @@
             flex-direction: column;
             align-items: center;
             height: 500px;
-
             .journal-input-container {
                 display: flex;
                 flex-direction: column;
             }
-
             .journal-title {
                 width: 400px;
                 margin: 0;
             }
-
             .journal-entry {
                 width: 400px;
                 height: 300px;
             }
-
             .journal-tag {
                 width: 200px;
                 margin: 0;
@@ -341,24 +305,19 @@
         }
     }
 }
-
 .submit-entry {}
-
 .edit-entry {
     display: flex;
     align-items: center;
-
     img {
         width: 1.5rem;
         height: 1.5rem;
     }
-
     i {
         font-size: 1rem;
         padding-left: 6px;
     }
 }
-
 .view-entry-item {
     white-space: pre-wrap;
 }
