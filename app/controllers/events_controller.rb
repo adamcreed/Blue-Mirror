@@ -25,7 +25,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      render json: { status: :created, location: @event }
+      render json: { location: format_event(@event) }, status: :created
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -34,9 +34,8 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    set_event
     if @event.update(event_params)
-      render json: { status: :ok, location: format_event(@event) }
+      render json: { location: format_event(@event) }
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -45,7 +44,6 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    set_event
     @event.destroy
   end
 
@@ -54,7 +52,7 @@ class EventsController < ApplicationController
   def format_event(event)
     {
       id: event.id,
-      title: event.title,
+      title: decrypt(event.title),
       start: (event.from + Time.now.utc_offset),
       frequency: event.frequency,
       completed: event.completed,
@@ -66,10 +64,12 @@ class EventsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find_by_id(params[:id])
+    @event = {} if different_user?(@event)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
+    params[:title] = encrypt_param params[:title]
     params.permit(:title, :from, :frequency, :completed, :user_id)
   end
 end

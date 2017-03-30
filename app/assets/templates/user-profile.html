@@ -24,7 +24,7 @@
 </div>
 
 <div class="sms-container">
-    <a class="desktop-sms" ng-click="othersTodos(); show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
+    <a class="desktop-sms" ng-click="show=true" ng-hide="show">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
     <div class="sms-popup" ng-show="show">
         <div class="receiving-message" ng-show="optedIn()"><span>You are currently receiving <span class="reminder">{{currentFrequency}}</span> messages</span></div>
         <form name="smsForm" ng-hide="optedIn()" class="smsForm" ng-submit="submitSms()">

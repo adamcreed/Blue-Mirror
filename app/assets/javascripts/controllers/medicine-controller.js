@@ -78,7 +78,7 @@
         };
 
         $scope.tookMeds = function() {
-            $scope.title = 'took meds ✅';
+            $scope.title = 'Took meds';
             $scope.from = moment().startOf('day').toDate();
             $scope.eventObj = {
                 title: $scope.title,
@@ -101,7 +101,7 @@
             });
 
             let todaysTakenEvents = todaysEvents.filter(event => {
-                return event.title === "took meds ✅";
+                return event.title === "Took meds";
             });
 
             return todaysTakenEvents.length > 0;
@@ -130,6 +130,9 @@
                 $scope.eventId = response.data.location.id;
                 $scope.postTitle = response.data.location.title;
 
+                if ($scope.postTitle == 'Took meds') {
+                  $scope.postTitle += ' ✅'
+                }
                 $scope.events.push({
                     _id: $scope.eventId,
                     title: $scope.postTitle,
@@ -183,11 +186,17 @@
         /* Event Render */
         $scope.eventRender = function(event, element, view) {
             $scope.calendarWatch++;
+
             element.attr({
                 'tooltip': event.title,
                 'tooltip-append-to-body': true
             });
             $compile(element)($scope);
+
+            if (event.title == 'Took meds') {
+                element.append(" ✅");
+            }
+            
             element.append("<span class='closeon'>❌</span>");
             element.append("<span class='star'>⭐</span>");
             element.find(".closeon").click(function() {

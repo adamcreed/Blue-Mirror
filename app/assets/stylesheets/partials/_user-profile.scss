@@ -1,5 +1,6 @@
 .shapes {
     display: flex;
+    padding-top: 15%;
     @include bp (mobile) {
         width: 100%;
         height: 80%;
@@ -11,7 +12,6 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        padding-top: 15%;
         width: 600px;
         height: 520px;
     }

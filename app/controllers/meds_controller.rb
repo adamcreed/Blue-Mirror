@@ -1,17 +1,20 @@
 class MedsController < ApplicationController
+  before_action :set_med, only: [:show, :update, :destroy]
+
   # GET /meds
   # GET /meds.json
   def index
     @meds = Med.where('user_id = ?', current_user)
 
-    render json: @meds
+    formatted_meds = @meds.map { |med| format_med med }
+
+    render json: formatted_meds
   end
 
   # GET /meds/1
   # GET /meds/1.json
   def show
-    @med = set_med
-    render json: @med
+    render json: format_med(@med)
   end
 
   # POST /meds
@@ -21,7 +24,7 @@ class MedsController < ApplicationController
     @med = Med.new(med_params)
 
     if @med.save
-      render json: { location: @med }, status: :created
+      render json: { location: format_med(@med) }, status: :created
     else
       render json: @med.errors, status: :unprocessable_entity
     end
@@ -30,9 +33,8 @@ class MedsController < ApplicationController
   # PATCH/PUT /meds/1
   # PATCH/PUT /meds/1.json
   def update
-    set_med
     if @med.update(med_params)
-      render json: { status: :ok, location: @med }
+      render json: { status: :ok, location: format_med(@med) }
     else
       render json: @med.errors, status: :unprocessable_entity
     end
@@ -41,7 +43,6 @@ class MedsController < ApplicationController
   # DELETE /meds/1
   # DELETE /meds/1.json
   def destroy
-    set_med
     @med.destroy
   end
 
@@ -50,10 +51,20 @@ class MedsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_med
     @med = Med.find_by_id(params[:id])
+    @med = {} if different_user?(@med)
+  end
+
+  def format_med(med)
+    {
+      id: med.id,
+      name: decrypt_property(med.name),
+      user_id: med.user_id
+    }
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def med_params
-      params.permit(:name, :user_id)
-    end
+    params[:name] = encrypt_param params[:name]
+    params.permit(:name, :user_id)
+  end
 end

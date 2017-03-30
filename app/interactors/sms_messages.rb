@@ -2,7 +2,7 @@ class SMSMessages
   include Delayed::RecurringJob
   include ApplicationHelper
   run_every 1.day
-  run_at '5:23pm'
+  run_at '10:00am'
   timezone 'US/Eastern'
   queue 'slow-jobs'
 
@@ -18,7 +18,7 @@ class SMSMessages
 
     weekly = daily.gsub 'day', 'week'
 
-    reminder = "Hello from the Blue Mirror team! We haven't seen you for " \
+    reminder = "Hello from Blue Mirror team! We haven't seen you for " \
     + "a few days and we hope you're okay! We'd love for you to come see " \
     + "us again! Remember: We are stronger together." \
     + "\n\nVisit https://blue-mirror.herokuapp.com to change your SMS settings."

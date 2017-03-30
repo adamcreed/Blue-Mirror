@@ -2,10 +2,8 @@
 
 one:
   mood: 1
-  reason: MyString
   user: one
 
 two:
   mood: 1
-  reason: MyString
   user: two

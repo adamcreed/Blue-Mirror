@@ -5,16 +5,10 @@ class MoodListsController < ApplicationController
     set_mood_list
 
     if @mood_list.update(mood_list_params)
-      render json: { status: :ok, location: @mood_list }
+      render json: { location: @mood_list }
     else
       render json: @mood_list.errors, status: :unprocessable_entity
     end
-  end
-
-  # DELETE /mood_lists/1
-  # DELETE /mood_lists/1.json
-  def destroy
-    @mood_list.destroy
   end
 
   private
@@ -26,6 +20,7 @@ class MoodListsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def mood_list_params
+    params[:moods] = encrypt_param params[:moods]
     params.permit(:moods)
   end
 end

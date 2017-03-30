@@ -11,13 +11,6 @@ class MoodsController < ApplicationController
     render json: formatted_moods
   end
 
-  # GET /moods/1
-  # GET /moods/1.json
-  def show
-    @mood = format_mood(set_mood)
-    render json: @mood
-  end
-
   # POST /moods
   # POST /moods.json
   def create
@@ -31,34 +24,12 @@ class MoodsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /moods/1
-  # PATCH/PUT /moods/1.json
-  def update
-    set_mood
-    max_mood = mood_list(current_user).length
-    params['mood'] = max_mood if params['mood'] > max_mood
-
-    if @mood.update(mood_params)
-      render json: { status: :ok, location: format_mood(@mood) }
-    else
-      render json: @mood.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /moods/1
-  # DELETE /moods/1.json
-  def destroy
-    set_mood
-    @mood.destroy
-  end
-
   private
 
   def format_mood(mood)
     {
       id: mood.id,
       mood: mood.mood,
-      reason: mood.reason,
       day: get_day(mood.created_at + Time.now.utc_offset),
       time: get_time(mood.created_at + Time.now.utc_offset)
     }
@@ -71,6 +42,9 @@ class MoodsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def mood_params
-    params.permit(:mood, :reason, :user_id)
+    max_mood = mood_list(current_user).length
+    params['mood'] = max_mood if params['mood'] > max_mood
+
+    params.permit(:mood, :user_id)
   end
 end

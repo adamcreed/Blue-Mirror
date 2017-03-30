@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :set_todo, only: [:show, :destroy]
+
   # GET /todos
   # GET /todos.json
   def index
@@ -7,13 +9,14 @@ class TodosController < ApplicationController
   end
 
   def featured
-    render json: get_featured('db/data/todos.seed')
+    @todos = Todo.where('featured = true').map(&:todo)
+    @todos << get_featured('db/data/todos.seed')
+    render json: @todos.flatten.uniq
   end
 
   # GET /todos/1
   # GET /todos/1.json
   def show
-    @todo = Todo.find_by_id(params['id'])
     render json: @todo
   end
 
@@ -33,7 +36,6 @@ class TodosController < ApplicationController
   # DELETE /todos/1
   # DELETE /todos/1.json
   def destroy
-    set_todo
     @todo.destroy
   end
 
@@ -42,6 +44,7 @@ class TodosController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_todo
     @todo = Todo.find_by_id(params[:id])
+    @todo = {} if different_user?(@todo)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

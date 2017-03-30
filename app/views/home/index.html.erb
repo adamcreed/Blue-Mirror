@@ -37,7 +37,7 @@
 
         <nav ng-cloak ng-controller="ProfileController as profile" ng-show="currentUser" class="fixed-nav">
 
-            <a ng-click="othersTodos(); show=!show" class="text-opt">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
+            <a ng-click="show=!show" class="text-opt">SMS <i class="fa fa-mobile" aria-hidden="true"></i></a>
             <div class="sms-container mobile-sms">
                 <div class="sms-popup" ng-show="show">
                     <div class="receiving-message" ng-show="optedIn()">

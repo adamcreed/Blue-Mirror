@@ -21,7 +21,7 @@ module ApplicationHelper
       create_mood_list user
     end
 
-    list = MoodList.find_by(user_id: user.id).moods.split(',').map do |mood|
+    list = decrypt(MoodList.find_by(user_id: user.id).moods).split(',').map do |mood|
       { text: mood.strip }
     end
 
@@ -35,7 +35,7 @@ module ApplicationHelper
   def create_mood_list(user)
     MoodList.create(
       user: user,
-      moods: 'Terrible, Bad, Neutral, Good, Great'
+      moods: encrypt('Terrible, Bad, Neutral, Good, Great')
     )
   end
 
@@ -48,7 +48,7 @@ module ApplicationHelper
   end
 
   def cipher
-    OpenSSL::Cipher::Cipher.new('aes-256-cbc')  # ('aes-256-cbc')
+    OpenSSL::Cipher::Cipher.new('aes-256-cbc')
   end
 
   def decrypt(value)
@@ -61,5 +61,19 @@ module ApplicationHelper
     c = cipher.encrypt
     c.key = Digest::SHA256.digest(ENV['PHONE_SALT'])
     Base64.encode64(c.update(value.to_s) + c.final)
+  end
+
+  def encrypt_param(param)
+    return param if param.blank?
+    encrypt param
+  end
+
+  def decrypt_property(property)
+    return property if property.blank?
+    decrypt property
+  end
+
+  def different_user?(resource)
+    not resource.user == current_user
   end
 end

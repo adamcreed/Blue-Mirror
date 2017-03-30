@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   def index
     page = params.fetch 'page', 1
     per = params.fetch 'per_page', 10
-    tag = params.fetch 'tag', ''
+    tag = encrypt_param(params.fetch('tag', ''))
 
     @notes = Note.where('user_id = ? AND tags ILIKE ?',
                         current_user, "%#{tag}%").order('created_at DESC')
@@ -54,11 +54,13 @@ class NotesController < ApplicationController
   private
 
   def format_note(note)
+    return {} if note.blank?
+
     {
       id: note.id,
-      title: note.title,
-      text: note.text,
-      tags: note.tags,
+      title: decrypt_property(note.title),
+      text: decrypt_property(note.text),
+      tags: decrypt_property(note.tags),
       day: get_day(note.created_at + Time.now.utc_offset),
       time: get_time(note.created_at + Time.now.utc_offset)
     }
@@ -67,10 +69,15 @@ class NotesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_note
     @note = Note.find_by_id(params[:id])
+    @note = {} if different_user?(@note)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def note_params
+    params[:title] = encrypt_param params[:title]
+    params[:text] = encrypt_param params[:text]
+    params[:tags] = encrypt_param params[:tags]
+
     params.permit(:title, :text, :tags, :user_id)
   end
 end

@@ -20,8 +20,7 @@
         };
 
         $scope.moodObj = {
-            mood: null,
-            reason: null
+            mood: null
         };
 
         // get moods
@@ -32,7 +31,6 @@
 
             $scope.labels = [];
             $scope.data = [];
-            $scope.reasons = [];
 
             for (let i = 0; i < $scope.allMoods.length; i++) {
                 $scope.labels.push($scope.allMoods[i].day);
@@ -214,7 +212,6 @@
 
                 $scope.labels = [];
                 $scope.data = [];
-                $scope.reasons = [];
 
                 for (let i = 0; i < $scope.allMoods.length; i++) {
                     $scope.labels.push($scope.allMoods[i].day);
@@ -243,7 +240,6 @@
 
                 $scope.labels = [];
                 $scope.data = [];
-                $scope.reasons = [];
 
                 for (let i = 0; i < $scope.allMoods.length; i++) {
                     $scope.labels.push($scope.allMoods[i].day);
@@ -272,7 +268,6 @@
 
                 $scope.labels = [];
                 $scope.data = [];
-                $scope.reasons = [];
 
                 for (let i = 0; i < $scope.allMoods.length; i++) {
                     $scope.labels.push($scope.allMoods[i].day);
