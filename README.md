@@ -57,8 +57,8 @@ A coping tool for those with depression and anxiety, this Angular-Rails web appl
   ### * Doables list
    * This feature provides the user with doable taks to help motivate them, and if they aren't sure what to write, we provide a list of suggested doable tasks that were curated from us and Eponis Sinope. 
     
-  ###  *Medication input
+  ###  * Medication input
   * Users can input and remove current medication their taking. There is a button labeled "I took my meds today" which serves a trackable history on their calendar of the days that their medication was taken while also serving as a visual reminder for the days that they may have forgotten to take it. 
 
- ###  *Calendar events
+ ###  * Calendar events
  * This feature allows users to add and remove events to and from their calendar using Angular-UI-Calendar and FullCalendar to serve as reminders for upcoming doctor appointments and miscellaneous activities. 
