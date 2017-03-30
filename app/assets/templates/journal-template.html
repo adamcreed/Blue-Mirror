@@ -4,6 +4,7 @@ View Less Posts</i>
 
 <i ng-click="less=false" ng-show="less" class="fa fa-plus" aria-hidden="true">View More Posts</i> </span>
     <div class="web-past" ng-show="!less">
+        <!-- <div class="past-all"> -->
         <h2>Past Entries</h2>
         <div class="arrows">
             <a ng-click="nextPage()"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
@@ -15,6 +16,7 @@ View Less Posts</i>
             <a ng-click="searchTags(); activeEntry=false"> <i class="fa fa-search" aria-hidden="true"></i>Search Tags
             </a>
         </form>
+        <!-- </div> -->
         <div class="web-list">
             <ul>
                 <li class="web-entries" ng-repeat="entry in journalsArray" ng-class="{active: viewEntry === {{entry.id}}}" ng-click="makeActive(entry, entry.id)">
