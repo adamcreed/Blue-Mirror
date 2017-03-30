@@ -1,24 +1,25 @@
-# README
+# Blue Mirror
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A coping tool for those with depression and anxiety, this mobile-first web application focuses on promoting mindfulness and self-motivation when life gets hard. Users can track moods over a long period of time as well as keep up with medications and view counselors in their local area.
 
-Things you may want to cover:
+# Features
 
-* Ruby version
+* SMS messaging
 
-* System dependencies
+* Updating moods
 
-* Configuration
+* Customizing moods
 
-* Database creation
+* Personal journal entries
 
-* Database initialization
+* Local health centers
 
-* How to run the test suite
+* Crisis helplines
 
-* Services (job queues, cache servers, search engines, etc.)
+* Doables list
 
-* Deployment instructions
+* Mood chart
 
-* ...
+* Medication input
+
+* Calendar events
