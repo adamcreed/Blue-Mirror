@@ -1,6 +1,7 @@
 .editable {
     background: #EAEAEA;
 }
+
 .mobile-less {
     @include bp (mobile) {
         position: fixed;
@@ -11,6 +12,7 @@
         display: none;
     }
 }
+
 .tag-container {
     input {
         @include bp(mobile) {
@@ -33,7 +35,7 @@
     border-bottom: $border;
     @include bp(mobile) {
         width: 100%;
-        top: 440px;
+        top: 500px;
         height: 43px;
         padding-left: 5px;
         padding-right: 5px;
@@ -52,7 +54,7 @@
     background: white;
     @include bp(mobile) {
         width: 100%;
-        top: 410px;
+        top: 470px;
         height: 30px;
         padding-left: 5px;
         padding-right: 5px;
@@ -64,6 +66,7 @@
         width: 250px;
         top: 110px;
     }
+
     i {
         font-size: 2rem;
     }
@@ -72,6 +75,7 @@
     display: none;
 }
 .web-past {
+    z-index: 2;
     @include bp (mobile) {
         position: fixed;
         left: 0;
@@ -96,6 +100,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     h2 {
         @include bp (mobile) {
             border-top: $border;
@@ -127,6 +132,7 @@
         ul {
             overflow-y: scroll;
             border-left: $border;
+
             li {
                 height: 60px;
                 display: flex;
@@ -174,11 +180,13 @@
         height: calc(100% - 50px);
         width: calc(100vw - 500px);
     }
+
     h2 {
         height: 65px;
         display: flex;
         align-items: center;
         width: calc(100vw - 50%;);
+
         i {
             padding-left: 5px;
         }
@@ -214,6 +222,7 @@
                 position: relative;
                 padding: 10px;
                 margin-top: calc(100% - 20px);
+
                 span {
                     font-family: $headerFont;
                     font-size: 1.3rem;
@@ -247,6 +256,7 @@
         overflow-y: scroll;
         justify-content: center;
         align-items: center;
+
         .journal-form {
             display: flex;
             justify-content: space-around;
@@ -254,20 +264,24 @@
             align-items: center;
             width: 100vw;
             height: 500px;
+
             .journal-input-container {
                 display: flex;
                 width: 300px;
                 flex-direction: column;
             }
+
             .journal-title {
-                width: 200px;
+                width: 100%;
                 margin: 0;
             }
+
             .journal-entry {
                 height: 300px;
             }
+
             .journal-tag {
-                width: 200px;
+                width: 100%;
                 margin: 0;
             }
         }
@@ -299,13 +313,13 @@
                 height: 300px;
             }
             .journal-tag {
-                width: 200px;
+                width: 400px;
                 margin: 0;
             }
         }
     }
 }
-.submit-entry {}
+
 .edit-entry {
     display: flex;
     align-items: center;
