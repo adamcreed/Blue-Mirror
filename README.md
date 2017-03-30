@@ -38,7 +38,7 @@ A coping tool for those with depression and anxiety, this Angular-Rails web appl
  * Upon entering the user profile, there is an option to update your mood, in which you can choose from our five premade selections or customize your own.
  
  ###  * Customizing moods
- * Choosing to customize your moods will allow you to edit any of our premade mood selections or add more of your very own. You can also sort your moods by dragging and dropping the order in which you want to place your moods. Note that editing and deleting moods will reflect on your mood chart.
+ * Choosing to customize your moods will allow you to edit any of our premade mood selections or add more of your very own. You can also sort your moods by dragging and dropping the order in which you want to place your moods using Jquery-UI. Note that editing and deleting moods will reflect on your mood chart.
  
   ###  * Mood chart
   * After updating your moods, they become reflected on the mood chart which displays a collection of the moods submitted. These can be filtered by the past week, month, and six months. This was integrated using Chart.js
@@ -58,4 +58,7 @@ A coping tool for those with depression and anxiety, this Angular-Rails web appl
     * This feature provides the user with doable taks to help motivate them, and if they aren't sure what to write, we provide a list of suggested doable tasks that were curated from us and Eponis Sinope. 
     
   ###  *Medication input
-  * 
+  * Users can input and remove current medication their taking. There is a button labeled "I took my meds today" which serves a trackable history on their calendar of the days that their medication was taken while also serving as a visual reminder for the days that they may have forgotten to take it. 
+
+ ###  *Calendar events
+ * This feature allows users to add and remove events to and from their calendar using Angular-UI-Calendar and FullCalendar to serve as reminders for upcoming doctor appointments and miscellaneous activities. 
