@@ -4,10 +4,10 @@ require_relative '../helpers/capybara_test_helper'
 class CapybaraTest < ActionDispatch::IntegrationTest
   include Capybara::Screenshot::MiniTestPlugin
   include CapybaraTestHelper
-  # test 'all the things' do
-  test 'should get login' do
+
+  test 'should get login, or redirect if logged in' do
     visit root_path
-    assert page.has_css? '.login'
+    assert page.has_css?('.login') || page.has_css?('.shapes')
   end
 
   test 'should log in' do
@@ -127,15 +127,15 @@ class CapybaraTest < ActionDispatch::IntegrationTest
   test 'should view and add events' do
     login username: ENV['EMAIL'], password: ENV['PASSWORD']
     click_on 'Meds'
-    refute page.has_content? 'took meds ✅'
+    refute page.has_content? 'Took meds ✅'
     refute page.has_css? '.disableButton'
 
     click_on 'I took my meds today'
-    assert page.has_content? 'took meds ✅'
+    assert page.has_content? 'Took meds ✅'
     assert page.has_css? '.disableButton'
 
-    find('a[tooltip="took meds ✅"] .closeon').click
-    refute page.has_content? 'took meds ✅'
+    find('a[tooltip="Took meds ✅"] .closeon').click
+    refute page.has_content? 'Took meds ✅'
     refute page.has_css? '.disableButton'
 
     refute page.has_content? 'Horse-Dagger'
@@ -169,5 +169,4 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     click_on 'sign out'
     assert page.has_css? '.login'
   end
-  # end
 end
