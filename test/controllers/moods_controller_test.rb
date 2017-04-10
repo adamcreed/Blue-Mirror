@@ -18,21 +18,21 @@ class MoodsControllerTest < ActionDispatch::IntegrationTest
     assert_response 201
   end
 
-  test "should show mood" do
-    get mood_url(@mood), as: :json
-    assert_response :success
+  test "should fail to show mood without being logged in as that user" do
+    assert_raises NoMethodError do
+      get mood_url(@mood), as: :json
+    end
   end
 
-  test "should update mood" do
-    patch mood_url(@mood), params: { mood: @mood.mood, user_id: @mood.user_id }, as: :json
-    assert_response 200
+  test "should fail to update mood without being logged in as that user" do
+    assert_raises NoMethodError do
+      patch mood_url(@mood), params: { mood: @mood.mood, user_id: @mood.user_id }, as: :json
+    end
   end
 
-  test "should destroy mood" do
-    assert_difference('Mood.count', -1) do
+  test "should fail to destroy mood without being logged in as that user" do
+    assert_raises NoMethodError do
       delete mood_url(@mood), as: :json
     end
-
-    assert_response 204
   end
 end

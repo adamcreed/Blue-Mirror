@@ -18,21 +18,21 @@ class MedsControllerTest < ActionDispatch::IntegrationTest
     assert_response 201
   end
 
-  test "should show med" do
-    get med_url(@med), as: :json
-    assert_response :success
+  test "should fail to show med without being logged in as that user" do
+    assert_raises NoMethodError do
+      get med_url(@med), as: :json
+    end
   end
 
-  test "should update med" do
-    patch med_url(@med), params: { name: @med.name, user_id: @med.user_id }, as: :json
-    assert_response 200
+  test "should fail to update med without being logged in as that user" do
+    assert_raises NoMethodError do
+      patch med_url(@med), params: { name: @med.name, user_id: @med.user_id }, as: :json
+    end
   end
 
-  test "should destroy med" do
-    assert_difference('Med.count', -1) do
+  test "should fail to destroy med without being logged in as that user" do
+  assert_raises NoMethodError do
       delete med_url(@med), as: :json
     end
-
-    assert_response 204
   end
 end

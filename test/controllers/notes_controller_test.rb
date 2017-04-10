@@ -23,16 +23,15 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update note" do
-    patch note_url(@note), params: { note: { tags: @note.tags, text: @note.text, title: @note.title, user_id: @note.user_id } }, as: :json
-    assert_response 200
+  test "should fail to update note without being logged in as that user" do
+    assert_raises NoMethodError do
+      patch note_url(@note), params: { note: { tags: @note.tags, text: @note.text, title: @note.title, user_id: @note.user_id } }, as: :json
+    end
   end
 
-  test "should destroy note" do
-    assert_difference('Note.count', -1) do
+  test "should fail to destroy note without being logged in as that user" do
+    assert_raises NoMethodError do
       delete note_url(@note), as: :json
     end
-
-    assert_response 204
   end
 end

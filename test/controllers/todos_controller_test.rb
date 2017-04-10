@@ -23,11 +23,9 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should destroy todo" do
-    assert_difference('Todo.count', -1) do
+  test "should fail to delete todo without being logged in as that user" do
+    assert_raises NoMethodError do
       delete todo_url(@todo), as: :json
     end
-
-    assert_response 204
   end
 end
