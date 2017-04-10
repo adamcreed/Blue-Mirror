@@ -60,7 +60,7 @@ class CapybaraTest < ActionDispatch::IntegrationTest
     refute page.has_css? '#map-canvas'
     assert page.has_css? '.loading'
 
-    sleep 1 until page.has_css? '.map-results'
+    sleep 1 until page.has_css? ('.result-name')
 
     refute page.has_css? '.loading'
     assert page.has_css? '#map-canvas'
